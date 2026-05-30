@@ -1,0 +1,476 @@
+(function () {
+  "use strict";
+
+  const IMAGE_EXT = ["jpg", "jpeg", "png", "webp", "avif", "gif"];
+  const PREFIXES = [
+    "christchurch",
+    "kaikoura",
+    "queenstown",
+    "tekapo",
+    "wanaka",
+    "mountcook",
+    "milford",
+    "img",
+    "pic",
+    "image",
+    "photo"
+  ];
+
+  const masonry = document.getElementById("masonry");
+  const galleryStatus = document.getElementById("galleryStatus");
+  const galleryEmpty = document.getElementById("galleryEmpty");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const siteHeader = document.getElementById("siteHeader");
+  const navToggle = document.getElementById("navToggle");
+  const mainNav = document.getElementById("mainNav");
+  const searchOpen = document.getElementById("searchOpen");
+  const searchPanel = document.getElementById("searchPanel");
+  const searchInput = document.getElementById("searchInput");
+  const searchResults = document.getElementById("searchResults");
+  const wechatModal = document.getElementById("wechatModal");
+  const floatWechat = document.getElementById("floatWechat");
+  const heroRoute = document.getElementById("heroRoute");
+  const heroRouteCard = document.getElementById("heroRouteCard");
+  const heroRouteBrand = document.getElementById("heroRouteBrand");
+
+  let galleryPaths = [];
+  let lightboxIndex = 0;
+
+  const SEARCH_INDEX = [
+    { title: "首页", href: "#hero", keywords: "首页 home 天天旅行社" },
+    { title: "品牌简介", href: "#intro", keywords: "简介 精品小团 家庭 摄影" },
+    { title: "关于 Peter", href: "#peter", keywords: "Peter 向导 导游 本地 奔驰 商务车 司导" },
+    { title: "凯库拉观鲸", href: "#destinations", keywords: "凯库拉 观鲸 海豚 whale" },
+    { title: "特卡波星空", href: "#destinations", keywords: "特卡波 星空 银河 tekapo" },
+    { title: "库克山", href: "#destinations", keywords: "库克山 雪山 冰川 mount cook" },
+    { title: "皇后镇", href: "#destinations", keywords: "皇后镇 queenstown 冒险" },
+    { title: "米尔福德峡湾", href: "#destinations", keywords: "米尔福德 峡湾 milford fjord" },
+    { title: "南岛经典9天8晚", href: "winter-tour.html", keywords: "经典 9天 8晚 凯库拉 特卡波 库克山 瓦纳卡 皇后镇" },
+    { title: "精品线路", href: "routes.html", keywords: "精品线路 路线 产品 经典 慢旅行" },
+    { title: "南岛慢旅行13天12晚", href: "south-island-13-day.html", keywords: "旗舰 精品路线 13天 12晚 慢旅行 奔驰 商务车 Peter" },
+    { title: "为什么选择我们", href: "#features", keywords: "奔驰 小团 不购物 Peter 纯玩" },
+    { title: "客人评价", href: "#reviews", keywords: "好评 评价 反馈 客户" },
+    { title: "摄影图库", href: "#gallery", keywords: "摄影 图库 照片 gallery" },
+    { title: "咨询预订", href: "#contact", keywords: "咨询 预订 联系 电话 微信 whatsapp" }
+  ];
+
+  const NAV_SECTIONS = [
+    "contact",
+    "gallery",
+    "reviews",
+    "features",
+    "itinerary",
+    "destinations",
+    "peter",
+    "intro",
+    "hero"
+  ];
+
+  const HERO_ROUTE_STOPS = [
+    "📍 Christchurch 基督城",
+    "📍 Kaikōura 凯库拉",
+    "📍 Hanmer Springs 汉默温泉",
+    "📍 Akaroa 阿卡罗阿",
+    "📍 Lake Tekapo 特卡波湖",
+    "📍 Aoraki / Mt Cook 库克山",
+    "📍 Oamaru 奥马鲁",
+    "📍 Dunedin 但尼丁",
+    "📍 Te Anau 蒂阿瑙",
+    "📍 Milford Sound 米尔福德峡湾",
+    "📍 Te Anau 蒂阿瑙",
+    "📍 Wānaka 瓦纳卡",
+    "📍 Queenstown 皇后镇"
+  ];
+
+  function normalizePath(path) {
+    return encodeURI(path.replace(/\\/g, "/"));
+  }
+
+  function probeImage(src) {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve({ ok: true, src: normalizePath(src) });
+      img.onerror = () => resolve({ ok: false });
+      img.src = normalizePath(src);
+    });
+  }
+
+  async function fromManifest() {
+    try {
+      const res = await fetch("images/manifest.json", { cache: "no-store" });
+      if (!res.ok) return [];
+      const data = await res.json();
+      if (!Array.isArray(data)) return [];
+      return data
+        .filter((n) => typeof n === "string")
+        .map((n) => normalizePath(`images/${n.replace(/^images\//, "")}`));
+    } catch {
+      return [];
+    }
+  }
+
+  async function fromDirectoryListing() {
+    try {
+      const res = await fetch("images/", { cache: "no-store" });
+      if (!res.ok) return [];
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      return [...doc.querySelectorAll("a[href]")]
+        .map((a) => decodeURIComponent(a.getAttribute("href") || ""))
+        .filter((name) =>
+          IMAGE_EXT.some((ext) => name.toLowerCase().endsWith("." + ext))
+        )
+        .filter((name) => name !== "logo.png")
+        .map((name) => normalizePath(`images/${name.replace(/^.*\//, "")}`));
+    } catch {
+      return [];
+    }
+  }
+
+  async function fromProbe() {
+    const candidates = new Set();
+    PREFIXES.forEach((prefix) => {
+      for (let i = 1; i <= 80; i += 1) {
+        IMAGE_EXT.forEach((ext) => {
+          candidates.add(`images/${prefix}${i}.${ext}`);
+        });
+      }
+    });
+    const found = [];
+    const list = [...candidates];
+    for (let i = 0; i < list.length; i += 20) {
+      const chunk = list.slice(i, i + 20);
+      const results = await Promise.all(chunk.map((src) => probeImage(src)));
+      results.forEach((r) => {
+        if (r.ok) found.push(r.src);
+      });
+    }
+    return found;
+  }
+
+  function uniqueSorted(paths) {
+    return [...new Set(paths.map(normalizePath))].sort((a, b) =>
+      a.localeCompare(b, "en")
+    );
+  }
+
+  function renderGallery(paths) {
+    if (!masonry) return;
+    masonry.innerHTML = "";
+    paths.forEach((src, i) => {
+      const item = document.createElement("figure");
+      item.className = "masonry-item";
+      item.style.animationDelay = `${Math.min(i * 0.04, 0.8)}s`;
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "新西兰南岛 · 新西兰天天旅行社";
+      img.loading = "lazy";
+      img.decoding = "async";
+      item.appendChild(img);
+      item.addEventListener("click", () => openLightbox(i));
+      masonry.appendChild(item);
+    });
+  }
+
+  async function loadGallery() {
+    const [manifest, listing, probed] = await Promise.all([
+      fromManifest(),
+      fromDirectoryListing(),
+      fromProbe()
+    ]);
+    galleryPaths = uniqueSorted([...manifest, ...listing, ...probed]).filter((p) => {
+      const name = p.split("/").pop()?.toLowerCase() || "";
+      return ![
+        "logo.png",
+        "peter.png",
+        "peter.jpg",
+        "peter-avatar-fallback.svg",
+        "mercedes-v-class.png"
+      ].includes(name);
+    });
+
+    if (!galleryPaths.length) {
+      if (galleryEmpty) galleryEmpty.hidden = false;
+      if (galleryStatus) galleryStatus.textContent = "暂无影像";
+      return;
+    }
+
+    if (galleryEmpty) galleryEmpty.hidden = true;
+    renderGallery(galleryPaths);
+    if (galleryStatus) {
+      galleryStatus.textContent = `${galleryPaths.length} 张南岛实拍影像`;
+    }
+  }
+
+  function openLightbox(index) {
+    lightboxIndex = index;
+    lightboxImg.src = galleryPaths[lightboxIndex];
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  function stepLightbox(delta) {
+    if (!galleryPaths.length) return;
+    lightboxIndex =
+      (lightboxIndex + delta + galleryPaths.length) % galleryPaths.length;
+    lightboxImg.src = galleryPaths[lightboxIndex];
+  }
+
+  function initLightbox() {
+    if (!lightbox) return;
+    lightbox.querySelector(".lightbox-close")?.addEventListener("click", closeLightbox);
+    lightbox.querySelector(".lightbox-prev")?.addEventListener("click", () => stepLightbox(-1));
+    lightbox.querySelector(".lightbox-next")?.addEventListener("click", () => stepLightbox(1));
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.hidden) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") stepLightbox(-1);
+      if (e.key === "ArrowRight") stepLightbox(1);
+    });
+  }
+
+  function openWechatModal() {
+    if (!wechatModal) return;
+    wechatModal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeWechatModal() {
+    if (!wechatModal) return;
+    wechatModal.hidden = true;
+    if (searchPanel?.hidden !== false && lightbox?.hidden !== false) {
+      document.body.style.overflow = "";
+    }
+  }
+
+  function initWechat() {
+    floatWechat?.addEventListener("click", openWechatModal);
+    document.querySelectorAll("[data-wechat-trigger]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        openWechatModal();
+      });
+    });
+    wechatModal?.querySelectorAll("[data-wechat-close]").forEach((el) => {
+      el.addEventListener("click", closeWechatModal);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && wechatModal && !wechatModal.hidden) {
+        closeWechatModal();
+      }
+    });
+  }
+
+  function initHeader() {
+    const onScroll = () => {
+      siteHeader?.classList.toggle("is-scrolled", window.scrollY > 32);
+      updateActiveNav();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    navToggle?.addEventListener("click", () => {
+      const open = mainNav.classList.toggle("is-open");
+      navToggle.classList.toggle("is-open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+    });
+
+    mainNav?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("is-open");
+        navToggle?.classList.remove("is-open");
+        navToggle?.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  function updateActiveNav() {
+    const offset = 140;
+    let current = "hero";
+
+    NAV_SECTIONS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY + offset >= el.offsetTop) current = id;
+    });
+
+    mainNav?.querySelectorAll("a").forEach((a) => {
+      const href = a.getAttribute("href")?.slice(1) || "";
+      const active = href === current;
+      a.classList.toggle("is-active", active);
+    });
+  }
+
+  function initReveal() {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("is-visible");
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  }
+
+  function initLoader() {
+    window.addEventListener("load", () => document.body.classList.remove("is-loading"));
+    setTimeout(() => document.body.classList.remove("is-loading"), 2200);
+  }
+
+  function initHeroRoute() {
+    if (!heroRoute || !heroRouteCard || !heroRouteBrand) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) {
+      heroRouteCard.classList.remove("is-visible");
+      heroRouteBrand.classList.add("is-visible");
+      return;
+    }
+
+    const duration = 15000;
+    const travelDuration = 13000;
+    const stopVisibleMs = 800;
+    const stopStep = travelDuration / HERO_ROUTE_STOPS.length;
+    let start = performance.now();
+    let lastStop = -1;
+    let showingFinal = false;
+    let rafId = 0;
+
+    const render = (now) => {
+      const elapsed = (now - start) % duration;
+      const isFinal = elapsed >= travelDuration;
+
+      if (isFinal) {
+        if (!showingFinal) {
+          heroRouteCard.classList.remove("is-visible");
+          heroRouteBrand.classList.add("is-visible");
+          showingFinal = true;
+        }
+      } else {
+        const stopIndex = Math.min(
+          HERO_ROUTE_STOPS.length - 1,
+          Math.floor(elapsed / stopStep)
+        );
+        const localTime = elapsed - stopIndex * stopStep;
+
+        if (showingFinal) {
+          heroRouteBrand.classList.remove("is-visible");
+          showingFinal = false;
+        }
+
+        if (stopIndex !== lastStop) {
+          heroRouteCard.textContent = HERO_ROUTE_STOPS[stopIndex];
+          lastStop = stopIndex;
+        }
+
+        heroRouteCard.classList.toggle("is-visible", localTime <= stopVisibleMs);
+      }
+
+      rafId = requestAnimationFrame(render);
+    };
+
+    rafId = requestAnimationFrame(render);
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        cancelAnimationFrame(rafId);
+        return;
+      }
+      start = performance.now();
+      lastStop = -1;
+      showingFinal = false;
+      rafId = requestAnimationFrame(render);
+    });
+  }
+
+  function initSmoothAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", (e) => {
+        const id = anchor.getAttribute("href");
+        if (!id || id === "#") return;
+        if (anchor.hasAttribute("data-wechat-trigger")) return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  }
+
+  function openSearch() {
+    searchPanel.hidden = false;
+    document.body.style.overflow = "hidden";
+    searchInput?.focus();
+    runSearch("");
+  }
+
+  function closeSearch() {
+    searchPanel.hidden = true;
+    if (wechatModal?.hidden !== false && lightbox?.hidden !== false) {
+      document.body.style.overflow = "";
+    }
+    if (searchInput) searchInput.value = "";
+  }
+
+  function runSearch(query) {
+    if (!searchResults) return;
+    const q = query.trim().toLowerCase();
+    const matches = q
+      ? SEARCH_INDEX.filter(
+          (item) =>
+            item.title.toLowerCase().includes(q) ||
+            item.keywords.toLowerCase().includes(q)
+        )
+      : SEARCH_INDEX;
+
+    searchResults.innerHTML = "";
+    if (!matches.length) {
+      searchResults.innerHTML = '<li class="empty">未找到相关内容</li>';
+      return;
+    }
+
+    const seen = new Set();
+    matches.forEach((item) => {
+      const key = item.href + item.title;
+      if (seen.has(key)) return;
+      seen.add(key);
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = item.href;
+      a.textContent = item.title;
+      a.addEventListener("click", () => closeSearch());
+      li.appendChild(a);
+      searchResults.appendChild(li);
+    });
+  }
+
+  function initSearch() {
+    searchOpen?.addEventListener("click", openSearch);
+    searchPanel?.querySelectorAll("[data-search-close]").forEach((el) => {
+      el.addEventListener("click", closeSearch);
+    });
+    searchInput?.addEventListener("input", (e) => runSearch(e.target.value));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !searchPanel.hidden) closeSearch();
+    });
+  }
+
+  initHeader();
+  initReveal();
+  initLoader();
+  initHeroRoute();
+  initSmoothAnchors();
+  initLightbox();
+  initSearch();
+  initWechat();
+  loadGallery();
+})();
