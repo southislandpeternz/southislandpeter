@@ -392,11 +392,12 @@ body:not(.is-loading) .page-loader {
 .hero-headline {
   position: absolute;
   z-index: 2;
-  top: calc(var(--header-h) + 120px);
+  top: calc(var(--header-h) + 132px);
   left: calc(clamp(20px, 4vw, 56px) + 60px);
-  width: 40vw;
-  max-width: 40vw;
+  width: clamp(380px, 42vw, 560px);
+  max-width: calc(100vw - 2 * (clamp(20px, 4vw, 56px) + 60px));
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -475,14 +476,14 @@ body:not(.is-loading) .page-loader {
 }
 
 .hero-byline {
-  margin: 12px 0 0;
+  margin: 18px 0 0;
   font-family: inherit;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.5;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.32);
 }
 
 .hero-actions {
@@ -921,7 +922,6 @@ body:not(.is-loading) .page-loader {
 }
 
 .section-head,
-.hero-headline,
 .intro-copy,
 .peter-copy,
 .vehicle-card,
@@ -948,7 +948,6 @@ body:not(.is-loading) .page-loader {
 }
 
 .section-head,
-.hero-headline,
 .intro-copy,
 .peter-copy,
 .contact-us-head,
