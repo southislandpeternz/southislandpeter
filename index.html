@@ -172,14 +172,39 @@
           <p class="section-desc">Mercedes-Benz V-Class 全程护航，适合 4–8 人精品小团，长途南岛公路也能从容舒适。</p>
         </header>
         <div class="vehicle-showcase">
-          <div class="vehicle-gallery">
-            <figure class="vehicle-main">
-              <img src="images/mercedes-new.JPG" alt="奔驰 V-Class 商务车" loading="lazy">
-            </figure>
-            <figure class="vehicle-sub">
-              <img src="images/kaikoura7.jpg" alt="南岛沿途风光" loading="lazy">
-            </figure>
+        <div class="mb-carousel" id="mbCarousel" aria-roledescription="carousel" aria-label="奔驰商务车与南岛风景轮播">
+          <div class="mb-carousel-viewport">
+            <div class="mb-carousel-track">
+              <figure class="mb-slide">
+                <img src="images/mercedes-new.JPG" alt="奔驰商务车舒适慢旅行" loading="lazy">
+                <figcaption>奔驰商务车舒适慢旅行</figcaption>
+              </figure>
+              <figure class="mb-slide">
+                <img src="images/mt-cook1.JPG" alt="库克山国家公园" loading="lazy">
+                <figcaption>库克山国家公园</figcaption>
+              </figure>
+              <figure class="mb-slide">
+                <img src="images/hooker-valley-track.JPG" alt="胡克山谷步道" loading="lazy">
+                <figcaption>胡克山谷步道</figcaption>
+              </figure>
+              <figure class="mb-slide">
+                <img src="images/tasman-glacier-track.JPG" alt="塔斯曼冰河步道" loading="lazy">
+                <figcaption>塔斯曼冰河步道</figcaption>
+              </figure>
+              <figure class="mb-slide">
+                <img src="images/tekapo-stargazing.JPG" alt="世界级暗夜星空" loading="lazy">
+                <figcaption>世界级暗夜星空</figcaption>
+              </figure>
+              <figure class="mb-slide">
+                <img src="images/kajkoura-whale-watch.jpg" alt="凯库拉观鲸" loading="lazy">
+                <figcaption>凯库拉观鲸</figcaption>
+              </figure>
+            </div>
           </div>
+          <button type="button" class="mb-arrow mb-arrow--prev" aria-label="上一张">‹</button>
+          <button type="button" class="mb-arrow mb-arrow--next" aria-label="下一张">›</button>
+          <div class="mb-dots" id="mbDots" role="tablist" aria-label="轮播导航"></div>
+        </div>
           <div class="vehicle-features">
             <article class="vehicle-card">
               <span class="vehicle-num">01</span>
@@ -639,6 +664,67 @@
           openCert();
         }
       });
+    })();
+  </script>
+  <script>
+    (function () {
+      var root = document.getElementById("mbCarousel");
+      if (!root) return;
+      var track = root.querySelector(".mb-carousel-track");
+      var viewport = root.querySelector(".mb-carousel-viewport");
+      var slides = Array.prototype.slice.call(root.querySelectorAll(".mb-slide"));
+      var dotsWrap = document.getElementById("mbDots");
+      var prevBtn = root.querySelector(".mb-arrow--prev");
+      var nextBtn = root.querySelector(".mb-arrow--next");
+      if (!track || slides.length === 0) return;
+
+      var index = 0;
+      var timer = null;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      slides.forEach(function (_, i) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "mb-dot" + (i === 0 ? " is-active" : "");
+        b.setAttribute("aria-label", "第 " + (i + 1) + " 张");
+        b.addEventListener("click", function () { go(i, true); });
+        dotsWrap.appendChild(b);
+      });
+      var dots = Array.prototype.slice.call(dotsWrap.children);
+
+      function go(i, manual) {
+        index = (i + slides.length) % slides.length;
+        track.style.transform = "translateX(" + (-index * 100) + "%)";
+        dots.forEach(function (d, k) { d.classList.toggle("is-active", k === index); });
+        if (manual) restart();
+      }
+
+      function restart() {
+        if (reduce) return;
+        clearInterval(timer);
+        timer = setInterval(function () { go(index + 1, false); }, 4500);
+      }
+
+      prevBtn && prevBtn.addEventListener("click", function () { go(index - 1, true); });
+      nextBtn && nextBtn.addEventListener("click", function () { go(index + 1, true); });
+
+      var startX = 0, dx = 0, dragging = false;
+      viewport.addEventListener("touchstart", function (e) {
+        startX = e.touches[0].clientX; dx = 0; dragging = true;
+      }, { passive: true });
+      viewport.addEventListener("touchmove", function (e) {
+        if (dragging) dx = e.touches[0].clientX - startX;
+      }, { passive: true });
+      viewport.addEventListener("touchend", function () {
+        if (!dragging) return;
+        dragging = false;
+        if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1), true);
+      });
+
+      root.addEventListener("mouseenter", function () { clearInterval(timer); });
+      root.addEventListener("mouseleave", restart);
+
+      restart();
     })();
   </script>
 </body>

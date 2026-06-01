@@ -1257,6 +1257,111 @@ body:not(.is-loading) .page-loader {
   object-fit: cover;
 }
 
+/* 奔驰专栏图片轮播 */
+.mb-carousel {
+  position: relative;
+}
+
+.mb-carousel-viewport {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+.mb-carousel-track {
+  display: flex;
+  transition: transform 0.6s var(--ease-out);
+  will-change: transform;
+}
+
+.mb-slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 100%;
+  margin: 0;
+}
+
+.mb-slide img {
+  display: block;
+  width: 100%;
+  height: clamp(260px, 42vw, 460px);
+  object-fit: cover;
+}
+
+.mb-slide figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px 22px 18px;
+  color: #fff;
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.58));
+}
+
+.mb-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+  z-index: 2;
+}
+
+.mb-arrow:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.06);
+}
+
+.mb-arrow--prev { left: 14px; }
+.mb-arrow--next { right: 14px; }
+
+.mb-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.mb-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(56, 82, 65, 0.25);
+  cursor: pointer;
+  transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+
+.mb-dot.is-active {
+  background: var(--accent);
+  transform: scale(1.35);
+}
+
+@media (max-width: 768px) {
+  .mb-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 19px;
+  }
+}
+
 .vehicle-features {
   display: grid;
   gap: 14px;
