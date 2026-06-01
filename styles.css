@@ -1236,6 +1236,14 @@ body:not(.is-loading) .page-loader {
   object-fit: cover;
 }
 
+/* 手机端完整显示车身（保持原有比例与圆角，不裁切） */
+@media (max-width: 768px) {
+  .vehicle-main img {
+    object-fit: contain;
+    background: var(--bg-alt);
+  }
+}
+
 .vehicle-sub {
   margin: 0;
   border-radius: var(--radius);
