@@ -3415,6 +3415,147 @@ body:not(.is-loading) .page-loader {
   }
 }
 
+/* 公司资质 Company Credentials */
+.cred-intro {
+  max-width: 760px;
+  margin: 0 auto clamp(32px, 4vw, 44px);
+  text-align: center;
+}
+
+.cred-intro p {
+  margin: 0 0 10px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+
+.cred-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.cred-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 20px);
+  margin-bottom: clamp(40px, 5vw, 60px);
+}
+
+.cred-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: clamp(18px, 2.2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cred-card-label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.cred-card-value {
+  font-size: clamp(15px, 1.8vw, 18px);
+  font-weight: 600;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.cred-cert {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cred-cert-title {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+.cred-cert-card {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(47, 47, 47, 0.12);
+  padding: clamp(16px, 2.4vw, 28px);
+  cursor: zoom-in;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.cred-cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 60px rgba(47, 47, 47, 0.16);
+}
+
+.cred-cert-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.cred-cert-card figcaption {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.cred-badges {
+  list-style: none;
+  padding: 0;
+  margin: clamp(24px, 3vw, 32px) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cred-badges li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(47, 170, 93, 0.12);
+  border: 1px solid rgba(47, 170, 93, 0.3);
+  color: #1f6b3d;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.cred-badges li::before {
+  content: "✓";
+  font-weight: 700;
+}
+
+.cred-note {
+  max-width: 720px;
+  margin: clamp(36px, 5vw, 52px) auto 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: clamp(15px, 1.8vw, 17px);
+  line-height: 1.9;
+}
+
+@media (max-width: 760px) {
+  .cred-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 460px) {
+  .cred-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* 页面顶部 Banner（占位大图 + 标题） */
 .tt-banner {
   position: relative;

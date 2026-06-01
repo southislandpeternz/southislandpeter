@@ -450,6 +450,61 @@
     </div>
   </section>
 
+  <!-- 公司资质 Company Credentials -->
+  <section class="section" id="credentials">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="section-kicker">Company Credentials</p>
+        <h2>合法注册 · 安心出行</h2>
+      </header>
+
+      <div class="cred-intro reveal">
+        <p>新西兰天天旅行社（Tian Tian Travel Limited）为新西兰政府正式注册企业。</p>
+        <p>公司成立于 2024 年 7 月 19 日，拥有独立公司编号及 NZBN 商业注册号码。</p>
+        <p>我们长期专注于南岛精品小团、私人定制旅行、商务包车及摄影旅行服务。</p>
+        <p>所有行程均由真实注册企业运营，为来自中国及世界各地的游客提供安全、可靠、深度的新西兰旅行体验。</p>
+      </div>
+
+      <div class="cred-grid reveal">
+        <article class="cred-card">
+          <span class="cred-card-label">公司名称</span>
+          <span class="cred-card-value">Tian Tian Travel Limited</span>
+        </article>
+        <article class="cred-card">
+          <span class="cred-card-label">Company Number</span>
+          <span class="cred-card-value">9262522</span>
+        </article>
+        <article class="cred-card">
+          <span class="cred-card-label">NZBN</span>
+          <span class="cred-card-value">9429052232527</span>
+        </article>
+        <article class="cred-card">
+          <span class="cred-card-label">成立时间</span>
+          <span class="cred-card-value">19 July 2024</span>
+        </article>
+      </div>
+
+      <div class="cred-cert reveal">
+        <header class="section-head" style="margin-bottom: clamp(20px, 3vw, 28px);">
+          <h3 class="cred-cert-title">新西兰公司注册证书</h3>
+          <p class="section-desc" style="margin:0;">Certificate of Incorporation</p>
+        </header>
+        <figure class="cred-cert-card" id="certCard" role="button" tabindex="0" aria-label="点击放大查看公司注册证书">
+          <img src="images/certificate.jpg" alt="Tian Tian Travel Limited 新西兰公司注册证书 Certificate of Incorporation" loading="lazy" id="certImage" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+          <figcaption>点击放大查看证书</figcaption>
+        </figure>
+        <ul class="cred-badges" aria-label="资质认证">
+          <li>New Zealand Registered Company</li>
+          <li>NZBN Verified</li>
+          <li>South Island Local Operator</li>
+          <li>Mercedes-Benz Premium Small Group</li>
+        </ul>
+      </div>
+
+      <p class="cred-note reveal">您的每一次旅行安排，均由新西兰合法注册企业提供服务，让旅行更加安心可靠。</p>
+    </div>
+  </section>
+
   <!-- Footer / 联系我们 -->
   <footer class="footer" id="contact">
     <div class="container">
@@ -565,5 +620,26 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    (function () {
+      var card = document.getElementById("certCard");
+      var certImg = document.getElementById("certImage");
+      var lb = document.getElementById("lightbox");
+      var lbImg = document.getElementById("lightboxImg");
+      if (!card || !certImg || !lb || !lbImg) return;
+      function openCert() {
+        lbImg.src = certImg.src;
+        lb.hidden = false;
+        document.body.style.overflow = "hidden";
+      }
+      card.addEventListener("click", openCert);
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openCert();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
