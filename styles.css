@@ -412,11 +412,16 @@ body:not(.is-loading) .page-loader {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* 人物在画面右下，锚定右侧以完整露出身形 */
-  background-position: 100% 42%;
+  overflow: hidden;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 100% 42%;
   animation: kenBurns 32s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 @keyframes kenBurns {
@@ -2373,8 +2378,8 @@ body:not(.is-loading) .page-loader {
     font-size: clamp(57px, 7.4vw, 105px);
   }
 
-  .hero-bg {
-    background-position: 92% 40%;
+  .hero-bg-img {
+    object-position: 92% 40%;
   }
 
   .hero-route {
@@ -2460,8 +2465,8 @@ body:not(.is-loading) .page-loader {
     gap: 12px;
   }
 
-  .hero-bg {
-    background-position: 88% 38%;
+  .hero-bg-img {
+    object-position: 88% 38%;
   }
 
   .hero-route {
@@ -2604,7 +2609,7 @@ body:not(.is-loading) .page-loader {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-bg {
+  .hero-bg-img {
     animation: none;
     transform: none;
   }
