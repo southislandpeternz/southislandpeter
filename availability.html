@@ -71,60 +71,22 @@
       <div class="container">
         <header class="section-head reveal">
           <p class="section-kicker">Booking Calendar</p>
-          <h2>可预订时间表</h2>
-          <p class="section-desc">2026 年 8 月至 2027 年 7 月档期一览。</p>
+          <h2>月历档期系统</h2>
+          <p class="section-desc">一眼看清每一天的可订状态。默认绿色为可预订，热门日期请尽早咨询锁定。</p>
         </header>
 
-        <div class="avail-grid reveal">
-          <article class="avail-card">
-            <div class="avail-month">2026 年 8 月</div>
-            <span class="avail-badge avail-badge--open">可预订</span>
-          </article>
-          <article class="avail-card">
-            <div class="avail-month">2026 年 9 月</div>
-            <span class="avail-badge avail-badge--open">可预订</span>
-          </article>
-          <article class="avail-card">
-            <div class="avail-month">2026 年 10 月</div>
-            <span class="avail-badge avail-badge--open">可预订</span>
-          </article>
-          <article class="avail-card">
-            <div class="avail-month">2026 年 11 月 1 日 – 19 日</div>
-            <span class="avail-badge avail-badge--open">可预订</span>
-          </article>
-          <article class="avail-card avail-card--rest">
-            <div class="avail-month">2026 年 11 月 20 日 – 2027 年 1 月 10 日</div>
-            <span class="avail-badge avail-badge--rest">休假中</span>
-          </article>
-          <article class="avail-card">
-            <div class="avail-month">2027 年 1 月 11 日 – 31 日</div>
-            <span class="avail-badge avail-badge--open">可预订</span>
-          </article>
-          <article class="avail-card">
-            <div class="avail-month">2027 年 2 月</div>
-            <span class="avail-badge avail-badge--open">可预订</span>
-          </article>
-          <article class="avail-card">
-            <div class="avail-month">2027 年 3 月</div>
-            <span class="avail-badge avail-badge--open">可预订</span>
-          </article>
-          <article class="avail-card">
-            <div class="avail-month">2027 年 4 月</div>
-            <span class="avail-badge avail-badge--open">可预订</span>
-          </article>
-          <article class="avail-card">
-            <div class="avail-month">2027 年 5 月</div>
-            <span class="avail-badge avail-badge--open">可预订</span>
-          </article>
-          <article class="avail-card">
-            <div class="avail-month">2027 年 6 月 1 日 – 24 日</div>
-            <span class="avail-badge avail-badge--open">可预订</span>
-          </article>
-          <article class="avail-card avail-card--rest">
-            <div class="avail-month">2027 年 6 月 25 日 – 7 月 31 日</div>
-            <span class="avail-badge avail-badge--rest">冬季休假</span>
-          </article>
+        <div class="cal-legend reveal" aria-label="档期图例">
+          <span class="cal-legend-item"><span class="cal-legend-dot cal-dot--open"></span>可预订</span>
+          <span class="cal-legend-item"><span class="cal-legend-dot cal-dot--enquiry"></span>咨询中</span>
+          <span class="cal-legend-item"><span class="cal-legend-dot cal-dot--booked"></span>已满</span>
+          <span class="cal-legend-item"><span class="cal-legend-dot cal-dot--holiday"></span>休假</span>
         </div>
+        <p class="cal-note reveal">
+          档期状态说明：绿色 = 可预订 ｜ 黄色 = 客户咨询中 ｜ 红色 = 已确认预订 ｜ 灰色 = 休假中。<br>
+          休假时段：2026 年 11 月 20 日 – 2027 年 1 月 10 日。
+        </p>
+
+        <div class="cal-root reveal" id="calendarRoot" aria-label="未来一年档期月历"></div>
       </div>
     </section>
 
@@ -199,6 +161,7 @@
       document.getElementById("floatWechat")?.click();
     });
   </script>
+  <script src="calendar-status.js"></script>
   <script src="winter-tour.js"></script>
 </body>
 </html>
