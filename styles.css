@@ -602,7 +602,7 @@ body:not(.is-loading) .page-loader {
 
 .hero-highlights {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   width: 100%;
   margin: 30px 0 0;
@@ -2400,8 +2400,31 @@ body:not(.is-loading) .page-loader {
   .brand-zh { font-size: 10px; }
 
   .btn-cta {
-    padding: 8px 12px;
-    font-size: 12px;
+    padding: 10px 16px;
+    font-size: 13px;
+    min-height: 44px;
+  }
+
+  .btn-primary,
+  .btn-outline,
+  .btn-hero {
+    min-height: 48px;
+    font-size: 15px;
+  }
+
+  .btn-hero {
+    padding: 14px 22px;
+  }
+
+  .contact-us-actions .btn {
+    min-height: 50px;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .float-btn {
+    min-width: 52px;
+    min-height: 52px;
   }
 
   .hero-headline {
@@ -3647,8 +3670,175 @@ body:not(.is-loading) .page-loader {
 }
 
 .cred-badges li::before {
-  content: "✓";
-  font-weight: 700;
+  content: none;
+}
+
+/* 首页精简版公司资质 */
+.cred-compact {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 380px);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  max-width: 920px;
+  margin: 0 auto clamp(28px, 4vw, 40px);
+}
+
+.cred-compact-name {
+  margin: 0 0 6px;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cred-compact-tagline {
+  margin: 0 0 clamp(20px, 3vw, 28px);
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.cred-compact-list {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.cred-compact-list div {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.cred-compact-list dt {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.cred-compact-list dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.cred-cert-card--compact {
+  margin: 0;
+}
+
+.home-routes-cta {
+  text-align: center;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 16px;
+  min-height: 52px;
+}
+
+/* 精品线路分类页 */
+.pr-section {
+  scroll-margin-top: 88px;
+}
+
+.pr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+.pr-grid--2 {
+  max-width: 880px;
+  margin-inline: auto;
+}
+
+.pr-grid--single {
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.pr-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: clamp(22px, 3vw, 28px);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s;
+}
+
+.pr-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(47, 47, 47, 0.12);
+  border-color: rgba(47, 170, 93, 0.35);
+}
+
+.pr-card--featured {
+  border-color: rgba(47, 170, 93, 0.25);
+  background: linear-gradient(145deg, #fff 0%, rgba(47, 170, 93, 0.04) 100%);
+}
+
+.pr-card-num {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.pr-card h3 {
+  margin: 0;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.pr-card p {
+  margin: 0;
+  flex: 1;
+  color: var(--text-muted);
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+
+.pr-card-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.pr-see-all {
+  text-align: center;
+  margin-top: clamp(24px, 3vw, 32px);
+}
+
+@media (max-width: 760px) {
+  .cred-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .cred-compact-list div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .pr-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  .cred-compact-list div {
+    grid-template-columns: 1fr;
+  }
 }
 
 .cred-note {

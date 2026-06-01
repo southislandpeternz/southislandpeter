@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="optimized-images/网页封面背景.JPG" fetchpriority="high">
 </head>
 <body class="is-loading">
 
@@ -17,7 +18,7 @@
   <header class="site-header" id="siteHeader">
     <div class="header-bar">
       <a href="#hero" class="brand">
-        <img src="optimized-images/logo.png" class="site-logo" alt="新西兰天天旅行社 Logo">
+        <img src="optimized-images/logo.png" class="site-logo" alt="新西兰天天旅行社 Logo" width="48" height="48" loading="eager">
         <div class="brand-text">
           <div class="brand-en">Tian Tian Travel Ltd</div>
           <div class="brand-zh">新西兰天天旅行社</div>
@@ -27,9 +28,6 @@
       <nav class="nav-center" id="mainNav" aria-label="主导航">
         <a href="#hero">首页</a>
         <a href="#peter">关于 Peter</a>
-        <a href="day-tours.html">一日游</a>
-        <a href="two-day-tours.html">两日游</a>
-        <a href="three-day-tours.html">三日游</a>
         <a href="routes.html">精品线路</a>
         <a href="destinations.html">景点百科</a>
         <a href="availability.html">档期安排</a>
@@ -63,7 +61,7 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-headline reveal">
-      <h1 class="hero-title">南岛真实<br class="hero-title-break" aria-hidden="true">漫旅行</h1>
+      <h1 class="hero-title">南岛真实<br class="hero-title-break" aria-hidden="true">慢旅行</h1>
       <p class="hero-byline">Peter · 南岛当地向导</p>
       <div class="hero-actions">
         <a href="routes.html" class="btn-hero btn-hero--primary">
@@ -74,7 +72,7 @@
               <path d="M12 7l1.2 4.8L8 12l4.8 1.2L12 18l1.2-4.8L16 12l-4.8-1.2z" fill="currentColor" stroke="none"/>
             </svg>
           </span>
-          看看我的路线
+          查看精品线路
         </a>
         <a href="#contact" class="btn-hero btn-hero--secondary">
           免费定制行程
@@ -82,12 +80,6 @@
         </a>
       </div>
       <ul class="hero-highlights" aria-label="服务亮点">
-        <li class="hero-highlight-item">
-          <span class="hero-highlight-icon-wrap" aria-hidden="true">
-            <span class="hero-highlight-icon">📅</span>
-          </span>
-          <span class="hero-highlight-text">6-12天定制</span>
-        </li>
         <li class="hero-highlight-item">
           <span class="hero-highlight-icon-wrap" aria-hidden="true">
             <span class="hero-highlight-icon">👥</span>
@@ -176,7 +168,7 @@
           <div class="mb-carousel-viewport">
             <div class="mb-carousel-track">
               <figure class="mb-slide">
-                <img src="optimized-images/mercedes-new.JPG" alt="奔驰商务车舒适慢旅行" loading="lazy">
+                <img src="optimized-images/mercedes-new.JPG" alt="奔驰商务车舒适慢旅行" loading="eager" fetchpriority="high">
                 <figcaption>奔驰商务车舒适慢旅行</figcaption>
               </figure>
               <figure class="mb-slide">
@@ -276,103 +268,84 @@
     </div>
   </section>
 
-  <!-- 景点介绍 -->
-  <section class="section section-alt" id="destinations">
+  <!-- 公司资质 · 信任背书 -->
+  <section class="section section-alt" id="credentials">
     <div class="container">
       <header class="section-head reveal">
-        <p class="section-kicker">Iconic Destinations</p>
-        <h2>南岛精华景点</h2>
-        <p class="section-desc">观鲸、星空、雪山、冒险之都与世界级峡湾，精品小团深度停留</p>
-        <div class="tt-see-all-row">
-          <a href="destinations.html" class="tt-see-all">查看全部景点介绍 <span class="tt-arrow" aria-hidden="true">→</span></a>
-        </div>
+        <p class="section-kicker">Company Credentials</p>
+        <h2>公司资质</h2>
       </header>
-      <div class="dest-grid">
-        <article class="dest-card dest-card--wide reveal">
-          <img src="optimized-images/kaikoura6.jpg" alt="凯库拉观鲸" loading="lazy">
-          <div class="dest-overlay">
-            <span class="dest-tag">Coast</span>
-            <h3>凯库拉观鲸</h3>
-            <p>出海邂逅抹香鲸与海豚群，海岸公路与海鲜午餐同样令人难忘。</p>
-          </div>
-        </article>
-        <article class="dest-card reveal">
-          <img src="optimized-images/kaikoura1.jpg" alt="特卡波星空" loading="lazy">
-          <div class="dest-overlay">
-            <span class="dest-tag">Stars</span>
-            <h3>特卡波星空</h3>
-            <p>暗夜保护区银河璀璨，牧羊人教堂湖畔最适合家庭与摄影创作。</p>
-          </div>
-        </article>
-        <article class="dest-card reveal">
-          <img src="optimized-images/kaikoura8.jpg" alt="库克山" loading="lazy">
-          <div class="dest-overlay">
-            <span class="dest-tag">Alpine</span>
-            <h3>库克山</h3>
-            <p>南阿尔卑斯主峰脚下，冰川湖泊与短途徒步，感受雪山壮丽。</p>
-          </div>
-        </article>
-        <article class="dest-card reveal">
-          <img src="optimized-images/kaikoura3.jpg" alt="皇后镇" loading="lazy">
-          <div class="dest-overlay">
-            <span class="dest-tag">Adventure</span>
-            <h3>皇后镇</h3>
-            <p>瓦卡蒂普湖畔的冒险之都，天际缆车、酒庄与湖畔漫步皆宜。</p>
-          </div>
-        </article>
-        <article class="dest-card reveal">
-          <img src="optimized-images/christchurch5.jpg" alt="米尔福德峡湾" loading="lazy">
-          <div class="dest-overlay">
-            <span class="dest-tag">Fjord</span>
-            <h3>米尔福德峡湾</h3>
-            <p>世界遗产级峡湾风光，游船穿行瀑布与峭壁，南岛必访之境。</p>
-          </div>
-        </article>
+
+      <div class="cred-compact reveal">
+        <div class="cred-compact-info">
+          <p class="cred-compact-name">Tian Tian Travel Limited</p>
+          <p class="cred-compact-tagline">新西兰合法注册旅游企业</p>
+          <dl class="cred-compact-list">
+            <div>
+              <dt>成立日期</dt>
+              <dd>19 July 2024</dd>
+            </div>
+            <div>
+              <dt>Company Number</dt>
+              <dd>9262522</dd>
+            </div>
+            <div>
+              <dt>NZBN</dt>
+              <dd>9429052232527</dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="cred-cert-card cred-cert-card--compact" id="certCard" role="button" tabindex="0" aria-label="点击放大查看公司注册证书">
+          <img src="optimized-images/certificate.jpg?v=3" alt="Certificate of Incorporation — Tian Tian Travel Limited" loading="lazy" id="certImage" onerror="this.onerror=null;this.src='optimized-images/placeholder.svg';">
+          <figcaption>Certificate of Incorporation</figcaption>
+        </figure>
       </div>
+
+      <ul class="cred-badges reveal" aria-label="资质认证">
+        <li>✓ New Zealand Registered Company</li>
+        <li>✓ NZBN Verified</li>
+        <li>✓ South Island Local Operator</li>
+        <li>✓ Mercedes-Benz Premium Small Group</li>
+      </ul>
+
+      <p class="cred-note reveal">您的每一次旅行安排，<br>均由新西兰合法注册企业提供服务，<br>让旅行更加安心可靠。</p>
     </div>
   </section>
 
-  <!-- 精品线路 -->
+  <!-- 精品线路预览 -->
   <section class="section" id="itinerary">
     <div class="container">
       <header class="section-head reveal">
-        <p class="section-kicker">Signature Journeys</p>
+        <p class="section-kicker">Premium Routes</p>
         <h2>精品线路</h2>
-        <p class="section-desc">不赶路，不打卡，带您深入体验真正的新西兰南岛。一日、两日、三日及多日深度线路，总有一款适合您。</p>
-        <div class="tt-see-all-row">
-          <a href="day-tours.html" class="tt-see-all">查看全部一日游 <span class="tt-arrow" aria-hidden="true">→</span></a>
-          <a href="two-day-tours.html" class="tt-see-all">查看全部两日游 <span class="tt-arrow" aria-hidden="true">→</span></a>
-          <a href="three-day-tours.html" class="tt-see-all">查看全部三日游 <span class="tt-arrow" aria-hidden="true">→</span></a>
-          <a href="routes.html" class="tt-see-all">全部精品线路 <span class="tt-arrow" aria-hidden="true">→</span></a>
-        </div>
+        <p class="section-desc">一日游至南岛深度环岛，奔驰商务车 4–8 人精品小团，Peter 本人带团。</p>
       </header>
       <div class="journey-grid reveal">
         <article class="journey-card">
-          <p class="journey-eyebrow">Classic South Island</p>
-          <h3>南岛经典9天8晚</h3>
-          <p>凯库拉观鲸 · 特卡波星空 · 库克山雪山 · 瓦纳卡湖景 · 皇后镇度假</p>
+          <p class="journey-eyebrow">Classic · 8 Days</p>
+          <h3>南岛 8 日经典慢旅行</h3>
+          <p>凯库拉观鲸 · 特卡波星空 · 库克山 · 瓦纳卡 · 皇后镇</p>
           <div class="journey-tags">
-            <span>✅ 4-8人精品小团</span>
-            <span>✅ 奔驰商务车</span>
-            <span>✅ 摄影慢旅行</span>
-            <span>✅ 9天8晚</span>
+            <span>4-8人精品小团</span>
+            <span>奔驰商务车</span>
           </div>
           <a href="winter-tour.html" class="btn btn-primary">查看详细行程</a>
         </article>
         <article class="journey-card">
-          <p class="journey-eyebrow">Flagship Slow Travel</p>
-          <h3>南岛慢旅行13天12晚</h3>
-          <p>凯库拉观鲸 · 阿卡罗阿 · 特卡波 · 库克山 · 奥马鲁 · 但尼丁 · 米尔福德峡湾 · 皇后镇</p>
+          <p class="journey-eyebrow">Flagship · 13 Days</p>
+          <h3>南岛 13 日环岛精品游</h3>
+          <p>凯库拉 · 特卡波 · 库克山 · 米尔福德峡湾 · 皇后镇深度慢旅行</p>
           <div class="journey-tags">
-            <span>✅ 4-8人精品小团</span>
-            <span>✅ 奔驰V-Class商务车</span>
-            <span>✅ 深度慢旅行</span>
-            <span>✅ 摄影体验</span>
-            <span>✅ 13天12晚</span>
+            <span>深度慢旅行</span>
+            <span>摄影体验</span>
           </div>
           <a href="south-island-13-day.html" class="btn btn-primary">查看详细行程</a>
         </article>
       </div>
+      <p class="home-routes-cta reveal">
+        <a href="routes.html" class="btn btn-outline btn-lg">查看全部精品线路 →</a>
+      </p>
     </div>
   </section>
 
@@ -417,125 +390,12 @@
     </div>
   </section>
 
-  <!-- 客人评价 -->
-  <section class="section" id="reviews">
-    <div class="container">
-      <header class="section-head reveal">
-        <p class="section-kicker">Guest Reviews</p>
-        <h2>客户评价</h2>
-        <p class="section-desc">来自中国家庭、好友结伴与摄影旅人的南岛之旅反馈</p>
-      </header>
-      <div class="reviews-grid">
-        <article class="review-card reveal">
-          <div class="review-media">
-            <img src="optimized-images/kaikoura4.jpg" alt="客人南岛旅行实拍" loading="lazy">
-          </div>
-          <div class="review-stars" aria-label="5 星评价">★★★★★</div>
-          <blockquote>「带父母和孩子走完全程都不累，Peter 会看老人状态调整节奏，凯库拉观鲸孩子兴奋了一整天。」</blockquote>
-          <cite>— 上海 · 王女士 · 家庭团</cite>
-        </article>
-        <article class="review-card reveal">
-          <div class="review-media">
-            <img src="optimized-images/kaikoura9.jpg" alt="客人南岛旅行实拍" loading="lazy">
-          </div>
-          <div class="review-stars" aria-label="5 星评价">★★★★★</div>
-          <blockquote>「奔驰商务车非常稳，我们四个好友行李很多也放得下。特卡波拍银河，Peter 知道最佳机位。」</blockquote>
-          <cite>— 北京 · 陈先生 · 摄影团</cite>
-        </article>
-        <article class="review-card reveal">
-          <div class="review-media">
-            <img src="optimized-images/christchurch3.jpg" alt="客人南岛旅行实拍" loading="lazy">
-          </div>
-          <div class="review-stars" aria-label="5 星评价">★★★★★</div>
-          <blockquote>「米尔福德峡湾和库克山太震撼了，全程无购物，价格透明。已在微信推荐给朋友。」</blockquote>
-          <cite>— 广州 · 李女士 · 好友结伴</cite>
-        </article>
-        <article class="review-card reveal">
-          <div class="review-media">
-            <img src="optimized-images/kaikoura10.jpg" alt="客人南岛旅行实拍" loading="lazy">
-          </div>
-          <div class="review-stars" aria-label="5 星评价">★★★★★</div>
-          <blockquote>「小团体验远超大团，皇后镇多留了一天自由活动，whatsapp 咨询回复很快，安排专业。」</blockquote>
-          <cite>— 深圳 · 张先生 · 定制团</cite>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 摄影图库 -->
-  <section class="section section-alt" id="gallery">
-    <div class="container">
-      <header class="section-head reveal">
-        <p class="section-kicker">Gallery</p>
-        <h2>南岛摄影图库</h2>
-        <p class="section-desc" id="galleryStatus">正在加载影像…</p>
-      </header>
-      <div class="masonry" id="masonry" aria-live="polite"></div>
-      <p class="gallery-empty" id="galleryEmpty" hidden>暂无图片，请将照片放入 images 文件夹。</p>
-    </div>
-  </section>
-
-  <!-- 公司资质 Company Credentials -->
-  <section class="section" id="credentials">
-    <div class="container">
-      <header class="section-head reveal">
-        <p class="section-kicker">Company Credentials</p>
-        <h2>合法注册 · 安心出行</h2>
-      </header>
-
-      <div class="cred-intro reveal">
-        <p>新西兰天天旅行社（Tian Tian Travel Limited）为新西兰政府正式注册企业。</p>
-        <p>公司成立于 2024 年 7 月 19 日，拥有独立公司编号及 NZBN 商业注册号码。</p>
-        <p>我们长期专注于南岛精品小团、私人定制旅行、商务包车及摄影旅行服务。</p>
-        <p>所有行程均由真实注册企业运营，为来自中国及世界各地的游客提供安全、可靠、深度的新西兰旅行体验。</p>
-      </div>
-
-      <div class="cred-grid reveal">
-        <article class="cred-card">
-          <span class="cred-card-label">公司名称</span>
-          <span class="cred-card-value">Tian Tian Travel Limited</span>
-        </article>
-        <article class="cred-card">
-          <span class="cred-card-label">Company Number</span>
-          <span class="cred-card-value">9262522</span>
-        </article>
-        <article class="cred-card">
-          <span class="cred-card-label">NZBN</span>
-          <span class="cred-card-value">9429052232527</span>
-        </article>
-        <article class="cred-card">
-          <span class="cred-card-label">成立时间</span>
-          <span class="cred-card-value">19 July 2024</span>
-        </article>
-      </div>
-
-      <div class="cred-cert reveal">
-        <header class="section-head" style="margin-bottom: clamp(20px, 3vw, 28px);">
-          <h3 class="cred-cert-title">新西兰公司注册证书</h3>
-          <p class="section-desc" style="margin:0;">Certificate of Incorporation</p>
-        </header>
-        <figure class="cred-cert-card" id="certCard" role="button" tabindex="0" aria-label="点击放大查看公司注册证书">
-          <img src="optimized-images/certificate.jpg?v=2" alt="Tian Tian Travel Limited 新西兰公司注册证书 Certificate of Incorporation" loading="lazy" id="certImage" onerror="this.onerror=null;this.src='optimized-images/placeholder.svg';">
-          <figcaption>点击放大查看证书</figcaption>
-        </figure>
-        <ul class="cred-badges" aria-label="资质认证">
-          <li>New Zealand Registered Company</li>
-          <li>NZBN Verified</li>
-          <li>South Island Local Operator</li>
-          <li>Mercedes-Benz Premium Small Group</li>
-        </ul>
-      </div>
-
-      <p class="cred-note reveal">您的每一次旅行安排，均由新西兰合法注册企业提供服务，让旅行更加安心可靠。</p>
-    </div>
-  </section>
-
   <!-- Footer / 联系我们 -->
   <footer class="footer" id="contact">
     <div class="container">
       <div class="footer-brand-block reveal">
         <a href="#hero" class="brand brand--footer">
-          <img src="optimized-images/logo.png" class="site-logo site-logo--footer" alt="新西兰天天旅行社">
+          <img src="optimized-images/logo.png" class="site-logo site-logo--footer" alt="新西兰天天旅行社" loading="lazy">
           <div class="brand-text">
             <div class="brand-en">Tian Tian Travel Ltd</div>
             <div class="brand-zh">新西兰天天旅行社</div>
@@ -575,15 +435,15 @@
           <div class="contact-us-qr">
             <figure class="contact-qr-card" id="wechatQr">
               <div class="contact-qr-img-wrap">
-                <img src="optimized-images/wechat-qr.jpg" alt="微信二维码" width="160" height="160" loading="lazy">
+                <img src="optimized-images/wechat-qr.jpg" alt="微信二维码" width="220" height="220" loading="lazy">
               </div>
-              <figcaption>扫描添加微信</figcaption>
+              <figcaption>微信咨询</figcaption>
             </figure>
             <figure class="contact-qr-card contact-qr-card--wa">
               <div class="contact-qr-img-wrap">
-                <img src="optimized-images/peter-whatapp.jpg" alt="WhatsApp 二维码" width="160" height="160" loading="lazy">
+                <img src="optimized-images/peter-whatapp.jpg" alt="WhatsApp 二维码" width="220" height="220" loading="lazy">
               </div>
-              <figcaption>扫描联系 WhatsApp</figcaption>
+              <figcaption>WhatsApp咨询</figcaption>
             </figure>
           </div>
         </div>
@@ -619,7 +479,7 @@
       <h3 id="wechatModalTitle">微信咨询</h3>
       <p>添加客服微信，获取 8 天行程详情与最新团期报价</p>
       <div class="wechat-dialog-qr">
-        <img src="optimized-images/wechat-qr.jpg" alt="微信二维码" width="180" height="180">
+        <img src="optimized-images/wechat-qr.jpg" alt="微信二维码" width="220" height="220" loading="lazy">
       </div>
       <p class="wechat-id">或致电 <a href="tel:+6421976868">+64 21 976 868</a> · <a href="mailto:yue_she@hotmail.com">yue_she@hotmail.com</a></p>
     </div>
