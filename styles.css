@@ -1941,7 +1941,9 @@ body:not(.is-loading) .page-loader {
 }
 
 .contact-qr-img-wrap {
+  width: min(220px, 100%);
   aspect-ratio: 1;
+  margin-inline: auto;
   padding: 12px;
   background: #fff;
   border: 1px solid var(--border);
@@ -1964,11 +1966,11 @@ body:not(.is-loading) .page-loader {
 }
 
 .contact-qr-card--wa .contact-qr-img-wrap {
-  border-color: rgba(37, 211, 102, 0.35);
+  border-color: var(--border);
 }
 
 .contact-qr-card--wa figcaption {
-  color: rgba(37, 211, 102, 0.9);
+  color: var(--text-muted);
 }
 
 .contact-us-actions {
@@ -1988,8 +1990,9 @@ body:not(.is-loading) .page-loader {
 
 /* 微信弹窗二维码 */
 .wechat-dialog-qr img {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
+  max-width: 100%;
   object-fit: contain;
   margin-inline: auto;
   background: #fff;
