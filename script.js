@@ -98,13 +98,13 @@
 
   async function fromManifest() {
     try {
-      const res = await fetch("images/manifest.json", { cache: "no-store" });
+      const res = await fetch("optimized-images/manifest.json", { cache: "no-store" });
       if (!res.ok) return [];
       const data = await res.json();
       if (!Array.isArray(data)) return [];
       return data
         .filter((n) => typeof n === "string")
-        .map((n) => normalizePath(`images/${n.replace(/^images\//, "")}`));
+        .map((n) => normalizePath(`optimized-images/${n.replace(/^images\//, "")}`));
     } catch {
       return [];
     }
@@ -112,7 +112,7 @@
 
   async function fromDirectoryListing() {
     try {
-      const res = await fetch("images/", { cache: "no-store" });
+      const res = await fetch("optimized-images/", { cache: "no-store" });
       if (!res.ok) return [];
       const html = await res.text();
       const doc = new DOMParser().parseFromString(html, "text/html");
@@ -122,7 +122,7 @@
           IMAGE_EXT.some((ext) => name.toLowerCase().endsWith("." + ext))
         )
         .filter((name) => name !== "logo.png")
-        .map((name) => normalizePath(`images/${name.replace(/^.*\//, "")}`));
+        .map((name) => normalizePath(`optimized-images/${name.replace(/^.*\//, "")}`));
     } catch {
       return [];
     }
@@ -133,7 +133,7 @@
     PREFIXES.forEach((prefix) => {
       for (let i = 1; i <= 80; i += 1) {
         IMAGE_EXT.forEach((ext) => {
-          candidates.add(`images/${prefix}${i}.${ext}`);
+          candidates.add(`optimized-images/${prefix}${i}.${ext}`);
         });
       }
     });

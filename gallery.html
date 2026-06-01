@@ -15,7 +15,7 @@
   <header class="site-header" id="siteHeader">
     <div class="header-bar">
       <a href="index.html" class="brand">
-        <img src="images/logo.png" class="site-logo" alt="新西兰天天旅行社 Logo">
+        <img src="optimized-images/logo.png" class="site-logo" alt="新西兰天天旅行社 Logo">
         <div class="brand-text">
           <div class="brand-en">Tian Tian Travel Ltd</div>
           <div class="brand-zh">新西兰天天旅行社</div>
@@ -49,7 +49,7 @@
 
   <main>
     <section class="tt-banner">
-      <div class="tt-banner-bg" style="background-image: url('images/placeholder.svg');"></div>
+      <div class="tt-banner-bg" style="background-image: url('optimized-images/placeholder.svg');"></div>
       <div class="tt-banner-inner">
         <p class="tt-banner-kicker">Travel Photography</p>
         <h1>摄影旅拍</h1>
@@ -111,7 +111,7 @@
       <h3 id="wechatModalTitle">微信咨询</h3>
       <p>添加 Peter 微信，了解摄影旅拍线路</p>
       <div class="wechat-dialog-qr">
-        <img src="images/微信.JPG" alt="微信二维码" width="180" height="180">
+        <img src="optimized-images/微信.JPG" alt="微信二维码" width="180" height="180">
       </div>
       <p class="wechat-id">或致电 <a href="tel:+6421976868">+64 21 976 868</a></p>
     </div>
@@ -119,13 +119,13 @@
 
   <script>
     // 瀑布流占位图：生成 100 张占位图。
-    // 后续替换真实照片时，可直接在 #galleryMasonry 内写入 <img src="images/你的照片.jpg">，本脚本只填充空容器。
+    // 后续替换真实照片时，可直接在 #galleryMasonry 内写入 <img src="optimized-images/你的照片.jpg">，本脚本只填充空容器。
     (function () {
       var box = document.getElementById("galleryMasonry");
       if (!box || box.children.length) return;
       for (var i = 1; i <= 100; i++) {
         var img = document.createElement("img");
-        img.src = "images/placeholder.svg";
+        img.src = "optimized-images/placeholder.svg";
         img.alt = "摄影旅拍占位图 " + i;
         img.loading = "lazy";
         box.appendChild(img);
