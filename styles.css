@@ -3172,6 +3172,119 @@ body:not(.is-loading) .page-loader {
   transform: translateX(4px);
 }
 
+/* 档期安排 availability */
+.avail-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: clamp(24px, 3.4vw, 38px);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid rgba(56, 82, 65, 0.22);
+  box-shadow: var(--shadow-card);
+}
+
+.avail-highlight .avail-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.avail-highlight .avail-dot::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #2faa5d;
+  box-shadow: 0 0 0 4px rgba(47, 170, 93, 0.18);
+}
+
+.avail-highlight strong {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.avail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: clamp(14px, 2vw, 20px);
+}
+
+.avail-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(18px, 2.2vw, 24px);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.avail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.avail-card--rest {
+  background: var(--bg-alt);
+}
+
+.avail-month {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.avail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.avail-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.avail-badge--open {
+  color: #1f6b3d;
+  background: rgba(47, 170, 93, 0.14);
+}
+
+.avail-badge--open::before {
+  background: #2faa5d;
+}
+
+.avail-badge--rest {
+  color: #9a6a3a;
+  background: rgba(199, 142, 74, 0.16);
+}
+
+.avail-badge--rest::before {
+  background: #c78e4a;
+}
+
 /* 页面顶部 Banner（占位大图 + 标题） */
 .tt-banner {
   position: relative;
