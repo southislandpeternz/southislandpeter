@@ -3128,3 +3128,494 @@ body:not(.is-loading) .page-loader {
     font-size: 18px;
   }
 }
+
+/* ====================================================================
+   多页面扩展：一日游 / 两日游 / 三日游 / 景点百科 / 摄影旅拍 / 客人评价
+   沿用现有米白 + 森林绿配色与卡片风格；类名前缀 tt- 避免与既有样式冲突
+   ==================================================================== */
+
+.nav-center a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* 「查看全部 →」入口链接 */
+.tt-see-all-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 26px;
+  margin-top: 22px;
+}
+
+.tt-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  transition: color 0.25s var(--ease-out);
+}
+
+.tt-see-all .tt-arrow {
+  display: inline-block;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.tt-see-all:hover {
+  color: var(--accent-hover);
+}
+
+.tt-see-all:hover .tt-arrow {
+  transform: translateX(4px);
+}
+
+/* 页面顶部 Banner（占位大图 + 标题） */
+.tt-banner {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: min(56vh, 440px);
+  padding: calc(var(--header-h) + clamp(48px, 8vw, 96px)) 0 clamp(48px, 7vw, 84px);
+  overflow: hidden;
+}
+
+.tt-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+}
+
+.tt-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(31, 41, 38, 0.52) 0%, rgba(31, 41, 38, 0.34) 55%, rgba(31, 41, 38, 0.52) 100%);
+}
+
+.tt-banner-inner {
+  max-width: 780px;
+  padding: 0 24px;
+}
+
+.tt-banner-kicker {
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, 0.82);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.tt-banner h1 {
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
+}
+
+.tt-banner p {
+  margin: 0 auto;
+  max-width: 640px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.75;
+}
+
+/* 线路卡片网格 */
+.tt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 34px);
+}
+
+.tt-grid--single {
+  grid-template-columns: 1fr;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+/* 通用卡片 */
+.tt-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+.tt-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.tt-card-cover {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.tt-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.tt-card:hover .tt-card-cover img {
+  transform: scale(1.05);
+}
+
+.tt-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(56, 82, 65, 0.92);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.tt-card-body {
+  padding: clamp(20px, 2.4vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.tt-card-body h2,
+.tt-card-body h3 {
+  margin: 0;
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.tt-card-en {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tt-card-desc {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.tt-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  color: var(--text-muted);
+  font-size: 13.5px;
+}
+
+.tt-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tt-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tt-tags span {
+  font-size: 12.5px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.tt-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.tt-thumbs img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tt-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+/* 多日行程 Day 区块 */
+.tt-days {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tt-day {
+  border-top: 1px dashed var(--border);
+  padding-top: 18px;
+}
+
+.tt-day:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.tt-day-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.tt-day-label::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+/* 景点百科条目 */
+.tt-dest {
+  margin-bottom: clamp(44px, 6vw, 80px);
+}
+
+.tt-dest:last-child {
+  margin-bottom: 0;
+}
+
+.tt-dest-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 44px);
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.tt-dest-cover {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.tt-dest-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tt-dest-title {
+  margin: 0 0 6px;
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-weight: 600;
+}
+
+.tt-dest-en {
+  margin: 0 0 14px;
+  color: var(--text-dim);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.tt-dest-intro {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+
+.tt-dest-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.tt-dest-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 摄影旅拍瀑布流 */
+.tt-masonry {
+  column-count: 4;
+  column-gap: 14px;
+}
+
+.tt-masonry img {
+  width: 100%;
+  margin: 0 0 14px;
+  border-radius: 12px;
+  break-inside: avoid;
+}
+
+/* 客人评价 */
+.tt-review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 28px);
+}
+
+.tt-review {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 2.4vw, 28px);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tt-review-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tt-review-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.tt-review-name {
+  font-weight: 600;
+}
+
+.tt-review-meta {
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+.tt-stars {
+  color: #d4af37;
+  letter-spacing: 2px;
+}
+
+.tt-review p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+
+.tt-shot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.tt-shot {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: #fff;
+}
+
+.tt-shot img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.tt-shot figcaption {
+  padding: 8px 10px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.tt-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: #000;
+}
+
+.tt-video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.tt-video::after {
+  content: "▶";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* 响应式 */
+@media (max-width: 900px) {
+  .tt-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tt-dest-head {
+    grid-template-columns: 1fr;
+  }
+
+  .tt-dest-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tt-masonry {
+    column-count: 2;
+  }
+
+  .tt-review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tt-shot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .tt-dest-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
