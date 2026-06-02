@@ -5482,18 +5482,16 @@ body:not(.is-loading) .page-loader {
   position: relative;
   border-radius: 14px;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
-  background: #2f2f2f;
+  background: transparent;
   border: none;
   box-shadow: 0 6px 20px rgba(47, 47, 47, 0.1);
 }
 
 .rev-featured-shot img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
   display: block;
+  vertical-align: top;
 }
 
 .rev-source {
@@ -5524,8 +5522,10 @@ body:not(.is-loading) .page-loader {
 }
 
 .rev-review-card img[src*="images/reviews/"] {
-  object-fit: cover;
-  object-position: top center;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: unset;
   padding: 0;
   background: none;
 }
@@ -5534,8 +5534,10 @@ body:not(.is-loading) .page-loader {
 .rev-featured-shot.rev-review-card {
   position: relative;
   width: 100%;
+  height: auto;
+  aspect-ratio: auto;
   padding: 0;
-  background: #2f2f2f;
+  background: transparent;
   border: none;
   overflow: hidden;
   border-radius: 14px;
@@ -5543,12 +5545,12 @@ body:not(.is-loading) .page-loader {
 
 .rev-review-card.media-slot--review > img,
 .rev-featured-shot.rev-review-card > img {
-  position: absolute;
-  inset: 0;
+  position: static;
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
+  max-width: 100%;
+  object-fit: unset;
   padding: 0;
   background: none;
 }
@@ -5578,32 +5580,17 @@ body:not(.is-loading) .page-loader {
   box-shadow: 0 6px 18px rgba(47, 47, 47, 0.08);
 }
 
-.rev-review-masonry .rev-review-card:nth-child(3n + 1) {
-  aspect-ratio: 3 / 4.2;
-}
-
-.rev-review-masonry .rev-review-card:nth-child(3n + 2) {
-  aspect-ratio: 3 / 5;
-}
-
-.rev-review-masonry .rev-review-card:nth-child(3n) {
-  aspect-ratio: 4 / 5;
-}
-
 .rev-review-masonry .rev-review-card .media-slot-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
+  position: static;
   margin: 0;
-  padding: 22px 10px 9px;
+  padding: 8px 10px 10px;
   border: none;
+  border-top: 1px solid rgba(56, 82, 65, 0.08);
   text-align: left;
   font-size: 11.5px;
   line-height: 1.35;
-  color: rgba(255, 255, 255, 0.95);
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.62) 100%);
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.92);
   pointer-events: none;
 }
 
@@ -5999,12 +5986,6 @@ body:not(.is-loading) .page-loader {
     column-count: 2;
   }
 
-  .rev-review-masonry .rev-review-card:nth-child(3n + 1),
-  .rev-review-masonry .rev-review-card:nth-child(3n + 2),
-  .rev-review-masonry .rev-review-card:nth-child(3n) {
-    aspect-ratio: 3 / 4.6;
-  }
-
   .rev-stats {
     grid-template-columns: 1fr;
   }
@@ -6081,7 +6062,12 @@ body:not(.is-loading) .page-loader {
 .media-slot--review:not(.rev-review-card) { aspect-ratio: 3 / 4; }
 
 .rev-review-card.media-slot--review {
-  aspect-ratio: unset;
+  aspect-ratio: auto;
+  height: auto;
+}
+
+.rev-review-card.media-slot > img {
+  height: auto;
 }
 .media-slot--photo { aspect-ratio: 4 / 5; }
 .media-slot--video { aspect-ratio: 16 / 9; }
@@ -6197,13 +6183,11 @@ body:not(.is-loading) .page-loader {
 }
 
 .rev-masonry.rev-review-masonry .rev-review-card > img {
-  position: absolute;
-  inset: 0;
+  position: static;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  height: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: unset;
   aspect-ratio: auto;
 }
 
@@ -6244,7 +6228,11 @@ body:not(.is-loading) .page-loader {
 .rev-featured-shot.media-slot,
 figure.rev-featured-shot .media-slot {
   width: 100%;
-  height: 100%;
+  height: auto;
+}
+
+.rev-featured-shot.rev-review-card.media-slot {
+  height: auto;
 }
 
 .rev-theme-shots:not(.rev-review-masonry) .media-slot {
@@ -6302,7 +6290,8 @@ figure.rev-featured-shot .media-slot {
 }
 
 .rev-featured-shot.media-slot {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: auto;
+  height: auto;
 }
 
 .rev-featured-shot .rev-source {
@@ -6383,20 +6372,21 @@ figure.rev-featured-shot .media-slot {
 .trust-preview-card .media-slot--review {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4.2;
-  background: #2f2f2f;
+  aspect-ratio: auto;
+  height: auto;
+  background: transparent;
   border: none;
   border-radius: 14px;
   overflow: hidden;
 }
 
 .trust-preview-card .media-slot--review > img {
-  position: absolute;
-  inset: 0;
+  position: static;
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
+  max-width: 100%;
+  object-fit: unset;
   padding: 0;
 }
 
