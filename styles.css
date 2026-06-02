@@ -5521,18 +5521,31 @@ body:not(.is-loading) .page-loader {
   padding: 12%;
 }
 
-.rev-featured-shot img[src*="optimized-images/reviews/"],
-.rev-theme-shots img[src*="optimized-images/reviews/"],
-.rev-masonry img[src*="optimized-images/reviews/"] {
+.rev-featured-shot img[src*="images/reviews/"],
+.rev-theme-shots img[src*="images/reviews/"],
+.rev-masonry img[src*="images/reviews/"] {
   object-fit: cover;
   padding: 0;
   background: none;
 }
 
-.media-slot--review.media-slot--filled > img {
+.media-slot--review.media-slot--filled {
+  position: relative;
+}
+
+.media-slot--review.media-slot--filled > img,
+.rev-featured-shot.media-slot--review > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   padding: 0;
   background: none;
+}
+
+.rev-featured-shot.media-slot--review {
+  position: relative;
 }
 
 .rev-theme-shots--mixed {
@@ -6043,7 +6056,9 @@ body:not(.is-loading) .page-loader {
 }
 
 .tt-masonry .media-slot > img,
-.rev-masonry .media-slot > img {
+.rev-masonry .media-slot--review.media-slot--filled > img {
+  position: static;
+  width: 100%;
   height: auto;
   aspect-ratio: auto;
 }
