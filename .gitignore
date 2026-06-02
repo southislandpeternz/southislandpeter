@@ -1,0 +1,10 @@
+# Local Python / image tooling (never commit)
+.tmp-pillow/
+__pycache__/
+*.pyc
+.Python
+venv/
+.venv/
+
+# macOS
+.DS_Store
