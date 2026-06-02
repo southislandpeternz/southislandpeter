@@ -5521,6 +5521,20 @@ body:not(.is-loading) .page-loader {
   padding: 12%;
 }
 
+.rev-featured-shot img[src*="optimized-images/reviews/"],
+.rev-theme-shots img[src*="optimized-images/reviews/"],
+.rev-masonry img[src*="optimized-images/reviews/"] {
+  object-fit: cover;
+  padding: 0;
+  background: none;
+}
+
+.media-slot--review.media-slot--filled > img {
+  object-fit: cover;
+  padding: 0;
+  background: none;
+}
+
 .rev-theme-shots--mixed {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
