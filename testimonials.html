@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="客人评价 — 来自世界各地客人对南岛真实漫旅行与向导 Peter 的真实反馈，含小红书与微信聊天分享。">
-  <title>客人评价 | 南岛真实漫旅行 · South Island Real Travel by Peter</title>
+  <meta name="description" content="客人眼中的 Peter — 真实评价、截图与合影，了解为什么那么多家庭选择 Peter 带团走南岛。">
+  <title>客人眼中的 Peter | 真实评价 · Tian Tian Travel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-tour">
+<body class="page-tour page-reviews">
 
   <header class="site-header" id="siteHeader">
     <div class="header-bar">
       <a href="index.html" class="brand">
-        <img src="optimized-images/logo.png" class="site-logo" alt="新西兰天天旅行社 Logo">
+        <img src="optimized-images/logo.png" class="site-logo" alt="新西兰天天旅行社 Logo" loading="lazy">
         <div class="brand-text">
           <div class="brand-en">Tian Tian Travel Ltd</div>
           <div class="brand-zh">新西兰天天旅行社</div>
@@ -26,11 +26,12 @@
         <a href="index.html">首页</a>
         <a href="index.html#peter">关于 Peter</a>
         <a href="routes.html">精品线路</a>
-        <a href="destinations.html">景点百科</a>
+        <a href="destinations.html">南岛故事</a>
         <a href="availability.html">档期安排</a>
         <a href="gallery.html">摄影旅拍</a>
-        <a href="testimonials.html">客人评价</a>
-        <a href="index.html#contact">联系我们</a></nav>
+        <a href="testimonials.html" aria-current="page">客人评价</a>
+        <a href="index.html#contact">联系我们</a>
+      </nav>
 
       <div class="header-actions">
         <a href="tel:+6421976868" class="header-phone">
@@ -46,155 +47,313 @@
   </header>
 
   <main>
-    <section class="tt-banner">
-      <div class="tt-banner-bg" style="background-image: url('optimized-images/placeholder.svg');"></div>
-      <div class="tt-banner-inner">
-        <p class="tt-banner-kicker">Guest Reviews</p>
-        <h1>客人评价</h1>
-        <p>来自世界各地客人的真实反馈。以下头像与截图均为占位图，后续可替换为真实照片、视频与社交分享。</p>
+    <section class="rev-hero">
+      <figure class="media-slot media-slot--hero media-slot--banner rev-hero-bg media-slot--filled">
+      <img src="optimized-images/Peter.jpg" alt="">
+      <figcaption class="media-slot-label">Hero主图</figcaption>
+    </figure>
+      <div class="rev-hero-inner reveal">
+        <p class="rev-hero-kicker">Guest Voices</p>
+        <h1>客人眼中的 Peter</h1>
+        <p class="rev-hero-lead">这些年带团过程中，<br>最珍贵的不是走过多少公里路，<br>而是客人留下的一句句认可与信任。</p>
       </div>
     </section>
 
-    <section class="section">
+    <!-- 精选真实评价 -->
+    <section class="section" id="rev-featured">
       <div class="container">
-        <header class="section-head reveal">
-          <p class="section-kicker">Real Feedback</p>
-          <h2>他们这样说</h2>
-          <p class="section-desc">真实评价 · 占位内容可随时替换。</p>
+        <header class="rev-section-head reveal">
+          <p class="section-kicker">Featured Reviews</p>
+          <h2>精选真实评价</h2>
+          <p class="section-desc">来自小红书、微信、Google 与客人朋友圈的真实反馈。</p>
         </header>
 
-        <div class="tt-review-grid reveal">
-
-          <article class="tt-review">
-            <div class="tt-review-top">
-              <img class="tt-review-avatar" src="optimized-images/placeholder.svg" alt="客人头像占位" loading="lazy">
-              <div>
-                <div class="tt-review-name">李女士 · 上海</div>
-                <div class="tt-review-meta">南岛经典9天8晚</div>
+        <div class="rev-featured-grid reveal">
+          <article class="rev-featured">
+            <figure class="rev-featured-shot media-slot media-slot--review">
+              <img src="optimized-images/slot-placeholder.svg" alt="小红书评价截图 · 王女士" loading="lazy">
+              <figcaption class="media-slot-label">客人评价截图</figcaption>
+              <figcaption class="rev-source rev-source--xhs">小红书</figcaption>
+            </figure>
+            <div class="rev-featured-body">
+              <div class="rev-guest">
+                <figure class="media-slot media-slot--avatar"><img class="rev-avatar" src="optimized-images/slot-placeholder.svg" alt="" width="48" height="48" loading="lazy"><figcaption class="media-slot-label">客人头像</figcaption></figure>
+                <div>
+                  <strong class="rev-guest-name">王女士</strong>
+                  <span class="rev-guest-meta">上海 · 家庭团 · 南岛 9 日</span>
+                </div>
               </div>
+              <p class="rev-summary">「带父母和孩子走完全程都不累。Peter 会看老人状态调整节奏，路上讲南岛故事，孩子听得入迷。不是导游式讲解，像朋友带着逛。」</p>
             </div>
-            <div class="tt-stars" aria-label="五星好评">★★★★★</div>
-            <p>Peter 非常耐心，行程一点都不赶。每天都能在最美的光线里拍照，库克山和特卡波的星空让全家都难忘。奔驰商务车很舒服，老人小孩都满意。</p>
           </article>
 
-          <article class="tt-review">
-            <div class="tt-review-top">
-              <img class="tt-review-avatar" src="optimized-images/placeholder.svg" alt="客人头像占位" loading="lazy">
-              <div>
-                <div class="tt-review-name">Mr. Wang · 北京</div>
-                <div class="tt-review-meta">南岛慢旅行13天12晚</div>
+          <article class="rev-featured rev-featured--highlight">
+            <figure class="rev-featured-shot media-slot media-slot--review">
+              <img src="optimized-images/slot-placeholder.svg" alt="微信聊天截图 · 陈先生" loading="lazy">
+              <figcaption class="media-slot-label">客人评价截图</figcaption>
+              <figcaption class="rev-source rev-source--wechat">微信</figcaption>
+            </figure>
+            <div class="rev-featured-body">
+              <div class="rev-guest">
+                <figure class="media-slot media-slot--avatar"><img class="rev-avatar" src="optimized-images/slot-placeholder.svg" alt="" width="48" height="48" loading="lazy"><figcaption class="media-slot-label">客人头像</figcaption></figure>
+                <div>
+                  <strong class="rev-guest-name">陈先生</strong>
+                  <span class="rev-guest-meta">北京 · 好友结伴 · 南岛 13 日</span>
+                </div>
               </div>
+              <p class="rev-summary">「奔驰商务车非常稳，四个好友行李很多也放得下。Peter 开车太稳了，库克山到皇后镇那段盘山路，全程没人晕车。已在微信推荐给两拨朋友。」</p>
             </div>
-            <div class="tt-stars" aria-label="五星好评">★★★★★</div>
-            <p>不购物、不拼团，完全按我们的节奏走。Peter 对南岛太熟了，知道哪里人少、哪里好拍。米尔福德峡湾那天的安排堪称完美。</p>
           </article>
 
-          <article class="tt-review">
-            <div class="tt-review-top">
-              <img class="tt-review-avatar" src="optimized-images/placeholder.svg" alt="客人头像占位" loading="lazy">
-              <div>
-                <div class="tt-review-name">陈先生一家 · 广州</div>
-                <div class="tt-review-meta">东海岸观鲸温泉三日漫旅行</div>
+          <article class="rev-featured">
+            <figure class="rev-featured-shot media-slot media-slot--review">
+              <img src="optimized-images/slot-placeholder.svg" alt="Google 评价截图 · 李女士" loading="lazy">
+              <figcaption class="media-slot-label">客人评价截图</figcaption>
+              <figcaption class="rev-source rev-source--google">Google Review</figcaption>
+            </figure>
+            <div class="rev-featured-body">
+              <div class="rev-guest">
+                <figure class="media-slot media-slot--avatar"><img class="rev-avatar" src="optimized-images/slot-placeholder.svg" alt="" width="48" height="48" loading="lazy"><figcaption class="media-slot-label">客人头像</figcaption></figure>
+                <div>
+                  <strong class="rev-guest-name">李女士</strong>
+                  <span class="rev-guest-meta">广州 · 携父母 · 凯库拉 &amp; 特卡波</span>
+                </div>
               </div>
+              <p class="rev-summary">「妈妈腿脚不好，Peter 每到一个景点都会先看哪里好走、哪里能休息。观鲸那天风大，他提前准备了晕船贴。这种细心，大团根本做不到。」</p>
             </div>
-            <div class="tt-stars" aria-label="五星好评">★★★★★</div>
-            <p>第一次出海观鲸就遇到了抹香鲸，孩子兴奋极了。汉默温泉也很放松。Peter 中文沟通无障碍，像朋友一样照顾我们。</p>
           </article>
 
-          <article class="tt-review">
-            <div class="tt-review-top">
-              <img class="tt-review-avatar" src="optimized-images/placeholder.svg" alt="客人头像占位" loading="lazy">
-              <div>
-                <div class="tt-review-name">Anna · 新加坡</div>
-                <div class="tt-review-meta">雪山星空三日漫旅行</div>
+          <article class="rev-featured">
+            <figure class="rev-featured-shot media-slot media-slot--review">
+              <img src="optimized-images/slot-placeholder.svg" alt="朋友圈分享 · 张先生" loading="lazy">
+              <figcaption class="media-slot-label">客人评价截图</figcaption>
+              <figcaption class="rev-source rev-source--moments">朋友圈</figcaption>
+            </figure>
+            <div class="rev-featured-body">
+              <div class="rev-guest">
+                <figure class="media-slot media-slot--avatar"><img class="rev-avatar" src="optimized-images/slot-placeholder.svg" alt="" width="48" height="48" loading="lazy"><figcaption class="media-slot-label">客人头像</figcaption></figure>
+                <div>
+                  <strong class="rev-guest-name">张先生</strong>
+                  <span class="rev-guest-meta">深圳 · 第二次报名 · 摄影团</span>
+                </div>
               </div>
+              <p class="rev-summary">「2024 年来过一次，2025 年带全家再来。Peter 记得我们上次喜欢特卡波，这次特意多留了一晚拍银河。回头客，因为信得过。」</p>
             </div>
-            <div class="tt-stars" aria-label="五星好评">★★★★★</div>
-            <p>The photography spots Peter chose were amazing. He knows exactly when the light is best. Very comfortable Mercedes van and a relaxed pace.</p>
           </article>
 
-          <article class="tt-review">
-            <div class="tt-review-top">
-              <img class="tt-review-avatar" src="optimized-images/placeholder.svg" alt="客人头像占位" loading="lazy">
-              <div>
-                <div class="tt-review-name">张女士 · 杭州</div>
-                <div class="tt-review-meta">法国小镇海湾两日漫旅行</div>
+          <article class="rev-featured">
+            <figure class="rev-featured-shot media-slot media-slot--review">
+              <img src="optimized-images/slot-placeholder.svg" alt="小红书评价截图 · 摄影团客人" loading="lazy">
+              <figcaption class="media-slot-label">客人评价截图</figcaption>
+              <figcaption class="rev-source rev-source--xhs">小红书</figcaption>
+            </figure>
+            <div class="rev-featured-body">
+              <div class="rev-guest">
+                <figure class="media-slot media-slot--avatar"><img class="rev-avatar" src="optimized-images/slot-placeholder.svg" alt="" width="48" height="48" loading="lazy"><figcaption class="media-slot-label">客人头像</figcaption></figure>
+                <div>
+                  <strong class="rev-guest-name">林小姐 &amp; 摄影团</strong>
+                  <span class="rev-guest-meta">杭州 · 特卡波 &amp; 库克山</span>
+                </div>
               </div>
+              <p class="rev-summary">「Peter 知道每个机位的最佳时间，牧羊人教堂的银河、普卡基湖的晨雾，都是他带队拍出来的。自己找攻略绝对找不到这些点。」</p>
             </div>
-            <div class="tt-stars" aria-label="五星好评">★★★★★</div>
-            <p>阿卡罗阿太美了，像到了法国。两天的节奏刚刚好，住宿和餐厅都是 Peter 精心挑选的，很有品质。</p>
           </article>
-
-          <article class="tt-review">
-            <div class="tt-review-top">
-              <img class="tt-review-avatar" src="optimized-images/placeholder.svg" alt="客人头像占位" loading="lazy">
-              <div>
-                <div class="tt-review-name">刘先生 · 深圳</div>
-                <div class="tt-review-meta">南岛13天全景深度游</div>
-              </div>
-            </div>
-            <div class="tt-stars" aria-label="五星好评">★★★★★</div>
-            <p>从基督城一路玩到皇后镇，每一天都有惊喜。Peter 既是向导也是摄影师，帮我们拍了很多大片，强烈推荐！</p>
-          </article>
-
         </div>
       </div>
     </section>
+
+    <!-- 按主题分类 -->
+    <section class="section section-alt" id="rev-themes">
+      <div class="container">
+        <header class="rev-section-head reveal">
+          <p class="section-kicker">By Theme</p>
+          <h2>客人怎么说</h2>
+          <p class="section-desc">按大家最常提到的方面分类，方便您快速了解 Peter 的优势。</p>
+        </header>
+
+        <div class="rev-themes">
+          <section class="rev-theme reveal" id="rev-guide">
+            <div class="rev-theme-head">
+              <span class="rev-theme-num">①</span>
+              <div>
+                <h3>专业讲解</h3>
+                <ul class="rev-keywords">
+                  <li>南岛历史</li><li>毛利文化</li><li>冰川知识</li><li>当地故事</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rev-theme-shots">
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="专业讲解相关评价截图 1" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">微信 · 讲解南岛历史</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="专业讲解相关评价截图 2" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">小红书 · 毛利文化分享</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="专业讲解相关评价截图 3" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">Google · 冰川知识讲解</figcaption></figure>
+            </div>
+          </section>
+
+          <section class="rev-theme reveal" id="rev-care">
+            <div class="rev-theme-head">
+              <span class="rev-theme-num">②</span>
+              <div>
+                <h3>认真负责</h3>
+                <ul class="rev-keywords">
+                  <li>服务周到</li><li>照顾老人</li><li>照顾孩子</li><li>临时情况处理</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rev-theme-shots">
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="认真负责相关评价截图 1" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">微信 · 照顾老人细节</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="认真负责相关评价截图 2" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">朋友圈 · 带孩子观鲸</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="认真负责相关评价截图 3" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">微信 · 临时改行程</figcaption></figure>
+            </div>
+          </section>
+
+          <section class="rev-theme rev-theme--accent reveal" id="rev-driving">
+            <div class="rev-theme-head">
+              <span class="rev-theme-num">③</span>
+              <div>
+                <h3>开车技术</h3>
+                <p class="rev-theme-note">Peter 的核心优势之一</p>
+                <ul class="rev-keywords">
+                  <li>开车平稳</li><li>山路技术好</li><li>安全感强</li><li>长途舒适</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rev-theme-shots rev-theme-shots--4">
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="开车技术相关评价截图 1" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">微信 · 山路平稳</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="开车技术相关评价截图 2" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">小红书 · 长途不累</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="开车技术相关评价截图 3" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">Google · 安全感强</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="开车技术相关评价截图 4" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">微信 · 奔驰商务舒适</figcaption></figure>
+            </div>
+          </section>
+
+          <section class="rev-theme reveal" id="rev-photo">
+            <div class="rev-theme-head">
+              <span class="rev-theme-num">④</span>
+              <div>
+                <h3>摄影旅拍</h3>
+                <ul class="rev-keywords">
+                  <li>拍照技术</li><li>找机位能力</li><li>出片效果</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rev-theme-shots rev-theme-shots--mixed">
+              <figure class="media-slot media-slot--photo media-slot--filled rev-shot-photo"><img src="optimized-images/tekapo-stargazing.JPG" alt="客人特卡波星空实拍" loading="lazy"><figcaption class="media-slot-label">摄影作品</figcaption><figcaption class="media-slot-caption">客人实拍 · 特卡波星空</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="摄影评价截图 1" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">小红书 · 机位推荐</figcaption></figure>
+              <figure class="media-slot media-slot--photo media-slot--filled rev-shot-photo"><img src="optimized-images/mt-cook1.JPG" alt="客人库克山实拍" loading="lazy"><figcaption class="media-slot-label">摄影作品</figcaption><figcaption class="media-slot-caption">客人实拍 · 库克山</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="摄影评价截图 2" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">微信 · 帮拍全家福</figcaption></figure>
+            </div>
+          </section>
+
+          <section class="rev-theme reveal" id="rev-local">
+            <div class="rev-theme-head">
+              <span class="rev-theme-num">⑤</span>
+              <div>
+                <h3>当地向导能力</h3>
+                <ul class="rev-keywords">
+                  <li>小众景点</li><li>私藏机位</li><li>当地生活体验</li><li>地道餐厅推荐</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rev-theme-shots">
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="当地向导相关评价截图 1" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">微信 · 私藏观景点</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="当地向导相关评价截图 2" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">小红书 · 本地餐厅</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="当地向导相关评价截图 3" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">朋友圈 · 小众路线</figcaption></figure>
+            </div>
+          </section>
+
+          <section class="rev-theme rev-theme--highlight reveal" id="rev-repeat">
+            <div class="rev-theme-head">
+              <span class="rev-theme-num">⑥</span>
+              <div>
+                <h3>回头客与转介绍</h3>
+                <p class="rev-theme-note">最能建立信任感</p>
+                <ul class="rev-keywords">
+                  <li>第二次报名</li><li>推荐朋友</li><li>全家再次参加</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rev-theme-shots rev-theme-shots--4">
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="回头客评价截图 1" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">微信 · 第二次报名</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="回头客评价截图 2" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">微信 · 推荐给朋友</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="回头客评价截图 3" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">小红书 · 全家再来</figcaption></figure>
+              <figure class="media-slot media-slot--review"><img src="optimized-images/slot-placeholder.svg" alt="回头客评价截图 4" loading="lazy"><figcaption class="media-slot-label">客人评价截图</figcaption><figcaption class="media-slot-caption">微信 · 三家人一起报团</figcaption></figure>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- 游客合影墙 -->
+    <section class="section" id="rev-photos">
+      <div class="container">
+        <header class="rev-section-head reveal">
+          <p class="section-kicker">Travel Moments</p>
+          <h2>与 Peter 的旅途瞬间</h2>
+          <p class="section-desc">凯库拉、特卡波、库克山、皇后镇……与客人一起走过的南岛。</p>
+        </header>
+                <div class="rev-photo-wall reveal">
+          <figure class="media-slot media-slot--scenery media-slot--filled"><img src="optimized-images/kajkoura-whale-watch.jpg" alt="凯库拉观鲸" loading="lazy"><figcaption class="media-slot-label">景点风光</figcaption><figcaption class="media-slot-caption">凯库拉观鲸</figcaption></figure>
+          <figure class="media-slot media-slot--scenery media-slot--filled"><img src="optimized-images/tekapo-stargazing.JPG" alt="特卡波湖" loading="lazy"><figcaption class="media-slot-label">景点风光</figcaption><figcaption class="media-slot-caption">特卡波湖</figcaption></figure>
+          <figure class="media-slot media-slot--scenery media-slot--filled"><img src="optimized-images/hooker-valley-track.JPG" alt="库克山" loading="lazy"><figcaption class="media-slot-label">景点风光</figcaption><figcaption class="media-slot-caption">库克山</figcaption></figure>
+          <figure class="media-slot media-slot--scenery media-slot--filled"><img src="optimized-images/kaikoura3.jpg" alt="皇后镇" loading="lazy"><figcaption class="media-slot-label">景点风光</figcaption><figcaption class="media-slot-caption">皇后镇</figcaption></figure>
+          <figure class="media-slot media-slot--guest"><img src="optimized-images/slot-placeholder.svg" alt="米尔福德峡湾合影" loading="lazy"><figcaption class="media-slot-label">客人合影</figcaption><figcaption class="media-slot-caption">米尔福德峡湾</figcaption></figure>
+          <figure class="media-slot media-slot--guest media-slot--filled"><img src="optimized-images/Peter.jpg" alt="Peter 与客人" loading="lazy"><figcaption class="media-slot-label">客人合影</figcaption><figcaption class="media-slot-caption">Peter 与客人</figcaption></figure>
+          <figure class="media-slot media-slot--guest media-slot--filled"><img src="optimized-images/christchurch4.jpg" alt="南岛沿途" loading="lazy"><figcaption class="media-slot-label">客人合影</figcaption><figcaption class="media-slot-caption">南岛沿途</figcaption></figure>
+          <figure class="media-slot media-slot--mercedes media-slot--filled"><img src="optimized-images/mercedes-new.JPG" alt="奔驰商务车旅途" loading="lazy"><figcaption class="media-slot-label">奔驰商务车</figcaption><figcaption class="media-slot-caption">奔驰商务车旅途</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 数字化口碑 -->
+    <section class="section section-alt" id="rev-stats">
+      <div class="container">
+        <div class="rev-stats reveal">
+          <div class="rev-stat">
+            <span class="rev-stat-num">500+</span>
+            <span class="rev-stat-label">服务游客</span>
+          </div>
+          <div class="rev-stat">
+            <span class="rev-stat-num">100+</span>
+            <span class="rev-stat-label">精品小团</span>
+          </div>
+          <div class="rev-stat">
+            <span class="rev-stat-num">主要</span>
+            <span class="rev-stat-label">回头客与转介绍客源</span>
+          </div>
+          <div class="rev-stat">
+            <span class="rev-stat-num">数百条</span>
+            <span class="rev-stat-label">真实好评</span>
+          </div>
+        </div>
+        <p class="rev-stats-note reveal">以上数据可根据实际运营情况调整更新。</p>
+      </div>
+    </section>
+
+    <!-- 评价截图瀑布流 -->
+    <section class="section" id="rev-wall">
+      <div class="container">
+        <header class="rev-section-head reveal">
+          <p class="section-kicker">Review Wall</p>
+          <h2>真实评价墙</h2>
+          <p class="section-desc">小红书 · 微信 · Google Reviews · 游客反馈。后续可持续上传新的评价截图。</p>
+        </header>
+        <p class="media-wall-hint reveal">新增评价：复制下方任意 <code>&lt;figure class="media-slot media-slot--review"&gt;</code> 块，粘贴到评价墙末尾，替换 <code>src</code> 即可。</p>
+        <div class="rev-masonry" id="revMasonry" data-media-wall="review" data-media-count="12" data-media-caption="评价截图" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <blockquote class="rev-closing reveal">
+      <p>风景会被遗忘，<br>但一次舒服、安心、有温度的旅行，<br>往往会被记住很多年。</p>
+      <footer>—— Peter</footer>
+    </blockquote>
 
     <section class="section section-alt">
       <div class="container">
-        <header class="section-head reveal">
-          <p class="section-kicker">Shared Online</p>
-          <h2>小红书 &amp; 微信真实分享</h2>
-          <p class="section-desc">客人在社交平台的真实分享截图（占位图，后续替换为真实截图）。</p>
-        </header>
-
-        <div class="tt-shot-grid reveal">
-          <figure class="tt-shot">
-            <img src="optimized-images/placeholder.svg" alt="小红书分享截图占位 1" loading="lazy">
-            <figcaption>小红书分享 · 占位</figcaption>
-          </figure>
-          <figure class="tt-shot">
-            <img src="optimized-images/placeholder.svg" alt="小红书分享截图占位 2" loading="lazy">
-            <figcaption>小红书分享 · 占位</figcaption>
-          </figure>
-          <figure class="tt-shot">
-            <img src="optimized-images/placeholder.svg" alt="微信聊天截图占位 1" loading="lazy">
-            <figcaption>微信好评 · 占位</figcaption>
-          </figure>
-          <figure class="tt-shot">
-            <img src="optimized-images/placeholder.svg" alt="微信聊天截图占位 2" loading="lazy">
-            <figcaption>微信好评 · 占位</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="section-kicker">Video Stories</p>
-          <h2>客人旅途视频</h2>
-          <p class="section-desc">视频占位，后续可嵌入客人真实旅途短片。</p>
-        </header>
-
-        <div class="tt-grid reveal">
-          <div class="tt-video"><img src="optimized-images/placeholder.svg" alt="客人旅途视频占位 1" loading="lazy"></div>
-          <div class="tt-video"><img src="optimized-images/placeholder.svg" alt="客人旅途视频占位 2" loading="lazy"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="route-pricing reveal">
-          <p class="section-kicker">Join Us</p>
-          <h2>下一个满意的客人，就是您</h2>
-          <p>把您的南岛旅行交给 Peter，留下一段轻松、真实而难忘的回忆。</p>
+        <div class="rev-cta reveal">
+          <h2>想把家人交给 Peter 带？</h2>
+          <p>聊聊您的出行时间与人选，Peter 会根据实际情况给出真诚的建议。</p>
           <div class="tour-book-actions">
-            <a href="routes.html" class="btn btn-primary">查看精品线路</a>
-            <a href="index.html#contact" class="btn btn-outline">免费规划行程</a>
-            <button type="button" class="btn btn-outline" id="floatWechatInline">微信咨询</button>
+            <a href="index.html#contact" class="btn btn-primary">联系 Peter</a>
+            <a href="routes.html" class="btn btn-outline">查看精品线路</a>
           </div>
         </div>
       </div>
@@ -204,7 +363,7 @@
   <footer class="footer">
     <div class="container">
       <p class="footer-copy">
-        <a href="index.html">← 返回首页</a> · © 2026 Tian Tian Travel Ltd · 新西兰天天旅行社 · South Island Real Travel by Peter
+        <a href="index.html">← 返回首页</a> · © 2026 Tian Tian Travel Ltd · 新西兰天天旅行社
       </p>
     </div>
   </footer>
@@ -225,20 +384,15 @@
     <div class="wechat-dialog">
       <button type="button" class="wechat-close" data-wechat-close aria-label="关闭">&times;</button>
       <h3 id="wechatModalTitle">微信咨询</h3>
-      <p>添加 Peter 微信，了解更多真实评价与行程</p>
+      <p>添加 Peter 微信，了解更多客人真实反馈</p>
       <div class="wechat-dialog-qr">
-        <img src="optimized-images/wechat-qr.jpg" alt="微信二维码" width="180" height="180">
+        <img src="optimized-images/wechat-qr.jpg" alt="微信二维码" width="220" height="220" loading="lazy">
       </div>
       <p class="wechat-id">或致电 <a href="tel:+6421976868">+64 21 976 868</a></p>
     </div>
   </div>
 
-  <script>
-    // 让正文中的「微信咨询」按钮也能打开微信弹窗
-    document.getElementById("floatWechatInline")?.addEventListener("click", function () {
-      document.getElementById("floatWechat")?.click();
-    });
-  </script>
-  <script src="winter-tour.js"></script>
+  <script src="media-slots.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

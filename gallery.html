@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="南岛真实漫旅行 · 摄影旅拍图库 — 记录新西兰南岛雪山、湖泊、峡湾与星空的旅行瞬间。瀑布流相册，后续持续上传实拍照片。">
-  <title>摄影旅拍 | 南岛真实漫旅行 · South Island Real Travel by Peter</title>
+  <meta name="description" content="Peter 摄影旅拍 — 南岛雪山、湖泊、峡湾与星空的旅行瞬间。相册可持续追加实拍作品。">
+  <title>摄影旅拍 | Peter · 南岛真实漫旅行</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-tour">
+<body class="page-tour page-gallery">
 
   <header class="site-header" id="siteHeader">
     <div class="header-bar">
@@ -26,7 +26,7 @@
         <a href="index.html">首页</a>
         <a href="index.html#peter">关于 Peter</a>
         <a href="routes.html">精品线路</a>
-        <a href="destinations.html">景点百科</a>
+        <a href="destinations.html">南岛故事</a>
         <a href="availability.html">档期安排</a>
         <a href="gallery.html">摄影旅拍</a>
         <a href="testimonials.html">客人评价</a>
@@ -47,11 +47,14 @@
 
   <main>
     <section class="tt-banner">
-      <div class="tt-banner-bg" style="background-image: url('optimized-images/placeholder.svg');"></div>
+      <figure class="media-slot media-slot--hero media-slot--banner tt-banner-bg" aria-hidden="true">
+        <img src="optimized-images/slot-placeholder.svg" alt="">
+        <figcaption class="media-slot-label">Hero主图</figcaption>
+      </figure>
       <div class="tt-banner-inner">
         <p class="tt-banner-kicker">Travel Photography</p>
         <h1>摄影旅拍</h1>
-        <p>旅途中的每一帧风景与故事。以下为占位图，后续将持续上传 Peter 的实拍照片。</p>
+        <p>旅途中的每一帧风景与故事 — 一本持续更新的南岛相册。</p>
       </div>
     </section>
 
@@ -60,10 +63,12 @@
         <header class="section-head reveal">
           <p class="section-kicker">Gallery</p>
           <h2>南岛旅拍相册</h2>
-          <p class="section-desc">瀑布流相册 · 占位图将逐步替换为真实照片。</p>
+          <p class="section-desc">Peter 镜头下的南岛。替换 <code>src</code> 即可更新，复制媒体位块可持续追加。</p>
         </header>
 
-        <div class="tt-masonry reveal" id="galleryMasonry"></div>
+        <p class="media-wall-hint reveal">新增作品：复制下方任意摄影作品位，粘贴到相册末尾，替换图片路径即可。</p>
+
+        <div class="tt-masonry reveal" id="galleryMasonry" data-media-wall="photo" data-media-count="18" aria-live="polite"></div>
       </div>
     </section>
 
@@ -75,7 +80,7 @@
           <p>跟着 Peter 的摄影路线出发，无论手机还是相机，都能记录最美的旅行时光。</p>
           <div class="tour-book-actions">
             <a href="routes.html" class="btn btn-primary">查看精品线路</a>
-            <a href="destinations.html" class="btn btn-outline">浏览景点百科</a>
+            <a href="destinations.html" class="btn btn-outline">浏览南岛故事</a>
             <a href="index.html#contact" class="btn btn-outline">免费规划行程</a>
           </div>
         </div>
@@ -109,27 +114,13 @@
       <h3 id="wechatModalTitle">微信咨询</h3>
       <p>添加 Peter 微信，了解摄影旅拍线路</p>
       <div class="wechat-dialog-qr">
-        <img src="optimized-images/wechat-qr.jpg" alt="微信二维码" width="180" height="180">
+        <img src="optimized-images/wechat-qr.jpg" alt="微信二维码" width="220" height="220">
       </div>
       <p class="wechat-id">或致电 <a href="tel:+6421976868">+64 21 976 868</a></p>
     </div>
   </div>
 
-  <script>
-    // 瀑布流占位图：生成 100 张占位图。
-    // 后续替换真实照片时，可直接在 #galleryMasonry 内写入 <img src="optimized-images/你的照片.jpg">，本脚本只填充空容器。
-    (function () {
-      var box = document.getElementById("galleryMasonry");
-      if (!box || box.children.length) return;
-      for (var i = 1; i <= 100; i++) {
-        var img = document.createElement("img");
-        img.src = "optimized-images/placeholder.svg";
-        img.alt = "摄影旅拍占位图 " + i;
-        img.loading = "lazy";
-        box.appendChild(img);
-      }
-    })();
-  </script>
-  <script src="winter-tour.js"></script>
+  <script src="media-slots.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

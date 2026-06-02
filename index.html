@@ -29,7 +29,7 @@
         <a href="#hero">首页</a>
         <a href="#peter">关于 Peter</a>
         <a href="routes.html">精品线路</a>
-        <a href="destinations.html">景点百科</a>
+        <a href="destinations.html">南岛故事</a>
         <a href="availability.html">档期安排</a>
         <a href="gallery.html">摄影旅拍</a>
         <a href="testimonials.html">客人评价</a>
@@ -58,7 +58,10 @@
   <section class="hero" id="hero">
     <div class="hero-media" aria-hidden="true">
       <div class="hero-bg">
-        <img src="optimized-images/hero-cover.jpg" alt="" class="hero-bg-img" width="1600" height="1581" loading="eager" fetchpriority="high" decoding="async">
+        <figure class="media-slot media-slot--hero media-slot--fill media-slot--filled">
+          <img src="optimized-images/hero-cover.jpg" alt="" class="hero-bg-img" width="1600" height="1581" loading="eager" fetchpriority="high" decoding="async">
+          <figcaption class="media-slot-label">Hero主图</figcaption>
+        </figure>
       </div>
       <div class="hero-overlay"></div>
     </div>
@@ -118,18 +121,28 @@
     <div class="container">
       <div class="intro-grid reveal">
         <div class="intro-copy">
-          <p class="section-kicker">Premium South Island</p>
-          <h2>南岛深度，从容而尊贵</h2>
-          <p class="intro-lead">新西兰天天旅行社专注南岛奔驰商务精品小团，为中国家庭、好友结伴与摄影爱好者打造 4–8 人专属行程。不购物、不赶路，用舒适座驾与本地向导，带您读懂南岛每一处风景。</p>
-          <ul class="intro-list">
-            <li>Mercedes-Benz 奔驰商务车全程护航</li>
-            <li>本地华人向导 Peter 全程陪伴讲解</li>
-            <li>凯库拉观鲸 · 特卡波星空 · 库克山 · 皇后镇 · 米尔福德峡湾</li>
+          <p class="section-kicker">Slow Travel with Peter</p>
+          <h2>跟着 Peter，<br>用慢一点的方式认识南岛</h2>
+          <p class="intro-subtitle">旅行不只是打卡景点，<br>更是透过风景，<br>了解这片土地的故事。</p>
+          <div class="intro-body">
+            <p>十多年来，Peter 长期生活在新西兰南岛。</p>
+            <p>从基督城到凯库拉，从特卡波星空到库克山雪峰，从瓦纳卡湖边到皇后镇山谷，这些地方不仅是旅游目的地，更是 Peter 日常生活的一部分。</p>
+            <p>每一次带团，都像带朋友回到自己熟悉的地方。</p>
+            <p>不赶时间，不刻意安排购物，而是在适合停留的地方多停一会儿，在值得拍照的风景前慢慢欣赏，在车窗外的风景变化中，讲述南岛的人文与故事。</p>
+          </div>
+          <ul class="intro-list intro-list--check">
+            <li>奔驰商务车舒适出行</li>
+            <li>Peter 全程陪伴讲解</li>
+            <li>4-8 人精品小团</li>
           </ul>
+          <p class="intro-closing">看风景的人很多，真正了解南岛的人并不多。<br>跟着 Peter，慢慢走，慢慢看，慢慢认识真实的新西兰南岛。</p>
         </div>
         <div class="intro-visual">
-          <img src="optimized-images/christchurch4.jpg" alt="新西兰南岛风光" loading="lazy">
-          <div class="intro-badge">精品小团 · 南岛专线</div>
+          <figure class="media-slot media-slot--scenery media-slot--filled">
+            <img src="optimized-images/christchurch4.jpg" alt="新西兰南岛风光" loading="lazy">
+            <figcaption class="media-slot-label">景点风光</figcaption>
+          </figure>
+          <div class="intro-badge">跟着 Peter · 认识真实南岛</div>
         </div>
       </div>
     </div>
@@ -140,7 +153,10 @@
     <div class="container">
       <div class="peter-grid reveal">
         <div class="peter-media">
-          <img src="optimized-images/Peter.jpg" class="peter-avatar" alt="南岛向导 Peter" loading="lazy" onerror="this.onerror=null;this.src='optimized-images/peter-avatar-fallback.svg';">
+          <figure class="media-slot media-slot--peter media-slot--filled peter-avatar-wrap">
+            <img src="optimized-images/Peter.jpg" class="peter-avatar" alt="南岛向导 Peter" loading="lazy" onerror="this.onerror=null;this.src='optimized-images/peter-avatar-fallback.svg';">
+            <figcaption class="media-slot-label">Peter带团照片</figcaption>
+          </figure>
           <div class="peter-caption">
             <div class="peter-name">Peter</div>
             <div class="peter-meta">南岛当地向导｜旅行记录者</div>
@@ -159,6 +175,15 @@
         </div>
       </div>
 
+      <div class="peter-video-slot reveal">
+        <figure class="media-slot media-slot--video">
+          <img src="optimized-images/slot-placeholder.svg" alt="Peter 介绍视频封面" loading="lazy">
+          <figcaption class="media-slot-label">视频封面</figcaption>
+          <span class="media-slot-play" aria-hidden="true"></span>
+        </figure>
+        <p class="peter-video-note">预留视频位：Peter 车内讲解 / 客人访谈片段（替换封面图并添加视频链接即可）</p>
+      </div>
+
       <div class="peter-service reveal">
         <header class="section-head">
           <p class="section-kicker">Mercedes-Benz</p>
@@ -170,27 +195,45 @@
           <div class="mb-carousel-viewport">
             <div class="mb-carousel-track">
               <figure class="mb-slide">
-                <img src="optimized-images/mercedes-new.JPG" alt="奔驰商务车舒适慢旅行" loading="eager" fetchpriority="high">
+                <figure class="media-slot media-slot--mercedes media-slot--cover media-slot--filled">
+                  <img src="optimized-images/mercedes-new.JPG" alt="奔驰商务车舒适慢旅行" loading="eager" fetchpriority="high">
+                  <figcaption class="media-slot-label">奔驰商务车</figcaption>
+                </figure>
                 <figcaption>奔驰商务车舒适慢旅行</figcaption>
               </figure>
               <figure class="mb-slide">
-                <img src="optimized-images/mt-cook1.JPG" alt="库克山国家公园" loading="lazy">
+                <figure class="media-slot media-slot--scenery media-slot--cover media-slot--filled">
+                  <img src="optimized-images/mt-cook1.JPG" alt="库克山国家公园" loading="lazy">
+                  <figcaption class="media-slot-label">景点风光</figcaption>
+                </figure>
                 <figcaption>库克山国家公园</figcaption>
               </figure>
               <figure class="mb-slide">
-                <img src="optimized-images/hooker-valley-track.JPG" alt="胡克山谷步道" loading="lazy">
+                <figure class="media-slot media-slot--scenery media-slot--cover media-slot--filled">
+                  <img src="optimized-images/hooker-valley-track.JPG" alt="胡克山谷步道" loading="lazy">
+                  <figcaption class="media-slot-label">景点风光</figcaption>
+                </figure>
                 <figcaption>胡克山谷步道</figcaption>
               </figure>
               <figure class="mb-slide">
-                <img src="optimized-images/tasman-glacier-track.JPG" alt="塔斯曼冰河步道" loading="lazy">
+                <figure class="media-slot media-slot--scenery media-slot--cover media-slot--filled">
+                  <img src="optimized-images/tasman-glacier-track.JPG" alt="塔斯曼冰河步道" loading="lazy">
+                  <figcaption class="media-slot-label">景点风光</figcaption>
+                </figure>
                 <figcaption>塔斯曼冰河步道</figcaption>
               </figure>
               <figure class="mb-slide">
-                <img src="optimized-images/tekapo-stargazing.JPG" alt="世界级暗夜星空" loading="lazy">
+                <figure class="media-slot media-slot--scenery media-slot--cover media-slot--filled">
+                  <img src="optimized-images/tekapo-stargazing.JPG" alt="世界级暗夜星空" loading="lazy">
+                  <figcaption class="media-slot-label">景点风光</figcaption>
+                </figure>
                 <figcaption>世界级暗夜星空</figcaption>
               </figure>
               <figure class="mb-slide">
-                <img src="optimized-images/kajkoura-whale-watch.jpg" alt="凯库拉观鲸" loading="lazy">
+                <figure class="media-slot media-slot--scenery media-slot--cover media-slot--filled">
+                  <img src="optimized-images/kajkoura-whale-watch.jpg" alt="凯库拉观鲸" loading="lazy">
+                  <figcaption class="media-slot-label">景点风光</figcaption>
+                </figure>
                 <figcaption>凯库拉观鲸</figcaption>
               </figure>
             </div>
@@ -270,48 +313,58 @@
     </div>
   </section>
 
-  <!-- 公司资质 · 信任背书 -->
+  <!-- Peter与南岛 · 品牌故事 + 资质背书 -->
   <section class="section section-alt" id="credentials">
     <div class="container">
-      <header class="section-head reveal">
-        <p class="section-kicker">Company Credentials</p>
-        <h2>公司资质</h2>
+      <header class="peter-si-head reveal">
+        <p class="section-kicker">Peter &amp; South Island</p>
+        <h2>Peter 与南岛</h2>
+        <p class="peter-si-lead">一家扎根于新西兰南岛的精品旅行服务团队</p>
+        <div class="peter-si-belief">
+          <p class="peter-si-belief-label">我们相信</p>
+          <p class="peter-si-belief-text">旅行不只是到达景点，<br>更是体验当地的风景、人文与故事。</p>
+        </div>
       </header>
 
-      <div class="cred-compact reveal">
-        <div class="cred-compact-info">
-          <p class="cred-compact-name">Tian Tian Travel Limited</p>
-          <p class="cred-compact-tagline">新西兰合法注册旅游企业</p>
-          <dl class="cred-compact-list">
-            <div>
-              <dt>成立日期</dt>
-              <dd>19 July 2024</dd>
-            </div>
-            <div>
-              <dt>Company Number</dt>
-              <dd>9262522</dd>
-            </div>
-            <div>
-              <dt>NZBN</dt>
-              <dd>9429052232527</dd>
-            </div>
-          </dl>
+      <div class="peter-si-split reveal">
+        <div class="peter-si-person">
+          <figure class="peter-si-photo">
+            <figure class="media-slot media-slot--peter media-slot--filled">
+              <img src="optimized-images/Peter.jpg" alt="南岛向导 Peter" class="peter-si-avatar" loading="lazy" onerror="this.onerror=null;this.src='optimized-images/peter-avatar-fallback.svg';">
+              <figcaption class="media-slot-label">Peter带团照片</figcaption>
+            </figure>
+            <figcaption class="peter-si-caption">
+              <span class="peter-si-name">Peter</span>
+              <span class="peter-si-meta">现居基督城</span>
+            </figcaption>
+          </figure>
+          <div class="peter-si-story">
+            <p class="peter-si-story-highlight">多年南岛实地带团经验</p>
+            <p>熟悉南岛四季风景、摄影机位、自然生态、小众路线和当地文化。</p>
+            <p>从凯库拉观鲸、阿卡罗阿海豚、库克山雪山冰川、特卡波星空、瓦纳卡湖景、皇后镇深度体验，到普通游客不容易发现的私藏风景，</p>
+            <p class="peter-si-story-closing">希望用慢旅行的方式，带更多朋友认识真实的新西兰南岛。</p>
+          </div>
         </div>
 
-        <figure class="cred-cert-card cred-cert-card--compact" id="certCard" role="button" tabindex="0" aria-label="点击放大查看公司注册证书">
-          <img src="optimized-images/certificate.jpg?v=3" alt="Certificate of Incorporation — Tian Tian Travel Limited" loading="lazy" id="certImage" onerror="this.onerror=null;this.src='optimized-images/placeholder.svg';">
-          <figcaption>Certificate of Incorporation</figcaption>
-        </figure>
+        <div class="peter-si-trust">
+          <div class="peter-si-cert-head">
+            <h3>新西兰公司注册证书</h3>
+            <p>Certificate of Incorporation · Tian Tian Travel Limited</p>
+          </div>
+          <figure class="cred-cert-card peter-si-cert" id="certCard" role="button" tabindex="0" aria-label="点击放大查看公司注册证书">
+            <img src="optimized-images/certificate.jpg?v=3" alt="Tian Tian Travel Limited 新西兰公司注册证书" loading="lazy" id="certImage" onerror="this.onerror=null;this.src='optimized-images/slot-placeholder.svg';">
+            <figcaption>点击放大查看证书</figcaption>
+          </figure>
+          <ul class="cred-badges cred-badges--trust" aria-label="服务与资质认证">
+            <li>新西兰正规注册企业</li>
+            <li>NZBN 企业认证</li>
+            <li>本地持证导游服务</li>
+            <li>奔驰商务车精品小团</li>
+            <li>透明报价</li>
+            <li>不购物、不赶路</li>
+          </ul>
+        </div>
       </div>
-
-      <ul class="cred-badges reveal" aria-label="资质认证">
-        <li>✓ New Zealand Registered Company</li>
-        <li>✓ NZBN Verified</li>
-        <li>✓ South Island Local Operator</li>
-        <li>✓ Mercedes-Benz Premium Small Group</li>
-      </ul>
-
-      <p class="cred-note reveal">您的每一次旅行安排，<br>均由新西兰合法注册企业提供服务，<br>让旅行更加安心可靠。</p>
     </div>
   </section>
 
@@ -323,139 +376,242 @@
         <h2>精品线路</h2>
         <p class="section-desc">一日游至南岛深度环岛，奔驰商务车 4–8 人精品小团，Peter 本人带团。</p>
       </header>
-      <div class="journey-grid reveal">
+      <div class="journey-grid journey-grid--home reveal">
+        <article class="journey-card">
+          <p class="journey-eyebrow">Day Tour</p>
+          <h3>一日游</h3>
+          <p class="journey-card-desc">凯库拉观鲸｜阿卡罗阿羊驼｜特卡波星空</p>
+          <a href="day-tours.html" class="btn btn-primary">了解详情</a>
+        </article>
+        <article class="journey-card">
+          <p class="journey-eyebrow">Two Days</p>
+          <h3>两日游</h3>
+          <p class="journey-card-desc">凯库拉＋汉默温泉｜特卡波＋库克山</p>
+          <a href="two-day-tours.html" class="btn btn-primary">了解详情</a>
+        </article>
+        <article class="journey-card">
+          <p class="journey-eyebrow">Three Days</p>
+          <h3>三日游</h3>
+          <p class="journey-card-desc">基督城｜特卡波｜库克山</p>
+          <a href="three-day-tours.html" class="btn btn-primary">了解详情</a>
+        </article>
         <article class="journey-card">
           <p class="journey-eyebrow">Classic · 8 Days</p>
           <h3>南岛 8 日经典慢旅行</h3>
-          <p>凯库拉观鲸 · 特卡波星空 · 库克山 · 瓦纳卡 · 皇后镇</p>
-          <div class="journey-tags">
-            <span>4-8人精品小团</span>
-            <span>奔驰商务车</span>
-          </div>
+          <p class="journey-card-desc" aria-hidden="true"></p>
           <a href="winter-tour.html" class="btn btn-primary">查看详细行程</a>
         </article>
         <article class="journey-card">
           <p class="journey-eyebrow">Flagship · 13 Days</p>
           <h3>南岛 13 日环岛精品游</h3>
-          <p>凯库拉 · 特卡波 · 库克山 · 米尔福德峡湾 · 皇后镇深度慢旅行</p>
-          <div class="journey-tags">
-            <span>深度慢旅行</span>
-            <span>摄影体验</span>
-          </div>
+          <p class="journey-card-desc" aria-hidden="true"></p>
           <a href="south-island-13-day.html" class="btn btn-primary">查看详细行程</a>
         </article>
       </div>
       <p class="home-routes-cta reveal">
-        <a href="routes.html" class="btn btn-outline btn-lg">查看全部精品线路 →</a>
+        <a href="routes.html" class="tt-see-all">查看全部精品线路 <span class="tt-arrow" aria-hidden="true">→</span></a>
       </p>
     </div>
   </section>
 
-  <!-- 为什么选择我们 -->
+  <!-- 为什么选择我们 · Peter 带团故事 -->
   <section class="section section-alt" id="features">
     <div class="container">
-      <header class="section-head reveal">
-        <p class="section-kicker">Why Tian Tian Travel</p>
-        <h2>为什么选择新西兰天天旅行社</h2>
-        <p class="section-desc">正规注册 · 奔驰商务 · 精品小团 · 本地向导 · 透明纯玩</p>
+      <header class="why-peter-head reveal">
+        <p class="section-kicker">Stories on the Road</p>
+        <h2>风景在路上，故事在车里</h2>
+        <p class="why-peter-lead">跟着 Peter 走进真实的新西兰南岛</p>
+        <p class="why-peter-poem">窗外是不断变化的风景，<br>车里是关于南岛的人文、历史与故事。</p>
       </header>
-      <div class="why-grid">
-        <article class="why-card reveal">
-          <div class="why-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 13h2l2-7h10l2 7h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-          </div>
+      <div class="why-grid why-grid--peter">
+        <article class="why-card why-card--story reveal">
+          <span class="why-card-num" aria-hidden="true">01</span>
           <h3>奔驰商务车</h3>
-          <p>Mercedes-Benz 高端商务座驾，长途舒适安全。</p>
+          <p class="why-card-lead">Mercedes-Benz 高端商务出行</p>
+          <p class="why-card-desc">舒适、安全、从容出发</p>
         </article>
-        <article class="why-card reveal">
-          <div class="why-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3l2.4 7.4H22l-6 4.6 2.3 7L12 17.4 5.7 22l2.3-7-6-4.6h7.6z"/></svg>
-          </div>
-          <h3>4–8 人精品小团</h3>
-          <p>真正小团深度游，每一处风景都留足时间。</p>
+        <article class="why-card why-card--story reveal">
+          <span class="why-card-num" aria-hidden="true">02</span>
+          <h3>Peter 讲南岛故事</h3>
+          <p class="why-card-lead">当地历史、人文、趣闻与真实见闻</p>
+          <p class="why-card-desc">让旅途不仅有风景，更有内容</p>
         </article>
-        <article class="why-card reveal">
-          <div class="why-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>不购物不赶路</h3>
-          <p>透明行程，无购物无套路，专注高品质体验。</p>
+        <article class="why-card why-card--story reveal">
+          <span class="why-card-num" aria-hidden="true">03</span>
+          <h3>4-8 人精品小团</h3>
+          <p class="why-card-lead">不拼团、不赶路</p>
+          <p class="why-card-desc">深度体验南岛之美</p>
         </article>
-        <article class="why-card reveal">
-          <div class="why-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          </div>
-          <h3>Peter 全程陪伴</h3>
-          <p>本地向导全程陪同，真实、舒适、有温度。</p>
+        <article class="why-card why-card--story reveal">
+          <span class="why-card-num" aria-hidden="true">04</span>
+          <h3>真实慢旅行</h3>
+          <p class="why-card-lead">不购物、不打卡式赶景点</p>
+          <p class="why-card-desc">用自己的节奏感受新西兰</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Footer / 联系我们 -->
-  <footer class="footer" id="contact">
+  <!-- 客人怎么说 · 信任预览（可扩展） -->
+  <section class="section section-alt" id="trust-preview">
     <div class="container">
-      <div class="footer-brand-block reveal">
-        <a href="#hero" class="brand brand--footer">
-          <img src="optimized-images/logo.png" class="site-logo site-logo--footer" alt="新西兰天天旅行社" loading="lazy">
-          <div class="brand-text">
-            <div class="brand-en">Tian Tian Travel Ltd</div>
-            <div class="brand-zh">新西兰天天旅行社</div>
-          </div>
-        </a>
-        <p class="footer-tagline">新西兰南岛奔驰商务精品小团 · 4–8 人深度专线</p>
+      <header class="section-head reveal">
+        <p class="section-kicker">Guest Voices</p>
+        <h2>客人怎么说</h2>
+        <p class="section-desc">真实反馈持续更新。替换下方评价截图的 <code>src</code> 即可，无需改版式。</p>
+      </header>
+      <div class="trust-preview-grid reveal">
+        <article class="trust-preview-card">
+          <figure class="media-slot media-slot--review">
+            <img src="optimized-images/slot-placeholder.svg" alt="客人评价截图" loading="lazy">
+            <figcaption class="media-slot-label">客人评价截图</figcaption>
+          </figure>
+          <p class="trust-preview-quote">「Peter 开车太稳了，全程没人晕车。已在微信推荐给朋友。」</p>
+          <span class="trust-preview-meta">陈先生 · 南岛 13 日</span>
+        </article>
+        <article class="trust-preview-card">
+          <figure class="media-slot media-slot--review">
+            <img src="optimized-images/slot-placeholder.svg" alt="客人评价截图" loading="lazy">
+            <figcaption class="media-slot-label">客人评价截图</figcaption>
+          </figure>
+          <p class="trust-preview-quote">「带父母走完全程都不累，像朋友带着逛。」</p>
+          <span class="trust-preview-meta">王女士 · 家庭团</span>
+        </article>
+        <article class="trust-preview-card">
+          <figure class="media-slot media-slot--review">
+            <img src="optimized-images/slot-placeholder.svg" alt="客人评价截图" loading="lazy">
+            <figcaption class="media-slot-label">客人评价截图</figcaption>
+          </figure>
+          <p class="trust-preview-quote">「2024 年来过，2025 年带全家再来。回头客，因为信得过。」</p>
+          <span class="trust-preview-meta">张先生 · 第二次报名</span>
+        </article>
       </div>
+      <p class="trust-preview-more reveal">
+        <a href="testimonials.html" class="tt-see-all">查看全部客人评价 <span class="tt-arrow" aria-hidden="true">→</span></a>
+      </p>
+    </div>
+  </section>
 
-      <section class="contact-us reveal" aria-labelledby="contactUsTitle">
-        <header class="contact-us-head">
-          <p class="section-kicker">Contact Us</p>
-          <h2 id="contactUsTitle">联系我们</h2>
-          <p class="section-desc">如果您有任何问题或想预订行程，请随时联系我们。</p>
-        </header>
+  <!-- 开始规划您的南岛之旅 -->
+  <footer class="footer footer--plan" id="contact">
+    <div class="container">
 
-        <div class="contact-us-grid">
-          <div class="contact-us-info">
-            <a href="tel:+6421976868" class="contact-row">
-              <span class="contact-row-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>
-                </svg>
-              </span>
-              <span class="contact-row-text">+64 21 976 868</span>
-            </a>
-            <a href="mailto:yue_she@hotmail.com" class="contact-row">
-              <span class="contact-row-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="5" width="18" height="14" rx="2"/>
-                  <path d="M3 7l9 6 9-6"/>
-                </svg>
-              </span>
-              <span class="contact-row-text">yue_she@hotmail.com</span>
-            </a>
-          </div>
-
-          <div class="contact-us-qr">
-            <figure class="contact-qr-card" id="wechatQr">
-              <div class="contact-qr-img-wrap">
-                <img src="optimized-images/wechat-qr.jpg" alt="微信二维码" width="220" height="220" loading="lazy">
-              </div>
-              <figcaption>微信咨询</figcaption>
-            </figure>
-            <figure class="contact-qr-card contact-qr-card--wa">
-              <div class="contact-qr-img-wrap">
-                <img src="optimized-images/peter-whatapp.jpg" alt="WhatsApp 二维码" width="220" height="220" loading="lazy">
-              </div>
-              <figcaption>WhatsApp咨询</figcaption>
-            </figure>
-          </div>
+      <header class="plan-hero reveal">
+        <p class="section-kicker">Plan Your Journey</p>
+        <h2 id="contactUsTitle">开始规划您的南岛之旅</h2>
+        <div class="plan-hero-copy">
+          <p>无论是家庭度假、摄影旅拍、蜜月旅行、亲子出游还是商务考察，欢迎与 Peter 聊聊您的旅行想法。</p>
+          <p>我们将根据人数、时间和预算，为您设计专属的新西兰南岛旅行方案。</p>
         </div>
+      </header>
 
-        <div class="contact-us-actions">
-          <a href="https://wa.me/6421976868" class="btn btn-outline" target="_blank" rel="noopener noreferrer">打开 WhatsApp</a>
-          <a href="#" class="btn btn-outline" data-wechat-trigger>微信咨询</a>
-          <a href="mailto:yue_she@hotmail.com" class="btn btn-primary">发送邮件咨询</a>
+      <section class="plan-peter reveal" aria-labelledby="planPeterTitle">
+        <figure class="plan-peter-photo">
+          <figure class="media-slot media-slot--peter media-slot--filled">
+            <img src="optimized-images/Peter.jpg" alt="Peter · 南岛当地导游" loading="lazy" onerror="this.onerror=null;this.src='optimized-images/peter-avatar-fallback.svg';">
+            <figcaption class="media-slot-label">Peter带团照片</figcaption>
+          </figure>
+        </figure>
+        <div class="plan-peter-copy">
+          <h3 id="planPeterTitle">Peter</h3>
+          <ul class="plan-peter-tags">
+            <li>新西兰南岛当地导游</li>
+            <li>基督城常驻</li>
+            <li>奔驰商务精品小团领队</li>
+          </ul>
+          <p class="plan-peter-highlight">多年南岛深度带团经验</p>
+          <div class="plan-peter-routes">
+            <p class="plan-peter-routes-label">熟悉</p>
+            <p>凯库拉观鲸、阿卡罗阿、特卡波星空、库克山、瓦纳卡、皇后镇、米尔福德峡湾等南岛经典及小众路线。</p>
+          </div>
+          <div class="plan-peter-contact">
+            <a href="tel:+6421976868" class="plan-contact-link">
+              <span class="plan-contact-label">联系电话</span>
+              <span class="plan-contact-value">+64 21 976 868</span>
+            </a>
+            <a href="mailto:yue_she@hotmail.com" class="plan-contact-link">
+              <span class="plan-contact-label">邮箱</span>
+              <span class="plan-contact-value">yue_she@hotmail.com</span>
+            </a>
+          </div>
         </div>
       </section>
+
+      <section class="plan-why reveal" aria-labelledby="planWhyTitle">
+        <h3 class="plan-section-title" id="planWhyTitle">为什么选择 Peter 带您旅行</h3>
+        <div class="plan-why-grid">
+          <article class="plan-why-card">
+            <div class="plan-why-visual">
+              <figure class="media-slot media-slot--scenery media-slot--filled">
+                <img src="optimized-images/mt-cook1.JPG" alt="南岛雪山湖泊风景" loading="lazy">
+                <figcaption class="media-slot-label">景点风光</figcaption>
+              </figure>
+            </div>
+            <div class="plan-why-body">
+              <h4>南岛真实风景</h4>
+              <p class="plan-why-lead">雪山｜湖泊｜星空｜海岸线</p>
+              <p>用镜头记录最真实的新西兰。</p>
+            </div>
+          </article>
+          <article class="plan-why-card">
+            <div class="plan-why-visual">
+              <figure class="media-slot media-slot--mercedes media-slot--filled">
+                <img src="optimized-images/mercedes-new.JPG" alt="奔驰商务精品小团" loading="lazy">
+                <figcaption class="media-slot-label">奔驰商务车</figcaption>
+              </figure>
+            </div>
+            <div class="plan-why-body">
+              <h4>奔驰商务精品小团</h4>
+              <p class="plan-why-lead">4-8 人精品小团 · 舒适座驾</p>
+              <p>不赶路、不购物，深度体验。</p>
+            </div>
+          </article>
+          <article class="plan-why-card">
+            <div class="plan-why-visual">
+              <figure class="media-slot media-slot--photo media-slot--filled">
+                <img src="optimized-images/tekapo-stargazing.JPG" alt="特卡波星空与南岛夜色" loading="lazy">
+                <figcaption class="media-slot-label">摄影作品</figcaption>
+              </figure>
+            </div>
+            <div class="plan-why-body">
+              <h4>当地人的旅行视角</h4>
+              <p class="plan-why-lead">不仅看风景，更了解故事</p>
+              <p>感受真实的新西兰南岛。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="plan-contact reveal" aria-labelledby="planContactTitle">
+        <h3 class="plan-section-title" id="planContactTitle">联系 Peter</h3>
+        <p class="plan-contact-sub">添加微信或 WhatsApp</p>
+        <p class="plan-contact-hint">提前沟通行程 · 获取专属报价 · 扫码即可联系 Peter</p>
+        <div class="plan-qr-row">
+          <figure class="contact-qr-card" id="wechatQr">
+            <div class="contact-qr-img-wrap">
+              <img src="optimized-images/wechat-qr.jpg" alt="微信二维码" width="220" height="220" loading="lazy">
+            </div>
+            <figcaption>微信咨询</figcaption>
+          </figure>
+          <figure class="contact-qr-card contact-qr-card--wa">
+            <div class="contact-qr-img-wrap">
+              <img src="optimized-images/peter-whatapp.jpg" alt="WhatsApp 二维码" width="220" height="220" loading="lazy">
+            </div>
+            <figcaption>WhatsApp 咨询</figcaption>
+          </figure>
+        </div>
+        <div class="plan-contact-actions">
+          <a href="https://wa.me/6421976868" class="btn btn-outline" target="_blank" rel="noopener noreferrer">打开 WhatsApp</a>
+          <button type="button" class="btn btn-outline" data-wechat-trigger>微信咨询</button>
+          <a href="mailto:yue_she@hotmail.com?subject=咨询南岛旅行方案" class="btn btn-primary">发送邮件咨询</a>
+        </div>
+      </section>
+
+      <blockquote class="plan-quote reveal">
+        <p>旅行不只是到达景点，<br>更重要的是遇见风景背后的故事。</p>
+        <p class="plan-quote-welcome">欢迎来到真实的新西兰南岛。</p>
+        <footer>—— Peter</footer>
+      </blockquote>
 
       <p class="footer-copy">© 2026 Tian Tian Travel Ltd · 新西兰天天旅行社 · 南岛奔驰商务精品小团</p>
     </div>
@@ -506,6 +662,7 @@
     <button type="button" class="lightbox-next" aria-label="下一张">›</button>
   </div>
 
+  <script src="media-slots.js"></script>
   <script src="script.js"></script>
   <script>
     (function () {
