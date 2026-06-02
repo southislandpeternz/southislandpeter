@@ -50,7 +50,7 @@
     { title: "精品线路", href: "routes.html", keywords: "精品线路 路线 产品 经典 慢旅行" },
     { title: "南岛慢旅行13天12晚", href: "south-island-13-day.html", keywords: "旗舰 精品路线 13天 12晚 慢旅行 奔驰 商务车 Peter" },
     { title: "为什么选择我们", href: "#features", keywords: "奔驰 小团 不购物 Peter 纯玩" },
-    { title: "客人评价", href: "#reviews", keywords: "好评 评价 反馈 客户" },
+    { title: "客人评价", href: "testimonials.html", keywords: "好评 评价 反馈 客户" },
     { title: "摄影图库", href: "#gallery", keywords: "摄影 图库 照片 gallery" },
     { title: "咨询预订", href: "#contact", keywords: "咨询 预订 联系 电话 微信 whatsapp" }
   ];
@@ -58,7 +58,6 @@
   const NAV_SECTIONS = [
     "contact",
     "gallery",
-    "reviews",
     "features",
     "itinerary",
     "destinations",
