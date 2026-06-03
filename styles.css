@@ -4680,12 +4680,6 @@ body:not(.is-loading) .page-loader {
   margin: 0;
 }
 
-@media (max-width: 1024px) {
-  .home-gallery-masonry {
-    column-count: 3;
-  }
-}
-
 @media (max-width: 640px) {
   .home-gallery-masonry {
     column-count: 2;
@@ -5828,7 +5822,8 @@ body:not(.is-loading) .page-loader {
   padding: 12%;
 }
 
-.rev-review-card img[src*="images/reviews/"] {
+.rev-review-card img[src*="review"],
+.rev-review-card img[src*="reviews"] {
   width: 100%;
   height: auto;
   max-width: 100%;

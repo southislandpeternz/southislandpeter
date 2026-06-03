@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-06-03T05:29:47.162Z",
+  "sourceDir": "images/网页使用照片集",
+  "count": 9,
+  "images": [
+    {
+      "file": "reviews-service-service-04.JPG",
+      "thumb": "thumbs/reviews-service-service-04.JPG",
+      "mtime": 1780376454696.1167,
+      "width": 560
+    },
+    {
+      "file": "reviews-service-service-03.JPG",
+      "thumb": "thumbs/reviews-service-service-03.JPG",
+      "mtime": 1780376448194.2815,
+      "width": 560
+    },
+    {
+      "file": "reviews-service-service-02.JPG",
+      "thumb": "thumbs/reviews-service-service-02.JPG",
+      "mtime": 1780376441192.4517,
+      "width": 560
+    },
+    {
+      "file": "review-service-service-01.JPG",
+      "thumb": "thumbs/review-service-service-01.JPG",
+      "mtime": 1780376434106.286,
+      "width": 560
+    },
+    {
+      "file": "reviews-driving-driving-02.JPG",
+      "thumb": "thumbs/reviews-driving-driving-02.JPG",
+      "mtime": 1780376426511.4182,
+      "width": 560
+    },
+    {
+      "file": "reviews-driving-driving-01.JPG",
+      "thumb": "thumbs/reviews-driving-driving-01.JPG",
+      "mtime": 1780376416657.7595,
+      "width": 560
+    },
+    {
+      "file": "reviews-photo-photo-01.JPG",
+      "thumb": "thumbs/reviews-photo-photo-01.JPG",
+      "mtime": 1780376405262.6328,
+      "width": 560
+    },
+    {
+      "file": "review-return-return-01.JPG",
+      "thumb": "thumbs/review-return-return-01.JPG",
+      "mtime": 1780376391691.384,
+      "width": 560
+    },
+    {
+      "file": "review-guide-01.jpg",
+      "thumb": "thumbs/review-guide-01.jpg",
+      "mtime": 1780360292829.5688,
+      "width": 560
+    }
+  ]
+}

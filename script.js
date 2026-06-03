@@ -152,26 +152,33 @@
     );
   }
 
-  const REVIEWS_DIR = "images/reviews";
-  const REVIEWS_EXT = ["jpg", "jpeg", "png", "webp"];
+  const REVIEWS_DIR = "images/网页使用照片集";
+  const REVIEW_FILE_RE = /^(review|reviews).+\.(jpe?g)$/i;
 
   function isReviewImageName(name) {
-    const lower = name.toLowerCase();
-    return REVIEWS_EXT.some((ext) => lower.endsWith("." + ext));
+    const base = name.replace(/^.*\//, "");
+    if (!base || base === "thumbs" || base.startsWith("thumbs/")) return false;
+    return REVIEW_FILE_RE.test(base);
+  }
+
+  function reviewAssetPath(...parts) {
+    return normalizePath([REVIEWS_DIR, ...parts].join("/"));
   }
 
   async function fromReviewsManifest() {
     try {
-      const res = await fetch(`${REVIEWS_DIR}/manifest.json`, { cache: "no-store" });
+      const res = await fetch(reviewAssetPath("manifest.json"), { cache: "no-store" });
       if (!res.ok) return [];
       const data = await res.json();
       if (!Array.isArray(data.images)) return [];
       return data.images
-        .filter((item) => item && typeof item.file === "string")
+        .filter((item) => item && typeof item.file === "string" && isReviewImageName(item.file))
         .map((item) => ({
-          full: normalizePath(`${REVIEWS_DIR}/${item.file}`),
-          thumb: normalizePath(`${REVIEWS_DIR}/${item.thumb || item.file}`)
-        }));
+          full: reviewAssetPath(item.file),
+          thumb: reviewAssetPath(item.thumb || `thumbs/${item.file}`),
+          mtime: typeof item.mtime === "number" ? item.mtime : 0
+        }))
+        .sort((a, b) => b.mtime - a.mtime);
     } catch {
       return [];
     }
@@ -179,7 +186,7 @@
 
   async function fromReviewsListing() {
     try {
-      const res = await fetch(`${REVIEWS_DIR}/`, { cache: "no-store" });
+      const res = await fetch(reviewAssetPath(""), { cache: "no-store" });
       if (!res.ok) return [];
       const html = await res.text();
       const doc = new DOMParser().parseFromString(html, "text/html");
@@ -188,9 +195,11 @@
         .filter((name) => isReviewImageName(name))
         .map((name) => {
           const file = name.replace(/^.*\//, "");
-          const full = normalizePath(`${REVIEWS_DIR}/${file}`);
-          const thumb = normalizePath(`${REVIEWS_DIR}/thumbs/${file}`);
-          return { full, thumb };
+          return {
+            full: reviewAssetPath(file),
+            thumb: reviewAssetPath(`thumbs/${file}`),
+            mtime: 0
+          };
         });
     } catch {
       return [];
@@ -199,9 +208,11 @@
 
   async function verifyReviewEntry(entry) {
     const thumbOk = await probeImage(entry.thumb);
-    if (thumbOk.ok) return { full: entry.full, thumb: thumbOk.src };
+    if (thumbOk.ok) {
+      return { full: entry.full, thumb: thumbOk.src, mtime: entry.mtime || 0 };
+    }
     const fullOk = await probeImage(entry.full);
-    if (fullOk.ok) return { full: fullOk.src, thumb: fullOk.src };
+    if (fullOk.ok) return { full: fullOk.src, thumb: fullOk.src, mtime: entry.mtime || 0 };
     return null;
   }
 
@@ -249,7 +260,7 @@
       });
     }
 
-    verified.sort((a, b) => a.full.localeCompare(b.full, "en"));
+    verified.sort((a, b) => (b.mtime || 0) - (a.mtime || 0));
     renderHomeReviews(verified);
   }
 
