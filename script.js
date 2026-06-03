@@ -41,7 +41,7 @@
     { title: "首页", href: "#hero", keywords: "首页 home 天天旅行社" },
     { title: "关于 Peter", href: "#peter", keywords: "Peter 向导 导游 本地 奔驰 商务车 司导 天天旅行社" },
     { title: "精选南岛旅行路线", href: "#routes", keywords: "精品线路 一日游 三日游 八日游 环岛" },
-    { title: "风景在路上", href: "#stories", keywords: "故事 客人 真实 南岛 车里" },
+    { title: "摄影旅拍作品展示", href: "#gallery", keywords: "摄影 旅拍 相册 照片 图库 gallery" },
     { title: "凯库拉观鲸", href: "#destinations", keywords: "凯库拉 观鲸 海豚 whale" },
     { title: "特卡波星空", href: "#destinations", keywords: "特卡波 星空 银河 tekapo" },
     { title: "库克山", href: "#destinations", keywords: "库克山 雪山 冰川 mount cook" },
@@ -51,13 +51,12 @@
     { title: "精品线路", href: "routes.html", keywords: "精品线路 路线 产品 经典 慢旅行" },
     { title: "南岛慢旅行13天12晚", href: "south-island-13-day.html", keywords: "旗舰 精品路线 13天 12晚 慢旅行 奔驰 商务车 Peter" },
     { title: "客人评价", href: "testimonials.html", keywords: "好评 评价 反馈 客户" },
-    { title: "摄影图库", href: "#gallery", keywords: "摄影 图库 照片 gallery" },
     { title: "咨询预订", href: "#contact", keywords: "咨询 预订 联系 电话 微信 whatsapp" }
   ];
 
   const NAV_SECTIONS = [
     "contact",
-    "stories",
+    "gallery",
     "routes",
     "peter",
     "hero"

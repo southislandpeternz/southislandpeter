@@ -4657,88 +4657,23 @@ body:not(.is-loading) .page-loader {
   margin-top: 4px;
 }
 
-.home-stories-head {
-  max-width: 640px;
+/* 摄影旅拍（首页） */
+#gallery {
+  scroll-margin-top: 88px;
+}
+
+.home-gallery-masonry {
+  max-width: 1100px;
   margin-inline: auto;
 }
 
-.home-stories-list {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(24px, 4vw, 36px);
-  margin-top: clamp(8px, 2vw, 16px);
-}
-
-.home-story-card {
-  display: grid;
-  grid-template-columns: minmax(200px, 340px) minmax(0, 1fr);
-  gap: clamp(20px, 3vw, 32px);
-  align-items: start;
-  padding: clamp(20px, 3vw, 28px);
-  background: rgba(255, 255, 255, 0.48);
-  border: 1px solid rgba(56, 82, 65, 0.1);
-  border-radius: 20px;
-}
-
-.home-story-card:nth-child(even) {
-  background: rgba(255, 255, 255, 0.62);
-}
-
-.home-story-card__photo {
+.home-gallery-item {
   margin: 0;
-  border-radius: 14px;
-  overflow: hidden;
 }
 
-.home-story-card__photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-  vertical-align: top;
-}
-
-.home-story-card__body h3 {
-  margin: 0 0 8px;
-  font-size: clamp(20px, 2.4vw, 24px);
-  font-weight: 600;
-}
-
-.home-story-lead {
-  margin: 0 0 12px;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text);
-}
-
-.home-story-card__body > p:not(.home-story-lead) {
-  margin: 0 0 16px;
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.9;
-}
-
-.home-story-quote {
-  margin: 0;
-  padding: 14px 18px;
-  border-left: 3px solid var(--accent);
-  background: rgba(56, 82, 65, 0.06);
-  border-radius: 0 12px 12px 0;
-}
-
-.home-story-quote p {
-  margin: 0;
-  font-size: 15px;
-  font-style: italic;
-  color: var(--text);
-  line-height: 1.75;
-}
-
-.home-stories-more {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px 28px;
-  margin-top: clamp(32px, 4vw, 48px);
+.home-gallery-cta {
+  text-align: center;
+  margin-top: clamp(28px, 4vw, 36px);
 }
 
 .footer--consult .plan-hero-copy--single {
@@ -4808,10 +4743,6 @@ body:not(.is-loading) .page-loader {
 
   .home-routes-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .home-story-card {
-    grid-template-columns: 1fr;
   }
 }
 
