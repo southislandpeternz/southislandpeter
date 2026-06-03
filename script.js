@@ -217,6 +217,19 @@
     lightboxImg.src = galleryPaths[lightboxIndex];
   }
 
+  function initHomeGalleryLightbox() {
+    const imgs = document.querySelectorAll(".home-gallery-item img");
+    if (!imgs.length || !lightbox || !lightboxImg) return;
+    const paths = Array.from(imgs, (img) => img.currentSrc || img.src);
+    imgs.forEach((img, index) => {
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", () => {
+        galleryPaths = paths;
+        openLightbox(index);
+      });
+    });
+  }
+
   function initLightbox() {
     if (!lightbox) return;
     lightbox.querySelector(".lightbox-close")?.addEventListener("click", closeLightbox);
@@ -465,6 +478,7 @@
   initHeroRoute();
   initSmoothAnchors();
   initLightbox();
+  initHomeGalleryLightbox();
   initSearch();
   initWechat();
   loadGallery();
