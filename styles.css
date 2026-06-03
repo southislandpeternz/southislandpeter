@@ -4676,6 +4676,10 @@ body:not(.is-loading) .page-loader {
   margin-top: clamp(28px, 4vw, 36px);
 }
 
+#gallery + .footer--consult.footer--plan {
+  padding-top: clamp(48px, 7vw, 72px);
+}
+
 .footer--consult .plan-hero-copy--single {
   max-width: 560px;
   margin-inline: auto;
