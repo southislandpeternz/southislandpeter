@@ -42,6 +42,7 @@
     { title: "关于 Peter", href: "#peter", keywords: "Peter 向导 导游 本地 奔驰 商务车 司导 天天旅行社" },
     { title: "精选南岛旅行路线", href: "#routes", keywords: "精品线路 一日游 三日游 八日游 环岛" },
     { title: "摄影旅拍作品展示", href: "#gallery", keywords: "摄影 旅拍 相册 照片 图库 gallery" },
+    { title: "客人好评墙", href: "#reviews", keywords: "好评 评价 微信 小红书 Google 朋友圈 客人 反馈" },
     { title: "凯库拉观鲸", href: "destinations.html#kaikoura", keywords: "凯库拉 观鲸 海豚 whale 南岛故事" },
     { title: "特卡波星空", href: "destinations.html#tekapo", keywords: "特卡波 星空 银河 tekapo 南岛故事" },
     { title: "库克山", href: "destinations.html#mt-cook", keywords: "库克山 雪山 冰川 mount cook 南岛故事" },
@@ -56,6 +57,7 @@
 
   const NAV_SECTIONS = [
     "contact",
+    "reviews",
     "gallery",
     "routes",
     "peter",
@@ -217,15 +219,18 @@
     lightboxImg.src = galleryPaths[lightboxIndex];
   }
 
-  function initHomeGalleryLightbox() {
-    const imgs = document.querySelectorAll(".home-gallery-item img");
-    if (!imgs.length || !lightbox || !lightboxImg) return;
-    const paths = Array.from(imgs, (img) => img.currentSrc || img.src);
-    imgs.forEach((img, index) => {
-      img.style.cursor = "zoom-in";
-      img.addEventListener("click", () => {
-        galleryPaths = paths;
-        openLightbox(index);
+  function initHomeMasonryLightbox() {
+    if (!lightbox || !lightboxImg) return;
+    document.querySelectorAll(".home-gallery-masonry").forEach((grid) => {
+      const imgs = grid.querySelectorAll(".home-gallery-item img");
+      if (!imgs.length) return;
+      const paths = Array.from(imgs, (img) => img.currentSrc || img.src);
+      imgs.forEach((img, index) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => {
+          galleryPaths = paths;
+          openLightbox(index);
+        });
       });
     });
   }
@@ -478,7 +483,7 @@
   initHeroRoute();
   initSmoothAnchors();
   initLightbox();
-  initHomeGalleryLightbox();
+  initHomeMasonryLightbox();
   initSearch();
   initWechat();
   loadGallery();

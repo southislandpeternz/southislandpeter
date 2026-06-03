@@ -4657,8 +4657,9 @@ body:not(.is-loading) .page-loader {
   margin-top: 4px;
 }
 
-/* 摄影旅拍（首页） */
-#gallery {
+/* 首页瀑布流（摄影旅拍 / 客人好评墙） */
+#gallery,
+#reviews {
   scroll-margin-top: 88px;
 }
 
@@ -4676,7 +4677,7 @@ body:not(.is-loading) .page-loader {
   margin-top: clamp(28px, 4vw, 36px);
 }
 
-#gallery + .footer--consult.footer--plan {
+#reviews + .footer--consult.footer--plan {
   padding-top: clamp(48px, 7vw, 72px);
 }
 
