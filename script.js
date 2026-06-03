@@ -152,6 +152,107 @@
     );
   }
 
+  const REVIEWS_DIR = "images/reviews";
+  const REVIEWS_EXT = ["jpg", "jpeg", "png", "webp"];
+
+  function isReviewImageName(name) {
+    const lower = name.toLowerCase();
+    return REVIEWS_EXT.some((ext) => lower.endsWith("." + ext));
+  }
+
+  async function fromReviewsManifest() {
+    try {
+      const res = await fetch(`${REVIEWS_DIR}/manifest.json`, { cache: "no-store" });
+      if (!res.ok) return [];
+      const data = await res.json();
+      if (!Array.isArray(data.images)) return [];
+      return data.images
+        .filter((item) => item && typeof item.file === "string")
+        .map((item) => ({
+          full: normalizePath(`${REVIEWS_DIR}/${item.file}`),
+          thumb: normalizePath(`${REVIEWS_DIR}/${item.thumb || item.file}`)
+        }));
+    } catch {
+      return [];
+    }
+  }
+
+  async function fromReviewsListing() {
+    try {
+      const res = await fetch(`${REVIEWS_DIR}/`, { cache: "no-store" });
+      if (!res.ok) return [];
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      return [...doc.querySelectorAll("a[href]")]
+        .map((a) => decodeURIComponent(a.getAttribute("href") || ""))
+        .filter((name) => isReviewImageName(name))
+        .map((name) => {
+          const file = name.replace(/^.*\//, "");
+          const full = normalizePath(`${REVIEWS_DIR}/${file}`);
+          const thumb = normalizePath(`${REVIEWS_DIR}/thumbs/${file}`);
+          return { full, thumb };
+        });
+    } catch {
+      return [];
+    }
+  }
+
+  async function verifyReviewEntry(entry) {
+    const thumbOk = await probeImage(entry.thumb);
+    if (thumbOk.ok) return { full: entry.full, thumb: thumbOk.src };
+    const fullOk = await probeImage(entry.full);
+    if (fullOk.ok) return { full: fullOk.src, thumb: fullOk.src };
+    return null;
+  }
+
+  function renderHomeReviews(entries) {
+    const grid = document.getElementById("homeReviewsMasonry");
+    if (!grid) return;
+    grid.innerHTML = "";
+    grid.setAttribute("aria-busy", "false");
+    entries.forEach((entry, i) => {
+      const figure = document.createElement("figure");
+      figure.className = "home-gallery-item";
+      const img = document.createElement("img");
+      img.src = entry.thumb;
+      img.dataset.fullSrc = entry.full;
+      img.alt = "";
+      img.loading = i < 4 ? "eager" : "lazy";
+      img.decoding = "async";
+      if (i < 4) img.fetchPriority = "high";
+      figure.appendChild(img);
+      grid.appendChild(figure);
+    });
+  }
+
+  async function loadHomeReviews() {
+    const grid = document.getElementById("homeReviewsMasonry");
+    if (!grid) return;
+
+    const [manifest, listing] = await Promise.all([
+      fromReviewsManifest(),
+      fromReviewsListing()
+    ]);
+
+    const merged = new Map();
+    [...manifest, ...listing].forEach((entry) => {
+      merged.set(entry.full, entry);
+    });
+
+    const verified = [];
+    const list = [...merged.values()];
+    for (let i = 0; i < list.length; i += 8) {
+      const chunk = list.slice(i, i + 8);
+      const results = await Promise.all(chunk.map((entry) => verifyReviewEntry(entry)));
+      results.forEach((r) => {
+        if (r) verified.push(r);
+      });
+    }
+
+    verified.sort((a, b) => a.full.localeCompare(b.full, "en"));
+    renderHomeReviews(verified);
+  }
+
   function renderGallery(paths) {
     if (!masonry) return;
     masonry.innerHTML = "";
@@ -224,7 +325,10 @@
     document.querySelectorAll(".home-gallery-masonry").forEach((grid) => {
       const imgs = grid.querySelectorAll(".home-gallery-item img");
       if (!imgs.length) return;
-      const paths = Array.from(imgs, (img) => img.currentSrc || img.src);
+      const paths = Array.from(
+        imgs,
+        (img) => img.dataset.fullSrc || img.currentSrc || img.src
+      );
       imgs.forEach((img, index) => {
         img.style.cursor = "zoom-in";
         img.addEventListener("click", () => {
@@ -477,14 +581,19 @@
     });
   }
 
-  initHeader();
-  initReveal();
-  initLoader();
-  initHeroRoute();
-  initSmoothAnchors();
-  initLightbox();
-  initHomeMasonryLightbox();
-  initSearch();
-  initWechat();
-  loadGallery();
+  async function boot() {
+    initHeader();
+    initReveal();
+    initLoader();
+    initHeroRoute();
+    initSmoothAnchors();
+    initLightbox();
+    initSearch();
+    initWechat();
+    await loadHomeReviews();
+    initHomeMasonryLightbox();
+    loadGallery();
+  }
+
+  boot();
 })();

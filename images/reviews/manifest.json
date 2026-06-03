@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-06-03T05:11:46.141Z",
+  "count": 8,
+  "images": [
+    {
+      "file": "review-guide-01.jpg",
+      "thumb": "thumbs/review-guide-01.jpg",
+      "width": 560
+    },
+    {
+      "file": "review-return-return-01.JPG",
+      "thumb": "thumbs/review-return-return-01.JPG",
+      "width": 560
+    },
+    {
+      "file": "review-service-service-01.JPG",
+      "thumb": "thumbs/review-service-service-01.JPG",
+      "width": 560
+    },
+    {
+      "file": "reviews-driving-driving-01.JPG",
+      "thumb": "thumbs/reviews-driving-driving-01.JPG",
+      "width": 560
+    },
+    {
+      "file": "reviews-driving-driving-02.JPG",
+      "thumb": "thumbs/reviews-driving-driving-02.JPG",
+      "width": 560
+    },
+    {
+      "file": "reviews-service-service-02.JPG",
+      "thumb": "thumbs/reviews-service-service-02.JPG",
+      "width": 560
+    },
+    {
+      "file": "reviews-service-service-03.JPG",
+      "thumb": "thumbs/reviews-service-service-03.JPG",
+      "width": 560
+    },
+    {
+      "file": "reviews-service-service-04.JPG",
+      "thumb": "thumbs/reviews-service-service-04.JPG",
+      "width": 560
+    }
+  ]
+}

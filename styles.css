@@ -4666,10 +4666,30 @@ body:not(.is-loading) .page-loader {
 .home-gallery-masonry {
   max-width: 1100px;
   margin-inline: auto;
+  column-count: 4;
+}
+
+.home-gallery-masonry .home-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 6px 20px rgba(47, 47, 47, 0.08);
 }
 
 .home-gallery-item {
   margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .home-gallery-masonry {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-gallery-masonry {
+    column-count: 2;
+  }
 }
 
 .home-gallery-cta {
