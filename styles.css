@@ -230,7 +230,7 @@ body:not(.is-loading) .page-loader {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(6px, 1vw, 18px);
+  gap: clamp(8px, 1.15vw, 20px);
   flex-wrap: wrap;
 }
 
