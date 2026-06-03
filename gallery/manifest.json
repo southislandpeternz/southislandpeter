@@ -1,0 +1,261 @@
+{
+  "generatedAt": "2026-06-03T06:04:39.191Z",
+  "photosRoot": "NZ-Travel-photos",
+  "regions": [
+    {
+      "slug": "akaroa",
+      "name": "Akaroa",
+      "title": "Akaroa Photography",
+      "description": "Akaroa Photography — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.jpg",
+      "coverThumb": "thumbs/seed-1.jpg",
+      "imageCount": 1,
+      "images": [
+        {
+          "file": "seed-1.jpg",
+          "thumb": "thumbs/seed-1.jpg",
+          "mtime": 1780466661490.5461,
+          "full": "NZ-Travel-photos/akaroa/seed-1.jpg",
+          "thumbUrl": "NZ-Travel-photos/akaroa/thumbs/seed-1.jpg"
+        }
+      ],
+      "url": "gallery/akaroa/",
+      "coverUrl": "NZ-Travel-photos/akaroa/thumbs/seed-1.jpg"
+    },
+    {
+      "slug": "christchurch",
+      "name": "Christchurch",
+      "title": "Christchurch Travel Photography",
+      "description": "Christchurch Travel Photography — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.jpg",
+      "coverThumb": "thumbs/seed-1.jpg",
+      "imageCount": 2,
+      "images": [
+        {
+          "file": "seed-1.jpg",
+          "thumb": "thumbs/seed-1.jpg",
+          "mtime": 1780466661627.25,
+          "full": "NZ-Travel-photos/christchurch/seed-1.jpg",
+          "thumbUrl": "NZ-Travel-photos/christchurch/thumbs/seed-1.jpg"
+        },
+        {
+          "file": "seed-2.jpg",
+          "thumb": "thumbs/seed-2.jpg",
+          "mtime": 1780466661628.136,
+          "full": "NZ-Travel-photos/christchurch/seed-2.jpg",
+          "thumbUrl": "NZ-Travel-photos/christchurch/thumbs/seed-2.jpg"
+        }
+      ],
+      "url": "gallery/christchurch/",
+      "coverUrl": "NZ-Travel-photos/christchurch/thumbs/seed-1.jpg"
+    },
+    {
+      "slug": "hanmer-springs",
+      "name": "Hanmer Springs",
+      "title": "Hanmer Springs Photography",
+      "description": "Hanmer Springs Photography — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.jpg",
+      "coverThumb": "thumbs/seed-1.jpg",
+      "imageCount": 1,
+      "images": [
+        {
+          "file": "seed-1.jpg",
+          "thumb": "thumbs/seed-1.jpg",
+          "mtime": 1780466661825.8357,
+          "full": "NZ-Travel-photos/hanmer-springs/seed-1.jpg",
+          "thumbUrl": "NZ-Travel-photos/hanmer-springs/thumbs/seed-1.jpg"
+        }
+      ],
+      "url": "gallery/hanmer-springs/",
+      "coverUrl": "NZ-Travel-photos/hanmer-springs/thumbs/seed-1.jpg"
+    },
+    {
+      "slug": "kaikoura",
+      "name": "Kaikoura",
+      "title": "Kaikoura Whale Watching",
+      "description": "Kaikoura Whale Watching — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.jpg",
+      "coverThumb": "thumbs/seed-1.jpg",
+      "imageCount": 3,
+      "images": [
+        {
+          "file": "seed-1.jpg",
+          "thumb": "thumbs/seed-1.jpg",
+          "mtime": 1780466661944.1748,
+          "full": "NZ-Travel-photos/kaikoura/seed-1.jpg",
+          "thumbUrl": "NZ-Travel-photos/kaikoura/thumbs/seed-1.jpg"
+        },
+        {
+          "file": "seed-2.jpg",
+          "thumb": "thumbs/seed-2.jpg",
+          "mtime": 1780466661945.4927,
+          "full": "NZ-Travel-photos/kaikoura/seed-2.jpg",
+          "thumbUrl": "NZ-Travel-photos/kaikoura/thumbs/seed-2.jpg"
+        },
+        {
+          "file": "seed-3.jpg",
+          "thumb": "thumbs/seed-3.jpg",
+          "mtime": 1780466661946.9827,
+          "full": "NZ-Travel-photos/kaikoura/seed-3.jpg",
+          "thumbUrl": "NZ-Travel-photos/kaikoura/thumbs/seed-3.jpg"
+        }
+      ],
+      "url": "gallery/kaikoura/",
+      "coverUrl": "NZ-Travel-photos/kaikoura/thumbs/seed-1.jpg"
+    },
+    {
+      "slug": "lake-tekapo",
+      "name": "Lake Tekapo",
+      "title": "Lake Tekapo Photography",
+      "description": "Lake Tekapo Photography — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.JPG",
+      "coverThumb": "thumbs/seed-1.JPG",
+      "imageCount": 1,
+      "images": [
+        {
+          "file": "seed-1.JPG",
+          "thumb": "thumbs/seed-1.JPG",
+          "mtime": 1780466662174.8337,
+          "full": "NZ-Travel-photos/lake-tekapo/seed-1.JPG",
+          "thumbUrl": "NZ-Travel-photos/lake-tekapo/thumbs/seed-1.JPG"
+        }
+      ],
+      "url": "gallery/lake-tekapo/",
+      "coverUrl": "NZ-Travel-photos/lake-tekapo/thumbs/seed-1.JPG"
+    },
+    {
+      "slug": "milford-sound",
+      "name": "Milford Sound",
+      "title": "Milford Sound Photography",
+      "description": "Milford Sound Photography — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.JPG",
+      "coverThumb": "thumbs/seed-1.JPG",
+      "imageCount": 1,
+      "images": [
+        {
+          "file": "seed-1.JPG",
+          "thumb": "thumbs/seed-1.JPG",
+          "mtime": 1780466662292.8926,
+          "full": "NZ-Travel-photos/milford-sound/seed-1.JPG",
+          "thumbUrl": "NZ-Travel-photos/milford-sound/thumbs/seed-1.JPG"
+        }
+      ],
+      "url": "gallery/milford-sound/",
+      "coverUrl": "NZ-Travel-photos/milford-sound/thumbs/seed-1.JPG"
+    },
+    {
+      "slug": "mount-cook",
+      "name": "Mount Cook",
+      "title": "Mount Cook Scenic Photography",
+      "description": "Mount Cook Scenic Photography — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.JPG",
+      "coverThumb": "thumbs/seed-1.JPG",
+      "imageCount": 3,
+      "images": [
+        {
+          "file": "seed-1.JPG",
+          "thumb": "thumbs/seed-1.JPG",
+          "mtime": 1780466662344.1558,
+          "full": "NZ-Travel-photos/mount-cook/seed-1.JPG",
+          "thumbUrl": "NZ-Travel-photos/mount-cook/thumbs/seed-1.JPG"
+        },
+        {
+          "file": "seed-2.JPG",
+          "thumb": "thumbs/seed-2.JPG",
+          "mtime": 1780466662344.3381,
+          "full": "NZ-Travel-photos/mount-cook/seed-2.JPG",
+          "thumbUrl": "NZ-Travel-photos/mount-cook/thumbs/seed-2.JPG"
+        },
+        {
+          "file": "seed-3.JPG",
+          "thumb": "thumbs/seed-3.JPG",
+          "mtime": 1780466662344.5977,
+          "full": "NZ-Travel-photos/mount-cook/seed-3.JPG",
+          "thumbUrl": "NZ-Travel-photos/mount-cook/thumbs/seed-3.JPG"
+        }
+      ],
+      "url": "gallery/mount-cook/",
+      "coverUrl": "NZ-Travel-photos/mount-cook/thumbs/seed-1.JPG"
+    },
+    {
+      "slug": "oamaru",
+      "name": "Oamaru",
+      "title": "Oamaru Photography",
+      "description": "Oamaru Photography — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.jpg",
+      "coverThumb": "thumbs/seed-1.jpg",
+      "imageCount": 1,
+      "images": [
+        {
+          "file": "seed-1.jpg",
+          "thumb": "thumbs/seed-1.jpg",
+          "mtime": 1780466662543.3633,
+          "full": "NZ-Travel-photos/oamaru/seed-1.jpg",
+          "thumbUrl": "NZ-Travel-photos/oamaru/thumbs/seed-1.jpg"
+        }
+      ],
+      "url": "gallery/oamaru/",
+      "coverUrl": "NZ-Travel-photos/oamaru/thumbs/seed-1.jpg"
+    },
+    {
+      "slug": "queenstown",
+      "name": "Queenstown",
+      "title": "Queenstown Travel Photography",
+      "description": "Queenstown Travel Photography — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.jpg",
+      "coverThumb": "thumbs/seed-1.jpg",
+      "imageCount": 1,
+      "images": [
+        {
+          "file": "seed-1.jpg",
+          "thumb": "thumbs/seed-1.jpg",
+          "mtime": 1780466662670.9014,
+          "full": "NZ-Travel-photos/queenstown/seed-1.jpg",
+          "thumbUrl": "NZ-Travel-photos/queenstown/thumbs/seed-1.jpg"
+        }
+      ],
+      "url": "gallery/queenstown/",
+      "coverUrl": "NZ-Travel-photos/queenstown/thumbs/seed-1.jpg"
+    },
+    {
+      "slug": "wanaka",
+      "name": "Wanaka",
+      "title": "Wanaka Travel Photography",
+      "description": "Wanaka Travel Photography — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.JPG",
+      "coverThumb": "thumbs/seed-1.JPG",
+      "imageCount": 1,
+      "images": [
+        {
+          "file": "seed-1.JPG",
+          "thumb": "thumbs/seed-1.JPG",
+          "mtime": 1780466662799.2288,
+          "full": "NZ-Travel-photos/wanaka/seed-1.JPG",
+          "thumbUrl": "NZ-Travel-photos/wanaka/thumbs/seed-1.JPG"
+        }
+      ],
+      "url": "gallery/wanaka/",
+      "coverUrl": "NZ-Travel-photos/wanaka/thumbs/seed-1.JPG"
+    },
+    {
+      "slug": "west-coast",
+      "name": "West Coast",
+      "title": "West Coast Photography",
+      "description": "West Coast Photography — Peter's South Island travel photography gallery.",
+      "cover": "seed-1.jpg",
+      "coverThumb": "thumbs/seed-1.jpg",
+      "imageCount": 1,
+      "images": [
+        {
+          "file": "seed-1.jpg",
+          "thumb": "thumbs/seed-1.jpg",
+          "mtime": 1780466662922.4648,
+          "full": "NZ-Travel-photos/west-coast/seed-1.jpg",
+          "thumbUrl": "NZ-Travel-photos/west-coast/thumbs/seed-1.jpg"
+        }
+      ],
+      "url": "gallery/west-coast/",
+      "coverUrl": "NZ-Travel-photos/west-coast/thumbs/seed-1.jpg"
+    }
+  ]
+}
