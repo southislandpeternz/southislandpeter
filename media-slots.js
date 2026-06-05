@@ -1,11 +1,11 @@
 /**
  * 全站统一媒体位系统
  * 替换图片：只改 <img src="...">，版式不变。
- * 占位图：optimized-images/slot-placeholder.svg
+ * 占位图：images/网页使用照片集/site/slot-placeholder.svg
  * 类型：hero | peter | guest | mercedes | scenery | review | photo | video | avatar
  */
 (function (global) {
-  var PLACEHOLDER = "optimized-images/slot-placeholder.svg";
+  var PLACEHOLDER = "images/网页使用照片集/site/slot-placeholder.svg";
 
   var SLOT_LABELS = {
     hero: "Hero主图",

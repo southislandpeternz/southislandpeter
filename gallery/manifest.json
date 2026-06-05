@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-03T06:04:39.191Z",
-  "photosRoot": "NZ-Travel-photos",
+  "generatedAt": "2026-06-03T22:39:38.006Z",
+  "photosRoot": "images/网页使用照片集/gallery",
   "regions": [
     {
       "slug": "akaroa",
@@ -14,13 +14,13 @@
         {
           "file": "seed-1.jpg",
           "thumb": "thumbs/seed-1.jpg",
-          "mtime": 1780466661490.5461,
-          "full": "NZ-Travel-photos/akaroa/seed-1.jpg",
-          "thumbUrl": "NZ-Travel-photos/akaroa/thumbs/seed-1.jpg"
+          "mtime": 1780526375636.1584,
+          "full": "images/网页使用照片集/gallery/akaroa/seed-1.jpg",
+          "thumbUrl": "images/网页使用照片集/gallery/akaroa/thumbs/seed-1.jpg"
         }
       ],
       "url": "gallery/akaroa/",
-      "coverUrl": "NZ-Travel-photos/akaroa/thumbs/seed-1.jpg"
+      "coverUrl": "images/网页使用照片集/gallery/akaroa/thumbs/seed-1.jpg"
     },
     {
       "slug": "christchurch",
@@ -34,20 +34,20 @@
         {
           "file": "seed-1.jpg",
           "thumb": "thumbs/seed-1.jpg",
-          "mtime": 1780466661627.25,
-          "full": "NZ-Travel-photos/christchurch/seed-1.jpg",
-          "thumbUrl": "NZ-Travel-photos/christchurch/thumbs/seed-1.jpg"
+          "mtime": 1780526375837.2983,
+          "full": "images/网页使用照片集/gallery/christchurch/seed-1.jpg",
+          "thumbUrl": "images/网页使用照片集/gallery/christchurch/thumbs/seed-1.jpg"
         },
         {
           "file": "seed-2.jpg",
           "thumb": "thumbs/seed-2.jpg",
-          "mtime": 1780466661628.136,
-          "full": "NZ-Travel-photos/christchurch/seed-2.jpg",
-          "thumbUrl": "NZ-Travel-photos/christchurch/thumbs/seed-2.jpg"
+          "mtime": 1780526375838.2349,
+          "full": "images/网页使用照片集/gallery/christchurch/seed-2.jpg",
+          "thumbUrl": "images/网页使用照片集/gallery/christchurch/thumbs/seed-2.jpg"
         }
       ],
       "url": "gallery/christchurch/",
-      "coverUrl": "NZ-Travel-photos/christchurch/thumbs/seed-1.jpg"
+      "coverUrl": "images/网页使用照片集/gallery/christchurch/thumbs/seed-1.jpg"
     },
     {
       "slug": "hanmer-springs",
@@ -61,13 +61,13 @@
         {
           "file": "seed-1.jpg",
           "thumb": "thumbs/seed-1.jpg",
-          "mtime": 1780466661825.8357,
-          "full": "NZ-Travel-photos/hanmer-springs/seed-1.jpg",
-          "thumbUrl": "NZ-Travel-photos/hanmer-springs/thumbs/seed-1.jpg"
+          "mtime": 1780526376125.028,
+          "full": "images/网页使用照片集/gallery/hanmer-springs/seed-1.jpg",
+          "thumbUrl": "images/网页使用照片集/gallery/hanmer-springs/thumbs/seed-1.jpg"
         }
       ],
       "url": "gallery/hanmer-springs/",
-      "coverUrl": "NZ-Travel-photos/hanmer-springs/thumbs/seed-1.jpg"
+      "coverUrl": "images/网页使用照片集/gallery/hanmer-springs/thumbs/seed-1.jpg"
     },
     {
       "slug": "kaikoura",
@@ -81,27 +81,27 @@
         {
           "file": "seed-1.jpg",
           "thumb": "thumbs/seed-1.jpg",
-          "mtime": 1780466661944.1748,
-          "full": "NZ-Travel-photos/kaikoura/seed-1.jpg",
-          "thumbUrl": "NZ-Travel-photos/kaikoura/thumbs/seed-1.jpg"
+          "mtime": 1780526376303.2676,
+          "full": "images/网页使用照片集/gallery/kaikoura/seed-1.jpg",
+          "thumbUrl": "images/网页使用照片集/gallery/kaikoura/thumbs/seed-1.jpg"
         },
         {
           "file": "seed-2.jpg",
           "thumb": "thumbs/seed-2.jpg",
-          "mtime": 1780466661945.4927,
-          "full": "NZ-Travel-photos/kaikoura/seed-2.jpg",
-          "thumbUrl": "NZ-Travel-photos/kaikoura/thumbs/seed-2.jpg"
+          "mtime": 1780526376304.5469,
+          "full": "images/网页使用照片集/gallery/kaikoura/seed-2.jpg",
+          "thumbUrl": "images/网页使用照片集/gallery/kaikoura/thumbs/seed-2.jpg"
         },
         {
           "file": "seed-3.jpg",
           "thumb": "thumbs/seed-3.jpg",
-          "mtime": 1780466661946.9827,
-          "full": "NZ-Travel-photos/kaikoura/seed-3.jpg",
-          "thumbUrl": "NZ-Travel-photos/kaikoura/thumbs/seed-3.jpg"
+          "mtime": 1780526376305.8171,
+          "full": "images/网页使用照片集/gallery/kaikoura/seed-3.jpg",
+          "thumbUrl": "images/网页使用照片集/gallery/kaikoura/thumbs/seed-3.jpg"
         }
       ],
       "url": "gallery/kaikoura/",
-      "coverUrl": "NZ-Travel-photos/kaikoura/thumbs/seed-1.jpg"
+      "coverUrl": "images/网页使用照片集/gallery/kaikoura/thumbs/seed-1.jpg"
     },
     {
       "slug": "lake-tekapo",
@@ -115,13 +115,13 @@
         {
           "file": "seed-1.JPG",
           "thumb": "thumbs/seed-1.JPG",
-          "mtime": 1780466662174.8337,
-          "full": "NZ-Travel-photos/lake-tekapo/seed-1.JPG",
-          "thumbUrl": "NZ-Travel-photos/lake-tekapo/thumbs/seed-1.JPG"
+          "mtime": 1780526376641.1697,
+          "full": "images/网页使用照片集/gallery/lake-tekapo/seed-1.JPG",
+          "thumbUrl": "images/网页使用照片集/gallery/lake-tekapo/thumbs/seed-1.JPG"
         }
       ],
       "url": "gallery/lake-tekapo/",
-      "coverUrl": "NZ-Travel-photos/lake-tekapo/thumbs/seed-1.JPG"
+      "coverUrl": "images/网页使用照片集/gallery/lake-tekapo/thumbs/seed-1.JPG"
     },
     {
       "slug": "milford-sound",
@@ -135,13 +135,13 @@
         {
           "file": "seed-1.JPG",
           "thumb": "thumbs/seed-1.JPG",
-          "mtime": 1780466662292.8926,
-          "full": "NZ-Travel-photos/milford-sound/seed-1.JPG",
-          "thumbUrl": "NZ-Travel-photos/milford-sound/thumbs/seed-1.JPG"
+          "mtime": 1780526376810.2454,
+          "full": "images/网页使用照片集/gallery/milford-sound/seed-1.JPG",
+          "thumbUrl": "images/网页使用照片集/gallery/milford-sound/thumbs/seed-1.JPG"
         }
       ],
       "url": "gallery/milford-sound/",
-      "coverUrl": "NZ-Travel-photos/milford-sound/thumbs/seed-1.JPG"
+      "coverUrl": "images/网页使用照片集/gallery/milford-sound/thumbs/seed-1.JPG"
     },
     {
       "slug": "mount-cook",
@@ -155,27 +155,27 @@
         {
           "file": "seed-1.JPG",
           "thumb": "thumbs/seed-1.JPG",
-          "mtime": 1780466662344.1558,
-          "full": "NZ-Travel-photos/mount-cook/seed-1.JPG",
-          "thumbUrl": "NZ-Travel-photos/mount-cook/thumbs/seed-1.JPG"
+          "mtime": 1780526376980.6282,
+          "full": "images/网页使用照片集/gallery/mount-cook/seed-1.JPG",
+          "thumbUrl": "images/网页使用照片集/gallery/mount-cook/thumbs/seed-1.JPG"
         },
         {
           "file": "seed-2.JPG",
           "thumb": "thumbs/seed-2.JPG",
-          "mtime": 1780466662344.3381,
-          "full": "NZ-Travel-photos/mount-cook/seed-2.JPG",
-          "thumbUrl": "NZ-Travel-photos/mount-cook/thumbs/seed-2.JPG"
+          "mtime": 1780526376981.015,
+          "full": "images/网页使用照片集/gallery/mount-cook/seed-2.JPG",
+          "thumbUrl": "images/网页使用照片集/gallery/mount-cook/thumbs/seed-2.JPG"
         },
         {
           "file": "seed-3.JPG",
           "thumb": "thumbs/seed-3.JPG",
-          "mtime": 1780466662344.5977,
-          "full": "NZ-Travel-photos/mount-cook/seed-3.JPG",
-          "thumbUrl": "NZ-Travel-photos/mount-cook/thumbs/seed-3.JPG"
+          "mtime": 1780526376982.414,
+          "full": "images/网页使用照片集/gallery/mount-cook/seed-3.JPG",
+          "thumbUrl": "images/网页使用照片集/gallery/mount-cook/thumbs/seed-3.JPG"
         }
       ],
       "url": "gallery/mount-cook/",
-      "coverUrl": "NZ-Travel-photos/mount-cook/thumbs/seed-1.JPG"
+      "coverUrl": "images/网页使用照片集/gallery/mount-cook/thumbs/seed-1.JPG"
     },
     {
       "slug": "oamaru",
@@ -189,13 +189,13 @@
         {
           "file": "seed-1.jpg",
           "thumb": "thumbs/seed-1.jpg",
-          "mtime": 1780466662543.3633,
-          "full": "NZ-Travel-photos/oamaru/seed-1.jpg",
-          "thumbUrl": "NZ-Travel-photos/oamaru/thumbs/seed-1.jpg"
+          "mtime": 1780526377320.0686,
+          "full": "images/网页使用照片集/gallery/oamaru/seed-1.jpg",
+          "thumbUrl": "images/网页使用照片集/gallery/oamaru/thumbs/seed-1.jpg"
         }
       ],
       "url": "gallery/oamaru/",
-      "coverUrl": "NZ-Travel-photos/oamaru/thumbs/seed-1.jpg"
+      "coverUrl": "images/网页使用照片集/gallery/oamaru/thumbs/seed-1.jpg"
     },
     {
       "slug": "queenstown",
@@ -209,13 +209,13 @@
         {
           "file": "seed-1.jpg",
           "thumb": "thumbs/seed-1.jpg",
-          "mtime": 1780466662670.9014,
-          "full": "NZ-Travel-photos/queenstown/seed-1.jpg",
-          "thumbUrl": "NZ-Travel-photos/queenstown/thumbs/seed-1.jpg"
+          "mtime": 1780526377494.206,
+          "full": "images/网页使用照片集/gallery/queenstown/seed-1.jpg",
+          "thumbUrl": "images/网页使用照片集/gallery/queenstown/thumbs/seed-1.jpg"
         }
       ],
       "url": "gallery/queenstown/",
-      "coverUrl": "NZ-Travel-photos/queenstown/thumbs/seed-1.jpg"
+      "coverUrl": "images/网页使用照片集/gallery/queenstown/thumbs/seed-1.jpg"
     },
     {
       "slug": "wanaka",
@@ -229,13 +229,13 @@
         {
           "file": "seed-1.JPG",
           "thumb": "thumbs/seed-1.JPG",
-          "mtime": 1780466662799.2288,
-          "full": "NZ-Travel-photos/wanaka/seed-1.JPG",
-          "thumbUrl": "NZ-Travel-photos/wanaka/thumbs/seed-1.JPG"
+          "mtime": 1780526377666.9712,
+          "full": "images/网页使用照片集/gallery/wanaka/seed-1.JPG",
+          "thumbUrl": "images/网页使用照片集/gallery/wanaka/thumbs/seed-1.JPG"
         }
       ],
       "url": "gallery/wanaka/",
-      "coverUrl": "NZ-Travel-photos/wanaka/thumbs/seed-1.JPG"
+      "coverUrl": "images/网页使用照片集/gallery/wanaka/thumbs/seed-1.JPG"
     },
     {
       "slug": "west-coast",
@@ -249,13 +249,13 @@
         {
           "file": "seed-1.jpg",
           "thumb": "thumbs/seed-1.jpg",
-          "mtime": 1780466662922.4648,
-          "full": "NZ-Travel-photos/west-coast/seed-1.jpg",
-          "thumbUrl": "NZ-Travel-photos/west-coast/thumbs/seed-1.jpg"
+          "mtime": 1780526377837.331,
+          "full": "images/网页使用照片集/gallery/west-coast/seed-1.jpg",
+          "thumbUrl": "images/网页使用照片集/gallery/west-coast/thumbs/seed-1.jpg"
         }
       ],
       "url": "gallery/west-coast/",
-      "coverUrl": "NZ-Travel-photos/west-coast/thumbs/seed-1.jpg"
+      "coverUrl": "images/网页使用照片集/gallery/west-coast/thumbs/seed-1.jpg"
     }
   ]
 }

@@ -1,7 +1,10 @@
 (function () {
   "use strict";
 
-  const IMAGE_EXT = /\.(jpe?g|png|webp|gif|avif)$/i;
+  const WEB_PHOTOS_ROOT = "images/网页使用照片集/gallery";
+  const EMPTY_HINT =
+    "暂无摄影旅拍作品。请将照片放入 images/网页使用照片集/gallery/ 对应地区文件夹，然后运行 node scripts/generate-gallery.mjs。";
+
   let manifestCache = null;
   let lightboxPaths = [];
   let lightboxIndex = 0;
@@ -29,6 +32,12 @@
     return "";
   }
 
+  function showEmpty(container, message) {
+    if (!container) return;
+    container.setAttribute("aria-busy", "false");
+    container.innerHTML = `<p class="gallery-empty">${message}</p>`;
+  }
+
   async function loadManifest() {
     if (manifestCache) return manifestCache;
     const url = manifestUrl();
@@ -43,31 +52,9 @@
     }
   }
 
-  async function fromRegionListing(slug) {
-    const dir = normalizePath(`NZ-Travel-photos/${slug}/`);
-    try {
-      const res = await fetch(dir, { cache: "no-store" });
-      if (!res.ok) return [];
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, "text/html");
-      return [...doc.querySelectorAll("a[href]")]
-        .map((a) => decodeURIComponent(a.getAttribute("href") || ""))
-        .filter((name) => IMAGE_EXT.test(name) && !name.includes("thumbs"))
-        .sort((a, b) => a.localeCompare(b, "en"))
-        .map((file) => ({
-          file,
-          thumb: `thumbs/${file}`,
-          full: `NZ-Travel-photos/${slug}/${file}`,
-          thumbUrl: `NZ-Travel-photos/${slug}/thumbs/${file}`
-        }));
-    } catch {
-      return [];
-    }
-  }
-
   function regionCardHtml(region, base, linkPrefix) {
     const href = `${linkPrefix}${region.slug}/index.html`;
-    const img = normalizePath(`${base}NZ-Travel-photos/${region.slug}/${region.coverThumb}`);
+    const img = normalizePath(`${base}${region.coverUrl}`);
     return `<a href="${href}" class="gallery-region-card reveal">
       <figure class="gallery-region-card__img">
         <img src="${img}" alt="" loading="lazy" decoding="async">
@@ -79,6 +66,10 @@
   function renderRegionGrid(container, regions, base, linkPrefix) {
     if (!container) return;
     const withPhotos = regions.filter((r) => r.imageCount > 0);
+    if (!withPhotos.length) {
+      showEmpty(container, EMPTY_HINT);
+      return;
+    }
     container.innerHTML = withPhotos.map((r) => regionCardHtml(r, base, linkPrefix)).join("");
     container.setAttribute("aria-busy", "false");
   }
@@ -149,7 +140,7 @@
       const el = document.createElement("img");
       el.src = thumb;
       el.dataset.fullSrc = full;
-      el.alt = "";
+      el.alt = img.alt || "";
       el.loading = i < 4 ? "eager" : "lazy";
       el.decoding = "async";
       if (i < 4) el.fetchPriority = "high";
@@ -164,15 +155,13 @@
     const grid = document.getElementById("regionGalleryMasonry");
     if (!grid) return;
     const slug = grid.dataset.galleryRegion;
-    const base = hubBase();
     const manifest = await loadManifest();
-    let images = manifest?.regions?.find((r) => r.slug === slug)?.images;
+    const images = manifest?.regions?.find((r) => r.slug === slug)?.images;
     if (!images?.length) {
-      images = await fromRegionListing(slug);
-    }
-    if (!images?.length) {
-      grid.setAttribute("aria-busy", "false");
-      grid.innerHTML = "<p class=\"gallery-empty\">暂无摄影作品，请将照片放入 NZ-Travel-photos/" + slug + "/</p>";
+      showEmpty(
+        grid,
+        `暂无 ${slug} 摄影作品。请将照片放入 images/网页使用照片集/gallery/${slug}/，然后运行 node scripts/generate-gallery.mjs。`
+      );
       return;
     }
     renderMasonry(grid, images);
@@ -182,10 +171,10 @@
     const grid = document.getElementById("galleryHubGrid");
     const manifest = await loadManifest();
     if (!manifest?.regions?.length) {
-      if (grid) {
-        grid.setAttribute("aria-busy", "false");
-        grid.innerHTML = "<p class=\"gallery-empty\">相册 manifest 未找到，请运行 node scripts/generate-gallery.mjs</p>";
-      }
+      showEmpty(
+        grid,
+        "摄影相册尚未生成。请将照片放入 images/网页使用照片集/gallery/ 后运行 node scripts/generate-gallery.mjs。"
+      );
       return;
     }
     renderRegionGrid(grid, manifest.regions, "../", "");
@@ -195,15 +184,47 @@
     const grid = document.getElementById("homeGalleryRegions");
     const manifest = await loadManifest();
     if (!manifest?.regions?.length) {
-      if (grid) grid.setAttribute("aria-busy", "false");
+      showEmpty(grid, EMPTY_HINT);
       return;
     }
     renderRegionGrid(grid, manifest.regions, "", "gallery/");
   }
 
+  async function loadShowcaseManifest() {
+    try {
+      const res = await fetch(normalizePath("gallery/xhs-showcase.json"), { cache: "no-store" });
+      if (!res.ok) return null;
+      return await res.json();
+    } catch {
+      return null;
+    }
+  }
+
+  async function initHomeShowcase() {
+    const grid = document.getElementById("homeGalleryShowcase");
+    if (!grid) return;
+    const manifest = await loadShowcaseManifest();
+    const images = manifest?.images;
+    if (!images?.length) {
+      showEmpty(
+        grid,
+        "精选旅拍作品尚未生成。请运行 node scripts/generate-xhs-showcase.mjs。"
+      );
+      return;
+    }
+    renderMasonry(
+      grid,
+      images.map((img) => ({
+        full: img.full,
+        thumbUrl: img.thumbUrl,
+        alt: img.alt || ""
+      }))
+    );
+  }
+
   async function boot() {
     initLightboxControls();
-    await Promise.all([initHome(), initHub(), initRegionPage()]);
+    await Promise.all([initHome(), initHomeShowcase(), initHub(), initRegionPage()]);
   }
 
   if (document.readyState === "loading") {

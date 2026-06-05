@@ -8,3 +8,6 @@ venv/
 
 # macOS
 .DS_Store
+
+# Photo organizer venv
+.venv-photo-organizer/

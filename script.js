@@ -1,21 +1,6 @@
 (function () {
   "use strict";
 
-  const IMAGE_EXT = ["jpg", "jpeg", "png", "webp", "avif", "gif"];
-  const PREFIXES = [
-    "christchurch",
-    "kaikoura",
-    "queenstown",
-    "tekapo",
-    "wanaka",
-    "mountcook",
-    "milford",
-    "img",
-    "pic",
-    "image",
-    "photo"
-  ];
-
   const masonry = document.getElementById("masonry");
   const galleryStatus = document.getElementById("galleryStatus");
   const galleryEmpty = document.getElementById("galleryEmpty");
@@ -94,66 +79,9 @@
     });
   }
 
-  async function fromManifest() {
-    try {
-      const res = await fetch("optimized-images/manifest.json", { cache: "no-store" });
-      if (!res.ok) return [];
-      const data = await res.json();
-      if (!Array.isArray(data)) return [];
-      return data
-        .filter((n) => typeof n === "string")
-        .map((n) => normalizePath(`optimized-images/${n.replace(/^images\//, "")}`));
-    } catch {
-      return [];
-    }
-  }
-
-  async function fromDirectoryListing() {
-    try {
-      const res = await fetch("optimized-images/", { cache: "no-store" });
-      if (!res.ok) return [];
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, "text/html");
-      return [...doc.querySelectorAll("a[href]")]
-        .map((a) => decodeURIComponent(a.getAttribute("href") || ""))
-        .filter((name) =>
-          IMAGE_EXT.some((ext) => name.toLowerCase().endsWith("." + ext))
-        )
-        .filter((name) => name !== "logo.png")
-        .map((name) => normalizePath(`optimized-images/${name.replace(/^.*\//, "")}`));
-    } catch {
-      return [];
-    }
-  }
-
-  async function fromProbe() {
-    const candidates = new Set();
-    PREFIXES.forEach((prefix) => {
-      for (let i = 1; i <= 80; i += 1) {
-        IMAGE_EXT.forEach((ext) => {
-          candidates.add(`optimized-images/${prefix}${i}.${ext}`);
-        });
-      }
-    });
-    const found = [];
-    const list = [...candidates];
-    for (let i = 0; i < list.length; i += 20) {
-      const chunk = list.slice(i, i + 20);
-      const results = await Promise.all(chunk.map((src) => probeImage(src)));
-      results.forEach((r) => {
-        if (r.ok) found.push(r.src);
-      });
-    }
-    return found;
-  }
-
-  function uniqueSorted(paths) {
-    return [...new Set(paths.map(normalizePath))].sort((a, b) =>
-      a.localeCompare(b, "en")
-    );
-  }
-
   const REVIEWS_DIR = "images/网页使用照片集";
+  const REVIEWS_EMPTY_HINT =
+    "暂无客人评价图片。请将 review*.jpg / reviews*.jpg 放入 images/网页使用照片集/ 后运行 node scripts/generate-reviews-manifest.mjs。";
   const REVIEW_FILE_RE = /^(review|reviews).+\.(jpe?g)$/i;
 
   function isReviewImageName(name) {
@@ -185,28 +113,6 @@
     }
   }
 
-  async function fromReviewsListing() {
-    try {
-      const res = await fetch(reviewAssetPath(""), { cache: "no-store" });
-      if (!res.ok) return [];
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, "text/html");
-      return [...doc.querySelectorAll("a[href]")]
-        .map((a) => decodeURIComponent(a.getAttribute("href") || ""))
-        .filter((name) => isReviewImageName(name))
-        .map((name) => {
-          const file = name.replace(/^.*\//, "");
-          return {
-            full: reviewAssetPath(file),
-            thumb: reviewAssetPath(`thumbs/${file}`),
-            mtime: 0
-          };
-        });
-    } catch {
-      return [];
-    }
-  }
-
   async function verifyReviewEntry(entry) {
     const thumbOk = await probeImage(entry.thumb);
     if (thumbOk.ok) {
@@ -222,6 +128,10 @@
     if (!grid) return;
     grid.innerHTML = "";
     grid.setAttribute("aria-busy", "false");
+    if (!entries.length) {
+      grid.innerHTML = `<p class="gallery-empty">${REVIEWS_EMPTY_HINT}</p>`;
+      return;
+    }
     entries.forEach((entry, i) => {
       const figure = document.createElement("figure");
       figure.className = "home-gallery-item";
@@ -241,18 +151,9 @@
     const grid = document.getElementById("homeReviewsMasonry");
     if (!grid) return;
 
-    const [manifest, listing] = await Promise.all([
-      fromReviewsManifest(),
-      fromReviewsListing()
-    ]);
-
-    const merged = new Map();
-    [...manifest, ...listing].forEach((entry) => {
-      merged.set(entry.full, entry);
-    });
-
+    const manifest = await fromReviewsManifest();
     const verified = [];
-    const list = [...merged.values()];
+    const list = [...manifest];
     for (let i = 0; i < list.length; i += 8) {
       const chunk = list.slice(i, i + 8);
       const results = await Promise.all(chunk.map((entry) => verifyReviewEntry(entry)));
@@ -281,36 +182,6 @@
       item.addEventListener("click", () => openLightbox(i));
       masonry.appendChild(item);
     });
-  }
-
-  async function loadGallery() {
-    const [manifest, listing, probed] = await Promise.all([
-      fromManifest(),
-      fromDirectoryListing(),
-      fromProbe()
-    ]);
-    galleryPaths = uniqueSorted([...manifest, ...listing, ...probed]).filter((p) => {
-      const name = p.split("/").pop()?.toLowerCase() || "";
-      return ![
-        "logo.png",
-        "peter.png",
-        "peter.jpg",
-        "peter-avatar-fallback.svg",
-        "mercedes-v-class.png"
-      ].includes(name);
-    });
-
-    if (!galleryPaths.length) {
-      if (galleryEmpty) galleryEmpty.hidden = false;
-      if (galleryStatus) galleryStatus.textContent = "暂无影像";
-      return;
-    }
-
-    if (galleryEmpty) galleryEmpty.hidden = true;
-    renderGallery(galleryPaths);
-    if (galleryStatus) {
-      galleryStatus.textContent = `${galleryPaths.length} 张南岛实拍影像`;
-    }
   }
 
   function openLightbox(index) {
@@ -604,7 +475,6 @@
     initWechat();
     await loadHomeReviews();
     initHomeMasonryLightbox();
-    loadGallery();
   }
 
   boot();

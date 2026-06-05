@@ -1,16 +1,24 @@
 #!/usr/bin/env node
 /**
- * Scans NZ-Travel-photos/{region}/ and generates gallery manifest + HTML pages.
+ * Scans images/网页使用照片集/gallery/{region}/ and generates gallery manifest + HTML pages.
  * Run: node scripts/generate-gallery.mjs
+ *
+ * Photo libraries (keep separate — do not merge):
+ *   NZ-Travel-photos/              — raw source material (not served on site)
+ *   images/网页使用照片集/           — website photos (gallery, site, reviews)
+ *   images/                        — marketing assets only (not served for gallery)
  */
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
 
 const ROOT = process.cwd();
-const PHOTOS_ROOT = path.join(ROOT, "NZ-Travel-photos");
+const WEB_PHOTOS_ROOT = path.join(ROOT, "images/网页使用照片集");
+const PHOTOS_ROOT = path.join(WEB_PHOTOS_ROOT, "gallery");
+const SITE_ROOT = path.join(WEB_PHOTOS_ROOT, "site");
 const GALLERY_DIR = path.join(ROOT, "gallery");
 const IMAGE_EXT = /\.(jpe?g|png|webp|gif|avif)$/i;
+const PHOTOS_ROOT_REL = "images/网页使用照片集/gallery";
 
 const REGION_SLUGS = [
   "akaroa",
@@ -64,18 +72,19 @@ const SEO_TITLES = {
   "west-coast": "West Coast Photography"
 };
 
+/** Seed website gallery from site/ assets when a region folder is empty. */
 const SEED_IMAGES = {
-  kaikoura: ["optimized-images/kajkoura-whale-watch.jpg", "optimized-images/kaikoura6.jpg", "optimized-images/kaikoura10.jpg"],
-  "mount-cook": ["optimized-images/mt-cook1.JPG", "optimized-images/hooker-valley-track.JPG", "optimized-images/tasman-glacier-track.JPG"],
-  "lake-tekapo": ["optimized-images/tekapo-stargazing.JPG"],
-  christchurch: ["optimized-images/christchurch4.jpg", "optimized-images/christchurch2.jpg"],
-  queenstown: ["optimized-images/kaikoura10.jpg"],
-  wanaka: ["optimized-images/tasman-glacier-track.JPG"],
-  "milford-sound": ["optimized-images/hooker-valley-track.JPG"],
-  akaroa: ["optimized-images/christchurch3.jpg"],
-  "hanmer-springs": ["optimized-images/christchurch1.jpg"],
-  oamaru: ["optimized-images/christchurch5.jpg"],
-  "west-coast": ["optimized-images/kaikoura3.jpg"]
+  kaikoura: ["kajkoura-whale-watch.jpg", "kaikoura6.jpg", "kaikoura10.jpg"],
+  "mount-cook": ["mt-cook1.JPG", "hooker-valley-track.JPG", "tasman-glacier-track.JPG"],
+  "lake-tekapo": ["tekapo-stargazing.JPG"],
+  christchurch: ["christchurch4.jpg", "christchurch2.jpg"],
+  queenstown: ["kaikoura10.jpg"],
+  wanaka: ["tasman-glacier-track.JPG"],
+  "milford-sound": ["hooker-valley-track.JPG"],
+  akaroa: ["christchurch3.jpg"],
+  "hanmer-springs": ["christchurch1.jpg"],
+  oamaru: ["christchurch5.jpg"],
+  "west-coast": ["kaikoura3.jpg"]
 };
 
 function slugToName(slug) {
@@ -118,8 +127,8 @@ function seedRegion(slug) {
   if (existing.length > 0) return;
   const seeds = SEED_IMAGES[slug];
   if (!seeds) return;
-  seeds.forEach((rel, i) => {
-    const src = path.join(ROOT, rel);
+  seeds.forEach((filename, i) => {
+    const src = path.join(SITE_ROOT, filename);
     if (!fs.existsSync(src)) return;
     const ext = path.extname(src);
     const dest = path.join(dir, `seed-${i + 1}${ext}`);
@@ -164,10 +173,6 @@ function scanRegion(slug) {
   };
 }
 
-function rel(root, file) {
-  return path.relative(root, file).split(path.sep).join("/");
-}
-
 function headerNav(base) {
   return `      <nav class="nav-center" id="mainNav" aria-label="主导航">
         <a href="${base}index.html">首页</a>
@@ -197,7 +202,7 @@ function pageShell({ base, title, description, bodyClass, main }) {
   <header class="site-header" id="siteHeader">
     <div class="header-bar">
       <a href="${base}index.html" class="brand">
-        <img src="${base}optimized-images/logo.png" class="site-logo" alt="新西兰天天旅行社 Logo" width="48" height="48" loading="eager">
+        <img src="${base}images/网页使用照片集/site/logo.png" class="site-logo" alt="新西兰天天旅行社 Logo" width="48" height="48" loading="eager">
         <div class="brand-text">
           <div class="brand-en">Tian Tian Travel Ltd</div>
           <div class="brand-zh">新西兰天天旅行社</div>
@@ -245,7 +250,7 @@ function writeHub() {
       <div class="tt-banner-inner">
         <p class="tt-banner-kicker">Photography Gallery</p>
         <h1>南岛摄影相册</h1>
-        <p>按地区浏览 Peter 镜头下的新西兰南岛 — 新增照片放入 NZ-Travel-photos 对应文件夹后运行生成脚本即可更新。</p>
+        <p>按地区浏览 Peter 镜头下的新西兰南岛 — 新增照片放入 images/网页使用照片集/gallery/ 对应文件夹后运行 node scripts/generate-gallery.mjs 即可更新。</p>
       </div>
     </section>
     <section class="section">
@@ -303,15 +308,15 @@ const regions = REGION_SLUGS.map(scanRegion).filter(Boolean);
 
 const manifest = {
   generatedAt: new Date().toISOString(),
-  photosRoot: "NZ-Travel-photos",
+  photosRoot: PHOTOS_ROOT_REL,
   regions: regions.map((r) => ({
     ...r,
     url: `gallery/${r.slug}/`,
-    coverUrl: `NZ-Travel-photos/${r.slug}/${r.coverThumb}`,
+    coverUrl: `${PHOTOS_ROOT_REL}/${r.slug}/${r.coverThumb}`,
     images: r.images.map((img) => ({
       ...img,
-      full: `NZ-Travel-photos/${r.slug}/${img.file}`,
-      thumbUrl: `NZ-Travel-photos/${r.slug}/${img.thumb}`
+      full: `${PHOTOS_ROOT_REL}/${r.slug}/${img.file}`,
+      thumbUrl: `${PHOTOS_ROOT_REL}/${r.slug}/${img.thumb}`
     }))
   }))
 };
@@ -330,7 +335,6 @@ REGION_SLUGS.forEach((slug) => {
   writeRegionPage(region);
 });
 
-// Root gallery.html redirect
 fs.writeFileSync(
   path.join(ROOT, "gallery.html"),
   `<!DOCTYPE html>
@@ -350,3 +354,4 @@ fs.writeFileSync(
 );
 
 console.log(`Gallery: ${regions.length} regions, ${regions.reduce((n, r) => n + r.imageCount, 0)} photos`);
+console.log(`Source: ${PHOTOS_ROOT_REL}/`);

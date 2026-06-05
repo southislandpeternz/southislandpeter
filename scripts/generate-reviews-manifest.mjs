@@ -30,15 +30,17 @@ function makeThumb(src, dest) {
   fs.copyFileSync(src, dest);
 }
 
+
 const files = fs
-  .readdirSync(REVIEWS_DIR)
-  .filter((name) => {
-    if (name.startsWith(".") || name === "manifest.json" || name === "thumbs") {
-      return false;
-    }
+  .readdirSync(REVIEWS_DIR, { withFileTypes: true })
+  .filter((entry) => {
+    if (!entry.isFile()) return false;
+    const name = entry.name;
+    if (name.startsWith(".") || name === "manifest.json") return false;
     return REVIEW_FILE_RE.test(name);
   })
-  .map((file) => {
+  .map((entry) => {
+    const file = entry.name;
     const src = path.join(REVIEWS_DIR, file);
     const stat = fs.statSync(src);
     return { file, mtime: stat.mtimeMs };
