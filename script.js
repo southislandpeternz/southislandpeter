@@ -67,15 +67,21 @@
   ];
 
   function normalizePath(path) {
-    return encodeURI(path.replace(/\\/g, "/"));
+    const clean = String(path).replace(/\\/g, "/");
+    try {
+      return encodeURI(decodeURI(clean));
+    } catch {
+      return encodeURI(clean);
+    }
   }
 
   function probeImage(src) {
+    const url = normalizePath(src);
     return new Promise((resolve) => {
       const img = new Image();
-      img.onload = () => resolve({ ok: true, src: normalizePath(src) });
+      img.onload = () => resolve({ ok: true, src: url });
       img.onerror = () => resolve({ ok: false });
-      img.src = normalizePath(src);
+      img.src = url;
     });
   }
 

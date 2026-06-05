@@ -10,7 +10,12 @@
   let lightboxIndex = 0;
 
   function normalizePath(p) {
-    return encodeURI(p.replace(/\\/g, "/"));
+    const clean = String(p).replace(/\\/g, "/");
+    try {
+      return encodeURI(decodeURI(clean));
+    } catch {
+      return encodeURI(clean);
+    }
   }
 
   function manifestUrl() {
