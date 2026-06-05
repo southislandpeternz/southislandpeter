@@ -17,7 +17,13 @@ except ImportError:
 
 TEXT_NAME_RE = re.compile(
     r"(screenshot|screen.?shot|截屏|截图|微信|wechat|chat|行程|房型|"
-    r"review|评价|咨询|说明|文字|itinerary|hotel.?room)",
+    r"review|评价|咨询|说明|文字|itinerary|hotel.?room|"
+    r"flight|airline|boarding|航班|登机|机票|air.?nz|qantas|jetstar)",
+    re.I,
+)
+
+FLIGHT_NAME_RE = re.compile(
+    r"(flight|airline|boarding|航班|登机|机票|departure|arrival|gate|seat.?map)",
     re.I,
 )
 
@@ -79,9 +85,28 @@ def load_image(path: str):
     return bgr, gray
 
 
+def is_flight_screenshot(gray: np.ndarray, category: str) -> bool:
+    """Dark-background airline / flight tracker / boarding app screenshots."""
+    if category == "tekapo-stars":
+        return False
+    dark = float((gray < 55).mean())
+    avg = float(gray.mean())
+    edges = cv2.Canny(gray, 80, 160)
+    edge_ratio = float(edges.mean() / 255)
+    bright = float((gray > 190).mean())
+    h, w = gray.shape[:2]
+    ar = w / h if h else 1
+
+    if dark > 0.52 and avg < 58 and bright < 0.18 and edge_ratio > 0.05:
+        return True
+    if dark > 0.42 and avg < 72 and 0.45 < ar < 2.3 and edge_ratio > 0.07 and bright < 0.22:
+        return True
+    return False
+
+
 def reject_reason(path: str, category: str, bgr, gray) -> str | None:
     name = Path(path).name
-    if TEXT_NAME_RE.search(name):
+    if TEXT_NAME_RE.search(name) or FLIGHT_NAME_RE.search(name):
         return "text_filename"
     if Path(path).suffix.lower() == ".png" and category != "peter":
         return "png_screenshot"
@@ -117,6 +142,9 @@ def reject_reason(path: str, category: str, bgr, gray) -> str | None:
         if lap < 80:
             return "too_blurry"
         return None
+
+    if is_flight_screenshot(gray, category):
+        return "flight_screenshot"
 
     # Banner / chat / itinerary text screenshots
     if ar > 2.0 or ar < 0.48:

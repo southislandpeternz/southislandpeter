@@ -15,6 +15,7 @@ const SITE_ROOT = path.join(WEB_ROOT, "site");
 const OUT_DIR = path.join(WEB_ROOT, "xiaohongshu-showcase");
 const MANIFEST_PATH = path.join(ROOT, "gallery/xhs-showcase.json");
 const SCORE_PY = path.join(ROOT, "scripts/xhs-showcase-score.py");
+const PURGE_PY = path.join(ROOT, "scripts/purge-source-photos.py");
 const PYTHON = path.join(ROOT, ".venv-photo-organizer/bin/python");
 const IMAGE_EXT = /\.(jpe?g|png|webp|heic|gif|avif)$/i;
 const TARGET_TOTAL = 24;
@@ -209,11 +210,25 @@ function trackExclude(exclude, row) {
   if (row.person_dhash) exclude.person_dhash.push(row.person_dhash);
 }
 
+function purgeSources() {
+  const dirs = [
+    ...new Set(CATEGORIES.flatMap((cat) => cat.sources).concat([path.join(DESKTOP, "小红书素材库")]))
+  ].filter((d) => fs.existsSync(d));
+  if (!dirs.length) return;
+  console.log("\n=== Purging text/flight screenshots & duplicates ===");
+  execSync(
+    `"${PYTHON}" "${PURGE_PY}" ${dirs.map((d) => `"${d}"`).join(" ")}`,
+    { stdio: "inherit", maxBuffer: 64 * 1024 * 1024 }
+  );
+}
+
 function main() {
   if (!fs.existsSync(PYTHON)) {
     console.error(`Missing Python venv: ${PYTHON}`);
     process.exit(1);
   }
+
+  purgeSources();
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   fs.mkdirSync(path.join(OUT_DIR, "thumbs"), { recursive: true });
@@ -265,6 +280,9 @@ function main() {
     targetCount: TARGET_TOTAL,
     focus: ["雪山", "湖泊", "奔驰商务车", "客人合影"],
     filters: [
+      "purge_text_screenshots",
+      "purge_flight_screenshots",
+      "purge_duplicates",
       "no_text_screenshots",
       "no_near_duplicates",
       "no_duplicate_people",
