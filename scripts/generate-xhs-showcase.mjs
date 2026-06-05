@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 /**
- * Pick ~24 curated homepage travel photos (3 per priority theme).
- * Filters text screenshots and near-duplicates.
+ * Pick ~24 curated homepage travel photos with priority themes.
  * Run: node scripts/generate-xhs-showcase.mjs
  */
 import fs from "fs";
@@ -12,6 +11,7 @@ const ROOT = process.cwd();
 const DESKTOP = "/Users/yueshe/Desktop/NZ-Travel-photos ";
 const DESKTOP_LIB = path.join(DESKTOP, "小红书素材库");
 const WEB_ROOT = path.join(ROOT, "images/网页使用照片集");
+const SITE_ROOT = path.join(WEB_ROOT, "site");
 const OUT_DIR = path.join(WEB_ROOT, "xiaohongshu-showcase");
 const MANIFEST_PATH = path.join(ROOT, "gallery/xhs-showcase.json");
 const SCORE_PY = path.join(ROOT, "scripts/xhs-showcase-score.py");
@@ -19,6 +19,7 @@ const PYTHON = path.join(ROOT, ".venv-photo-organizer/bin/python");
 const IMAGE_EXT = /\.(jpe?g|png|webp|heic|gif|avif)$/i;
 const TARGET_TOTAL = 24;
 
+/** Priority order — processed first in gallery. */
 const CATEGORIES = [
   {
     slug: "mount-cook",
@@ -32,23 +33,28 @@ const CATEGORIES = [
   {
     slug: "lake-pukaki",
     label: "普卡基湖",
-    count: 3,
+    count: 4,
     sources: [path.join(DESKTOP, "lake-pukaki"), path.join(DESKTOP, "lake-pukali")]
   },
   {
-    slug: "lake-tekapo",
-    label: "特卡波",
-    count: 3,
+    slug: "vehicle",
+    label: "奔驰商务车",
+    count: 6,
     sources: [
-      path.join(DESKTOP, "lake-tekapo"),
-      path.join(DESKTOP, "Lake -tekapo"),
-      path.join(DESKTOP_LIB, "小红书-湖景精选")
+      path.join(DESKTOP_LIB, "小红书-奔驰商务车精选"),
+      path.join(DESKTOP, "奔驰商务车")
     ]
+  },
+  {
+    slug: "guests",
+    label: "客人合影",
+    count: 4,
+    sources: [path.join(DESKTOP_LIB, "小红书-客户合影精选")]
   },
   {
     slug: "kaikoura",
     label: "凯库拉观鲸",
-    count: 3,
+    count: 5,
     sources: [
       path.join(DESKTOP, "kaikoura"),
       path.join(DESKTOP, "kaikoura "),
@@ -56,28 +62,17 @@ const CATEGORIES = [
     ]
   },
   {
-    slug: "milford-sound",
-    label: "米尔福德峡湾",
-    count: 3,
-    sources: [path.join(DESKTOP, "milford-sound")]
+    slug: "tekapo-stars",
+    label: "特卡波星空",
+    count: 1,
+    sources: [path.join(DESKTOP, "星空")],
+    extraFiles: [path.join(SITE_ROOT, "tekapo-stargazing.JPG")]
   },
   {
-    slug: "queenstown",
-    label: "皇后镇",
-    count: 3,
-    sources: [path.join(DESKTOP, "queenstown")]
-  },
-  {
-    slug: "vehicle",
-    label: "奔驰商务车",
-    count: 3,
-    sources: [path.join(DESKTOP_LIB, "小红书-奔驰商务车精选")]
-  },
-  {
-    slug: "guests",
-    label: "客人旅拍",
-    count: 3,
-    sources: [path.join(DESKTOP_LIB, "小红书-客户合影精选")]
+    slug: "peter",
+    label: "Peter",
+    count: 1,
+    sources: [SITE_ROOT, path.join(DESKTOP_LIB, "小红书-客户合影精选")]
   }
 ];
 
@@ -99,7 +94,7 @@ function makeThumb(src, dest, size) {
   }
 }
 
-function listPhotosRecursive(dir) {
+function listPhotosRecursive(dir, nameFilter) {
   if (!fs.existsSync(dir)) return [];
   const out = [];
   const walk = (current) => {
@@ -107,16 +102,18 @@ function listPhotosRecursive(dir) {
       if (entry.name.startsWith(".")) continue;
       const full = path.join(current, entry.name);
       if (entry.isDirectory()) walk(full);
-      else if (IMAGE_EXT.test(entry.name)) out.push(full);
+      else if (IMAGE_EXT.test(entry.name)) {
+        if (!nameFilter || nameFilter(entry.name)) out.push(full);
+      }
     }
   };
   walk(dir);
   return out;
 }
 
-function collectSources(sources) {
+function collectSources(sources, nameFilter) {
   const files = [];
-  for (const src of sources) files.push(...listPhotosRecursive(src));
+  for (const src of sources) files.push(...listPhotosRecursive(src, nameFilter));
   return [...new Set(files)];
 }
 
@@ -153,6 +150,12 @@ function clearShowcaseDir() {
   }
 }
 
+function trackExclude(exclude, row) {
+  exclude.md5.push(row.md5);
+  exclude.dhash.push(row.dhash);
+  if (row.person_dhash) exclude.person_dhash.push(row.person_dhash);
+}
+
 function main() {
   if (!fs.existsSync(PYTHON)) {
     console.error(`Missing Python venv: ${PYTHON}`);
@@ -168,20 +171,28 @@ function main() {
   clearShowcaseDir();
 
   const images = [];
-  const exclude = { md5: [], dhash: [] };
+  const exclude = { md5: [], dhash: [], person_dhash: [] };
 
   for (const cat of CATEGORIES) {
-    const files = collectSources(cat.sources);
-    if (!files.length) {
+    let nameFilter = null;
+    if (cat.slug === "peter") {
+      nameFilter = (name) => /peter/i.test(name);
+    }
+
+    const files = [
+      ...collectSources(cat.sources, nameFilter),
+      ...(cat.extraFiles || []).filter((f) => fs.existsSync(f))
+    ];
+    const uniqueFiles = [...new Set(files)];
+    if (!uniqueFiles.length) {
       console.warn(`No photos for ${cat.label}`);
       continue;
     }
-    const ranked = rankCandidates(cat.slug, files, exclude);
+    const ranked = rankCandidates(cat.slug, uniqueFiles, exclude);
     const top = ranked.slice(0, cat.count);
     console.log(`\n=== ${cat.label} (${top.length}/${cat.count}, pool ${ranked.length}) ===`);
     top.forEach((row, i) => {
-      exclude.md5.push(row.md5);
-      exclude.dhash.push(row.dhash);
+      trackExclude(exclude, row);
       const destName = safeName(cat.slug, i);
       const destFull = path.join(OUT_DIR, destName);
       const destThumb = path.join(OUT_DIR, "thumbs", destName);
@@ -208,7 +219,12 @@ function main() {
     photosRoot: "images/网页使用照片集/xiaohongshu-showcase",
     imageCount: images.length,
     targetCount: TARGET_TOTAL,
-    filters: ["no_text_screenshots", "no_near_duplicates", "scenery_only_for_landscape"],
+    filters: [
+      "no_text_screenshots",
+      "no_near_duplicates",
+      "no_duplicate_people",
+      "one_peter_portrait"
+    ],
     images
   };
 

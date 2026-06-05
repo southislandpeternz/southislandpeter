@@ -28,7 +28,10 @@ SCENERY_CATS = {
     "kaikoura",
     "milford-sound",
     "queenstown",
+    "tekapo-stars",
 }
+
+PERSON_CATS = {"guests", "peter"}
 
 
 def md5_file(path: str) -> str:
@@ -57,6 +60,16 @@ def skin_ratio(bgr: np.ndarray) -> float:
     return float(skin.mean())
 
 
+def person_hash(gray: np.ndarray, size: int = 10) -> str:
+    h, w = gray.shape[:2]
+    y0, y1 = int(h * 0.04), int(h * 0.58)
+    x0, x1 = int(w * 0.12), int(w * 0.88)
+    crop = gray[y0:y1, x0:x1]
+    if crop.size < 100:
+        return dhash(gray, size)
+    return dhash(crop, size)
+
+
 def load_image(path: str):
     data = np.fromfile(path, dtype=np.uint8)
     bgr = cv2.imdecode(data, cv2.IMREAD_COLOR)
@@ -70,7 +83,7 @@ def reject_reason(path: str, category: str, bgr, gray) -> str | None:
     name = Path(path).name
     if TEXT_NAME_RE.search(name):
         return "text_filename"
-    if Path(path).suffix.lower() == ".png":
+    if Path(path).suffix.lower() == ".png" and category != "peter":
         return "png_screenshot"
 
     h, w = gray.shape[:2]
@@ -78,9 +91,9 @@ def reject_reason(path: str, category: str, bgr, gray) -> str | None:
     short_edge = min(w, h)
     ar = w / h if h else 1
 
-    if long_edge < 600:
+    if long_edge < 600 and category != "peter":
         return "too_small"
-    if short_edge < 400:
+    if short_edge < 400 and category != "peter":
         return "too_small"
 
     light = float((gray > 200).mean())
@@ -88,6 +101,22 @@ def reject_reason(path: str, category: str, bgr, gray) -> str | None:
     edge_ratio = float(edges.mean() / 255)
     lap = float(cv2.Laplacian(gray, cv2.CV_64F).var())
     skin = skin_ratio(bgr)
+    avg_b = float(gray.mean())
+    dark = float((gray < 70).mean())
+
+    if category == "peter":
+        if skin < 0.06:
+            return "no_person"
+        return None
+
+    if category == "tekapo-stars":
+        if dark < 0.28 and avg_b > 80:
+            return "not_night_sky"
+        if avg_b > 120 and dark < 0.35:
+            return "not_night_sky"
+        if lap < 80:
+            return "too_blurry"
+        return None
 
     # Banner / chat / itinerary text screenshots
     if ar > 2.0 or ar < 0.48:
@@ -117,17 +146,21 @@ def reject_reason(path: str, category: str, bgr, gray) -> str | None:
     if category == "guests":
         if light > 0.55 and edge_ratio > 0.18 and skin < 0.06:
             return "text_not_guest"
-        if skin < 0.05 and category == "guests":
+        if skin < 0.05:
             return "no_people"
 
     return None
 
 
-def photo_score(gray: np.ndarray) -> float:
+def photo_score(gray: np.ndarray, category: str) -> float:
     lap = cv2.Laplacian(gray, cv2.CV_64F).var()
     h, w = gray.shape[:2]
     mp = (w * h) / 1e6
-    return float(lap) * 0.6 + mp * 40
+    score = float(lap) * 0.6 + mp * 40
+    if category == "tekapo-stars":
+        dark = float((gray < 70).mean())
+        score += dark * 500
+    return score
 
 
 def main() -> None:
@@ -138,12 +171,14 @@ def main() -> None:
     category = sys.argv[1]
     exclude_md5 = set()
     exclude_dhash = []
+    exclude_person = []
     paths = sys.argv[2:]
     if paths and paths[0].endswith(".json") and Path(paths[0]).exists():
         try:
             ex = json.loads(Path(paths[0]).read_text(encoding="utf-8"))
             exclude_md5 = set(ex.get("md5", []))
             exclude_dhash = list(ex.get("dhash", []))
+            exclude_person = list(ex.get("person_dhash", []))
         except (json.JSONDecodeError, OSError):
             pass
         paths = paths[1:]
@@ -169,17 +204,25 @@ def main() -> None:
             continue
 
         dh = dhash(gray)
+        ph = person_hash(gray)
         if any(hamming(dh, prev) < 10 for prev in exclude_dhash):
             continue
         if any(hamming(dh, row["dhash"]) < 10 for row in rows):
             continue
 
+        if category in PERSON_CATS or category == "guests":
+            if any(hamming(ph, prev) < 8 for prev in exclude_person):
+                continue
+            if any(hamming(ph, row["person_dhash"]) < 8 for row in rows):
+                continue
+
         rows.append(
             {
                 "path": path,
-                "score": photo_score(gray),
+                "score": photo_score(gray, category),
                 "md5": digest,
                 "dhash": dh,
+                "person_dhash": ph,
             }
         )
 
