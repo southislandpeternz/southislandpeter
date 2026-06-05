@@ -1,43 +1,170 @@
 {
-  "generatedAt": "2026-06-05T01:41:00.545Z",
+  "generatedAt": "2026-06-05T02:04:38.394Z",
   "photosRoot": "images/网页使用照片集/xiaohongshu-showcase",
-  "imageCount": 8,
+  "imageCount": 24,
+  "targetCount": 24,
   "images": [
     {
-      "category": "lake",
-      "label": "湖景",
-      "file": "lake-1.jpg",
+      "category": "mount-cook",
+      "label": "库克山",
+      "file": "mount-cook-1.jpg",
+      "score": 6684.181659831036,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/mount-cook-1.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/mount-cook-1.jpg",
+      "alt": "Peter 南岛旅拍 · 库克山"
+    },
+    {
+      "category": "mount-cook",
+      "label": "库克山",
+      "file": "mount-cook-2.jpg",
+      "score": 6484.322717115119,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/mount-cook-2.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/mount-cook-2.jpg",
+      "alt": "Peter 南岛旅拍 · 库克山"
+    },
+    {
+      "category": "mount-cook",
+      "label": "库克山",
+      "file": "mount-cook-3.jpg",
+      "score": 6247.255400566038,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/mount-cook-3.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/mount-cook-3.jpg",
+      "alt": "Peter 南岛旅拍 · 库克山"
+    },
+    {
+      "category": "lake-pukaki",
+      "label": "普卡基湖",
+      "file": "lake-pukaki-1.jpg",
       "score": 5016.341890629825,
-      "full": "images/网页使用照片集/xiaohongshu-showcase/lake-1.jpg",
-      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/lake-1.jpg",
-      "alt": "Peter 南岛旅拍 · 湖景"
+      "full": "images/网页使用照片集/xiaohongshu-showcase/lake-pukaki-1.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/lake-pukaki-1.jpg",
+      "alt": "Peter 南岛旅拍 · 普卡基湖"
     },
     {
-      "category": "lake",
-      "label": "湖景",
-      "file": "lake-2.jpg",
+      "category": "lake-pukaki",
+      "label": "普卡基湖",
+      "file": "lake-pukaki-2.jpg",
       "score": 2842.6930109568,
-      "full": "images/网页使用照片集/xiaohongshu-showcase/lake-2.jpg",
-      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/lake-2.jpg",
-      "alt": "Peter 南岛旅拍 · 湖景"
+      "full": "images/网页使用照片集/xiaohongshu-showcase/lake-pukaki-2.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/lake-pukaki-2.jpg",
+      "alt": "Peter 南岛旅拍 · 普卡基湖"
     },
     {
-      "category": "whale",
-      "label": "观鲸",
-      "file": "whale-1.jpg",
+      "category": "lake-pukaki",
+      "label": "普卡基湖",
+      "file": "lake-pukaki-3.jpg",
+      "score": 2464.601279472695,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/lake-pukaki-3.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/lake-pukaki-3.jpg",
+      "alt": "Peter 南岛旅拍 · 普卡基湖"
+    },
+    {
+      "category": "lake-tekapo",
+      "label": "特卡波",
+      "file": "lake-tekapo-1.jpg",
+      "score": 2494.5465500205837,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/lake-tekapo-1.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/lake-tekapo-1.jpg",
+      "alt": "Peter 南岛旅拍 · 特卡波"
+    },
+    {
+      "category": "lake-tekapo",
+      "label": "特卡波",
+      "file": "lake-tekapo-2.jpg",
+      "score": 2385.0828989355555,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/lake-tekapo-2.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/lake-tekapo-2.jpg",
+      "alt": "Peter 南岛旅拍 · 特卡波"
+    },
+    {
+      "category": "lake-tekapo",
+      "label": "特卡波",
+      "file": "lake-tekapo-3.jpg",
+      "score": 2355.5076328147097,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/lake-tekapo-3.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/lake-tekapo-3.jpg",
+      "alt": "Peter 南岛旅拍 · 特卡波"
+    },
+    {
+      "category": "kaikoura",
+      "label": "凯库拉观鲸",
+      "file": "kaikoura-1.jpg",
       "score": 1876.7891210940638,
-      "full": "images/网页使用照片集/xiaohongshu-showcase/whale-1.jpg",
-      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/whale-1.jpg",
-      "alt": "Peter 南岛旅拍 · 观鲸"
+      "full": "images/网页使用照片集/xiaohongshu-showcase/kaikoura-1.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/kaikoura-1.jpg",
+      "alt": "Peter 南岛旅拍 · 凯库拉观鲸"
     },
     {
-      "category": "whale",
-      "label": "观鲸",
-      "file": "whale-2.jpg",
+      "category": "kaikoura",
+      "label": "凯库拉观鲸",
+      "file": "kaikoura-2.jpg",
       "score": 1337.582891009895,
-      "full": "images/网页使用照片集/xiaohongshu-showcase/whale-2.jpg",
-      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/whale-2.jpg",
-      "alt": "Peter 南岛旅拍 · 观鲸"
+      "full": "images/网页使用照片集/xiaohongshu-showcase/kaikoura-2.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/kaikoura-2.jpg",
+      "alt": "Peter 南岛旅拍 · 凯库拉观鲸"
+    },
+    {
+      "category": "kaikoura",
+      "label": "凯库拉观鲸",
+      "file": "kaikoura-3.jpg",
+      "score": 1320.3627175332117,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/kaikoura-3.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/kaikoura-3.jpg",
+      "alt": "Peter 南岛旅拍 · 凯库拉观鲸"
+    },
+    {
+      "category": "milford-sound",
+      "label": "米尔福德峡湾",
+      "file": "milford-sound-1.jpg",
+      "score": 6153.417075094339,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/milford-sound-1.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/milford-sound-1.jpg",
+      "alt": "Peter 南岛旅拍 · 米尔福德峡湾"
+    },
+    {
+      "category": "milford-sound",
+      "label": "米尔福德峡湾",
+      "file": "milford-sound-2.jpg",
+      "score": 1710.3429084575778,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/milford-sound-2.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/milford-sound-2.jpg",
+      "alt": "Peter 南岛旅拍 · 米尔福德峡湾"
+    },
+    {
+      "category": "milford-sound",
+      "label": "米尔福德峡湾",
+      "file": "milford-sound-3.jpg",
+      "score": 1600.2568401985645,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/milford-sound-3.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/milford-sound-3.jpg",
+      "alt": "Peter 南岛旅拍 · 米尔福德峡湾"
+    },
+    {
+      "category": "queenstown",
+      "label": "皇后镇",
+      "file": "queenstown-1.jpg",
+      "score": 1314.14132340135,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/queenstown-1.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/queenstown-1.jpg",
+      "alt": "Peter 南岛旅拍 · 皇后镇"
+    },
+    {
+      "category": "queenstown",
+      "label": "皇后镇",
+      "file": "queenstown-2.jpg",
+      "score": 1243.5222839534372,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/queenstown-2.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/queenstown-2.jpg",
+      "alt": "Peter 南岛旅拍 · 皇后镇"
+    },
+    {
+      "category": "queenstown",
+      "label": "皇后镇",
+      "file": "queenstown-3.jpg",
+      "score": 1027.2199800314631,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/queenstown-3.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/queenstown-3.jpg",
+      "alt": "Peter 南岛旅拍 · 皇后镇"
     },
     {
       "category": "vehicle",
@@ -58,22 +185,40 @@
       "alt": "Peter 南岛旅拍 · 奔驰商务车"
     },
     {
+      "category": "vehicle",
+      "label": "奔驰商务车",
+      "file": "vehicle-3.jpg",
+      "score": 2731.6616021896093,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/vehicle-3.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/vehicle-3.jpg",
+      "alt": "Peter 南岛旅拍 · 奔驰商务车"
+    },
+    {
       "category": "guests",
-      "label": "客户合影",
+      "label": "客人合影",
       "file": "guests-1.jpg",
       "score": 5493.523239046551,
       "full": "images/网页使用照片集/xiaohongshu-showcase/guests-1.jpg",
       "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/guests-1.jpg",
-      "alt": "Peter 南岛旅拍 · 客户合影"
+      "alt": "Peter 南岛旅拍 · 客人合影"
     },
     {
       "category": "guests",
-      "label": "客户合影",
+      "label": "客人合影",
       "file": "guests-2.jpg",
       "score": 4177.459489487606,
       "full": "images/网页使用照片集/xiaohongshu-showcase/guests-2.jpg",
       "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/guests-2.jpg",
-      "alt": "Peter 南岛旅拍 · 客户合影"
+      "alt": "Peter 南岛旅拍 · 客人合影"
+    },
+    {
+      "category": "guests",
+      "label": "客人合影",
+      "file": "guests-3.jpg",
+      "score": 4002.1633996046066,
+      "full": "images/网页使用照片集/xiaohongshu-showcase/guests-3.jpg",
+      "thumbUrl": "images/网页使用照片集/xiaohongshu-showcase/thumbs/guests-3.jpg",
+      "alt": "Peter 南岛旅拍 · 客人合影"
     }
   ]
 }

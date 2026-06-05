@@ -1,61 +1,143 @@
 {
-  "generatedAt": "2026-06-03T22:39:38.871Z",
-  "sourceDir": "images/网页使用照片集",
+  "generatedAt": "2026-06-05T02:03:37.490Z",
+  "sourceDir": "images/网页使用照片集/reviews",
+  "homepageLimit": 12,
   "count": 9,
   "images": [
     {
       "file": "reviews-service-service-04.JPG",
       "thumb": "thumbs/reviews-service-service-04.JPG",
-      "mtime": 1780376454696.1167,
-      "width": 560
+      "mtime": 1780625017026.2185,
+      "width": 560,
+      "platforms": [
+        "google",
+        "wechat"
+      ],
+      "platform": "google",
+      "platformLabel": "Google Review",
+      "alt": "客人好评 · Google Review",
+      "full": "images/网页使用照片集/reviews/reviews-service-service-04.JPG",
+      "thumbUrl": "images/网页使用照片集/reviews/thumbs/reviews-service-service-04.JPG"
     },
     {
       "file": "reviews-service-service-03.JPG",
       "thumb": "thumbs/reviews-service-service-03.JPG",
-      "mtime": 1780376448194.2815,
-      "width": 560
+      "mtime": 1780625017026.0134,
+      "width": 560,
+      "platforms": [
+        "wechat",
+        "xhs"
+      ],
+      "platform": "wechat",
+      "platformLabel": "微信",
+      "alt": "客人好评 · 微信",
+      "full": "images/网页使用照片集/reviews/reviews-service-service-03.JPG",
+      "thumbUrl": "images/网页使用照片集/reviews/thumbs/reviews-service-service-03.JPG"
     },
     {
       "file": "reviews-service-service-02.JPG",
       "thumb": "thumbs/reviews-service-service-02.JPG",
-      "mtime": 1780376441192.4517,
-      "width": 560
-    },
-    {
-      "file": "review-service-service-01.JPG",
-      "thumb": "thumbs/review-service-service-01.JPG",
-      "mtime": 1780376434106.286,
-      "width": 560
-    },
-    {
-      "file": "reviews-driving-driving-02.JPG",
-      "thumb": "thumbs/reviews-driving-driving-02.JPG",
-      "mtime": 1780376426511.4182,
-      "width": 560
-    },
-    {
-      "file": "reviews-driving-driving-01.JPG",
-      "thumb": "thumbs/reviews-driving-driving-01.JPG",
-      "mtime": 1780376416657.7595,
-      "width": 560
+      "mtime": 1780625017025.8176,
+      "width": 560,
+      "platforms": [
+        "xhs"
+      ],
+      "platform": "xhs",
+      "platformLabel": "小红书",
+      "alt": "客人好评 · 小红书",
+      "full": "images/网页使用照片集/reviews/reviews-service-service-02.JPG",
+      "thumbUrl": "images/网页使用照片集/reviews/thumbs/reviews-service-service-02.JPG"
     },
     {
       "file": "reviews-photo-photo-01.JPG",
       "thumb": "thumbs/reviews-photo-photo-01.JPG",
-      "mtime": 1780376405262.6328,
-      "width": 560
+      "mtime": 1780625017025.6746,
+      "width": 560,
+      "platforms": [
+        "xhs",
+        "wechat"
+      ],
+      "platform": "xhs",
+      "platformLabel": "小红书",
+      "alt": "客人好评 · 小红书",
+      "full": "images/网页使用照片集/reviews/reviews-photo-photo-01.JPG",
+      "thumbUrl": "images/网页使用照片集/reviews/thumbs/reviews-photo-photo-01.JPG"
+    },
+    {
+      "file": "reviews-driving-driving-02.JPG",
+      "thumb": "thumbs/reviews-driving-driving-02.JPG",
+      "mtime": 1780625017025.4656,
+      "width": 560,
+      "platforms": [
+        "xhs",
+        "wechat"
+      ],
+      "platform": "xhs",
+      "platformLabel": "小红书",
+      "alt": "客人好评 · 小红书",
+      "full": "images/网页使用照片集/reviews/reviews-driving-driving-02.JPG",
+      "thumbUrl": "images/网页使用照片集/reviews/thumbs/reviews-driving-driving-02.JPG"
+    },
+    {
+      "file": "reviews-driving-driving-01.JPG",
+      "thumb": "thumbs/reviews-driving-driving-01.JPG",
+      "mtime": 1780625017025.2915,
+      "width": 560,
+      "platforms": [
+        "wechat",
+        "google"
+      ],
+      "platform": "wechat",
+      "platformLabel": "微信",
+      "alt": "客人好评 · 微信",
+      "full": "images/网页使用照片集/reviews/reviews-driving-driving-01.JPG",
+      "thumbUrl": "images/网页使用照片集/reviews/thumbs/reviews-driving-driving-01.JPG"
+    },
+    {
+      "file": "review-service-service-01.JPG",
+      "thumb": "thumbs/review-service-service-01.JPG",
+      "mtime": 1780625017025.0886,
+      "width": 560,
+      "platforms": [
+        "google",
+        "wechat"
+      ],
+      "platform": "google",
+      "platformLabel": "Google Review",
+      "alt": "客人好评 · Google Review",
+      "full": "images/网页使用照片集/reviews/review-service-service-01.JPG",
+      "thumbUrl": "images/网页使用照片集/reviews/thumbs/review-service-service-01.JPG"
     },
     {
       "file": "review-return-return-01.JPG",
       "thumb": "thumbs/review-return-return-01.JPG",
-      "mtime": 1780376391691.384,
-      "width": 560
+      "mtime": 1780625017024.8337,
+      "width": 560,
+      "platforms": [
+        "wechat",
+        "xhs"
+      ],
+      "platform": "wechat",
+      "platformLabel": "微信",
+      "alt": "客人好评 · 微信",
+      "full": "images/网页使用照片集/reviews/review-return-return-01.JPG",
+      "thumbUrl": "images/网页使用照片集/reviews/thumbs/review-return-return-01.JPG"
     },
     {
       "file": "review-guide-01.jpg",
       "thumb": "thumbs/review-guide-01.jpg",
-      "mtime": 1780360292829.5688,
-      "width": 560
+      "mtime": 1780625017024.5457,
+      "width": 560,
+      "platforms": [
+        "xhs",
+        "wechat",
+        "google"
+      ],
+      "platform": "xhs",
+      "platformLabel": "小红书",
+      "alt": "客人好评 · 小红书",
+      "full": "images/网页使用照片集/reviews/review-guide-01.jpg",
+      "thumbUrl": "images/网页使用照片集/reviews/thumbs/review-guide-01.jpg"
     }
   ]
 }

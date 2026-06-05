@@ -79,10 +79,12 @@
     });
   }
 
-  const REVIEWS_DIR = "images/网页使用照片集";
+  const REVIEWS_ROOT = "images/网页使用照片集";
+  const REVIEWS_DIR = "images/网页使用照片集/reviews";
+  const HOME_REVIEWS_LIMIT = 12;
   const REVIEWS_EMPTY_HINT =
-    "暂无客人评价图片。请将 review*.jpg / reviews*.jpg 放入 images/网页使用照片集/ 后运行 node scripts/generate-reviews-manifest.mjs。";
-  const REVIEW_FILE_RE = /^(review|reviews).+\.(jpe?g)$/i;
+    "暂无客人评价图片。请将评价截图放入 images/网页使用照片集/reviews/ 后运行 node scripts/generate-reviews-manifest.mjs。";
+  const REVIEW_FILE_RE = /^(review|reviews).+\.(jpe?g|png|webp)$/i;
 
   function isReviewImageName(name) {
     const base = name.replace(/^.*\//, "");
@@ -91,7 +93,7 @@
   }
 
   function reviewAssetPath(...parts) {
-    return normalizePath([REVIEWS_DIR, ...parts].join("/"));
+    return normalizePath([REVIEWS_ROOT, ...parts].join("/"));
   }
 
   async function fromReviewsManifest() {
@@ -103,9 +105,14 @@
       return data.images
         .filter((item) => item && typeof item.file === "string" && isReviewImageName(item.file))
         .map((item) => ({
-          full: reviewAssetPath(item.file),
-          thumb: reviewAssetPath(item.thumb || `thumbs/${item.file}`),
-          mtime: typeof item.mtime === "number" ? item.mtime : 0
+          full: normalizePath(item.full || `${REVIEWS_DIR}/${item.file}`),
+          thumb: normalizePath(
+            item.thumbUrl || `${REVIEWS_DIR}/${item.thumb || `thumbs/${item.file}`}`
+          ),
+          mtime: typeof item.mtime === "number" ? item.mtime : 0,
+          platforms: Array.isArray(item.platforms) ? item.platforms : [],
+          platform: item.platform || "",
+          alt: item.alt || "客人好评截图"
         }))
         .sort((a, b) => b.mtime - a.mtime);
     } catch {
@@ -113,13 +120,65 @@
     }
   }
 
+  function pickHomeReviews(entries, limit) {
+    const picked = [];
+    const used = new Set();
+    const buckets = { wechat: [], xhs: [], google: [] };
+
+    entries.forEach((entry) => {
+      const tags = entry.platforms?.length
+        ? entry.platforms
+        : [entry.platform || "wechat"];
+      tags.forEach((tag) => {
+        if (buckets[tag] && !buckets[tag].includes(entry)) {
+          buckets[tag].push(entry);
+        }
+      });
+    });
+
+    const order = ["wechat", "xhs", "google"];
+    while (picked.length < limit) {
+      let added = false;
+      for (const tag of order) {
+        const next = buckets[tag].find((entry) => !used.has(entry.full));
+        if (!next) continue;
+        used.add(next.full);
+        picked.push(next);
+        added = true;
+        if (picked.length >= limit) break;
+      }
+      if (!added) break;
+    }
+
+    for (const entry of entries) {
+      if (picked.length >= limit) break;
+      if (used.has(entry.full)) continue;
+      used.add(entry.full);
+      picked.push(entry);
+    }
+
+    return picked.slice(0, limit);
+  }
+
   async function verifyReviewEntry(entry) {
     const thumbOk = await probeImage(entry.thumb);
     if (thumbOk.ok) {
-      return { full: entry.full, thumb: thumbOk.src, mtime: entry.mtime || 0 };
+      return {
+        full: entry.full,
+        thumb: thumbOk.src,
+        mtime: entry.mtime || 0,
+        alt: entry.alt || "客人好评截图"
+      };
     }
     const fullOk = await probeImage(entry.full);
-    if (fullOk.ok) return { full: fullOk.src, thumb: fullOk.src, mtime: entry.mtime || 0 };
+    if (fullOk.ok) {
+      return {
+        full: fullOk.src,
+        thumb: fullOk.src,
+        mtime: entry.mtime || 0,
+        alt: entry.alt || "客人好评截图"
+      };
+    }
     return null;
   }
 
@@ -138,7 +197,7 @@
       const img = document.createElement("img");
       img.src = entry.thumb;
       img.dataset.fullSrc = entry.full;
-      img.alt = "";
+      img.alt = entry.alt || "客人好评截图";
       img.loading = i < 4 ? "eager" : "lazy";
       img.decoding = "async";
       if (i < 4) img.fetchPriority = "high";
@@ -163,7 +222,7 @@
     }
 
     verified.sort((a, b) => (b.mtime || 0) - (a.mtime || 0));
-    renderHomeReviews(verified);
+    renderHomeReviews(pickHomeReviews(verified, HOME_REVIEWS_LIMIT));
   }
 
   function renderGallery(paths) {
