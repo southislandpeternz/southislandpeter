@@ -1,0 +1,3607 @@
+{
+  "generatedAt": "2026-06-05T06:39:17.554109+00:00",
+  "dryRun": false,
+  "scannedDirs": [
+    "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook",
+    "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选",
+    "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali",
+    "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo",
+    "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo",
+    "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选",
+    "/Users/yueshe/Desktop/NZ-Travel-photos /星空",
+    "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选",
+    "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车",
+    "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选",
+    "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库",
+    "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery"
+  ],
+  "deletedCount": 799,
+  "deleted": [
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8653.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8653.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_6896.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6837.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_6837.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6180.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6180.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6368.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6368.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6368.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6368.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8837.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8837.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8838.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8838.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8834.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8834.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8839.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8839.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8836.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8836.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8840.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8840.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_5544.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_5544.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8832.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8832.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_5547.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_5547.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_5539.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_5539.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8833.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8833.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7010.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7011.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8830.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8830.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8841.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8840.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_5627.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_5627.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8841.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8840.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8841.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8840.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8841.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8840.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7183.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7183.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7022.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7022.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_5533.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_5533.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_6838.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6838.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8634.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8634.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7115.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7115.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6436.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6436.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo15.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8750.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8750.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7113.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7113.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7578.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7578_2.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8635.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8635.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8170.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_8170.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8173.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8173.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7517.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7517.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo17.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo17.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo116.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo116.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8173.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8173.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8173.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8173.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7609.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7609.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7609.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7609.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7609.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7609.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7121.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7121.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6966.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6966.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8734.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8734.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8737.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8737.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6489.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6489.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8238.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8238.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8736.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8736.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6489.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6489.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6489.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6489.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5553.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_5553.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8733.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8733.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6488.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6488.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8861.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8861.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7614.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7614.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7614.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7614.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo112.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo112.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8735.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8735.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_5553.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_5553.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5553.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_5553.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6488.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6488.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6488.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6488.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8747.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8747.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5125.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_5125.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8190.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8190.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5125.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_5125.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6752.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6752.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8191.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8191.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_8191.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8191.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8191.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8191.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8186.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8186.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_5896.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_5897.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7733.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7482.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-mount-cook-view/IMG_7482.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6952.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6952.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8270_2.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8270.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7575.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7575.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8749.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8749.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7575.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7575.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7575.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7575.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_5897.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_5897.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7131.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7131.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7134.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7134.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8515.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8515.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7133.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7133.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_5896.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_5897.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8732.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8732.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8803.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8803.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8519.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8519.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6752.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6752.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6752.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6752.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7130.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7130.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_7190.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7190.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7188.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7188.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7129.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7129.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6426.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6426.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7189.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7189.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8858.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8858.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6426.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6426.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6426.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6426.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7187.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7187.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7190.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7190.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5081.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_5081.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_5081.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_5081.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5227.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_5227.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7197.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7197.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6787.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6788.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_6855_2.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6855.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6786.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6788.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6785.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6788.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6751.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7138.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7138.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7197.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7197.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7197.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7197.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7726.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7726.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5153.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_5153.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo129.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo129.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_3514.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6751.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7826.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7826_2.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6170.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6170.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-flight18.jpeg",
+      "reason": "text_filename"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6785.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6788.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_1053.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_1053.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7726.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7726.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7726.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7726.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7726.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7726.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5123.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5123.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6170.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6170.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6170.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6170.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8819.JPG",
+      "reason": "not_vehicle"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8819.JPG",
+      "reason": "not_vehicle"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7857.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7857.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7857.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7857.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6427.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6ECEBDD9-279D-4492-B3F5-82BD50349ACD_2.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6ECEBDD9-279D-4492-B3F5-82BD50349ACD_2.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6750.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6750.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8534 (1).jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_8534 (1).JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8498.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8498.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8504.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8504.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8504_2.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8504.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6749.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6427.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8507.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8507.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_6750_2.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6750_2.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6750.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_6750.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7184.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7184.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7557.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7557.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo16.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/lake-tekapo16.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo16.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/lake-tekapo16.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7146.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7146.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7125.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7125.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-peninsula142.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo154.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7204.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7204.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7204.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7204.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6749.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-flight110.jpeg",
+      "reason": "text_filename"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo13_48.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_7450.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-flight14.jpeg",
+      "reason": "text_filename"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_9710.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-mount-cook-view/IMG_9710.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6747.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6747.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7557.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7557.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7557.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7557.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-coast16.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8967_2.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8967_2.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8967_2.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8967_2.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_7466.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7487.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-mount-cook-view/IMG_7487.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7144.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7144.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7144.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7144.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6178.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6178.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6178.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6178.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7125.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7125.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7125.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7125.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7146.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7146.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7146.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7146.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7452.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7452.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7186.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_7186.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_6807_2.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6807.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7145.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7145.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7145.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7145.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo144.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8755.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6163.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6164.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo13.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo14.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7083.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6164.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6164.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6496.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6496.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7207.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7207.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6367.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6367.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-flight111.jpeg",
+      "reason": "text_filename"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6497.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-客户合影精选/IMG_6497.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7082.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_7724.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6180.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6180.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_7128.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7128.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7143.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7143.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo147.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo147.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6163.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6164.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7083.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7083_2.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6777.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6487.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6487.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6745.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo12.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo12.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo163.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo163.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_7452.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_3513.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8888.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8888.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7082.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8241.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8241.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7051.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7051.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7051.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7051.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7865.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_7456.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7454.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7454.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7454.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7454.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6745.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7147.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7147.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7147.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7147.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6487.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6487.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6487.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6487.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8515.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8515.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8515.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8515.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7143.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7143.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7143.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7143.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7864.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_6484.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_6484.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo12.png",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6538.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7862.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo114.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo114.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7865.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7865.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_6477.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_6477.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_6481.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_6481.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_6772.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6772.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo166.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5053.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5053.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_5053.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5053.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo18.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7863.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8519.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8519.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8519.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8519.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo165.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7084.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5306.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7864.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7864.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_3131.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5305.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7862.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7862.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7725.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7725.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8969.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8969.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7419.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7419.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5307.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5307.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8296.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7863.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6893.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_6893.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8759.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8759.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7418.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7418.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8760.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8760.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6884.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7047.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6475.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6475.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_3297 2.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_6372.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5311.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7229.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_7229.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8759.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8759.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8759.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8759.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7417.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7417.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_8295.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8295.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8760.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8760.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8760.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8760.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7369.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7369.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo164.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo164.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_1109.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_1109.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7370.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7370.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_7230.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7230.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7419.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7419.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6856.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6856.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8346.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8346.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8537.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8537.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7723.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7723.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo156.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo156.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8295.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8295.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_6372.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5311.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8193.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6475.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6475.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6475.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6475.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7368.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7368.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8194.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8192.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8195.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5146.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7199.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7199.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7199.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7199.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7199.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7199.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo15.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo15.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8447.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7369.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7369.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7369.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7369.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7370.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7370.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7370.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7370.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5971.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5145.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_8193.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8193.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8127.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8127.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_6829.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6829.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6829.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6829.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7422.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7422.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7229.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_7229.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7048.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo127.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo127.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_5235.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5235.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_5235.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5235.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7550.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7550 2.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7550.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7550 2.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7550.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7550 2.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7550 2.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7550 2.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8194.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_8192.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8192.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7371.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7371.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7371.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7371.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7367.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7367.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7231.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7231.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7365.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7365.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo182.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8014.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8014.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6851.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7230.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7230.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7368.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7368.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8758.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8758.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7048.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5236.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5236.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo128.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo128.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6707.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_6707.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_6707.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_6707.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8017.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8018.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7423.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7423.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7194.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7194.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7194.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7194.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8932.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8017.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8762.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_8762.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7367.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7367.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7367.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7367.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7365.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7365.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7365.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7365.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7422.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7422.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8018_2.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8018.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo196.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo196.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7371.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7371.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7371.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7371.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7195.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7195.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6884.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo140.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5143.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_6278.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6278.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6278.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6278.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7415.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7415.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7194.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7194.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7616.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7616.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7616.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7616.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7616.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_7616.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7199.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7199.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8763.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_8763.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5334.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7424.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7424.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7192.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7192.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-flight16.jpeg",
+      "reason": "text_filename"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7255.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-flight17.jpeg",
+      "reason": "text_filename"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6277.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6277.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7195.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7195.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7372.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7372.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7829.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5334.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5493.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5493.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_3132.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_3132.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7423.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7423.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo195.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5494.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5494.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7829.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7829.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5315.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5315.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8395_2.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8395.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_8395.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8395.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7399.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7399.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo11.png",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7623.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7623.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7415.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7415.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_6937.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6937.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo110.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7222.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo134.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7882.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7882.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6366.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6366.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8932.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo117.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/lake-tekapo117.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo117.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/lake-tekapo117.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7728.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7728.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_5847.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_BFB7D04E-17CC-4264-B807-4D0C77207052_2.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_BFB7D04E-17CC-4264-B807-4D0C77207052.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8347.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8347.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_5076.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8277_2.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8277.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo155.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo145.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/lake-tekapo145.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6740.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6368.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6368.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_6367.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6367.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo133.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6351.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_3685.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_3685.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7702_2.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7702.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7702.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7702.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8853.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8145.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8145.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_8145.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8145.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo194.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5410.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5410.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8528.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8528.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5314.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5314.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7160.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7160.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7484.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7484.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo115.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-mount-cook-view/IMG_2778.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/lake-tekapo115.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-mount-cook-view/IMG_2778.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_2778.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-mount-cook-view/IMG_2778.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5138.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6820.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6293.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6293.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8426.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6820.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_8426.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7406.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7406.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_0754 2.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_0754.jpeg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo18.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7108_2.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7108.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_7469.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5146.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5316.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5316.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo142.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5145.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6350.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5143.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_5262.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8201.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8201.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6167.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6167.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6167.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6167.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7456.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7456.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7227.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7227.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7899.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8201.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8201.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_8201.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8201.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8201.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8201.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5141.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5310.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7883.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7883.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5139.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo111.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo141.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-flight11.jpeg",
+      "reason": "text_filename"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7153.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6169.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_6169.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo112.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo13.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5404.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo143.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_7571.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8338.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8338.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-peninsula138.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5404.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_7597.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5488.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5489.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_3683.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7228.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7228.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7867.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7867.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7693_2.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_5489.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5489.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5489.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5489.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5899.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5899.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7849.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7849.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5488.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_5488.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8711.JPG",
+      "reason": "not_vehicle"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7898.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_8345.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo14_54.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8627.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo113.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_5030.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_5030.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5030.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_5030.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo132.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo114.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6934.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-peninsula121.JPG",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5102.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5898.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_7517.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6934.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5898.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5132.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5900.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5900.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6406.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_6406.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5301.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7847.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7847.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5438.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5438.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7756.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7696.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7847.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7847.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo12.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_8493.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /mount-cook/IMG_6847.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/E6C8EF19-58F8-4602-9BFE-7A698D107147_2.png",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8397.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8397.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5124.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_3679.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-salmon-farm/IMG_3679.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-coast11.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5124.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_CA04E3DB-49F8-4C19-9D2B-601390288F6C.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8446.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_CA04E3DB-49F8-4C19-9D2B-601390288F6C_2.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5301.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8446.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5439.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8395.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8395.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7014.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5061.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7104.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7014.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo19.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-mount-cook-view/IMG_7226.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7104.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_7234.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/IMG_7234.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_7894.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7894.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7013.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7477.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo148.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5061.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7013.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo118.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7734.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7012.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8692.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5109.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5041.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5041.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5119.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo153.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7012.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7477.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_7455.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7455.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7025.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7734.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5060.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo130.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo157.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5302.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5119.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5121.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/73865b0eeb40063db4928117c6b90abd.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo177.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5121.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo188.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7754.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7469.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5059.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7754.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7469.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_9126.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_9126.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-coast15.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_F8B00EC1-7399-4C8C-92F8-D70ED274DA6B.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_E19F6757-AB89-4839-B039-851253D3718C.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6885.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_E19F6757-AB89-4839-B039-851253D3718C_2.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5108.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/kaikkoura-coast14.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7052.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7475.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5106.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6835.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6835.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7468.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8070.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo190.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo167.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-mount-cook-view/IMG_9703.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5308.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_5308.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo192.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7475.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6885.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_9063.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7468.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8070.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6412.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6412.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7890.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6411.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6411.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /星空/IMG_7763.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /星空/IMG_7763.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo119.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo126.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6891.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7744.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo191.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7756.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-pukali/lake-pukaki-mount-cook-view/IMG_7429.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo11.png",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5997.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_5997.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7253.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7103.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7103.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo113.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/IMG_8516.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6879.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_7254.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/lake-tekapo120.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/73865b0eeb40063db4928117c6b90abd.png",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6879.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /星空/IMG_6892.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /星空/IMG_6892.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6886.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3506.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6886.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6882.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7246.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6883.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8412.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7867.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_3949.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8410.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8412.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7867.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/552b2c3776fbdc35c16c0fa7859c75.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7867.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6882.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/552b2c3776fbdc35c16c0fa7859c75.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7867.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6883.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3506.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6891.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8092.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8092.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6887.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3787.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6881.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6887.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8746.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3512.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6880.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6881.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_3950.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_6880.JPG",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8965.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8965_2.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3510.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3565.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_9132.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7899.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7943.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_7943.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7533.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7894.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3049.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7768.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8692.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8962.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8962.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7946.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7535.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3730.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8964.jpeg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8964.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8593.JPG",
+      "reason": "portrait_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8593.jpeg",
+      "reason": "portrait_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/2 (1).jpeg",
+      "reason": "portrait_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8695.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/296.jpg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/296.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/296.jpg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/296.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3501.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/293.jpg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/293.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-奔驰商务车精选/IMG_8092.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8092.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8595.JPG",
+      "reason": "text_ui"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_8595.jpeg",
+      "reason": "text_ui"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_3951.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/wanaka/seed-1.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8969.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/mount-cook/seed-3.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8969.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_3948.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_2914.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7989.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7732.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7733.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3501.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/348.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/queenstown/seed-1.jpg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/kaikoura/seed-3.jpg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/fac82c4cd81b7176833a17b2d77f9d.jpg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3500.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/366.jpg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3952.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3049.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_9130.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7348.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_4231.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3512.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/2 (1).jpg",
+      "reason": "portrait_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_2914.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/374.jpg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/374.jpg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/274.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/274.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3510.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/5535_2.jpg",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/5535.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/3 (1).jpg",
+      "reason": "text_ui"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7989.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_4233.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_9051.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7533.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3929.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_9064.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7348.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/wanaka/thumbs/seed-1.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8969.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-酒店精选/IMG_7898.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7535.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3730.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7890.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-湖景精选/IMG_8961_2.JPG",
+      "reason": "duplicate_md5",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8961_2.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8746.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/5534.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/5534 (1).jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/5534.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/5534 (1).jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3565.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3787.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/348.jpg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7461.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_9063.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_4231.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7461.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/45.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /lake-tekapo/45.jpeg"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/christchurch/thumbs/seed-1.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/christchurch/seed-1.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/254.jpg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3952.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7732.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_9064.PNG",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_4233.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/queenstown/thumbs/seed-1.jpg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/oamaru/thumbs/seed-1.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/oamaru/seed-1.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_3929.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8961_2.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/milford-sound/thumbs/seed-1.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/mount-cook/thumbs/seed-1.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/mount-cook/seed-1.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7901.jpeg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_7901.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_8695.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/hanmer-springs/thumbs/seed-1.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/hanmer-springs/seed-1.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/mount-cook/seed-2.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/milford-sound/thumbs/seed-1.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/milford-sound/seed-1.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/milford-sound/thumbs/seed-1.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/fb0e73bbff98cba9c4e2779b0267a6.jpeg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/mount-cook/thumbs/seed-3.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Desktop/NZ-Travel-photos /Lake -tekapo/IMG_8969.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/IMG_9051.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/239.jpg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/akaroa/thumbs/seed-1.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/akaroa/seed-1.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/346.jpeg",
+      "reason": "flight_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/west-coast/thumbs/seed-1.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/west-coast/seed-1.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/IMG_7946.jpeg",
+      "reason": "text_aspect"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/kaikoura/thumbs/seed-3.jpg",
+      "reason": "portrait_not_scenery"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/fb0e73bbff98cba9c4e2779b0267a6.jpg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/lake-tekapo/thumbs/seed-1.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/lake-tekapo/seed-1.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/mount-cook/thumbs/seed-2.JPG",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/milford-sound/thumbs/seed-1.JPG"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/kaikoura/thumbs/seed-2.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/kaikoura/seed-2.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/kaikoura/seed-1.jpg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /奔驰商务车/346.jpg",
+      "reason": "flight_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-观鲸精选/lake-tekapo13_69.jpg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/christchurch/thumbs/seed-2.jpg",
+      "reason": "duplicate_phash",
+      "kept": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/christchurch/seed-2.jpg"
+    },
+    {
+      "path": "/Users/yueshe/Documents/小红书AI/images/网页使用照片集/gallery/kaikoura/thumbs/seed-1.jpg",
+      "reason": "too_blurry"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/52761810746666362e01f707d215acc8.png",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/52761810746666362e01f707d215acc8.jpeg",
+      "reason": "too_small"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/5a9c9efab2f9e4dda159be5b97336e97.png",
+      "reason": "png_screenshot"
+    },
+    {
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /小红书素材库/小红书-雪山精选/5a9c9efab2f9e4dda159be5b97336e97.jpeg",
+      "reason": "too_small"
+    }
+  ]
+}

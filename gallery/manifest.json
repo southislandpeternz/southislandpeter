@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T22:39:38.006Z",
+  "generatedAt": "2026-06-05T07:27:21.845Z",
   "photosRoot": "images/网页使用照片集/gallery",
   "regions": [
     {
@@ -74,34 +74,20 @@
       "name": "Kaikoura",
       "title": "Kaikoura Whale Watching",
       "description": "Kaikoura Whale Watching — Peter's South Island travel photography gallery.",
-      "cover": "seed-1.jpg",
-      "coverThumb": "thumbs/seed-1.jpg",
-      "imageCount": 3,
+      "cover": "seed-2.jpg",
+      "coverThumb": "thumbs/seed-2.jpg",
+      "imageCount": 1,
       "images": [
-        {
-          "file": "seed-1.jpg",
-          "thumb": "thumbs/seed-1.jpg",
-          "mtime": 1780526376303.2676,
-          "full": "images/网页使用照片集/gallery/kaikoura/seed-1.jpg",
-          "thumbUrl": "images/网页使用照片集/gallery/kaikoura/thumbs/seed-1.jpg"
-        },
         {
           "file": "seed-2.jpg",
           "thumb": "thumbs/seed-2.jpg",
           "mtime": 1780526376304.5469,
           "full": "images/网页使用照片集/gallery/kaikoura/seed-2.jpg",
           "thumbUrl": "images/网页使用照片集/gallery/kaikoura/thumbs/seed-2.jpg"
-        },
-        {
-          "file": "seed-3.jpg",
-          "thumb": "thumbs/seed-3.jpg",
-          "mtime": 1780526376305.8171,
-          "full": "images/网页使用照片集/gallery/kaikoura/seed-3.jpg",
-          "thumbUrl": "images/网页使用照片集/gallery/kaikoura/thumbs/seed-3.jpg"
         }
       ],
       "url": "gallery/kaikoura/",
-      "coverUrl": "images/网页使用照片集/gallery/kaikoura/thumbs/seed-1.jpg"
+      "coverUrl": "images/网页使用照片集/gallery/kaikoura/thumbs/seed-2.jpg"
     },
     {
       "slug": "lake-tekapo",
@@ -135,7 +121,7 @@
         {
           "file": "seed-1.JPG",
           "thumb": "thumbs/seed-1.JPG",
-          "mtime": 1780526376810.2454,
+          "mtime": 1780644441233.7622,
           "full": "images/网页使用照片集/gallery/milford-sound/seed-1.JPG",
           "thumbUrl": "images/网页使用照片集/gallery/milford-sound/thumbs/seed-1.JPG"
         }
@@ -150,7 +136,7 @@
       "description": "Mount Cook Scenic Photography — Peter's South Island travel photography gallery.",
       "cover": "seed-1.JPG",
       "coverThumb": "thumbs/seed-1.JPG",
-      "imageCount": 3,
+      "imageCount": 1,
       "images": [
         {
           "file": "seed-1.JPG",
@@ -158,20 +144,6 @@
           "mtime": 1780526376980.6282,
           "full": "images/网页使用照片集/gallery/mount-cook/seed-1.JPG",
           "thumbUrl": "images/网页使用照片集/gallery/mount-cook/thumbs/seed-1.JPG"
-        },
-        {
-          "file": "seed-2.JPG",
-          "thumb": "thumbs/seed-2.JPG",
-          "mtime": 1780526376981.015,
-          "full": "images/网页使用照片集/gallery/mount-cook/seed-2.JPG",
-          "thumbUrl": "images/网页使用照片集/gallery/mount-cook/thumbs/seed-2.JPG"
-        },
-        {
-          "file": "seed-3.JPG",
-          "thumb": "thumbs/seed-3.JPG",
-          "mtime": 1780526376982.414,
-          "full": "images/网页使用照片集/gallery/mount-cook/seed-3.JPG",
-          "thumbUrl": "images/网页使用照片集/gallery/mount-cook/thumbs/seed-3.JPG"
         }
       ],
       "url": "gallery/mount-cook/",
@@ -209,7 +181,7 @@
         {
           "file": "seed-1.jpg",
           "thumb": "thumbs/seed-1.jpg",
-          "mtime": 1780526377494.206,
+          "mtime": 1780644441513.912,
           "full": "images/网页使用照片集/gallery/queenstown/seed-1.jpg",
           "thumbUrl": "images/网页使用照片集/gallery/queenstown/thumbs/seed-1.jpg"
         }
@@ -229,7 +201,7 @@
         {
           "file": "seed-1.JPG",
           "thumb": "thumbs/seed-1.JPG",
-          "mtime": 1780526377666.9712,
+          "mtime": 1780644441629.1777,
           "full": "images/网页使用照片集/gallery/wanaka/seed-1.JPG",
           "thumbUrl": "images/网页使用照片集/gallery/wanaka/thumbs/seed-1.JPG"
         }
