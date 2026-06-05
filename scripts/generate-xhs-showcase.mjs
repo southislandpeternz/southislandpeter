@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * Pick 24 curated homepage travel photos (3 per priority theme).
+ * Pick ~24 curated homepage travel photos (3 per priority theme).
+ * Filters text screenshots and near-duplicates.
  * Run: node scripts/generate-xhs-showcase.mjs
  */
 import fs from "fs";
 import path from "path";
-import crypto from "crypto";
 import { execSync } from "child_process";
 
 const ROOT = process.cwd();
@@ -14,6 +14,7 @@ const DESKTOP_LIB = path.join(DESKTOP, "小红书素材库");
 const WEB_ROOT = path.join(ROOT, "images/网页使用照片集");
 const OUT_DIR = path.join(WEB_ROOT, "xiaohongshu-showcase");
 const MANIFEST_PATH = path.join(ROOT, "gallery/xhs-showcase.json");
+const SCORE_PY = path.join(ROOT, "scripts/xhs-showcase-score.py");
 const PYTHON = path.join(ROOT, ".venv-photo-organizer/bin/python");
 const IMAGE_EXT = /\.(jpe?g|png|webp|heic|gif|avif)$/i;
 const TARGET_TOTAL = 24;
@@ -32,11 +33,7 @@ const CATEGORIES = [
     slug: "lake-pukaki",
     label: "普卡基湖",
     count: 3,
-    sources: [
-      path.join(DESKTOP, "lake-pukaki"),
-      path.join(DESKTOP, "lake-pukali"),
-      path.join(DESKTOP_LIB, "小红书-湖景精选")
-    ]
+    sources: [path.join(DESKTOP, "lake-pukaki"), path.join(DESKTOP, "lake-pukali")]
   },
   {
     slug: "lake-tekapo",
@@ -78,7 +75,7 @@ const CATEGORIES = [
   },
   {
     slug: "guests",
-    label: "客人合影",
+    label: "客人旅拍",
     count: 3,
     sources: [path.join(DESKTOP_LIB, "小红书-客户合影精选")]
   }
@@ -120,74 +117,23 @@ function listPhotosRecursive(dir) {
 function collectSources(sources) {
   const files = [];
   for (const src of sources) files.push(...listPhotosRecursive(src));
-  return files;
+  return [...new Set(files)];
 }
 
-function pickTopN(files, count, excludeMd5) {
-  if (!files.length || count <= 0) return [];
-  const scoreScript = `
-import sys, json, hashlib
-from pathlib import Path
-try:
-    import cv2
-    import numpy as np
-except ImportError:
-    print(json.dumps({"error": "cv2 missing"}))
-    sys.exit(1)
-
-exclude = set(sys.argv[1].split(",")) if len(sys.argv) > 1 and sys.argv[1] else set()
-paths = sys.argv[2:]
-
-def md5(p):
-    h = hashlib.md5()
-    with open(p, "rb") as f:
-        for chunk in iter(lambda: f.read(1 << 20), b""):
-            h.update(chunk)
-    return h.hexdigest()
-
-def score(path):
-    p = Path(path)
-    try:
-        data = np.fromfile(str(p), dtype=np.uint8)
-        img = cv2.imdecode(data, cv2.IMREAD_COLOR)
-        if img is None:
-            return 0.0
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        lap = cv2.Laplacian(gray, cv2.CV_64F).var()
-        h, w = img.shape[:2]
-        mp = (w * h) / 1e6
-        return float(lap) * 0.6 + mp * 40
-    except Exception:
-        return 0.0
-
-rows = []
-seen = set()
-for p in paths:
-    try:
-        digest = md5(p)
-    except OSError:
-        continue
-    if digest in seen or digest in exclude:
-        continue
-    seen.add(digest)
-    rows.append({"path": p, "score": score(p), "md5": digest})
-
-rows.sort(key=lambda r: r["score"], reverse=True)
-print(json.dumps(rows[:${count}]))
-`;
-  const tmp = path.join(ROOT, ".tmp-xhs-score.py");
-  fs.writeFileSync(tmp, scoreScript);
+function rankCandidates(category, files, exclude) {
+  if (!files.length) return [];
+  const excludeFile = path.join(ROOT, ".tmp-xhs-exclude.json");
+  fs.writeFileSync(excludeFile, JSON.stringify(exclude));
   try {
-    const excludeArg = [...excludeMd5].join(",");
     const out = execSync(
-      `"${PYTHON}" "${tmp}" "${excludeArg}" ${files.map((f) => `"${f}"`).join(" ")}`,
+      `"${PYTHON}" "${SCORE_PY}" "${category}" "${excludeFile}" ${files.map((f) => `"${f}"`).join(" ")}`,
       { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 }
     );
     const rows = JSON.parse(out.trim());
     if (rows.error) throw new Error(rows.error);
     return rows;
   } finally {
-    fs.unlinkSync(tmp);
+    fs.unlinkSync(excludeFile);
   }
 }
 
@@ -212,13 +158,17 @@ function main() {
     console.error(`Missing Python venv: ${PYTHON}`);
     process.exit(1);
   }
+  if (!fs.existsSync(SCORE_PY)) {
+    console.error(`Missing scorer: ${SCORE_PY}`);
+    process.exit(1);
+  }
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   fs.mkdirSync(path.join(OUT_DIR, "thumbs"), { recursive: true });
   clearShowcaseDir();
 
   const images = [];
-  const usedMd5 = new Set();
+  const exclude = { md5: [], dhash: [] };
 
   for (const cat of CATEGORIES) {
     const files = collectSources(cat.sources);
@@ -226,10 +176,12 @@ function main() {
       console.warn(`No photos for ${cat.label}`);
       continue;
     }
-    const top = pickTopN(files, cat.count, usedMd5);
-    console.log(`\n=== ${cat.label} (${top.length}/${cat.count}) ===`);
+    const ranked = rankCandidates(cat.slug, files, exclude);
+    const top = ranked.slice(0, cat.count);
+    console.log(`\n=== ${cat.label} (${top.length}/${cat.count}, pool ${ranked.length}) ===`);
     top.forEach((row, i) => {
-      usedMd5.add(row.md5);
+      exclude.md5.push(row.md5);
+      exclude.dhash.push(row.dhash);
       const destName = safeName(cat.slug, i);
       const destFull = path.join(OUT_DIR, destName);
       const destThumb = path.join(OUT_DIR, "thumbs", destName);
@@ -244,8 +196,11 @@ function main() {
         thumbUrl: `images/网页使用照片集/xiaohongshu-showcase/thumbs/${destName}`,
         alt: `Peter 南岛旅拍 · ${cat.label}`
       });
-      console.log(`  ${destName} (score ${row.score.toFixed(1)})`);
+      console.log(`  ${destName} (score ${row.score.toFixed(1)}) <- ${path.basename(row.path)}`);
     });
+    if (top.length < cat.count) {
+      console.warn(`  Warning: only ${top.length} valid photos for ${cat.label}`);
+    }
   }
 
   const manifest = {
@@ -253,6 +208,7 @@ function main() {
     photosRoot: "images/网页使用照片集/xiaohongshu-showcase",
     imageCount: images.length,
     targetCount: TARGET_TOTAL,
+    filters: ["no_text_screenshots", "no_near_duplicates", "scenery_only_for_landscape"],
     images
   };
 
