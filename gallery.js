@@ -132,16 +132,23 @@
     });
   }
 
-  function renderMasonry(container, images) {
+  function renderMasonry(container, images, options) {
     if (!container) return;
+    const editorial = options?.editorial;
     container.innerHTML = "";
+    if (editorial) {
+      container.classList.add("home-gallery-masonry--editorial");
+    }
     const paths = [];
     images.forEach((img, i) => {
       const full = normalizePath(img.full || img.thumbUrl || "");
       const thumb = normalizePath(img.thumbUrl || img.thumb || img.full || "");
       paths.push(full);
       const figure = document.createElement("figure");
-      figure.className = "home-gallery-item";
+      const layout = img.layout || "standard";
+      figure.className = editorial
+        ? `home-gallery-item home-gallery-item--${layout}`
+        : "home-gallery-item";
       const el = document.createElement("img");
       el.src = thumb;
       el.dataset.fullSrc = full;
@@ -222,8 +229,11 @@
       images.map((img) => ({
         full: img.full,
         thumbUrl: img.thumbUrl,
-        alt: img.alt || ""
-      }))
+        alt: img.alt || "",
+        layout: img.layout || "standard",
+        score: img.score
+      })),
+      { editorial: true }
     );
   }
 

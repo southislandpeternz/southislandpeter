@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 /**
- * Scans images/网页使用照片集/reviews/ and writes manifest + thumbs.
- * Run: node scripts/generate-reviews-manifest.mjs
+ * Scans images/网页使用照片集/reviews/ — no placeholders.
  */
 import fs from "fs";
 import path from "path";
@@ -12,8 +11,8 @@ const REVIEWS_DIR = path.join(WEB_ROOT, "reviews");
 const LEGACY_DIR = WEB_ROOT;
 const THUMBS_DIR = path.join(REVIEWS_DIR, "thumbs");
 const IMAGE_EXT = /\.(jpe?g|png|webp)$/i;
+const PLACEHOLDER_RE = /placeholder|slot-placeholder/i;
 
-/** Platform tags for homepage diversity (wechat / xhs / google). */
 const PLATFORM_TAGS = {
   "review-guide-01.jpg": ["xhs", "wechat", "google"],
   "review-return-return-01.JPG": ["wechat", "xhs"],
@@ -45,24 +44,23 @@ function makeThumb(src, dest) {
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   if (hasSips()) {
     execSync(`sips -Z 560 "${src}" --out "${dest}"`, { stdio: "ignore" });
-    return;
+  } else {
+    fs.copyFileSync(src, dest);
   }
-  fs.copyFileSync(src, dest);
 }
 
 function ensureReviewsDir() {
   fs.mkdirSync(REVIEWS_DIR, { recursive: true });
   fs.mkdirSync(THUMBS_DIR, { recursive: true });
-
   if (!fs.existsSync(LEGACY_DIR)) return;
   for (const entry of fs.readdirSync(LEGACY_DIR, { withFileTypes: true })) {
     if (!entry.isFile()) continue;
-    const name = entry.name;
-    if (!IMAGE_EXT.test(name)) continue;
-    if (!/^(review|reviews)/i.test(name)) continue;
-    const dest = path.join(REVIEWS_DIR, name);
+    if (!IMAGE_EXT.test(entry.name)) continue;
+    if (!/^(review|reviews)/i.test(entry.name)) continue;
+    if (PLACEHOLDER_RE.test(entry.name)) continue;
+    const dest = path.join(REVIEWS_DIR, entry.name);
     if (!fs.existsSync(dest)) {
-      fs.copyFileSync(path.join(LEGACY_DIR, name), dest);
+      fs.copyFileSync(path.join(LEGACY_DIR, entry.name), dest);
     }
   }
 }
@@ -71,7 +69,13 @@ function listReviewFiles() {
   ensureReviewsDir();
   return fs
     .readdirSync(REVIEWS_DIR, { withFileTypes: true })
-    .filter((entry) => entry.isFile() && IMAGE_EXT.test(entry.name))
+    .filter(
+      (entry) =>
+        entry.isFile() &&
+        IMAGE_EXT.test(entry.name) &&
+        !PLACEHOLDER_RE.test(entry.name) &&
+        /^(review|reviews)/i.test(entry.name)
+    )
     .map((entry) => {
       const file = entry.name;
       const src = path.join(REVIEWS_DIR, file);
@@ -91,7 +95,6 @@ function listReviewFiles() {
 }
 
 const files = listReviewFiles();
-
 const images = files.map(({ file, mtime, platforms, platform, platformLabel, alt }) => {
   const src = path.join(REVIEWS_DIR, file);
   const thumbPath = path.join(THUMBS_DIR, file);
@@ -119,4 +122,4 @@ const manifest = {
 };
 
 fs.writeFileSync(path.join(WEB_ROOT, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n");
-console.log(`Wrote ${images.length} review images to ${WEB_ROOT}/manifest.json`);
+console.log(`Wrote ${images.length} review images (no placeholders)`);

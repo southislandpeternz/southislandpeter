@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Pick ~24 curated homepage travel photos with priority themes.
+ * Pick 24 curated homepage travel photos — 雪山/湖泊/奔驰/客人合影 focus.
  * Run: node scripts/generate-xhs-showcase.mjs
  */
 import fs from "fs";
@@ -19,12 +19,15 @@ const PYTHON = path.join(ROOT, ".venv-photo-organizer/bin/python");
 const IMAGE_EXT = /\.(jpe?g|png|webp|heic|gif|avif)$/i;
 const TARGET_TOTAL = 24;
 
-/** Priority order — processed first in gallery. */
+const LAKE_SLUGS = new Set(["lake-pukaki", "lake-tekapo", "tekapo-stars"]);
+const PERSON_SLUGS = new Set(["guests"]);
+
+/** 雪山 · 湖泊 · 奔驰 · 客人合影 = 24 */
 const CATEGORIES = [
   {
     slug: "mount-cook",
     label: "库克山",
-    count: 3,
+    count: 6,
     sources: [
       path.join(DESKTOP, "mount-cook"),
       path.join(DESKTOP_LIB, "小红书-雪山精选")
@@ -35,6 +38,23 @@ const CATEGORIES = [
     label: "普卡基湖",
     count: 4,
     sources: [path.join(DESKTOP, "lake-pukaki"), path.join(DESKTOP, "lake-pukali")]
+  },
+  {
+    slug: "lake-tekapo",
+    label: "特卡波湖",
+    count: 2,
+    sources: [
+      path.join(DESKTOP, "lake-tekapo"),
+      path.join(DESKTOP, "Lake -tekapo"),
+      path.join(DESKTOP_LIB, "小红书-湖景精选")
+    ]
+  },
+  {
+    slug: "tekapo-stars",
+    label: "特卡波星空",
+    count: 1,
+    sources: [path.join(DESKTOP, "星空")],
+    extraFiles: [path.join(SITE_ROOT, "tekapo-stargazing.JPG")]
   },
   {
     slug: "vehicle",
@@ -48,31 +68,8 @@ const CATEGORIES = [
   {
     slug: "guests",
     label: "客人合影",
-    count: 4,
-    sources: [path.join(DESKTOP_LIB, "小红书-客户合影精选")]
-  },
-  {
-    slug: "kaikoura",
-    label: "凯库拉观鲸",
     count: 5,
-    sources: [
-      path.join(DESKTOP, "kaikoura"),
-      path.join(DESKTOP, "kaikoura "),
-      path.join(DESKTOP_LIB, "小红书-观鲸精选")
-    ]
-  },
-  {
-    slug: "tekapo-stars",
-    label: "特卡波星空",
-    count: 1,
-    sources: [path.join(DESKTOP, "星空")],
-    extraFiles: [path.join(SITE_ROOT, "tekapo-stargazing.JPG")]
-  },
-  {
-    slug: "peter",
-    label: "Peter",
-    count: 1,
-    sources: [SITE_ROOT, path.join(DESKTOP_LIB, "小红书-客户合影精选")]
+    sources: [path.join(DESKTOP_LIB, "小红书-客户合影精选")]
   }
 ];
 
@@ -94,7 +91,7 @@ function makeThumb(src, dest, size) {
   }
 }
 
-function listPhotosRecursive(dir, nameFilter) {
+function listPhotosRecursive(dir) {
   if (!fs.existsSync(dir)) return [];
   const out = [];
   const walk = (current) => {
@@ -102,18 +99,16 @@ function listPhotosRecursive(dir, nameFilter) {
       if (entry.name.startsWith(".")) continue;
       const full = path.join(current, entry.name);
       if (entry.isDirectory()) walk(full);
-      else if (IMAGE_EXT.test(entry.name)) {
-        if (!nameFilter || nameFilter(entry.name)) out.push(full);
-      }
+      else if (IMAGE_EXT.test(entry.name)) out.push(full);
     }
   };
   walk(dir);
   return out;
 }
 
-function collectSources(sources, nameFilter) {
+function collectSources(sources) {
   const files = [];
-  for (const src of sources) files.push(...listPhotosRecursive(src, nameFilter));
+  for (const src of sources) files.push(...listPhotosRecursive(src));
   return [...new Set(files)];
 }
 
@@ -132,6 +127,64 @@ function rankCandidates(category, files, exclude) {
   } finally {
     fs.unlinkSync(excludeFile);
   }
+}
+
+function interleaveGroup(category) {
+  if (LAKE_SLUGS.has(category)) return "lake";
+  if (PERSON_SLUGS.has(category)) return "guests";
+  return category;
+}
+
+function interleaveImages(items) {
+  const buckets = {};
+  for (const img of items) {
+    const g = interleaveGroup(img.category);
+    (buckets[g] ||= []).push(img);
+  }
+  for (const g of Object.keys(buckets)) {
+    buckets[g].sort((a, b) => (b.score || 0) - (a.score || 0));
+  }
+  const order = ["mount-cook", "lake", "vehicle", "guests"];
+  const keys = order.filter((k) => buckets[k]?.length);
+  const out = [];
+  let guard = 0;
+  while (out.length < items.length && guard < items.length * 4) {
+    guard += 1;
+    let added = false;
+    for (const k of keys) {
+      if (!buckets[k]?.length) continue;
+      const last = out[out.length - 1];
+      const next = buckets[k][0];
+      if (last && interleaveGroup(last.category) === interleaveGroup(next.category)) {
+        continue;
+      }
+      out.push(buckets[k].shift());
+      added = true;
+    }
+    if (!added) {
+      for (const k of keys) {
+        if (buckets[k]?.length) {
+          out.push(buckets[k].shift());
+          break;
+        }
+      }
+    }
+  }
+  return out;
+}
+
+function assignLayouts(items) {
+  const heroes = new Set(
+    [...items].sort((a, b) => (b.score || 0) - (a.score || 0)).slice(0, 8).map((i) => i.file)
+  );
+  return items.map((img, idx) => {
+    let layout = "standard";
+    if (heroes.has(img.file)) {
+      if (idx % 5 === 0) layout = "hero";
+      else if (idx % 5 === 2) layout = "wide";
+    }
+    return { ...img, layout };
+  });
 }
 
 function safeName(slug, index) {
@@ -161,26 +214,17 @@ function main() {
     console.error(`Missing Python venv: ${PYTHON}`);
     process.exit(1);
   }
-  if (!fs.existsSync(SCORE_PY)) {
-    console.error(`Missing scorer: ${SCORE_PY}`);
-    process.exit(1);
-  }
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
   fs.mkdirSync(path.join(OUT_DIR, "thumbs"), { recursive: true });
   clearShowcaseDir();
 
-  const images = [];
+  const raw = [];
   const exclude = { md5: [], dhash: [], person_dhash: [] };
 
   for (const cat of CATEGORIES) {
-    let nameFilter = null;
-    if (cat.slug === "peter") {
-      nameFilter = (name) => /peter/i.test(name);
-    }
-
     const files = [
-      ...collectSources(cat.sources, nameFilter),
+      ...collectSources(cat.sources),
       ...(cat.extraFiles || []).filter((f) => fs.existsSync(f))
     ];
     const uniqueFiles = [...new Set(files)];
@@ -190,7 +234,7 @@ function main() {
     }
     const ranked = rankCandidates(cat.slug, uniqueFiles, exclude);
     const top = ranked.slice(0, cat.count);
-    console.log(`\n=== ${cat.label} (${top.length}/${cat.count}, pool ${ranked.length}) ===`);
+    console.log(`\n=== ${cat.label} (${top.length}/${cat.count}) ===`);
     top.forEach((row, i) => {
       trackExclude(exclude, row);
       const destName = safeName(cat.slug, i);
@@ -198,40 +242,40 @@ function main() {
       const destThumb = path.join(OUT_DIR, "thumbs", destName);
       fs.copyFileSync(row.path, destFull);
       makeThumb(destFull, destThumb, 720);
-      images.push({
+      raw.push({
         category: cat.slug,
         label: cat.label,
         file: destName,
         score: row.score,
+        source: path.basename(row.path),
         full: `images/网页使用照片集/xiaohongshu-showcase/${destName}`,
         thumbUrl: `images/网页使用照片集/xiaohongshu-showcase/thumbs/${destName}`,
         alt: `Peter 南岛旅拍 · ${cat.label}`
       });
-      console.log(`  ${destName} (score ${row.score.toFixed(1)}) <- ${path.basename(row.path)}`);
+      console.log(`  ${destName} <- ${path.basename(row.path)}`);
     });
-    if (top.length < cat.count) {
-      console.warn(`  Warning: only ${top.length} valid photos for ${cat.label}`);
-    }
   }
+
+  const images = assignLayouts(interleaveImages(raw));
 
   const manifest = {
     generatedAt: new Date().toISOString(),
     photosRoot: "images/网页使用照片集/xiaohongshu-showcase",
     imageCount: images.length,
     targetCount: TARGET_TOTAL,
+    focus: ["雪山", "湖泊", "奔驰商务车", "客人合影"],
     filters: [
       "no_text_screenshots",
       "no_near_duplicates",
       "no_duplicate_people",
-      "one_peter_portrait"
+      "interleaved_categories"
     ],
     images
   };
 
   fs.mkdirSync(path.dirname(MANIFEST_PATH), { recursive: true });
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + "\n");
-  console.log(`\nManifest: ${MANIFEST_PATH}`);
-  console.log(`Total: ${images.length} photos (target ${TARGET_TOTAL})`);
+  console.log(`\nTotal: ${images.length} (interleaved display order in manifest)`);
 }
 
 main();

@@ -4755,17 +4755,108 @@ body:not(.is-loading) .page-loader {
 .home-gallery-masonry .home-gallery-item img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
   box-shadow: 0 6px 20px rgba(47, 47, 47, 0.08);
 }
 
 .home-gallery-item {
+  margin: 0 0 14px;
+  break-inside: avoid;
+}
+
+/* 首页精选摄影 — 编辑式大小图混排 */
+#homeGalleryShowcase.home-gallery-masonry--editorial {
+  column-count: unset;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(10px, 1.5vw, 16px);
+  max-width: 1140px;
+}
+
+#homeGalleryShowcase .home-gallery-item {
   margin: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+#homeGalleryShowcase .home-gallery-item img {
+  width: 100%;
+  max-width: 100%;
+  min-height: 160px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+#homeGalleryShowcase .home-gallery-item--hero {
+  grid-column: span 7;
+}
+
+#homeGalleryShowcase .home-gallery-item--wide {
+  grid-column: span 5;
+}
+
+#homeGalleryShowcase .home-gallery-item--standard {
+  grid-column: span 4;
+}
+
+#homeReviewsMasonry .home-gallery-item img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+  #homeGalleryShowcase.home-gallery-masonry--editorial {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  #homeGalleryShowcase .home-gallery-item--hero {
+    grid-column: span 6;
+  }
+
+  #homeGalleryShowcase .home-gallery-item--wide {
+    grid-column: span 3;
+  }
+
+  #homeGalleryShowcase .home-gallery-item--standard {
+    grid-column: span 3;
+  }
 }
 
 @media (max-width: 640px) {
   .home-gallery-masonry {
     column-count: 2;
+  }
+
+  #homeGalleryShowcase.home-gallery-masonry--editorial {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  #homeGalleryShowcase .home-gallery-item--hero {
+    grid-column: span 2;
+  }
+
+  #homeGalleryShowcase .home-gallery-item--wide,
+  #homeGalleryShowcase .home-gallery-item--standard {
+    grid-column: span 1;
+  }
+
+  #homeGalleryShowcase .home-gallery-item img {
+    min-height: 120px;
+  }
+
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-img {
+    max-width: 96vw;
+    max-height: 80vh;
   }
 }
 

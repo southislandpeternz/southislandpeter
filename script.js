@@ -91,10 +91,12 @@
   const REVIEWS_EMPTY_HINT =
     "暂无客人评价图片。请将评价截图放入 images/网页使用照片集/reviews/ 后运行 node scripts/generate-reviews-manifest.mjs。";
   const REVIEW_FILE_RE = /^(review|reviews).+\.(jpe?g|png|webp)$/i;
+  const PLACEHOLDER_RE = /placeholder|slot-placeholder/i;
 
   function isReviewImageName(name) {
     const base = name.replace(/^.*\//, "");
     if (!base || base === "thumbs" || base.startsWith("thumbs/")) return false;
+    if (PLACEHOLDER_RE.test(base)) return false;
     return REVIEW_FILE_RE.test(base);
   }
 
