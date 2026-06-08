@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-06-04T03:17:20.206359+00:00",
+  "inbox": "NZ-Travel-photos/inbox",
+  "dry_run": true,
+  "total": 1,
+  "moved": 1,
+  "unsorted": 0,
+  "errors": 0,
+  "by_folder": {
+    "kaikoura": 1
+  },
+  "files": [
+    {
+      "source": "NZ-Travel-photos/inbox/test_kaikoura_sample.jpg",
+      "destination": "NZ-Travel-photos/kaikoura/test_kaikoura_sample.jpg",
+      "target_id": "kaikoura",
+      "folder": "kaikoura",
+      "confidence": 0.5828,
+      "method": "filename+ai_heuristic",
+      "sorted": true,
+      "gps": null,
+      "signals": [
+        {
+          "target_id": "kaikoura",
+          "score": 0.832,
+          "detail": "filename: filename contains 'kaikoura'"
+        },
+        {
+          "target_id": "lake-tekapo",
+          "score": 1.0,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "milford-sound",
+          "score": 1.0,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "kaikoura",
+          "score": 1.0,
+          "detail": "ai: local image heuristics"
+        }
+      ],
+      "error": null
+    }
+  ]
+}

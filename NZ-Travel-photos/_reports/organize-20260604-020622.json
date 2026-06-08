@@ -1,0 +1,172 @@
+{
+  "generated_at": "2026-06-04T02:06:22.687315+00:00",
+  "inbox": "NZ-Travel-photos/inbox",
+  "dry_run": true,
+  "total": 4,
+  "moved": 3,
+  "unsorted": 1,
+  "errors": 0,
+  "by_folder": {
+    "kaikoura": 1,
+    "unsorted": 1,
+    "车图集": 1,
+    "lake-tekapo": 1
+  },
+  "files": [
+    {
+      "source": "NZ-Travel-photos/inbox/DSC_kaikoura_whale_001.jpg",
+      "destination": "NZ-Travel-photos/kaikoura/DSC_kaikoura_whale_001.jpg",
+      "target_id": "kaikoura",
+      "folder": "kaikoura",
+      "confidence": 0.5787272727272728,
+      "method": "filename+ai_heuristic",
+      "sorted": true,
+      "gps": null,
+      "signals": [
+        {
+          "target_id": "kaikoura",
+          "score": 0.8218181818181818,
+          "detail": "filename: filename contains 'kaikoura'"
+        },
+        {
+          "target_id": "lake-tekapo",
+          "score": 1.0,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "milford-sound",
+          "score": 1.0,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "kaikoura",
+          "score": 1.0,
+          "detail": "ai: local image heuristics"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "NZ-Travel-photos/inbox/IMG_random_city.jpg",
+      "destination": "NZ-Travel-photos/unsorted/IMG_random_city.jpg",
+      "target_id": null,
+      "folder": "unsorted",
+      "confidence": 0.25,
+      "method": "ambiguous",
+      "sorted": false,
+      "gps": null,
+      "signals": [
+        {
+          "target_id": "cars",
+          "score": 1.0,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "milford-sound",
+          "score": 1.0,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "kaikoura",
+          "score": 0.9894946470162252,
+          "detail": "ai: local image heuristics"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "NZ-Travel-photos/inbox/mercedes_van_tour.JPG",
+      "destination": "NZ-Travel-photos/车图集/mercedes_van_tour.JPG",
+      "target_id": "cars",
+      "folder": "车图集",
+      "confidence": 0.5630359741361579,
+      "method": "filename+ai_heuristic",
+      "sorted": true,
+      "gps": null,
+      "signals": [
+        {
+          "target_id": "cars",
+          "score": 0.851764705882353,
+          "detail": "filename: filename contains 'mercedes'"
+        },
+        {
+          "target_id": "cars",
+          "score": 0.8893203671328671,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "lodging",
+          "score": 0.47640898164335665,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "milford-sound",
+          "score": 1.0,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "mount-cook",
+          "score": 0.503359557109557,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "kaikoura",
+          "score": 0.8004261363636365,
+          "detail": "ai: local image heuristics"
+        }
+      ],
+      "error": null
+    },
+    {
+      "source": "NZ-Travel-photos/inbox/tekapo_stargazing_night.JPG",
+      "destination": "NZ-Travel-photos/lake-tekapo/tekapo_stargazing_night.JPG",
+      "target_id": "lake-tekapo",
+      "folder": "lake-tekapo",
+      "confidence": 0.8910472878763926,
+      "method": "filename+gps+ai_heuristic",
+      "sorted": true,
+      "gps": [
+        -43.98572222222222,
+        170.4651333333333
+      ],
+      "signals": [
+        {
+          "target_id": "lake-tekapo",
+          "score": 0.7930434782608695,
+          "detail": "filename: filename contains 'tekapo'"
+        },
+        {
+          "target_id": "stars",
+          "score": 0.768695652173913,
+          "detail": "filename: filename contains 'star'"
+        },
+        {
+          "target_id": "lake-tekapo",
+          "score": 0.925228275920128,
+          "detail": "gps: GPS -43.9857, 170.4651"
+        },
+        {
+          "target_id": "food",
+          "score": 0.5684908854166667,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "lake-tekapo",
+          "score": 1.0,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "milford-sound",
+          "score": 0.9988906249999999,
+          "detail": "ai: local image heuristics"
+        },
+        {
+          "target_id": "kaikoura",
+          "score": 0.9132568359375,
+          "detail": "ai: local image heuristics"
+        }
+      ],
+      "error": null
+    }
+  ]
+}

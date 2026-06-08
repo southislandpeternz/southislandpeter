@@ -1,0 +1,60 @@
+Photo library: /Users/yueshe/Desktop/NZ-Travel-photos 
+Found 20411 images (excluding output folders)
+  Analyzed 500/20411
+  Analyzed 1000/20411
+  Analyzed 1500/20411
+  Analyzed 2000/20411
+  Analyzed 2500/20411
+  Analyzed 3000/20411
+  Analyzed 3500/20411
+  Analyzed 4000/20411
+  Analyzed 4500/20411
+  Analyzed 5000/20411
+  Analyzed 5500/20411
+  Analyzed 6000/20411
+  Analyzed 6500/20411
+  Analyzed 7000/20411
+  Analyzed 7500/20411
+  Analyzed 8000/20411
+  Analyzed 8500/20411
+  Analyzed 9000/20411
+  Analyzed 9500/20411
+  Analyzed 10000/20411
+  Analyzed 10500/20411
+  Analyzed 11000/20411
+  Analyzed 11500/20411
+  Analyzed 12000/20411
+  Analyzed 12500/20411
+  Analyzed 13000/20411
+  Analyzed 13500/20411
+  Analyzed 14000/20411
+  Analyzed 14500/20411
+  Analyzed 15000/20411
+  Analyzed 15500/20411
+  Analyzed 16000/20411
+  Analyzed 16500/20411
+  Analyzed 17000/20411
+  Analyzed 17500/20411
+  Analyzed 18000/20411
+  Analyzed 18500/20411
+  Analyzed 19000/20411
+  Analyzed 19500/20411
+  Analyzed 20000/20411
+  Analyzed 20411/20411
+Analyzed 20024 photos successfully
+Copying Website-Photos (10 per location)...
+Copying Xiaohongshu-Photos (20 per location)...
+
+=== Complete ===
+总照片数量: 20024
+五星照片数量: 830
+网站精选总数: 110
+小红书精选总数: 220
+删除候选总数: 300
+
+Outputs:
+  /Users/yueshe/Desktop/NZ-Travel-photos /Photo-Review
+  /Users/yueshe/Desktop/NZ-Travel-photos /Website-Photos
+  /Users/yueshe/Desktop/NZ-Travel-photos /Xiaohongshu-Photos
+  /Users/yueshe/Desktop/NZ-Travel-photos /photo-rating.csv
+  /Users/yueshe/Desktop/NZ-Travel-photos /photo-selection-report.md
