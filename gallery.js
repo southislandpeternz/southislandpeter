@@ -288,11 +288,7 @@
       showEmpty(featuredEl, EMPTY_HINT);
       return;
     }
-    const homeItems =
-      data.homeFeatured?.length > 0
-        ? data.homeFeatured
-        : (data.featured || []).slice(0, 6);
-    renderPhotoMasonry(featuredEl, homeItems);
+    renderPhotoMasonry(featuredEl, (data.featured || []).slice(0, 6));
   }
 
   async function boot() {

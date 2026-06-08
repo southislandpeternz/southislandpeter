@@ -130,47 +130,27 @@ const THEMES = [
 ];
 
 const FEATURED_COUNT = 12;
-const FEATURED_ORDER = ["stars", "mountains", "lakes", "fjord", "coastal", "akaroa"];
 const MIN_LANDSCAPE_ASPECT = 1.15;
 
-/** Homepage first 6 — lakes, mountains, travel, fjord, coast, wildlife. Slot 3 keeps one golf travel photo. */
-const HOME_FEATURED_PICKS = [
+/** Gallery page #photoFeaturedGrid — 12 curated featured works (homepage uses first 6). */
+const FEATURED_PICKS = [
+  { file: "tekapo-stargazing.JPG", category: "lake-pukaki", themeId: "lakes", label: "普卡基湖" },
+  { file: "mount-cook-blue-lake-new-zealand-01.jpeg", category: "mount-cook", themeId: "mountains", label: "库克山" },
+  { file: "wanaka-blue-lake-new-zealand-03.jpeg", category: "queenstown", themeId: "travel", label: "箭镇" },
+  { file: "milford-sound-fiord-mitre-peak-new-zealand-10.jpg", category: "milford-sound", themeId: "fjord", label: "米尔福德峡湾" },
+  { file: "queenstown-lake-wakatipu-new-zealand-07.jpg", category: "queenstown", themeId: "coastal", label: "皇后镇" },
+  { file: "akaroa-blue-lake-new-zealand-02.jpeg", category: "kaikoura", themeId: "wildlife", label: "凯库拉" },
+  { file: "mount-cook-blue-lake-new-zealand-07.jpeg", category: "mount-cook", themeId: "mountains", label: "库克山" },
+  { file: "lake-tekapo-blue-lake-new-zealand-04.jpeg", category: "lake-tekapo", themeId: "lakes", label: "特卡波湖" },
+  { file: "milford-sound-fiord-mitre-peak-new-zealand-01.jpeg", category: "milford-sound", themeId: "fjord", label: "米尔福德峡湾" },
   {
-    file: "tekapo-stargazing.JPG",
-    category: "lake-pukaki",
-    themeId: "lakes",
-    label: "普卡基湖"
-  },
-  {
-    file: "mount-cook-blue-lake-new-zealand-01.jpeg",
-    category: "mount-cook",
-    themeId: "mountains",
-    label: "库克山"
-  },
-  {
-    file: "wanaka-blue-lake-new-zealand-03.jpeg",
-    category: "queenstown",
-    themeId: "travel",
-    label: "箭镇"
-  },
-  {
-    file: "milford-sound-fiord-mitre-peak-new-zealand-10.jpg",
-    category: "milford-sound",
-    themeId: "fjord",
-    label: "米尔福德峡湾"
-  },
-  {
-    file: "queenstown-lake-wakatipu-new-zealand-07.jpg",
-    category: "queenstown",
-    themeId: "coastal",
-    label: "皇后镇"
-  },
-  {
-    file: "akaroa-blue-lake-new-zealand-02.jpeg",
+    file: "kaikoura-whale-watching-whale-watching-tour-new-zealand-08.jpg",
     category: "kaikoura",
-    themeId: "wildlife",
+    themeId: "coastal",
     label: "凯库拉"
-  }
+  },
+  { file: "akaroa-blue-lake-new-zealand-10.jpg", category: "akaroa", themeId: "akaroa", label: "阿卡罗阿" },
+  { file: "lake-tekapo-blue-lake-new-zealand-01.jpeg", category: "lake-pukaki", themeId: "lakes", label: "普卡基湖" }
 ];
 
 function hasSips() {
@@ -318,12 +298,6 @@ function pickHero(exclude) {
   return null;
 }
 
-function sourceKey(row) {
-  if (row.source) return String(row.source).toLowerCase();
-  if (row.path) return path.basename(row.path).toLowerCase();
-  return "";
-}
-
 function pickThemeImages(theme, exclude) {
   const files = resolveSources(theme.folders, theme.extraFiles, theme.libraryFolders);
   let ranked = rankCandidates(theme.category, files, exclude);
@@ -361,11 +335,15 @@ function findSourceFile(basename) {
   return null;
 }
 
-function pickHomeFeatured(exclude) {
-  return HOME_FEATURED_PICKS.map((spec) => {
+function pickFeaturedPicks(exclude) {
+  if (FEATURED_PICKS.length !== FEATURED_COUNT) {
+    console.error(`FEATURED_PICKS must have ${FEATURED_COUNT} entries, got ${FEATURED_PICKS.length}`);
+    process.exit(1);
+  }
+  return FEATURED_PICKS.map((spec) => {
     const filePath = findSourceFile(spec.file);
     if (!filePath) {
-      console.error(`Home featured missing: ${spec.file}`);
+      console.error(`Featured pick missing: ${spec.file}`);
       process.exit(1);
     }
     const ranked = rankCandidates(spec.category, [filePath], exclude);
@@ -381,56 +359,6 @@ function pickHomeFeatured(exclude) {
     trackExclude(exclude, row);
     return row;
   });
-}
-
-function buildFeatured(allThemeRows, heroRow, homeRows = []) {
-  const out = [...homeRows];
-  const used = new Set(out.map((r) => r.md5));
-  const usedSources = new Set(out.map((r) => sourceKey(r)).filter(Boolean));
-  if (heroRow?.md5) used.add(heroRow.md5);
-  if (heroRow?.path) usedSources.add(sourceKey(heroRow));
-
-  const buckets = {};
-  for (const row of allThemeRows) {
-    if (used.has(row.md5)) continue;
-    if (usedSources.has(sourceKey(row))) continue;
-    if (row.md5 === heroRow?.md5) continue;
-    if (row.aspect < MIN_LANDSCAPE_ASPECT) continue;
-    (buckets[row.themeId] ||= []).push(row);
-  }
-  for (const id of Object.keys(buckets)) {
-    buckets[id].sort((a, b) => (b.score || 0) - (a.score || 0));
-  }
-
-  let guard = 0;
-  while (out.length < FEATURED_COUNT && guard++ < 80) {
-    let added = false;
-    for (const themeId of FEATURED_ORDER) {
-      const bucket = buckets[themeId];
-      if (!bucket?.length) continue;
-      const row = bucket.shift();
-      if (used.has(row.md5) || usedSources.has(sourceKey(row)) || out.some((r) => r.md5 === row.md5)) continue;
-      out.push(row);
-      used.add(row.md5);
-      usedSources.add(sourceKey(row));
-      added = true;
-      if (out.length >= FEATURED_COUNT) break;
-    }
-    if (!added) {
-      for (const themeId of FEATURED_ORDER) {
-        const bucket = buckets[themeId];
-        if (!bucket?.length) continue;
-        const row = bucket.shift();
-        if (used.has(row.md5) || usedSources.has(sourceKey(row))) continue;
-        out.push(row);
-        used.add(row.md5);
-        usedSources.add(sourceKey(row));
-        if (out.length >= FEATURED_COUNT) break;
-      }
-      if (out.length >= FEATURED_COUNT) break;
-    }
-  }
-  return out.slice(0, FEATURED_COUNT);
 }
 
 function clearOutDir() {
@@ -461,7 +389,7 @@ function main() {
   clearOutDir();
   const exclude = { md5: [], dhash: [], person_dhash: [] };
 
-  const homeFeaturedRows = pickHomeFeatured(exclude);
+  const featuredRows = pickFeaturedPicks(exclude);
 
   const heroRow = pickHero(exclude);
   if (!heroRow) {
@@ -493,7 +421,6 @@ function main() {
     allThemeRows.push(...rows.map((row) => ({ ...row, themeId: theme.id })));
   }
 
-  const featuredRows = buildFeatured(allThemeRows, heroRow, homeFeaturedRows);
   const featured = featuredRows.map((row, idx) => {
     const img = exportImage(row, `featured/featured-${String(idx + 1).padStart(2, "0")}.jpg`, 1920, 800);
     img.theme = row.themeId;
@@ -503,9 +430,8 @@ function main() {
   const manifest = {
     generatedAt: new Date().toISOString(),
     source: WEBSITE_PHOTOS,
-    filters: ["landscape_only", "no_portraits", "no_peter", "theme_interleave", "home_featured_picks"],
+    filters: ["landscape_only", "no_portraits", "no_peter", "featured_picks"],
     hero,
-    homeFeatured: featured.slice(0, HOME_FEATURED_PICKS.length),
     featured,
     themes,
     counts: {

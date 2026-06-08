@@ -1,12 +1,11 @@
 {
-  "generatedAt": "2026-06-08T11:38:04.629Z",
+  "generatedAt": "2026-06-08T11:41:05.210Z",
   "source": "/Users/yueshe/Desktop/NZ-Travel-photos /Website-Photos",
   "filters": [
     "landscape_only",
     "no_portraits",
     "no_peter",
-    "theme_interleave",
-    "home_featured_picks"
+    "featured_picks"
   ],
   "hero": {
     "full": "images/网页使用照片集/photography-showcase/hero.jpg",
@@ -19,62 +18,6 @@
     "labelEn": "Mount Cook",
     "theme": "mount-cook"
   },
-  "homeFeatured": [
-    {
-      "full": "images/网页使用照片集/photography-showcase/featured/featured-01.jpg",
-      "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-01.jpg",
-      "alt": "新西兰南岛 · 普卡基湖 · tekapo stargazing",
-      "score": 738.8639680181063,
-      "aspect": 1.3333333333333333,
-      "source": "tekapo-stargazing.JPG",
-      "theme": "lakes"
-    },
-    {
-      "full": "images/网页使用照片集/photography-showcase/featured/featured-02.jpg",
-      "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-02.jpg",
-      "alt": "新西兰南岛 · 库克山 · mount cook blue lake new zealand 01",
-      "score": 827.2307222261966,
-      "aspect": 1.3333333333333333,
-      "source": "mount-cook-blue-lake-new-zealand-01.jpeg",
-      "theme": "mountains"
-    },
-    {
-      "full": "images/网页使用照片集/photography-showcase/featured/featured-03.jpg",
-      "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-03.jpg",
-      "alt": "新西兰南岛 · 箭镇 · wanaka blue lake new zealand 03",
-      "score": 1602.4109131362145,
-      "aspect": 1.3333333333333333,
-      "source": "wanaka-blue-lake-new-zealand-03.jpeg",
-      "theme": "travel"
-    },
-    {
-      "full": "images/网页使用照片集/photography-showcase/featured/featured-04.jpg",
-      "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-04.jpg",
-      "alt": "新西兰南岛 · 米尔福德峡湾 · milford sound fiord mitre peak new zealand 10",
-      "score": 1219.7730088945993,
-      "aspect": 1.3333333333333333,
-      "source": "milford-sound-fiord-mitre-peak-new-zealand-10.jpg",
-      "theme": "fjord"
-    },
-    {
-      "full": "images/网页使用照片集/photography-showcase/featured/featured-05.jpg",
-      "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-05.jpg",
-      "alt": "新西兰南岛 · 皇后镇 · queenstown lake wakatipu new zealand 07",
-      "score": 1218.0206295785458,
-      "aspect": 1.3333333333333333,
-      "source": "queenstown-lake-wakatipu-new-zealand-07.jpg",
-      "theme": "coastal"
-    },
-    {
-      "full": "images/网页使用照片集/photography-showcase/featured/featured-06.jpg",
-      "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-06.jpg",
-      "alt": "新西兰南岛 · 凯库拉 · akaroa blue lake new zealand 02",
-      "score": 1523.7016026501947,
-      "aspect": 1.3333333333333333,
-      "source": "akaroa-blue-lake-new-zealand-02.jpeg",
-      "theme": "wildlife"
-    }
-  ],
   "featured": [
     {
       "full": "images/网页使用照片集/photography-showcase/featured/featured-01.jpg",
@@ -133,7 +76,7 @@
     {
       "full": "images/网页使用照片集/photography-showcase/featured/featured-07.jpg",
       "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-07.jpg",
-      "alt": "新西兰南岛 · 雪山 · mount cook blue lake new zealand 07",
+      "alt": "新西兰南岛 · 库克山 · mount cook blue lake new zealand 07",
       "score": 1660.0220576069387,
       "aspect": 1.3333333333333333,
       "source": "mount-cook-blue-lake-new-zealand-07.jpeg",
@@ -142,16 +85,16 @@
     {
       "full": "images/网页使用照片集/photography-showcase/featured/featured-08.jpg",
       "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-08.jpg",
-      "alt": "新西兰南岛 · 湖泊 · lake tekapo blue lake new zealand 03",
-      "score": 1326.0834552728093,
+      "alt": "新西兰南岛 · 特卡波湖 · lake tekapo blue lake new zealand 04",
+      "score": 784.4564416559456,
       "aspect": 1.3333333333333333,
-      "source": "lake-tekapo-blue-lake-new-zealand-03.jpg",
+      "source": "lake-tekapo-blue-lake-new-zealand-04.jpeg",
       "theme": "lakes"
     },
     {
       "full": "images/网页使用照片集/photography-showcase/featured/featured-09.jpg",
       "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-09.jpg",
-      "alt": "新西兰南岛 · 峡湾 · milford sound fiord mitre peak new zealand 01",
+      "alt": "新西兰南岛 · 米尔福德峡湾 · milford sound fiord mitre peak new zealand 01",
       "score": 1185.2399273020071,
       "aspect": 1.3333333333333333,
       "source": "milford-sound-fiord-mitre-peak-new-zealand-01.jpeg",
@@ -160,10 +103,10 @@
     {
       "full": "images/网页使用照片集/photography-showcase/featured/featured-10.jpg",
       "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-10.jpg",
-      "alt": "新西兰南岛 · 海岸线 · kaikoura whale watching tour new zealand 08",
-      "score": 1664.5572159757457,
+      "alt": "新西兰南岛 · 凯库拉 · kaikoura whale watching whale watching tour new zealand 08",
+      "score": 1060.869276967146,
       "aspect": 1.3333333333333333,
-      "source": "kaikoura-whale-watching-tour-new-zealand-08.jpg",
+      "source": "kaikoura-whale-watching-whale-watching-tour-new-zealand-08.jpg",
       "theme": "coastal"
     },
     {
@@ -178,11 +121,11 @@
     {
       "full": "images/网页使用照片集/photography-showcase/featured/featured-12.jpg",
       "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/featured/featured-12.jpg",
-      "alt": "新西兰南岛 · 雪山 · mount cook blue lake new zealand 05",
-      "score": 1357.1378122541003,
+      "alt": "新西兰南岛 · 普卡基湖 · lake tekapo blue lake new zealand 01",
+      "score": 1310.8444536036952,
       "aspect": 1.3333333333333333,
-      "source": "mount-cook-blue-lake-new-zealand-05.jpeg",
-      "theme": "mountains"
+      "source": "lake-tekapo-blue-lake-new-zealand-01.jpeg",
+      "theme": "lakes"
     }
   ],
   "themes": [
@@ -194,50 +137,50 @@
         {
           "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-01.jpg",
           "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-01.jpg",
-          "alt": "新西兰南岛 · 雪山 · mount cook blue lake new zealand 07",
-          "score": 1660.0220576069387,
-          "aspect": 1.3333333333333333,
-          "source": "mount-cook-blue-lake-new-zealand-07.jpeg"
-        },
-        {
-          "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-02.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-02.jpg",
           "alt": "新西兰南岛 · 雪山 · mount cook blue lake new zealand 05",
           "score": 1357.1378122541003,
           "aspect": 1.3333333333333333,
           "source": "mount-cook-blue-lake-new-zealand-05.jpeg"
         },
         {
-          "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-03.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-03.jpg",
+          "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-02.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-02.jpg",
           "alt": "新西兰南岛 · 雪山 · mount cook blue lake new zealand 03",
           "score": 1186.6989641928728,
           "aspect": 1.3333333333333333,
           "source": "mount-cook-blue-lake-new-zealand-03.jpeg"
         },
         {
-          "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-04.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-04.jpg",
+          "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-03.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-03.jpg",
           "alt": "新西兰南岛 · 雪山 · mount cook blue lake new zealand 09",
           "score": 1094.8582464495007,
           "aspect": 1.3333333333333333,
           "source": "mount-cook-blue-lake-new-zealand-09.jpeg"
         },
         {
-          "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-05.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-05.jpg",
+          "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-04.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-04.jpg",
           "alt": "新西兰南岛 · 雪山 · mount cook blue lake new zealand 02",
           "score": 894.0473495325523,
           "aspect": 1.3333333333333333,
           "source": "mount-cook-blue-lake-new-zealand-02.jpeg"
         },
         {
-          "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-06.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-06.jpg",
+          "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-05.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-05.jpg",
           "alt": "新西兰南岛 · 雪山 · mount cook blue lake new zealand 10",
           "score": 879.2136146223581,
           "aspect": 1.3337191358024691,
           "source": "mount-cook-blue-lake-new-zealand-10.jpeg"
+        },
+        {
+          "full": "images/网页使用照片集/photography-showcase/themes/mountains/mountains-06.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/mountains/mountains-06.jpg",
+          "alt": "新西兰南岛 · 雪山 · mount cook blue lake new zealand 04",
+          "score": 867.7031762946465,
+          "aspect": 1.3333333333333333,
+          "source": "mount-cook-blue-lake-new-zealand-04.jpeg"
         }
       ]
     },
@@ -257,42 +200,42 @@
         {
           "full": "images/网页使用照片集/photography-showcase/themes/lakes/lakes-02.jpg",
           "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/lakes/lakes-02.jpg",
-          "alt": "新西兰南岛 · 湖泊 · lake tekapo blue lake new zealand 01",
-          "score": 1310.8444536036952,
-          "aspect": 1.3333333333333333,
-          "source": "lake-tekapo-blue-lake-new-zealand-01.jpeg"
-        },
-        {
-          "full": "images/网页使用照片集/photography-showcase/themes/lakes/lakes-03.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/lakes/lakes-03.jpg",
           "alt": "新西兰南岛 · 湖泊 · lake tekapo blue lake new zealand 05",
           "score": 1266.162666907751,
           "aspect": 1.3333333333333333,
           "source": "lake-tekapo-blue-lake-new-zealand-05.jpg"
         },
         {
-          "full": "images/网页使用照片集/photography-showcase/themes/lakes/lakes-04.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/lakes/lakes-04.jpg",
+          "full": "images/网页使用照片集/photography-showcase/themes/lakes/lakes-03.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/lakes/lakes-03.jpg",
           "alt": "新西兰南岛 · 湖泊 · lake tekapo blue lake new zealand 07",
           "score": 1056.164156638482,
           "aspect": 1.3333333333333333,
           "source": "lake-tekapo-blue-lake-new-zealand-07.jpg"
         },
         {
-          "full": "images/网页使用照片集/photography-showcase/themes/lakes/lakes-05.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/lakes/lakes-05.jpg",
+          "full": "images/网页使用照片集/photography-showcase/themes/lakes/lakes-04.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/lakes/lakes-04.jpg",
           "alt": "新西兰南岛 · 湖泊 · lake tekapo blue lake new zealand 02",
           "score": 942.8853421882237,
           "aspect": 1.3333333333333333,
           "source": "lake-tekapo-blue-lake-new-zealand-02.jpeg"
         },
         {
-          "full": "images/网页使用照片集/photography-showcase/themes/lakes/lakes-06.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/lakes/lakes-06.jpg",
+          "full": "images/网页使用照片集/photography-showcase/themes/lakes/lakes-05.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/lakes/lakes-05.jpg",
           "alt": "新西兰南岛 · 湖泊 · lake tekapo blue lake new zealand 06",
           "score": 805.1420809835239,
           "aspect": 1.3333333333333333,
           "source": "lake-tekapo-blue-lake-new-zealand-06.jpeg"
+        },
+        {
+          "full": "images/网页使用照片集/photography-showcase/themes/lakes/lakes-06.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/lakes/lakes-06.jpg",
+          "alt": "新西兰南岛 · 湖泊 · queenstown lake wakatipu new zealand 10",
+          "score": 790.2508220006096,
+          "aspect": 1.3333333333333333,
+          "source": "queenstown-lake-wakatipu-new-zealand-10.jpg"
         }
       ]
     },
@@ -304,34 +247,34 @@
         {
           "full": "images/网页使用照片集/photography-showcase/themes/fjord/fjord-01.jpg",
           "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/fjord/fjord-01.jpg",
-          "alt": "新西兰南岛 · 峡湾 · milford sound fiord mitre peak new zealand 01",
-          "score": 1185.2399273020071,
-          "aspect": 1.3333333333333333,
-          "source": "milford-sound-fiord-mitre-peak-new-zealand-01.jpeg"
-        },
-        {
-          "full": "images/网页使用照片集/photography-showcase/themes/fjord/fjord-02.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/fjord/fjord-02.jpg",
           "alt": "新西兰南岛 · 峡湾 · milford sound fiord mitre peak new zealand 02",
           "score": 1178.4259992385205,
           "aspect": 1.3333333333333333,
           "source": "milford-sound-fiord-mitre-peak-new-zealand-02.jpeg"
         },
         {
-          "full": "images/网页使用照片集/photography-showcase/themes/fjord/fjord-03.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/fjord/fjord-03.jpg",
+          "full": "images/网页使用照片集/photography-showcase/themes/fjord/fjord-02.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/fjord/fjord-02.jpg",
           "alt": "新西兰南岛 · 峡湾 · milford sound fiord mitre peak new zealand 05",
           "score": 1147.7427369712534,
           "aspect": 1.3333333333333333,
           "source": "milford-sound-fiord-mitre-peak-new-zealand-05.jpeg"
         },
         {
-          "full": "images/网页使用照片集/photography-showcase/themes/fjord/fjord-04.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/fjord/fjord-04.jpg",
+          "full": "images/网页使用照片集/photography-showcase/themes/fjord/fjord-03.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/fjord/fjord-03.jpg",
           "alt": "新西兰南岛 · 峡湾 · milford sound blue lake new zealand 03",
           "score": 1044.2040551117382,
           "aspect": 1.3333333333333333,
           "source": "milford-sound-blue-lake-new-zealand-03.jpeg"
+        },
+        {
+          "full": "images/网页使用照片集/photography-showcase/themes/fjord/fjord-04.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/fjord/fjord-04.jpg",
+          "alt": "新西兰南岛 · 峡湾 · milford sound blue lake new zealand 06",
+          "score": 752.0221437991629,
+          "aspect": 1.3333333333333333,
+          "source": "milford-sound-blue-lake-new-zealand-06.jpeg"
         }
       ]
     },
@@ -382,26 +325,26 @@
         {
           "full": "images/网页使用照片集/photography-showcase/themes/akaroa/akaroa-01.jpg",
           "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/akaroa/akaroa-01.jpg",
-          "alt": "新西兰南岛 · 阿卡罗阿 · akaroa blue lake new zealand 10",
-          "score": 1165.5484252068434,
-          "aspect": 1.3333333333333333,
-          "source": "akaroa-blue-lake-new-zealand-10.jpg"
-        },
-        {
-          "full": "images/网页使用照片集/photography-showcase/themes/akaroa/akaroa-02.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/akaroa/akaroa-02.jpg",
           "alt": "新西兰南岛 · 阿卡罗阿 · akaroa blue lake new zealand 01",
           "score": 1062.5098022191964,
           "aspect": 1.3337257210123603,
           "source": "akaroa-blue-lake-new-zealand-01.jpeg"
         },
         {
-          "full": "images/网页使用照片集/photography-showcase/themes/akaroa/akaroa-03.jpg",
-          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/akaroa/akaroa-03.jpg",
+          "full": "images/网页使用照片集/photography-showcase/themes/akaroa/akaroa-02.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/akaroa/akaroa-02.jpg",
           "alt": "新西兰南岛 · 阿卡罗阿 · akaroa blue lake new zealand 09",
           "score": 1026.1997251732141,
           "aspect": 1.3333333333333333,
           "source": "akaroa-blue-lake-new-zealand-09.jpg"
+        },
+        {
+          "full": "images/网页使用照片集/photography-showcase/themes/akaroa/akaroa-03.jpg",
+          "thumbUrl": "images/网页使用照片集/photography-showcase/thumbs/themes/akaroa/akaroa-03.jpg",
+          "alt": "新西兰南岛 · 阿卡罗阿 · akaroa blue lake new zealand 08",
+          "score": 994.7444765514708,
+          "aspect": 1.3333333333333333,
+          "source": "akaroa-blue-lake-new-zealand-08.jpeg"
         }
       ]
     }
