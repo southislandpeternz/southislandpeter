@@ -246,16 +246,42 @@ ${main}
 
 function writeHub() {
   const base = "../";
-  const main = `    <section class="tt-banner">
-      <div class="tt-banner-inner">
-        <p class="tt-banner-kicker">Photography Gallery</p>
-        <h1>南岛摄影相册</h1>
-        <p>按地区浏览 Peter 镜头下的新西兰南岛 — 新增照片放入 images/网页使用照片集/gallery/ 对应文件夹后运行 node scripts/generate-gallery.mjs 即可更新。</p>
+  const main = `    <section class="photo-showcase-intro">
+      <div class="container">
+        <header class="photo-showcase-head reveal">
+          <p class="section-kicker">Travel Photography</p>
+          <h1>摄影旅拍作品展示</h1>
+          <p class="section-desc">Peter 镜头下的南岛——雪山、湖泊、星空、峡湾与客户旅途中的真实瞬间。</p>
+        </header>
       </div>
     </section>
-    <section class="section">
+    <section class="photo-showcase-hero reveal" id="photoShowcaseHero" aria-label="精选封面摄影" aria-busy="true"></section>
+    <section class="section photo-showcase-featured">
       <div class="container">
-        <div class="gallery-region-grid" id="galleryHubGrid" aria-busy="true"></div>
+        <header class="photo-section-head reveal">
+          <p class="section-kicker">Featured Work</p>
+          <h2>精选摄影作品</h2>
+        </header>
+        <div class="photo-masonry reveal" id="photoFeaturedGrid" aria-label="精选摄影作品" aria-busy="true"></div>
+      </div>
+    </section>
+    <section class="section section-alt photo-showcase-themes">
+      <div class="container">
+        <header class="photo-section-head reveal">
+          <p class="section-kicker">Collections</p>
+          <h2>按主题浏览</h2>
+        </header>
+        <div id="photoThemeSections" aria-busy="true"></div>
+      </div>
+    </section>
+    <section class="section photo-showcase-regions">
+      <div class="container">
+        <header class="photo-section-head reveal">
+          <p class="section-kicker">By Region</p>
+          <h2>按地区浏览</h2>
+          <p class="section-desc">点击进入各地区完整相册</p>
+        </header>
+        <div class="gallery-region-grid reveal" id="galleryHubGrid" aria-busy="true"></div>
       </div>
     </section>`;
 
@@ -265,8 +291,8 @@ function writeHub() {
     pageShell({
       base,
       title: "Photography Gallery",
-      description: "South Island photography by region — Akaroa, Kaikoura, Mount Cook, Queenstown, Wanaka, Milford Sound and more.",
-      bodyClass: "page-tour page-gallery page-gallery-hub",
+      description: "South Island travel photography by Peter — Mount Cook, Lake Tekapo stars, Milford Sound, Queenstown lakes and guest travel moments.",
+      bodyClass: "page-tour page-gallery page-gallery-hub page-photo-showcase",
       main
     })
   );
@@ -283,7 +309,7 @@ function writeRegionPage(region) {
     </section>
     <section class="section">
       <div class="container">
-        <div class="home-gallery-masonry tt-masonry gallery-region-masonry reveal" id="regionGalleryMasonry" data-gallery-region="${region.slug}" aria-busy="true"></div>
+        <div class="photo-masonry gallery-region-masonry reveal" id="regionGalleryMasonry" data-gallery-region="${region.slug}" aria-busy="true"></div>
       </div>
     </section>`;
 

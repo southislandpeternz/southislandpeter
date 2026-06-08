@@ -1,11 +1,11 @@
 (function () {
   "use strict";
 
-  const WEB_PHOTOS_ROOT = "images/网页使用照片集/gallery";
   const EMPTY_HINT =
-    "暂无摄影旅拍作品。请将照片放入 images/网页使用照片集/gallery/ 对应地区文件夹，然后运行 node scripts/generate-gallery.mjs。";
+    "暂无摄影旅拍作品。请运行 node scripts/build-photography-showcase.mjs 从 Website-Photos 生成。";
 
   let manifestCache = null;
+  let showcaseCache = null;
   let lightboxPaths = [];
   let lightboxIndex = 0;
 
@@ -25,8 +25,15 @@
     if (document.getElementById("galleryHubGrid")) {
       return normalizePath("manifest.json");
     }
-    if (document.getElementById("homeGalleryRegions")) {
-      return normalizePath("gallery/manifest.json");
+    return null;
+  }
+
+  function showcaseUrl() {
+    if (document.body.classList.contains("page-photo-showcase")) {
+      return normalizePath("photography-showcase.json");
+    }
+    if (document.getElementById("homePhotoFeatured")) {
+      return normalizePath("gallery/photography-showcase.json");
     }
     return null;
   }
@@ -57,12 +64,26 @@
     }
   }
 
+  async function loadShowcase() {
+    if (showcaseCache) return showcaseCache;
+    const url = showcaseUrl();
+    if (!url) return null;
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) return null;
+      showcaseCache = await res.json();
+      return showcaseCache;
+    } catch {
+      return null;
+    }
+  }
+
   function regionCardHtml(region, base, linkPrefix) {
     const href = `${linkPrefix}${region.slug}/index.html`;
     const img = normalizePath(`${base}${region.coverUrl}`);
     return `<a href="${href}" class="gallery-region-card reveal">
       <figure class="gallery-region-card__img">
-        <img src="${img}" alt="" loading="lazy" decoding="async">
+        <img src="${img}" alt="${region.name}" loading="lazy" decoding="async">
         <figcaption class="gallery-region-card__label">${region.name}</figcaption>
       </figure>
     </a>`;
@@ -122,7 +143,7 @@
   }
 
   function bindMasonryLightbox(grid, paths) {
-    const imgs = grid.querySelectorAll(".home-gallery-item img");
+    const imgs = grid.querySelectorAll(".photo-masonry-item img, .home-gallery-item img");
     imgs.forEach((img, index) => {
       img.style.cursor = "zoom-in";
       img.addEventListener("click", () => {
@@ -132,35 +153,66 @@
     });
   }
 
-  function renderMasonry(container, images, options) {
-    if (!container) return;
-    const editorial = options?.editorial;
-    container.innerHTML = "";
-    if (editorial) {
-      container.classList.add("home-gallery-masonry--editorial");
-    }
-    const paths = [];
-    images.forEach((img, i) => {
-      const full = normalizePath(img.full || img.thumbUrl || "");
-      const thumb = normalizePath(img.thumbUrl || img.thumb || img.full || "");
-      paths.push(full);
-      const figure = document.createElement("figure");
-      const layout = img.layout || "standard";
-      figure.className = editorial
-        ? `home-gallery-item home-gallery-item--${layout}`
-        : "home-gallery-item";
-      const el = document.createElement("img");
-      el.src = thumb;
-      el.dataset.fullSrc = full;
-      el.alt = img.alt || "";
-      el.loading = i < 4 ? "eager" : "lazy";
-      el.decoding = "async";
-      if (i < 4) el.fetchPriority = "high";
-      figure.appendChild(el);
-      container.appendChild(figure);
-    });
+  function masonryItemHtml(img, idx, eager) {
+    const thumb = normalizePath(img.thumbUrl || img.full);
+    const full = normalizePath(img.full || img.thumbUrl);
+    const tall = img.aspect && img.aspect < 0.95 ? " photo-masonry-item--tall" : "";
+    const wide = img.aspect && img.aspect >= 1.45 ? " photo-masonry-item--wide" : "";
+    return `<figure class="photo-masonry-item${tall}${wide}" data-index="${idx}">
+      <img src="${thumb}" data-full-src="${full}" alt="${img.alt || ""}" loading="${eager ? "eager" : "lazy"}" decoding="async"${eager ? ' fetchpriority="high"' : ""}>
+    </figure>`;
+  }
+
+  function renderPhotoMasonry(container, images, options) {
+    if (!container) return [];
+    const limit = options?.limit;
+    const slice = limit ? images.slice(0, limit) : images;
+    const paths = slice.map((img) => normalizePath(img.full || img.thumbUrl));
+    container.innerHTML = slice.map((img, i) => masonryItemHtml(img, i, i < 3)).join("");
     container.setAttribute("aria-busy", "false");
     bindMasonryLightbox(container, paths);
+    return paths;
+  }
+
+  function renderPhotoHero(container, hero, compact) {
+    if (!container || !hero) return;
+    const src = normalizePath(compact ? hero.thumbUrl || hero.full : hero.full);
+    container.innerHTML = `
+      <figure class="photo-hero-figure">
+        <img src="${src}" alt="${hero.alt || hero.label || "Peter 南岛旅拍"}" loading="eager" fetchpriority="high" decoding="async">
+        <figcaption class="photo-hero-caption">
+          <span class="photo-hero-label">${hero.label || ""}</span>
+          <span class="photo-hero-label-en">${hero.labelEn || ""}</span>
+        </figcaption>
+      </figure>`;
+    container.setAttribute("aria-busy", "false");
+    const img = container.querySelector("img");
+    img?.addEventListener("click", () => {
+      lightboxPaths = [normalizePath(hero.full)];
+      openLightbox(0);
+    });
+  }
+
+  function renderThemeSections(container, themes) {
+    if (!container || !themes?.length) return;
+    container.innerHTML = "";
+    themes
+      .filter((theme) => theme.images?.length)
+      .forEach((theme) => {
+        const block = document.createElement("section");
+        block.className = "photo-theme-block reveal";
+        block.id = `theme-${theme.id}`;
+        block.innerHTML = `
+          <header class="photo-theme-head">
+            <h3>${theme.titleZh}</h3>
+            <p>${theme.titleEn}</p>
+          </header>
+          <div class="photo-masonry photo-masonry--theme"></div>`;
+        const grid = block.querySelector(".photo-masonry");
+        renderPhotoMasonry(grid, theme.images || []);
+        container.appendChild(block);
+      });
+    container.setAttribute("aria-busy", "false");
   }
 
   async function initRegionPage() {
@@ -176,70 +228,59 @@
       );
       return;
     }
-    renderMasonry(grid, images);
+    grid.classList.add("photo-masonry");
+    renderPhotoMasonry(
+      grid,
+      images.map((img) => ({
+        full: img.full,
+        thumbUrl: img.thumbUrl,
+        alt: img.alt || ""
+      }))
+    );
   }
 
   async function initHub() {
     const grid = document.getElementById("galleryHubGrid");
+    if (!grid) return;
     const manifest = await loadManifest();
     if (!manifest?.regions?.length) {
-      showEmpty(
-        grid,
-        "摄影相册尚未生成。请将照片放入 images/网页使用照片集/gallery/ 后运行 node scripts/generate-gallery.mjs。"
-      );
+      showEmpty(grid, "摄影相册尚未生成。");
       return;
     }
     renderRegionGrid(grid, manifest.regions, "../", "");
   }
 
-  async function initHome() {
-    const grid = document.getElementById("homeGalleryRegions");
-    const manifest = await loadManifest();
-    if (!manifest?.regions?.length) {
-      showEmpty(grid, EMPTY_HINT);
+  async function initPhotoShowcasePage() {
+    const heroEl = document.getElementById("photoShowcaseHero");
+    const featuredEl = document.getElementById("photoFeaturedGrid");
+    const themesEl = document.getElementById("photoThemeSections");
+    if (!heroEl && !featuredEl) return;
+
+    const data = await loadShowcase();
+    if (!data) {
+      showEmpty(featuredEl || heroEl, EMPTY_HINT);
       return;
     }
-    renderRegionGrid(grid, manifest.regions, "", "gallery/");
+    if (heroEl) renderPhotoHero(heroEl, data.hero, false);
+    if (featuredEl) renderPhotoMasonry(featuredEl, data.featured || []);
+    if (themesEl) renderThemeSections(themesEl, data.themes || []);
   }
 
-  async function loadShowcaseManifest() {
-    try {
-      const res = await fetch(normalizePath("gallery/xhs-showcase.json"), { cache: "no-store" });
-      if (!res.ok) return null;
-      return await res.json();
-    } catch {
-      return null;
-    }
-  }
+  async function initHomePhotoShowcase() {
+    const featuredEl = document.getElementById("homePhotoFeatured");
+    if (!featuredEl) return;
 
-  async function initHomeShowcase() {
-    const grid = document.getElementById("homeGalleryShowcase");
-    if (!grid) return;
-    const manifest = await loadShowcaseManifest();
-    const images = manifest?.images;
-    if (!images?.length) {
-      showEmpty(
-        grid,
-        "精选旅拍作品尚未生成。请运行 node scripts/generate-xhs-showcase.mjs。"
-      );
+    const data = await loadShowcase();
+    if (!data) {
+      showEmpty(featuredEl, EMPTY_HINT);
       return;
     }
-    renderMasonry(
-      grid,
-      images.map((img) => ({
-        full: img.full,
-        thumbUrl: img.thumbUrl,
-        alt: img.alt || "",
-        layout: img.layout || "standard",
-        score: img.score
-      })),
-      { editorial: true }
-    );
+    renderPhotoMasonry(featuredEl, data.featured || [], { limit: 6 });
   }
 
   async function boot() {
     initLightboxControls();
-    await Promise.all([initHome(), initHomeShowcase(), initHub(), initRegionPage()]);
+    await Promise.all([initHomePhotoShowcase(), initPhotoShowcasePage(), initHub(), initRegionPage()]);
   }
 
   if (document.readyState === "loading") {
