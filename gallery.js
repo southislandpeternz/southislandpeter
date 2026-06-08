@@ -53,6 +53,8 @@
     const sep = base.includes("?") ? "&" : "?";
     return `${base}${sep}v=${encodeURIComponent(showcaseVersion)}`;
   }
+
+  function hubBase() {
     if (document.getElementById("regionGalleryMasonry")) return "../../";
     if (document.getElementById("galleryHubGrid")) return "../";
     return "";
