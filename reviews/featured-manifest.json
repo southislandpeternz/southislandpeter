@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-08T01:54:11.281Z",
+  "generatedAt": "2026-06-08T05:42:15.405Z",
   "sourceCsv": "/Users/yueshe/Desktop/NZ-Travel-photos /reviews-content.csv",
   "count": 30,
   "images": [
@@ -8,12 +8,20 @@
       "guestLabel": "新西兰程先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "这次新西兰的行程非常幸运能遇到 Petera 作为我们 的导游 整体体验真的远超预期!首先他非常专 业, 对当地的自然景观。历史背景以及人文故事都 非常了解,一路上的讲解不仅清晰而且很有趣。让 人完全不会觉得枯燥, 反而越听越有兴趣。 在行程安排上, Peter 也非常细心和有经验, 会根据 当天的天气和实际情况灵活调整路线, 尽量带我们 看到最好的风景 避开人多的时间段, 这一点真的 很加分。 过程中他也一直很照顾大家的节奏,不会 赶行程,让整个旅途非常轻松舒服。 另外让我印象很深的是, 他不仅是一个 6 讲解型\"的 导游, 更像一个很贴心的朋友。比如会主动帮我们 拍照 推荐当地值得尝试的美食和购物地点;还会 耐心回答各种问题。",
       "displayText": "Peter 作为我们 的导游 整体体验真的远超预期!首先他非常专 业, 对当地的自然景观。历史背景以及人文故事都 非常了解,一路上的讲解不仅清晰而且很有趣。让 人完全不会觉得枯燥, 反而越听越有兴趣。",
       "image": "images/网页使用照片集/reviews/featured/featured-01.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-01.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-01.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 114.9
     },
     {
@@ -21,12 +29,20 @@
       "guestLabel": "新西兰谢先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "Tertc- 睿义 这次旅行真的太棒了,特别感谢我们的导 游Peter! 不仅讲解生动有趣。把每一个 景点的历史和故事都讲得清晰透彻,而且 非常贴心负责。时刻关注大家的需求。无 论是路线安排还是时间掌控都非常专业; 整个行程轻松愉快又收获满满。有这样的 导游带队, 真的是一种幸运 ! 2025-05-17 新西兰回复",
       "displayText": "这次旅行真的太棒了,特别感谢我们的导 游Peter! 不仅讲解生动有趣。把每一个 景点的历史和故事都讲得清晰透彻,而且 非常贴心负责。时刻关注大家的需求。",
       "image": "images/网页使用照片集/reviews/featured/featured-02.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-02.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-02.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 106.9
     },
     {
@@ -34,12 +50,20 @@
       "guestLabel": "New Zealand程先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "蚊子 Friend 这次行程非常顺利, 最想特别感谢导游 Petera 0 整个旅途中他一直很负责, 时间把 控得很好。无论是讲解还是日常照顾都很到 位, 对每个团员都很有耐心。 遇到小小问题也 能很快帮忙解决, 让人非常安心。 尽管全景 游内客很多很满, 工作时间很长很辛苦。他 也能尽心尽力让大家都满意而归 0 一路相处 下来氛围欢乐, 是一次很愉快充实, 收获满 满的旅行体验。 1 hrago New Zealand Reply Translate",
       "displayText": "这次行程非常顺利, 最想特别感谢导游 Peter 0 整个旅途中他一直很负责, 时间把 控得很好。无论是讲解还是日常照顾都很到 位, 对每个团员都很有耐心。 遇到小小问题也 能很快帮忙解决, 让人非常安心。",
       "image": "images/网页使用照片集/reviews/featured/featured-03.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-03.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-03.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 103.5
     },
     {
@@ -47,12 +71,20 @@
       "guestLabel": "新西兰张先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "一天八碗饭 这次新西兰南岛8日游圆满又难忘, 导游 Peter 是全程最大 的惊喜。他专业靠谱 讲解细致生动, 对南岛的风景。人 文与故事信手拈来, 让每一处景色都更有温度。 行程安排 合理顺畅, 衔接得当。即使遇到临时状况也能从容应对, 让人特别安心。 他性格温和,车程中妙语连珠; 轻松化解旅途疲惫, 一路 欢声笑语不断。不仅照顾周到; 还十分有耐心, 有问必 答。有求必应, 绅士又贴心 南岛风光绝美, 而 Peter 的陪伴让旅途更加温暖有趣。 感谢 他全程用心付出;让这趟旅行不仅收获美景,更收获满满 快乐与安心,十分推荐 !",
       "displayText": "这次新西兰南岛8日游圆满又难忘, 导游 Peter 是全程最大 的惊喜。他专业靠谱 讲解细致生动, 对南岛的风景。人 文与故事信手拈来, 让每一处景色都更有温度。 行程安排 合理顺畅, 衔接得当。",
       "image": "images/网页使用照片集/reviews/featured/featured-04.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-04.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-04.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 102.5
     },
     {
@@ -60,12 +92,20 @@
       "guestLabel": "New Zealand程先生/女士",
       "platform": "微信",
       "platformClass": "wechat",
+      "category": "微信好评",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "蚊子 Friend 这次行程非常顺利, 最想特别感谢导游 Petera 整个旅途中他一直很负责。时间把 控得很好。无论是讲解还是日常照顾都很到 位。对每个团员都很有耐心。遇到小问题也 能很快帮忙解决。让人非常安心。尽管全景 游内客很多很满, 工作时间很长很辛苦。他 也能尽心尽力让大家都满意而归。 一路相处 下来氛围欢乐, 是一次很愉快充实。收获满 满的旅行体验。 1 hrago New Zealand Reply Translate",
       "displayText": "这次行程非常顺利, 最想特别感谢导游 Peter 整个旅途中他一直很负责。时间把 控得很好。无论是讲解还是日常照顾都很到 位。对每个团员都很有耐心。遇到小问题也 能很快帮忙解决。让人非常安心。",
       "image": "images/网页使用照片集/reviews/featured/featured-05.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-05.jpg",
+      "media": {
+        "wechat": "images/网页使用照片集/reviews/featured/featured-05.jpg",
+        "google": null,
+        "feedback": null,
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 102.2
     },
     {
@@ -73,12 +113,20 @@
       "guestLabel": "新西兰张先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "一天八碗饭 这次新西兰南岛8日游圆满又难忘, 导游 Peter 是全程最大 的惊喜。他专业靠谱 讲解细致生动, 对南岛的风景。人 文与故事信手拈来。让每一处景色都更有温度。行程安排 合理顺畅。衔接得当。即使遇到临时状况也能从容应对, 让人特别安心< 他性格温和。车程中妙语连珠, 轻松化解旅途疲惫, 一路 欢声笑语不断 不仅照顾周到, 还十分有耐心。有问必 答。有求必应。绅士又贴心。 南岛风光绝美, 而 Peter 的陪伴让旅途更加温暖有趣。感谢 他全程用心付出。让这趟旅行不仅收获美景。更收获满满 快乐与安心。十分推荐 !",
       "displayText": "这次新西兰南岛8日游圆满又难忘, 导游 Peter 是全程最大 的惊喜。他专业靠谱 讲解细致生动, 对南岛的风景。人 文与故事信手拈来。让每一处景色都更有温度。行程安排 合理顺畅。衔接得当。",
       "image": "images/网页使用照片集/reviews/featured/featured-06.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-06.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-06.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 101.9
     },
     {
@@ -86,12 +134,20 @@
       "guestLabel": "新西兰谢先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "小乐子 JX 这次新西兰之行整体体验非常好, 尤其要感 谢我们的导游 Petera 0 一路上他专业又耐 心, 不仅安排细致周到, 还会根据实际情况 灵活调整, 让行程轻松又高效。 Peter 讲解 生动有趣。对当地文化和风景都有很深入的 了解, 也很照顾每位团员的需求, 让人感觉 很安心。 整个旅程氛围很好,节奏舒适, 是 一次非常愉快的体验; 值得推荐。 1hrago New Zealand Reply 1 Translate",
       "displayText": "这次新西兰之行整体体验非常好, 尤其要感 谢我们的导游 Peter 0 一路上他专业又耐 心, 不仅安排细致周到, 还会根据实际情况 灵活调整, 让行程轻松又高效。 Peter 讲解 生动有趣。",
       "image": "images/网页使用照片集/reviews/featured/featured-07.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-07.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-07.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 96.1
     },
     {
@@ -99,12 +155,20 @@
       "guestLabel": "新西兰程先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "客人大力推荐 Peter 南岛带队",
       "titleEn": "Guests highly recommend Peter's South Island tours",
       "originalText": "小红薯 GOEBIO8E 昨天刚结束南岛八天游。 优点: 1.全程吃住 行旅行社安排的井井有条 接送住宿都很 快 没有意外,而且七晚的酒店质量都很 高;尤其是皇后镇的两晚希尔顿酒店的游 泳池很好, 还有 te anau 的湖边酒店的景 色很棒 2.行程确实都如原来写的都去到 了。3.我们导游 Peter性格好, 细心有 爱, 准备水, 零食和维生素等, 驾驶技术 老练 0 总是能提前告知行程安排, 有耐 心。能及时注意到团体成员需求 缺点: 整个旅游线路设计不是很合理, 很多时间 在路上。尤其最后两天, 去每个地方比如 一些小镇和沙滩几乎都是待十分钟就走; 其余都是每天几百公里车程在路上; 走马 观花; 不太理解为什么要从皇后镇去西海 岸, 再从西海岸开到东边的基督城的目 的。 2025-02-18新西兰 回复",
       "displayText": "昨天刚结束南岛八天游。 优点: 1.全程吃住 行旅行社安排的井井有条 接送住宿都很 快 没有意外,而且七晚的酒店质量都很 高;尤其是皇后镇的两晚希尔顿酒店的游 泳池很好,",
       "image": "images/网页使用照片集/reviews/featured/featured-08.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-08.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-08.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 95
     },
     {
@@ -112,12 +176,20 @@
       "guestLabel": "新西兰谢先生/女士",
       "platform": "Google",
       "platformClass": "google",
+      "category": "Google Reviews",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "小乐子JX 这次新西兰之行整体体验非常好, 尤其要感 谢我们的导游 Petera 一路上他专业又耐 心。不仅安排细致周到,还会根据实际情况 灵活调整, 让行程轻松又高效。 Peter讲解 生动有趣。对当地文化和风景都有很深入的 了解。也很照顾每位团员的需求。让人感觉 很安心。整个旅程氛围很好,节奏舒适。是 一次非常愉快的体验; 值得推荐。 1 hrago New Zealand Reply Translate",
       "displayText": "这次新西兰之行整体体验非常好, 尤其要感 谢我们的导游 Peter 一路上他专业又耐 心。不仅安排细致周到,还会根据实际情况 灵活调整, 让行程轻松又高效。 Peter讲解 生动有趣。对当地文化和风景都有很深入的 了解。",
       "image": "images/网页使用照片集/reviews/featured/featured-09.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-09.jpg",
+      "media": {
+        "wechat": null,
+        "google": "images/网页使用照片集/reviews/featured/featured-09.jpg",
+        "feedback": null,
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 94.8
     },
     {
@@ -125,12 +197,20 @@
       "guestLabel": "New Zealand金先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "金陵梧语 (小红薯 G289FDC5) Friend 非常幸运这次遇到 Peter 带队, 他真的很专 业也很贴心。 一路上不仅讲解清晰。有趣, 还会主动关心大家的状态, 随时调整节奏。 很多细节都考虑得很周到, 让人完全不用操 心。整体体验非常放松又充实, 能感受到他 对工作的认真和热情,是一位值得推荐的好 导游。 1 hrago New Zealand Reply Translate",
       "displayText": "(小红薯 G289FDC5) Friend 非常幸运这次遇到 Peter 带队, 他真的很专 业也很贴心。 一路上不仅讲解清晰。有趣, 还会主动关心大家的状态, 随时调整节奏。 很多细节都考虑得很周到, 让人完全不用操 心。",
       "image": "images/网页使用照片集/reviews/featured/featured-10.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-10.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-10.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 93.4
     },
     {
@@ -138,12 +218,20 @@
       "guestLabel": "北京客人",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "翻翻 感谢司导Peter的平稳驾驶和专业讲解。度过了非 常愉快完美的八天。还看到了极光 路程安排的也 很好",
       "displayText": "感谢司导Peter的平稳驾驶和专业讲解。度过了非 常愉快完美的八天。还看到了极光 路程安排的也 很好",
       "image": "images/网页使用照片集/reviews/featured/featured-11.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-11.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-11.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 81.6
     },
     {
@@ -151,12 +239,20 @@
       "guestLabel": "新西兰客人",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "Ljchx 感谢司导Peter; 很耐心, 为我们安排的很好。 新西兰南岛 自驾之旅a 非常顺利, 我们从北一路往南开。再一路回基督 城, 路线安排得很合理。既看到了景色;行程也不会太 赶。 沿途无论是湖泊。雪山还是小镇风景, 都很让人印象 深刻。",
       "displayText": "感谢司导Peter; 很耐心, 为我们安排的很好。 新西兰南岛 自驾之旅a 非常顺利, 我们从北一路往南开。再一路回基督 城, 路线安排得很合理。既看到了景色;行程也不会太 赶。 沿途无论是湖泊。",
       "image": "images/网页使用照片集/reviews/featured/featured-12.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-12.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-12.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 72.5
     },
     {
@@ -164,12 +260,20 @@
       "guestLabel": "新西兰谢先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "Peter 我们小团的导游。专业。敬业, 耐心的介绍景 点。也是我们专业摄影师, 还带我们去了小众的加餐景 点。太棒啦 非常感谢 Peter 的服务。",
       "displayText": "我们小团的导游。专业。敬业, 耐心的介绍景 点。也是我们专业摄影师, 还带我们去了小众的加餐景 点。太棒啦 非常感谢 Peter 的服务。",
       "image": "images/网页使用照片集/reviews/featured/featured-13.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-13.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-13.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 72.4
     },
     {
@@ -177,12 +281,20 @@
       "guestLabel": "香港客人",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "炸毛黄金糕 非常棒的旅程, 虽然遇到了阴雨天气, 但好在后面几天都 放睛 导游 Petera 非常负责。每天开车好几个小时, 但 还是会在旅途中认真讲解当地风土人情, 同时也会给我们 很多拍照景点的建议。非常 nice 非常可靠, 车技也很好 ! 等下次天气更好的时候会再来",
       "displayText": "非常棒的旅程, 虽然遇到了阴雨天气, 但好在后面几天都 放睛 导游 Peter 非常负责。每天开车好几个小时, 但 还是会在旅途中认真讲解当地风土人情, 同时也会给我们 很多拍照景点的建议。",
       "image": "images/网页使用照片集/reviews/featured/featured-14.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-14.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-14.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 72.1
     },
     {
@@ -190,12 +302,20 @@
       "guestLabel": "新西兰客人",
       "platform": "微信",
       "platformClass": "wechat",
+      "category": "微信好评",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "Ljchx 感谢司导Peter, 很耐心。为我们安排的很好。 新西兰南岛 自驾之旅a非常顺利, 我们从北一路往南开,再一路回基督 城。路线安排得很合理。 既看到了景色, 行程也不会太 赶。沿途无论是湖泊。雪山还是小镇风景,都很让人印象 深刻。",
       "displayText": "感谢司导Peter, 很耐心。为我们安排的很好。 新西兰南岛 自驾之旅a非常顺利, 我们从北一路往南开,再一路回基督 城。路线安排得很合理。 既看到了景色, 行程也不会太 赶。沿途无论是湖泊。",
       "image": "images/网页使用照片集/reviews/featured/featured-15.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-15.jpg",
+      "media": {
+        "wechat": "images/网页使用照片集/reviews/featured/featured-15.jpg",
+        "google": null,
+        "feedback": null,
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 72.1
     },
     {
@@ -203,12 +323,20 @@
       "guestLabel": "香港毛先生/女士",
       "platform": "微信",
       "platformClass": "wechat",
+      "category": "微信好评",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "炸毛黄金糕 非常棒的旅程, 虽然遇到了阴雨天气。但好在后面几天都 放睛 导游 Petera 非常负责。每天开车好几个小时但 还是会在旅途中认真讲解当地风土人情, 同时也会给我们 很多拍照景点的建议;非常 nice 非常可靠,车技也很好 ! 等下次天气更好的时候会再来",
       "displayText": "非常棒的旅程, 虽然遇到了阴雨天气。但好在后面几天都 放睛 导游 Peter 非常负责。",
       "image": "images/网页使用照片集/reviews/featured/featured-16.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-16.jpg",
+      "media": {
+        "wechat": "images/网页使用照片集/reviews/featured/featured-16.jpg",
+        "google": null,
+        "feedback": null,
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 71.6
     },
     {
@@ -216,12 +344,20 @@
       "guestLabel": "新西兰周先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "teddy petera 很热心 人很好 服务周到 金牌司导 旅行非常愉快 !新西兰让人流连忘返 2025-05-17 新西兰 回复",
       "displayText": "人很好 服务周到 金牌司导 旅行非常愉快 !新西兰让人流连忘返 2025-05-17 新西兰 回复",
       "image": "images/网页使用照片集/reviews/featured/featured-17.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-17.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-17.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 71.2
     },
     {
@@ -229,12 +365,20 @@
       "guestLabel": "江苏周先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "愤怒的农村人69 peter 很热心 人很好 服务周到 金牌司导 旅行非常愉快 !新西兰让人流连忘返 2025-05-17江苏 回复",
       "displayText": "人很好 服务周到 金牌司导 旅行非常愉快 !新西兰让人流连忘返 2025-05-17江苏 回复",
       "image": "images/网页使用照片集/reviews/featured/featured-18.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-18.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-18.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 71.2
     },
     {
@@ -242,12 +386,20 @@
       "guestLabel": "新西兰万先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "客人大力推荐 Peter 南岛带队",
       "titleEn": "Guests highly recommend Peter's South Island tours",
       "originalText": "nini 旅途中相识, 热枕的服务,贴心的语言 万分的感谢, 他日再来新西兰; 定会加入 Peter 导游的 旅游团队。谢谢 2025-05-17 波兰 回复",
       "displayText": "旅途中相识, 热枕的服务,贴心的语言 万分的感谢, 他日再来新西兰; 定会加入 Peter 导游的 旅游团队。谢谢 2025-05-17 波兰 回复",
       "image": "images/网页使用照片集/reviews/featured/featured-19.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-19.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-19.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 66.9
     },
     {
@@ -255,12 +407,20 @@
       "guestLabel": "新西兰客人",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "客人大力推荐 Peter 南岛带队",
       "titleEn": "Guests highly recommend Peter's South Island tours",
       "originalText": "嵩哥 难忘的新西兰南岛之旅, 感谢Peter的一 路温馨服务 在我足不慎扭伤时 及时送 上药物888, 非常感谢 还 不时地为我们拍集体照,谢谢",
       "displayText": "难忘的新西兰南岛之旅, 感谢Peter的一 路温馨服务 在我足不慎扭伤时 及时送 上药物888, 非常感谢 还 不时地为我们拍集体照,谢谢",
       "image": "images/网页使用照片集/reviews/featured/featured-20.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-20.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-20.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 60
     },
     {
@@ -268,12 +428,20 @@
       "guestLabel": "新西兰客人",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "客人大力推荐 Peter 南岛带队",
       "titleEn": "Guests highly recommend Peter's South Island tours",
       "originalText": "嵩哥 难忘的新西兰南岛之旅, 感谢Peter的一 路温馨服务。在我足不慎扭伤时, 及时送 上药物8f, 非常感谢 还 不时地为我们拍集体照,谢谢",
       "displayText": "难忘的新西兰南岛之旅, 感谢Peter的一 路温馨服务。在我足不慎扭伤时, 及时送 上药物8f, 非常感谢 还 不时地为我们拍集体照,谢谢",
       "image": "images/网页使用照片集/reviews/featured/featured-21.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-21.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-21.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 60
     },
     {
@@ -281,12 +449,20 @@
       "guestLabel": "新西兰马先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "专业司导 Peter，行程省心又精彩",
       "titleEn": "Professional guide Peter — seamless South Island tour",
       "originalText": "皮蛋与牛马 刚刚结束新西兰的旅行, 真心感谢 Peter 的专业和热情!整个行程安排得井井有 条,不仅带我们领略了绝美的自然风光; 还分享了很多当地的历史文化和有趣的小 故事。让旅行变得生动又充实 !",
       "displayText": "刚刚结束新西兰的旅行, 真心感谢 Peter 的专业和热情!整个行程安排得井井有 条,不仅带我们领略了绝美的自然风光; 还分享了很多当地的历史文化和有趣的小 故事。让旅行变得生动又充实 !",
       "image": "images/网页使用照片集/reviews/featured/featured-22.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-22.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-22.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 59.5
     },
     {
@@ -294,12 +470,20 @@
       "guestLabel": "新西兰谢先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "客人大力推荐 Peter 南岛带队",
       "titleEn": "Guests highly recommend Peter's South Island tours",
       "originalText": "感谢 Peter ! 这趟新西兰之旅真的太圆满了 ! 全程行程安排 得井井有条 不仅驾驶技术一流。还对当地风景和文化了 如指掌。 既能省心赶路 又能深度体验美景, 遇到问题也 能随时解决。",
       "displayText": "! 这趟新西兰之旅真的太圆满了 ! 全程行程安排 得井井有条 不仅驾驶技术一流。还对当地风景和文化了 如指掌。 既能省心赶路 又能深度体验美景, 遇到问题也 能随时解决。",
       "image": "images/网页使用照片集/reviews/featured/featured-23.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-23.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-23.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 52.8
     },
     {
@@ -307,12 +491,20 @@
       "guestLabel": "新西兰谢先生/女士",
       "platform": "微信",
       "platformClass": "wechat",
+      "category": "微信好评",
       "titleZh": "客人大力推荐 Peter 南岛带队",
       "titleEn": "Guests highly recommend Peter's South Island tours",
       "originalText": "感谢 Peter! 这趟新西兰之旅真的太圆满了!全程行程安排 得井井有条, 不仅驾驶技术一流; 还对当地风景和文化了 如指掌。 既能省心赶路, 又能深度体验美景, 遇到问题也 能随时解决。",
       "displayText": "Peter! 这趟新西兰之旅真的太圆满了!全程行程安排 得井井有条, 不仅驾驶技术一流; 还对当地风景和文化了 如指掌。 既能省心赶路, 又能深度体验美景, 遇到问题也 能随时解决。",
       "image": "images/网页使用照片集/reviews/featured/featured-24.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-24.jpg",
+      "media": {
+        "wechat": "images/网页使用照片集/reviews/featured/featured-24.jpg",
+        "google": null,
+        "feedback": null,
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 52.8
     },
     {
@@ -320,12 +512,20 @@
       "guestLabel": "香港客人",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "香港客人的真实好评",
       "titleEn": "Authentic guest review — Tian Tian Travel",
       "originalText": "黑妞 非常愉快的八天旅途, 看到了双彩虹。极 光。导游非常耐心细致, 时间安排合理。",
       "displayText": "非常愉快的八天旅途, 看到了双彩虹。极 光。导游非常耐心细致, 时间安排合理。",
       "image": "images/网页使用照片集/reviews/featured/featured-25.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-25.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-25.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 21.2
     },
     {
@@ -333,12 +533,20 @@
       "guestLabel": "香港客人",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "香港客人的真实好评",
       "titleEn": "Authentic guest review — Tian Tian Travel",
       "originalText": "黑妞 非常愉快的八夭旅途 看到了双彩虹,极 光。导游非常耐心细致; 时间安排合理。",
       "displayText": "看到了双彩虹,极 光。导游非常耐心细致; 时间安排合理。",
       "image": "images/网页使用照片集/reviews/featured/featured-26.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-26.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-26.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 21.1
     },
     {
@@ -346,12 +554,20 @@
       "guestLabel": "新西兰戴先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "新西兰戴先生/女士的真实好评",
       "titleEn": "Authentic guest review — Tian Tian Travel",
       "originalText": "戴手表的西瓜 我们8天的旅行结束啦~ petter 导游非常 敬业!旅途中还给我们准备了零食水果, 服务周到 ! 2025-03-29波兰回复",
       "displayText": "我们8天的旅行结束啦~ petter 导游非常 敬业!旅途中还给我们准备了零食水果, 服务周到 ! 2025-03-29波兰回复",
       "image": "images/网页使用照片集/reviews/featured/featured-27.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-27.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-27.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 18.9
     },
     {
@@ -359,12 +575,20 @@
       "guestLabel": "香港客人",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "香港客人的真实好评",
       "titleEn": "Authentic guest review — Tian Tian Travel",
       "originalText": "II CD A BlNIWN 恻e @@ 共3张 「; 2小时前中国香港 回复",
       "displayText": "@@ 共3张 「; 2小时前中国香港 回复",
       "image": "images/网页使用照片集/reviews/featured/featured-28.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-28.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-28.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 4.9
     },
     {
@@ -372,12 +596,20 @@
       "guestLabel": "香港张先生/女士",
       "platform": "微信",
       "platformClass": "wechat",
+      "category": "微信好评",
       "titleZh": "香港张先生/女士的真实好评",
       "titleEn": "Authentic guest review — Tian Tian Travel",
       "originalText": "1 l! BlablN 趴& ( K 廿 3张 2小时前中国香港 回复",
       "displayText": "1 l! BlablN 趴& ( K 廿 3张 2小时前中国香港 回复",
       "image": "images/网页使用照片集/reviews/featured/featured-29.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-29.jpg",
+      "media": {
+        "wechat": "images/网页使用照片集/reviews/featured/featured-29.jpg",
+        "google": null,
+        "feedback": null,
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 4.4
     },
     {
@@ -385,12 +617,20 @@
       "guestLabel": "香港张先生/女士",
       "platform": "客户反馈",
       "platformClass": "feedback",
+      "category": "客户反馈截图",
       "titleZh": "香港张先生/女士的真实好评",
       "titleEn": "Authentic guest review — Tian Tian Travel",
       "originalText": "!335exs 24% 0% 共3张 刚刚 中国香港 回复 Jegu",
       "displayText": "!335exs 24% 0% 共3张 刚刚 中国香港 回复 Jegu",
       "image": "images/网页使用照片集/reviews/featured/featured-30.jpg",
       "thumb": "images/网页使用照片集/reviews/featured/featured-30.jpg",
+      "media": {
+        "wechat": null,
+        "google": null,
+        "feedback": "images/网页使用照片集/reviews/featured/featured-30.jpg",
+        "guestPhoto": null
+      },
+      "stars": 5,
       "score": 4.2
     }
   ]

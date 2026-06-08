@@ -37,7 +37,7 @@
     { title: "南岛经典9天8晚", href: "winter-tour.html", keywords: "经典 9天 8晚 凯库拉 特卡波 库克山 瓦纳卡 皇后镇" },
     { title: "精品线路", href: "routes.html", keywords: "精品线路 路线 产品 经典 慢旅行" },
     { title: "南岛慢旅行13天12晚", href: "south-island-13-day.html", keywords: "旗舰 精品路线 13天 12晚 慢旅行 奔驰 商务车 Peter" },
-    { title: "客人评价", href: "customer-reviews.html", keywords: "好评 评价 反馈 客户" },
+    { title: "客人评价中心", href: "customer-reviews.html", keywords: "好评 评价 反馈 客户 微信 Google 五星" },
     { title: "咨询预订", href: "#contact", keywords: "咨询 预订 联系 电话 微信 whatsapp" }
   ];
 

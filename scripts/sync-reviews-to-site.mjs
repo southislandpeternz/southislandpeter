@@ -89,6 +89,19 @@ function platformClass(platform) {
   return "feedback";
 }
 
+function buildMedia(row, rel) {
+  const cls = platformClass(row.Platform);
+  const cat = (row.Category || "").toLowerCase();
+  const media = { wechat: null, google: null, feedback: null, guestPhoto: null };
+
+  if (cls === "wechat") media.wechat = rel;
+  else if (cls === "google") media.google = rel;
+  else if (cat.includes("合影") || cat.includes("guest")) media.guestPhoto = rel;
+  else media.feedback = rel;
+
+  return media;
+}
+
 function hasSips() {
   try {
     execSync("which sips", { stdio: "ignore" });
@@ -142,12 +155,15 @@ function main() {
       guestLabel: row.GuestLabel,
       platform: row.Platform,
       platformClass: platformClass(row.Platform),
+      category: row.Category || "",
       titleZh: row.TitleZH,
       titleEn: row.TitleEN,
       originalText: row.OriginalText,
       displayText: cleanDisplay(row.DisplayText || row.OriginalText),
       image: rel,
       thumb: rel,
+      media: buildMedia(row, rel),
+      stars: 5,
       score: Number(row.Score) || 0
     });
   }
