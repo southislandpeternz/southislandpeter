@@ -18,6 +18,14 @@
     }
   }
 
+  /** Site-root absolute URL — works from /, /gallery/, and nested region pages. */
+  function assetUrl(p) {
+    const clean = String(p).replace(/\\/g, "/");
+    if (/^https?:\/\//i.test(clean)) return normalizePath(clean);
+    const rooted = clean.startsWith("/") ? clean : `/${clean}`;
+    return normalizePath(rooted);
+  }
+
   function manifestUrl() {
     if (document.getElementById("regionGalleryMasonry")) {
       return normalizePath("../../gallery/manifest.json");
@@ -80,7 +88,7 @@
 
   function regionCardHtml(region, base, linkPrefix) {
     const href = `${linkPrefix}${region.slug}/index.html`;
-    const img = normalizePath(`${base}${region.coverUrl}`);
+    const img = assetUrl(region.coverUrl);
     return `<a href="${href}" class="gallery-region-card reveal">
       <figure class="gallery-region-card__img">
         <img src="${img}" alt="${region.name}" loading="lazy" decoding="async">
@@ -154,8 +162,8 @@
   }
 
   function masonryItemHtml(img, idx, eager) {
-    const thumb = normalizePath(img.thumbUrl || img.full);
-    const full = normalizePath(img.full || img.thumbUrl);
+    const thumb = assetUrl(img.thumbUrl || img.full);
+    const full = assetUrl(img.full || img.thumbUrl);
     return `<figure class="photo-masonry-item" data-index="${idx}">
       <img src="${thumb}" data-full-src="${full}" alt="${img.alt || ""}" loading="${eager ? "eager" : "lazy"}" decoding="async"${eager ? ' fetchpriority="high"' : ""}>
     </figure>`;
@@ -165,7 +173,7 @@
     if (!container) return [];
     const limit = options?.limit;
     const slice = limit ? images.slice(0, limit) : images;
-    const paths = slice.map((img) => normalizePath(img.full || img.thumbUrl));
+    const paths = slice.map((img) => assetUrl(img.full || img.thumbUrl));
     container.innerHTML = slice.map((img, i) => masonryItemHtml(img, i, i < 3)).join("");
     container.setAttribute("aria-busy", "false");
     bindMasonryLightbox(container, paths);
@@ -174,7 +182,7 @@
 
   function renderPhotoHero(container, hero, compact) {
     if (!container || !hero) return;
-    const src = normalizePath(compact ? hero.thumbUrl || hero.full : hero.full);
+    const src = assetUrl(compact ? hero.thumbUrl || hero.full : hero.full);
     container.innerHTML = `
       <figure class="photo-hero-figure">
         <img src="${src}" alt="${hero.alt || hero.label || "新西兰南岛风光摄影"}" loading="eager" fetchpriority="high" decoding="async">
@@ -186,7 +194,7 @@
     container.setAttribute("aria-busy", "false");
     const img = container.querySelector("img");
     img?.addEventListener("click", () => {
-      lightboxPaths = [normalizePath(hero.full)];
+      lightboxPaths = [assetUrl(hero.full)];
       openLightbox(0);
     });
   }
