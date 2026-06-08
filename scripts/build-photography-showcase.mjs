@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * Build professional photography showcase from Desktop Website-Photos.
+ * Landscape-only — no Peter portraits or guest selfies.
  * Run: node scripts/build-photography-showcase.mjs
  */
 import fs from "fs";
@@ -20,12 +21,17 @@ const SCORE_PY = path.join(ROOT, "scripts/xhs-showcase-score.py");
 const PYTHON = path.join(ROOT, ".venv-photo-organizer/bin/python");
 const IMAGE_EXT = /\.(jpe?g|png|webp|heic|gif|avif)$/i;
 
+const EXCLUDE_FOLDER_RE =
+  /unknown-location|christchurch|mercedes|penguin|alpaca|unknown/i;
+const PERSON_FILE_RE =
+  /peter|portrait|selfie|guest|合影|人物|导游|mercedes|vehicle|van|arch|拱门|street|cityscape|urban/i;
+
 const HERO_PRIORITY = [
   {
     key: "mount-cook",
     label: "库克山",
     labelEn: "Mount Cook",
-    folders: ["Mount-Cook", "Homepage-Banner"],
+    folders: ["Mount-Cook"],
     category: "mount-cook",
     minAspect: 1.35
   },
@@ -36,27 +42,46 @@ const HERO_PRIORITY = [
     folders: ["Stargazing"],
     extraFiles: [path.join(SITE_ROOT, "tekapo-stargazing.JPG")],
     category: "tekapo-stars",
-    minAspect: 1.35
+    minAspect: 1.3
   },
   {
     key: "milford",
     label: "米尔福德峡湾",
     labelEn: "Milford Sound",
-    folders: ["Milford-Sound", "Homepage-Banner"],
+    folders: ["Milford-Sound"],
     category: "milford-sound",
     minAspect: 1.35
   },
   {
-    key: "queenstown",
-    label: "皇后镇湖景",
-    labelEn: "Queenstown",
-    folders: ["Queenstown", "Lake-Tekapo"],
-    category: "queenstown",
+    key: "lakes",
+    label: "特卡波湖",
+    labelEn: "Lake Tekapo",
+    folders: ["Lake-Tekapo", "Wanaka", "Queenstown"],
+    category: "lake-tekapo",
+    minAspect: 1.35
+  },
+  {
+    key: "coastal",
+    label: "凯库拉海岸",
+    labelEn: "Kaikoura Coast",
+    folders: ["Kaikoura", "West-Coast"],
+    libraryFolders: ["Whale-Watching"],
+    category: "kaikoura",
     minAspect: 1.35
   }
 ];
 
+/** Landscape-only themes — no guest / Mercedes / portraits */
 const THEMES = [
+  {
+    id: "stars",
+    titleZh: "星空",
+    titleEn: "Dark Sky",
+    folders: ["Stargazing"],
+    extraFiles: [path.join(SITE_ROOT, "tekapo-stargazing.JPG")],
+    category: "tekapo-stars",
+    count: 3
+  },
   {
     id: "mountains",
     titleZh: "雪山",
@@ -74,15 +99,6 @@ const THEMES = [
     count: 6
   },
   {
-    id: "stars",
-    titleZh: "星空",
-    titleEn: "Dark Sky",
-    folders: ["Stargazing"],
-    extraFiles: [path.join(SITE_ROOT, "tekapo-stargazing.JPG")],
-    category: "tekapo-stars",
-    count: 4
-  },
-  {
     id: "fjord",
     titleZh: "峡湾",
     titleEn: "Milford Sound",
@@ -91,17 +107,27 @@ const THEMES = [
     count: 4
   },
   {
-    id: "guests",
-    titleZh: "客户旅拍",
-    titleEn: "Guest Moments",
-    folders: ["Mercedes-Tour"],
-    extraDirs: [path.join(DESKTOP, "小红书素材库/小红书-客户合影精选")],
-    category: "guests",
-    count: 5
+    id: "coastal",
+    titleZh: "海岸线",
+    titleEn: "Coast & Ocean",
+    folders: ["Kaikoura", "West-Coast"],
+    libraryFolders: ["Whale-Watching"],
+    category: "kaikoura",
+    count: 4
+  },
+  {
+    id: "akaroa",
+    titleZh: "阿卡罗阿",
+    titleEn: "Akaroa Harbour",
+    folders: ["Akaroa"],
+    category: "akaroa",
+    count: 3
   }
 ];
 
 const FEATURED_COUNT = 12;
+const FEATURED_ORDER = ["stars", "mountains", "lakes", "fjord", "coastal", "akaroa"];
+const MIN_LANDSCAPE_ASPECT = 1.15;
 
 function hasSips() {
   try {
@@ -118,6 +144,18 @@ function imageSize(file) {
   const w = Number(out.match(/pixelWidth:\s*(\d+)/)?.[1] || 1600);
   const h = Number(out.match(/pixelHeight:\s*(\d+)/)?.[1] || 900);
   return { w, h, aspect: w / Math.max(h, 1) };
+}
+
+function filterLandscapeFiles(files) {
+  return files.filter((f) => {
+    const name = path.basename(f).toLowerCase();
+    const full = f.toLowerCase();
+    if (PERSON_FILE_RE.test(name)) return false;
+    if (EXCLUDE_FOLDER_RE.test(full)) return false;
+    const { aspect } = imageSize(f);
+    if (aspect < MIN_LANDSCAPE_ASPECT) return false;
+    return true;
+  });
 }
 
 function listPhotos(dirs, extraFiles = []) {
@@ -137,10 +175,10 @@ function listPhotos(dirs, extraFiles = []) {
   for (const file of extraFiles || []) {
     if (file && fs.existsSync(file)) files.push(file);
   }
-  return [...new Set(files)];
+  return filterLandscapeFiles([...new Set(files)]);
 }
 
-function resolveSources(folders, extraFiles = [], extraDirs = []) {
+function resolveSources(folders, extraFiles = [], libraryFolders = []) {
   const dirs = [];
   for (const folder of folders || []) {
     for (const root of [WEBSITE_PHOTOS, WEBSITE_LIBRARY, WEB_OPTIMIZED]) {
@@ -148,8 +186,9 @@ function resolveSources(folders, extraFiles = [], extraDirs = []) {
       if (fs.existsSync(p)) dirs.push(p);
     }
   }
-  for (const dir of extraDirs || []) {
-    if (fs.existsSync(dir)) dirs.push(dir);
+  for (const folder of libraryFolders || []) {
+    const p = path.join(WEBSITE_LIBRARY, folder);
+    if (fs.existsSync(p)) dirs.push(p);
   }
   return listPhotos(dirs, extraFiles);
 }
@@ -165,7 +204,11 @@ function rankCandidates(category, files, exclude) {
     );
     const rows = JSON.parse(out.trim());
     if (rows.error) throw new Error(rows.error);
-    return rows;
+    return rows.map((row) => {
+      const size = imageSize(row.path);
+      row.aspect = size.aspect;
+      return row;
+    }).filter((row) => row.aspect >= MIN_LANDSCAPE_ASPECT);
   } finally {
     fs.unlinkSync(excludeFile);
   }
@@ -190,7 +233,7 @@ function trackExclude(exclude, row) {
 
 function altFromPath(src, label) {
   const base = path.basename(src, path.extname(src)).replace(/[-_]+/g, " ");
-  return `Peter 南岛旅拍 · ${label} · ${base}`;
+  return `新西兰南岛 · ${label} · ${base}`;
 }
 
 function exportImage(row, relPath, maxSize, thumbSize) {
@@ -210,20 +253,14 @@ function exportImage(row, relPath, maxSize, thumbSize) {
 
 function pickHero(exclude) {
   for (const spec of HERO_PRIORITY) {
-    const files = resolveSources(spec.folders, spec.extraFiles);
+    const files = resolveSources(spec.folders, spec.extraFiles, spec.libraryFolders);
     const ranked = rankCandidates(spec.category, files, exclude);
     const landscape = ranked
-      .map((row) => {
-        const size = imageSize(row.path);
-        row.aspect = size.aspect;
-        return row;
-      })
       .filter((row) => row.aspect >= (spec.minAspect || 1.35))
       .sort((a, b) => b.aspect * (b.score || 0) - a.aspect * (a.score || 0));
     const wide = landscape.filter((row) => row.aspect >= 1.5);
     const pick = wide[0] || landscape[0] || ranked[0];
     if (!pick) continue;
-    if (!pick.aspect) pick.aspect = imageSize(pick.path).aspect;
     pick.alt = altFromPath(pick.path, spec.label);
     pick.label = spec.label;
     pick.labelEn = spec.labelEn;
@@ -235,7 +272,7 @@ function pickHero(exclude) {
 }
 
 function pickThemeImages(theme, exclude) {
-  const files = resolveSources(theme.folders, theme.extraFiles, theme.extraDirs);
+  const files = resolveSources(theme.folders, theme.extraFiles, theme.libraryFolders);
   let ranked = rankCandidates(theme.category, files, exclude);
   if (!ranked.length && theme.extraFiles?.length) {
     ranked = theme.extraFiles
@@ -243,18 +280,54 @@ function pickThemeImages(theme, exclude) {
       .map((f) => {
         const size = imageSize(f);
         return { path: f, score: 1000, aspect: size.aspect, md5: f, dhash: f, person_dhash: f };
-      });
+      })
+      .filter((row) => row.aspect >= MIN_LANDSCAPE_ASPECT);
   }
   const picked = [];
   for (const row of ranked) {
     if (picked.length >= theme.count) break;
-    const size = imageSize(row.path);
-    row.aspect = size.aspect;
     row.alt = altFromPath(row.path, theme.titleZh);
     trackExclude(exclude, row);
     picked.push(row);
   }
   return picked;
+}
+
+function buildFeatured(allThemeRows, heroRow) {
+  const buckets = {};
+  for (const row of allThemeRows) {
+    if (row.md5 === heroRow.md5) continue;
+    if (row.aspect < MIN_LANDSCAPE_ASPECT) continue;
+    (buckets[row.themeId] ||= []).push(row);
+  }
+  for (const id of Object.keys(buckets)) {
+    buckets[id].sort((a, b) => (b.score || 0) - (a.score || 0));
+  }
+
+  const out = [];
+  let guard = 0;
+  while (out.length < FEATURED_COUNT && guard++ < 80) {
+    let added = false;
+    for (const themeId of FEATURED_ORDER) {
+      const bucket = buckets[themeId];
+      if (!bucket?.length) continue;
+      const row = bucket.shift();
+      if (out.some((r) => r.md5 === row.md5)) continue;
+      out.push(row);
+      added = true;
+      if (out.length >= FEATURED_COUNT) break;
+    }
+    if (!added) {
+      for (const themeId of FEATURED_ORDER) {
+        const bucket = buckets[themeId];
+        if (!bucket?.length) continue;
+        out.push(bucket.shift());
+        if (out.length >= FEATURED_COUNT) break;
+      }
+      if (!out.length || out.length >= FEATURED_COUNT) break;
+    }
+  }
+  return out.slice(0, FEATURED_COUNT);
 }
 
 function clearOutDir() {
@@ -304,38 +377,18 @@ function main() {
     const images = rows.map((row, idx) =>
       exportImage(row, `themes/${theme.id}/${theme.id}-${String(idx + 1).padStart(2, "0")}.jpg`, 1920, 720)
     );
-    themes.push({
-      id: theme.id,
-      titleZh: theme.titleZh,
-      titleEn: theme.titleEn,
-      images
-    });
-    allThemeRows.push(...rows.map((row, idx) => ({ ...row, themeId: theme.id, themeIdx: idx })));
+    if (images.length) {
+      themes.push({
+        id: theme.id,
+        titleZh: theme.titleZh,
+        titleEn: theme.titleEn,
+        images
+      });
+    }
+    allThemeRows.push(...rows.map((row) => ({ ...row, themeId: theme.id })));
   }
 
-  const featuredPool = allThemeRows
-    .filter((row) => row.md5 !== heroRow.md5)
-    .sort((a, b) => {
-      const guestPenalty = (r) => (r.themeId === "guests" ? -5000 : 0);
-      return (b.score || 0) + guestPenalty(b) - ((a.score || 0) + guestPenalty(a));
-    });
-
-  const featuredRows = [];
-  const seenTheme = new Set();
-  for (const row of featuredPool) {
-    if (featuredRows.length >= FEATURED_COUNT) break;
-    if (row.themeId === "guests") continue;
-    if (seenTheme.has(row.themeId) && featuredRows.length > 4) continue;
-    featuredRows.push(row);
-    seenTheme.add(row.themeId);
-  }
-  for (const row of featuredPool) {
-    if (featuredRows.length >= FEATURED_COUNT) break;
-    if (row.themeId === "guests") continue;
-    if (featuredRows.some((r) => r.md5 === row.md5)) continue;
-    featuredRows.push(row);
-  }
-
+  const featuredRows = buildFeatured(allThemeRows, heroRow);
   const featured = featuredRows.map((row, idx) => {
     const img = exportImage(row, `featured/featured-${String(idx + 1).padStart(2, "0")}.jpg`, 1920, 800);
     img.theme = row.themeId;
@@ -345,6 +398,7 @@ function main() {
   const manifest = {
     generatedAt: new Date().toISOString(),
     source: WEBSITE_PHOTOS,
+    filters: ["landscape_only", "no_portraits", "no_peter", "theme_interleave"],
     hero,
     featured,
     themes,

@@ -34,6 +34,9 @@ SCENERY_CATS = {
     "kaikoura",
     "milford-sound",
     "queenstown",
+    "wanaka",
+    "akaroa",
+    "west-coast",
     "tekapo-stars",
 }
 

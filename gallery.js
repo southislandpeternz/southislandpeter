@@ -156,9 +156,7 @@
   function masonryItemHtml(img, idx, eager) {
     const thumb = normalizePath(img.thumbUrl || img.full);
     const full = normalizePath(img.full || img.thumbUrl);
-    const tall = img.aspect && img.aspect < 0.95 ? " photo-masonry-item--tall" : "";
-    const wide = img.aspect && img.aspect >= 1.45 ? " photo-masonry-item--wide" : "";
-    return `<figure class="photo-masonry-item${tall}${wide}" data-index="${idx}">
+    return `<figure class="photo-masonry-item" data-index="${idx}">
       <img src="${thumb}" data-full-src="${full}" alt="${img.alt || ""}" loading="${eager ? "eager" : "lazy"}" decoding="async"${eager ? ' fetchpriority="high"' : ""}>
     </figure>`;
   }
@@ -179,7 +177,7 @@
     const src = normalizePath(compact ? hero.thumbUrl || hero.full : hero.full);
     container.innerHTML = `
       <figure class="photo-hero-figure">
-        <img src="${src}" alt="${hero.alt || hero.label || "Peter 南岛旅拍"}" loading="eager" fetchpriority="high" decoding="async">
+        <img src="${src}" alt="${hero.alt || hero.label || "新西兰南岛风光摄影"}" loading="eager" fetchpriority="high" decoding="async">
         <figcaption class="photo-hero-caption">
           <span class="photo-hero-label">${hero.label || ""}</span>
           <span class="photo-hero-label-en">${hero.labelEn || ""}</span>

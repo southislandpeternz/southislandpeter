@@ -246,23 +246,23 @@ ${main}
 
 function writeHub() {
   const base = "../";
-  const main = `    <section class="photo-showcase-intro">
+  const main = `    <section class="photo-showcase-intro photo-showcase-intro--tight">
       <div class="container">
-        <header class="photo-showcase-head reveal">
+        <header class="photo-showcase-head photo-showcase-head--page reveal">
           <p class="section-kicker">Travel Photography</p>
           <h1>摄影旅拍作品展示</h1>
-          <p class="section-desc">Peter 镜头下的南岛——雪山、湖泊、星空、峡湾与客户旅途中的真实瞬间。</p>
+          <p class="section-desc">新西兰南岛风光摄影——雪山、湖泊、星空、峡湾与海岸线。</p>
         </header>
       </div>
+      <div class="photo-showcase-hero reveal" id="photoShowcaseHero" aria-label="精选封面摄影" aria-busy="true"></div>
     </section>
-    <section class="photo-showcase-hero reveal" id="photoShowcaseHero" aria-label="精选封面摄影" aria-busy="true"></section>
     <section class="section photo-showcase-featured">
       <div class="container">
         <header class="photo-section-head reveal">
           <p class="section-kicker">Featured Work</p>
           <h2>精选摄影作品</h2>
         </header>
-        <div class="photo-masonry reveal" id="photoFeaturedGrid" aria-label="精选摄影作品" aria-busy="true"></div>
+        <div class="photo-masonry photo-masonry--uniform reveal" id="photoFeaturedGrid" aria-label="精选摄影作品" aria-busy="true"></div>
       </div>
     </section>
     <section class="section section-alt photo-showcase-themes">
@@ -272,16 +272,6 @@ function writeHub() {
           <h2>按主题浏览</h2>
         </header>
         <div id="photoThemeSections" aria-busy="true"></div>
-      </div>
-    </section>
-    <section class="section photo-showcase-regions">
-      <div class="container">
-        <header class="photo-section-head reveal">
-          <p class="section-kicker">By Region</p>
-          <h2>按地区浏览</h2>
-          <p class="section-desc">点击进入各地区完整相册</p>
-        </header>
-        <div class="gallery-region-grid reveal" id="galleryHubGrid" aria-busy="true"></div>
       </div>
     </section>`;
 
