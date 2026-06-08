@@ -180,7 +180,7 @@ function headerNav(base) {
         <a href="${base}routes.html">精品线路</a>
         <a href="${base}availability.html">档期安排</a>
         <a href="${base}gallery/index.html" aria-current="page">摄影旅拍</a>
-        <a href="${base}testimonials.html">客人评价</a>
+        <a href="${base}customer-reviews.html">客人评价</a>
         <a href="${base}index.html#contact">联系我们</a>
       </nav>`;
 }

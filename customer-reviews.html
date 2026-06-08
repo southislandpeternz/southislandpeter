@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Customer Reviews — 30+ authentic guest testimonials for Peter's South Island Mercedes small group tours. WeChat, Google & social reviews.">
+  <title>Customer Reviews · 客户真实评价 | Tian Tian Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-tour page-reviews page-customer-reviews">
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-bar">
+      <a href="index.html" class="brand">
+        <img src="images/网页使用照片集/site/logo.png" class="site-logo" alt="新西兰天天旅行社 Logo" width="48" height="48" loading="lazy">
+        <div class="brand-text">
+          <div class="brand-en">Tian Tian Travel Ltd</div>
+          <div class="brand-zh">新西兰天天旅行社</div>
+        </div>
+      </a>
+
+      <nav class="nav-center" id="mainNav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="index.html#peter">关于 Peter</a>
+        <a href="routes.html">精品线路</a>
+        <a href="availability.html">档期安排</a>
+        <a href="gallery/index.html">摄影旅拍</a>
+        <a href="customer-reviews.html" aria-current="page">客人评价</a>
+        <a href="index.html#contact">联系我们</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+6421976868" class="header-phone">
+          <span class="phone-label">咨询热线</span>
+          <span class="phone-num">+64 21 976 868</span>
+        </a>
+        <a href="index.html#contact" class="btn-cta">立即咨询</a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="rev-hero">
+      <figure class="media-slot media-slot--hero media-slot--banner rev-hero-bg media-slot--filled">
+        <img src="images/网页使用照片集/site/Peter.jpg" alt="Peter 南岛司导">
+        <figcaption class="media-slot-label">Hero主图</figcaption>
+      </figure>
+      <div class="rev-hero-inner reveal">
+        <p class="rev-hero-kicker">Customer Reviews</p>
+        <h1>客户真实评价</h1>
+        <p class="rev-hero-stars" aria-label="五星好评">⭐⭐⭐⭐⭐</p>
+        <p class="rev-hero-lead">来自微信、Google 与社交平台的真实反馈<br>已收录 <strong id="crReviewCount">30</strong> 条精选好评</p>
+      </div>
+    </section>
+
+    <section class="section" id="cr-top">
+      <div class="container">
+        <header class="rev-section-head reveal">
+          <p class="section-kicker">Top Reviews</p>
+          <h2>最有说服力的客人好评</h2>
+          <p class="section-desc">OCR 提取原文 · 隐私化处理 · 真实截图存档</p>
+        </header>
+        <div class="rev-featured-grid reveal" id="crFeaturedGrid" aria-busy="true"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="cr-all">
+      <div class="container">
+        <header class="rev-section-head reveal">
+          <p class="section-kicker">All Featured</p>
+          <h2>全部精选评价</h2>
+          <p class="section-desc">微信聊天 · Google Review · 社交平台客户反馈</p>
+        </header>
+        <div class="rev-card-grid reveal" id="crAllGrid" aria-busy="true"></div>
+      </div>
+    </section>
+
+    <section class="section rev-cta-band">
+      <div class="container reveal">
+        <h2>准备开启您的南岛之旅？</h2>
+        <p>与 Peter 微信聊聊出行时间、人数与兴趣，定制专属行程。</p>
+        <a href="index.html#contact" class="btn btn-primary">立即咨询 Peter</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">
+        <a href="index.html">← 返回首页</a> · © 2026 Tian Tian Travel Ltd
+      </p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="评价截图预览">
+    <button type="button" class="lightbox-close" aria-label="关闭">&times;</button>
+    <button type="button" class="lightbox-prev" aria-label="上一张">‹</button>
+    <img class="lightbox-img" id="lightboxImg" alt="">
+    <button type="button" class="lightbox-next" aria-label="下一张">›</button>
+  </div>
+
+  <script src="reviews.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
