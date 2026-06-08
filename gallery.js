@@ -6,6 +6,7 @@
 
   let manifestCache = null;
   let showcaseCache = null;
+  let showcaseVersion = "";
   let lightboxPaths = [];
   let lightboxIndex = 0;
 
@@ -46,7 +47,12 @@
     return null;
   }
 
-  function hubBase() {
+  function bustAssetUrl(p) {
+    const base = assetUrl(p);
+    if (!showcaseVersion) return base;
+    const sep = base.includes("?") ? "&" : "?";
+    return `${base}${sep}v=${encodeURIComponent(showcaseVersion)}`;
+  }
     if (document.getElementById("regionGalleryMasonry")) return "../../";
     if (document.getElementById("galleryHubGrid")) return "../";
     return "";
@@ -77,9 +83,10 @@
     const url = showcaseUrl();
     if (!url) return null;
     try {
-      const res = await fetch(url, { cache: "no-store" });
+      const res = await fetch(`${url}?v=${Date.now()}`, { cache: "no-store" });
       if (!res.ok) return null;
       showcaseCache = await res.json();
+      showcaseVersion = showcaseCache.generatedAt || String(Date.now());
       return showcaseCache;
     } catch {
       return null;
@@ -162,8 +169,8 @@
   }
 
   function masonryItemHtml(img, idx, eager) {
-    const thumb = assetUrl(img.thumbUrl || img.full);
-    const full = assetUrl(img.full || img.thumbUrl);
+    const thumb = bustAssetUrl(img.thumbUrl || img.full);
+    const full = bustAssetUrl(img.full || img.thumbUrl);
     return `<figure class="photo-masonry-item" data-index="${idx}">
       <img src="${thumb}" data-full-src="${full}" alt="${img.alt || ""}" loading="${eager ? "eager" : "lazy"}" decoding="async"${eager ? ' fetchpriority="high"' : ""}>
     </figure>`;
@@ -173,7 +180,7 @@
     if (!container) return [];
     const limit = options?.limit;
     const slice = limit ? images.slice(0, limit) : images;
-    const paths = slice.map((img) => assetUrl(img.full || img.thumbUrl));
+    const paths = slice.map((img) => bustAssetUrl(img.full || img.thumbUrl));
     container.innerHTML = slice.map((img, i) => masonryItemHtml(img, i, i < 3)).join("");
     container.setAttribute("aria-busy", "false");
     bindMasonryLightbox(container, paths);
@@ -182,7 +189,7 @@
 
   function renderPhotoHero(container, hero, compact) {
     if (!container || !hero) return;
-    const src = assetUrl(compact ? hero.thumbUrl || hero.full : hero.full);
+    const src = bustAssetUrl(compact ? hero.thumbUrl || hero.full : hero.full);
     container.innerHTML = `
       <figure class="photo-hero-figure">
         <img src="${src}" alt="${hero.alt || hero.label || "新西兰南岛风光摄影"}" loading="eager" fetchpriority="high" decoding="async">
@@ -194,7 +201,7 @@
     container.setAttribute("aria-busy", "false");
     const img = container.querySelector("img");
     img?.addEventListener("click", () => {
-      lightboxPaths = [assetUrl(hero.full)];
+      lightboxPaths = [bustAssetUrl(hero.full)];
       openLightbox(0);
     });
   }
@@ -281,7 +288,11 @@
       showEmpty(featuredEl, EMPTY_HINT);
       return;
     }
-    renderPhotoMasonry(featuredEl, data.featured || [], { limit: 6 });
+    const homeItems =
+      data.homeFeatured?.length > 0
+        ? data.homeFeatured
+        : (data.featured || []).slice(0, 6);
+    renderPhotoMasonry(featuredEl, homeItems);
   }
 
   async function boot() {
