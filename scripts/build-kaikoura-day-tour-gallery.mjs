@@ -315,19 +315,25 @@ function ensureDir(dir) {
 }
 
 function optimizeWebImage(filePath) {
+  const outPath = filePath.replace(/\.(png|jpeg|jpg)$/i, ".jpg");
   try {
-    execSync("which sips", { stdio: "ignore" });
-    const tmp = `${filePath}.opt.jpg`;
     execSync(
-      `sips -Z 1920 -s format jpeg -s formatOptions 85 "${filePath}" --out "${tmp}"`,
-      { stdio: "ignore" }
+      `python3 -c "
+import sys
+from PIL import Image
+path = sys.argv[1]
+out = sys.argv[2]
+im = Image.open(path)
+im.thumbnail((1920, 1920), Image.LANCZOS)
+im.convert('RGB').save(out, 'JPEG', quality=85, optimize=True)
+" "${filePath}" "${outPath}"`,
+      { stdio: "pipe" }
     );
-    fs.renameSync(tmp, filePath.replace(/\.(png|jpeg|jpg)$/i, ".jpg"));
-    if (filePath !== filePath.replace(/\.(png|jpeg|jpg)$/i, ".jpg") && fs.existsSync(filePath)) {
+    if (outPath !== filePath && fs.existsSync(filePath)) {
       fs.unlinkSync(filePath);
     }
-  } catch {
-    /* keep original if sips unavailable */
+  } catch (err) {
+    console.warn(`[optimize] kept original for ${path.basename(filePath)}: ${err.message}`);
   }
 }
 
