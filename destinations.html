@@ -24,7 +24,7 @@
 
       <nav class="nav-center" id="mainNav" aria-label="主导航">
         <a href="index.html">首页</a>
-        <a href="index.html#peter">关于 Peter</a>
+        <a href="about-peter.html">关于 Peter</a>
         <a href="routes.html">精品线路</a>
         <a href="availability.html">档期安排</a>
         <a href="gallery/index.html">摄影旅拍</a>
@@ -73,6 +73,33 @@
       </div>
     </nav>
 
+    <section class="section page-team-strip" id="team">
+      <div class="container">
+        <div class="page-team-strip-inner reveal">
+          <figure class="page-team-strip-photo media-slot media-slot--filled">
+            <img src="images/网页使用照片集/site/Peter.jpg" alt="南岛向导 Peter" loading="lazy" onerror="this.onerror=null;this.src='images/网页使用照片集/site/peter-avatar-fallback.svg';">
+          </figure>
+          <div class="page-team-strip-body">
+            <p class="section-kicker">Meet Your Guide</p>
+            <h2>Peter 带你认识南岛 · 真实故事来自十多年带团</h2>
+            <p class="page-team-strip-lead">新西兰正规注册旅行社，奔驰商务精品小团，每一条故事都来自 Peter 的真实经历。</p>
+            <ul class="page-team-strip-tags" aria-label="团队优势">
+              <li>当地华人向导</li>
+              <li>南岛深度经验</li>
+              <li>私人定制行程</li>
+            </ul>
+            <div class="page-team-strip-actions">
+              <a href="about-peter.html" class="btn btn-outline">认识 Peter 与团队</a>
+              <a href="https://wa.me/6421976868" class="btn btn-primary" target="_blank" rel="noopener noreferrer">WhatsApp 咨询</a>
+            </div>
+          </div>
+          <figure class="page-team-strip-vehicle media-slot media-slot--filled" aria-hidden="true">
+            <img src="images/网页使用照片集/site/mercedes-new.JPG" alt="" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- 北线 -->
     <section class="story-route section" id="north-route">
       <div class="container">
@@ -104,9 +131,9 @@
           </article>
 
           <article class="story-spot reveal" id="akaroa">
-            <div class="story-spot-photo">
+            <div class="story-spot-photo" data-akaroa-gallery="cover">
               <figure class="media-slot media-slot--scenery">
-                <img src="images/网页使用照片集/site/slot-placeholder.svg" alt="阿卡罗阿港湾" loading="lazy">
+                <img src="" alt="" loading="lazy">
                 <figcaption class="media-slot-label">景点风光</figcaption>
               </figure>
             </div>
@@ -494,6 +521,24 @@
       </div>
     </section>
 
+    <section class="section section-alt page-reviews-section" id="story-reviews">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">Guest Reviews</p>
+          <h2>走过这些路的客人怎么说</h2>
+          <p class="section-desc">30+ 条真实五星好评 · 微信 · Google Review · 客户反馈截图</p>
+        </header>
+        <div class="home-reviews-cta reveal">
+          <p class="home-reviews-stars" aria-label="五星好评">⭐⭐⭐⭐⭐</p>
+        </div>
+        <div class="home-reviews-preview-grid reveal" data-reviews-preview data-reviews-limit="3" data-reviews-offset="0" aria-label="精选客户评价" aria-busy="true"></div>
+        <div class="page-reviews-cta-row reveal">
+          <a href="customer-reviews.html" class="tt-see-all">查看全部客户评价 <span class="tt-arrow" aria-hidden="true">→</span></a>
+          <a href="https://wa.me/6421976868" class="btn btn-outline" target="_blank" rel="noopener noreferrer">WhatsApp 咨询同款行程</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="story-cta reveal">
@@ -502,6 +547,7 @@
           <p>告诉 Peter 您心动的线路与季节，一起把北线、东线、中线或西线，串成属于您的南岛慢旅行。</p>
           <div class="tour-book-actions">
             <a href="routes.html" class="btn btn-primary">查看精品线路</a>
+            <a href="https://wa.me/6421976868" class="btn btn-outline btn--wa" target="_blank" rel="noopener noreferrer">WhatsApp 聊行程</a>
             <a href="index.html#contact" class="btn btn-outline">和 Peter 聊聊行程</a>
           </div>
         </div>
@@ -509,8 +555,50 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer page-contact-footer" id="page-contact">
     <div class="container">
+      <section class="contact-us reveal" aria-labelledby="destContactTitle">
+        <header class="contact-us-head">
+          <p class="section-kicker">Contact Peter</p>
+          <h2 id="destContactTitle">联系 Peter · 规划您的南岛故事之旅</h2>
+          <p class="section-desc">欢迎致电、邮件或 WhatsApp / 微信咨询团期与定制方案</p>
+        </header>
+        <div class="contact-us-grid">
+          <div class="contact-us-info">
+            <a href="tel:+6421976868" class="contact-row">
+              <span class="contact-row-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+              </span>
+              <span class="contact-row-text">+64 21 976 868</span>
+            </a>
+            <a href="mailto:yue_she@hotmail.com?subject=咨询南岛故事之旅" class="contact-row">
+              <span class="contact-row-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              </span>
+              <span class="contact-row-text">yue_she@hotmail.com</span>
+            </a>
+          </div>
+          <div class="contact-us-qr">
+            <figure class="contact-qr-card">
+              <div class="contact-qr-img-wrap">
+                <img src="images/网页使用照片集/site/wechat-qr.jpg" alt="微信二维码" width="160" height="160" loading="lazy">
+              </div>
+              <figcaption>微信咨询</figcaption>
+            </figure>
+            <figure class="contact-qr-card contact-qr-card--wa">
+              <div class="contact-qr-img-wrap">
+                <img src="images/网页使用照片集/site/peter-whatapp.jpg" alt="WhatsApp 二维码" width="220" height="220" loading="lazy">
+              </div>
+              <figcaption>WhatsApp 咨询</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="contact-us-actions">
+          <a href="https://wa.me/6421976868" class="btn btn-primary" target="_blank" rel="noopener noreferrer">打开 WhatsApp</a>
+          <button type="button" class="btn btn-outline" data-wechat-trigger>微信咨询</button>
+          <a href="mailto:yue_she@hotmail.com?subject=获取南岛行程建议" class="btn btn-outline">发送邮件</a>
+        </div>
+      </section>
       <p class="footer-copy">
         <a href="index.html">← 返回首页</a> · © 2026 Tian Tian Travel Ltd · 新西兰天天旅行社
       </p>
@@ -541,7 +629,16 @@
     </div>
   </div>
 
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="图片预览">
+    <button type="button" class="lightbox-close" aria-label="关闭">&times;</button>
+    <button type="button" class="lightbox-prev" aria-label="上一张">‹</button>
+    <img class="lightbox-img" id="lightboxImg" alt="">
+    <button type="button" class="lightbox-next" aria-label="下一张">›</button>
+  </div>
+
   <script src="media-slots.js"></script>
+  <script src="reviews.js"></script>
+  <script src="akaroa-day-tour.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

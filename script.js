@@ -30,6 +30,7 @@
     { title: "南岛摄影相册", href: "gallery/index.html", keywords: "摄影 gallery 相册 地区 Akaroa Kaikoura Queenstown" },
     { title: "客人好评墙", href: "#reviews", keywords: "好评 评价 微信 小红书 Google 朋友圈 客人 反馈" },
     { title: "凯库拉观鲸", href: "destinations.html#kaikoura", keywords: "凯库拉 观鲸 海豚 whale 南岛故事" },
+    { title: "阿卡罗阿一日游", href: "akaroa-day-tour.html", keywords: "Akaroa 阿卡罗阿 一日游 羊驼 龙虾 海湾 班克斯半岛 day tour" },
     { title: "特卡波星空", href: "destinations.html#tekapo", keywords: "特卡波 星空 银河 tekapo 南岛故事" },
     { title: "库克山", href: "destinations.html#mt-cook", keywords: "库克山 雪山 冰川 mount cook 南岛故事" },
     { title: "皇后镇", href: "destinations.html#queenstown", keywords: "皇后镇 queenstown 冒险 南岛故事" },
