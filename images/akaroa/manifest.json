@@ -1,0 +1,254 @@
+{
+  "region": "akaroa",
+  "namingPattern": "{region}-{subject}-{detail}-{nn}.jpg",
+  "sourceDir": "/Users/yueshe/Desktop/NZ-Travel-photos /akaroa",
+  "webDir": "images/akaroa",
+  "photoLibraryPath": "Photo Library/Akaroa Day Tour",
+  "categories": [
+    { "id": "alpaca-farm", "folder": "Alpaca-Farm", "label": "羊驼牧场 · Alpaca Farm" },
+    { "id": "lobster-fishing", "folder": "Lobster-Cruise", "label": "龙虾捕捞 · Lobster Fishing" },
+    { "id": "fishing", "folder": "Lobster-Cruise", "label": "海钓体验 · Fishing" },
+    { "id": "harbour-scenery", "folder": "Harbour", "label": "港湾风光 · Harbour Scenery" },
+    { "id": "harbour-cruise", "folder": "Cruise", "label": "港湾巡游 · Harbour Cruise" },
+    { "id": "wildlife", "folder": "Wildlife", "label": "野生动物 · Wildlife" },
+    { "id": "seafood", "folder": "Seafood", "label": "海鲜体验 · Seafood Experience" },
+    { "id": "township", "folder": "Township", "label": "阿卡罗阿小镇 · Akaroa Township" },
+    { "id": "transport", "folder": "Transport", "label": "奔驰商务车 · Mercedes Transport" }
+  ],
+  "folders": {
+    "Alpaca-Farm": "羊驼牧场 · Akaroa Alpaca Farm",
+    "Lobster-Cruise": "龙虾捕捞 & 海钓 · Lobster Fishing & Fishing",
+    "Harbour": "阿卡罗阿港湾风光 · Harbour Scenery",
+    "Cruise": "港湾巡游 · Harbour Cruise",
+    "Wildlife": "野生动物 · Wildlife",
+    "Seafood": "海鲜体验 · Seafood Experience",
+    "Township": "阿卡罗阿小镇 · Akaroa Township",
+    "Transport": "奔驰商务车 · Mercedes Tour Vehicle"
+  },
+  "pageSections": [
+    "Hero Banner",
+    "Wildlife",
+    "Lobster Experience",
+    "Alpaca Farm",
+    "Harbour Cruise",
+    "Seafood Experience",
+    "Township",
+    "Mercedes Transport"
+  ],
+  "photos": [
+    {
+      "id": "01",
+      "batch": 1,
+      "folder": "Alpaca-Farm",
+      "path": "images/akaroa/Alpaca-Farm/akaroa-alpaca-farm-feeding-alpaca-female-01.jpg",
+      "seoName": "akaroa-alpaca-farm-feeding-alpaca-female-01.jpg",
+      "sourceUuid": "6A6818F6-3D6B-4A09-999D-E3FEC9AD6996_1_105_c.jpeg",
+      "alt": "Visitor feeding alpaca at Akaroa alpaca farm",
+      "use": "Akaroa Day Tour · Alpaca Farm"
+    },
+    {
+      "id": "02",
+      "batch": 1,
+      "folder": "Alpaca-Farm",
+      "path": "images/akaroa/Alpaca-Farm/akaroa-alpaca-farm-lake-view-visitor-01.jpg",
+      "seoName": "akaroa-alpaca-farm-lake-view-visitor-01.jpg",
+      "sourceUuid": "5F8675A3-55BA-4B3E-8E56-04CC9574E4C3_1_105_c.jpeg",
+      "alt": "Alpaca farm harbour view with visitor feeding alpaca",
+      "use": "Akaroa Day Tour · Alpaca Farm"
+    },
+    {
+      "id": "03",
+      "batch": 1,
+      "folder": "Alpaca-Farm",
+      "path": "images/akaroa/Alpaca-Farm/akaroa-alpaca-farm-feeding-white-alpaca-01.jpg",
+      "seoName": "akaroa-alpaca-farm-feeding-white-alpaca-01.jpg",
+      "sourceUuid": "6C76A99F-7531-49F2-BBBD-E3003F9F8F56_1_105_c.jpeg",
+      "alt": "Visitor feeding white alpaca at Akaroa farm",
+      "use": "Akaroa Day Tour · Alpaca Farm"
+    },
+    {
+      "id": "04",
+      "batch": 1,
+      "folder": "Alpaca-Farm",
+      "path": "images/akaroa/Alpaca-Farm/akaroa-alpaca-closeup-portrait-01.jpg",
+      "seoName": "akaroa-alpaca-closeup-portrait-01.jpg",
+      "sourceUuid": "7BB73D75-453F-4904-A3C0-D799B69BD513_1_105_c.jpeg",
+      "alt": "Alpaca close-up portrait at Akaroa farm",
+      "use": "Akaroa Day Tour · Alpaca Farm"
+    },
+    {
+      "id": "05",
+      "batch": 1,
+      "folder": "Alpaca-Farm",
+      "path": "images/akaroa/Alpaca-Farm/akaroa-alpaca-farm-landscape-01.jpg",
+      "seoName": "akaroa-alpaca-farm-landscape-01.jpg",
+      "sourceUuid": "67CA59ED-1566-4CC8-80DD-1207B69B1CAB_1_105_c.jpeg",
+      "alt": "Akaroa alpaca farm panorama with harbour view",
+      "use": "Akaroa Day Tour · Alpaca Farm"
+    },
+    {
+      "id": "06",
+      "batch": 1,
+      "folder": "Lobster-Cruise",
+      "path": "images/akaroa/Lobster-Cruise/akaroa-lobster-cruise-catch-lobster-01.jpg",
+      "seoName": "akaroa-lobster-cruise-catch-lobster-01.jpg",
+      "sourceUuid": "33836A94-8EB3-4BFD-95D8-B0DFA24B2FF6_1_105_c.jpeg",
+      "sourceNote": "33836A94 (tourist holding lobsters). Original list had 6EB68549, used for #10.",
+      "alt": "Tourist displaying freshly caught Akaroa lobster on harbour cruise",
+      "use": "Akaroa Day Tour · Lobster Experience"
+    },
+    {
+      "id": "07",
+      "batch": 1,
+      "folder": "Lobster-Cruise",
+      "path": "images/akaroa/Lobster-Cruise/akaroa-harbour-cruise-rainbow-lobster-01.jpg",
+      "seoName": "akaroa-harbour-cruise-rainbow-lobster-01.jpg",
+      "sourceUuid": "21E4A921-BD81-4D02-91A9-AD5FEFFFEFDF_1_105_c.jpeg",
+      "alt": "Rainbow over Akaroa harbour with lobster catch on boat deck",
+      "use": "Akaroa Day Tour · Lobster Experience"
+    },
+    {
+      "id": "08",
+      "batch": 1,
+      "folder": "Lobster-Cruise",
+      "path": "images/akaroa/Lobster-Cruise/akaroa-harbour-cruise-lobster-display-01.jpg",
+      "seoName": "akaroa-harbour-cruise-lobster-display-01.jpg",
+      "sourceUuid": "DD1464E6-9AB1-408E-858F-E857DF34F04C_1_105_c.jpeg",
+      "sourceNote": "DD1464E6 (lobsters on boat table). Original list duplicated 21E4A921 for #08.",
+      "alt": "Lobsters displayed on boat during Akaroa harbour cruise",
+      "use": "Akaroa Day Tour · Lobster Experience"
+    },
+    {
+      "id": "09",
+      "batch": 1,
+      "folder": "Harbour",
+      "path": "images/akaroa/Harbour/akaroa-dolphins-harbour-boat-01.jpg",
+      "seoName": "akaroa-dolphins-harbour-boat-01.jpg",
+      "sourceUuid": "974EDC4E-EDB8-40B5-8FC3-F44032128194_1_105_c.jpeg",
+      "sourceNote": "Coast Up Close Wildlife Adventures tour boat. Original list had 18AF9B90 (lobster catch).",
+      "alt": "Akaroa harbour wildlife tour boat at sea",
+      "use": "Akaroa Day Tour · Harbour Cruise"
+    },
+    {
+      "id": "10",
+      "batch": 1,
+      "folder": "Harbour",
+      "path": "images/akaroa/Harbour/akaroa-harbour-cruise-passengers-01.jpg",
+      "seoName": "akaroa-harbour-cruise-passengers-01.jpg",
+      "sourceUuid": "6EB68549-E37F-4F0C-BEE4-305DFE059A3A_1_105_c.jpeg",
+      "alt": "Passengers enjoying Akaroa harbour cruise from boat deck",
+      "use": "Akaroa Day Tour · Harbour Cruise"
+    },
+    {
+      "id": "11",
+      "batch": 2,
+      "folder": "Lobster-Cruise",
+      "path": "images/akaroa/Lobster-Cruise/akaroa-lobster-fishing-rainbow-catch-01.jpg",
+      "seoName": "akaroa-lobster-fishing-rainbow-catch-01.jpg",
+      "sourceUuid": "3543C558-BE20-43DC-9669-A411F7F7BE88_1_105_c.jpeg",
+      "alt": "Rainbow over Akaroa harbour with lobster fishing catch celebration",
+      "use": "Akaroa Day Tour · Lobster Experience"
+    },
+    {
+      "id": "12",
+      "batch": 2,
+      "folder": "Lobster-Cruise",
+      "path": "images/akaroa/Lobster-Cruise/akaroa-lobster-catch-box-01.jpg",
+      "seoName": "akaroa-lobster-catch-box-01.jpg",
+      "sourceUuid": "50058F30-E412-4B25-9944-140484BD49EB_1_105_c.jpeg",
+      "alt": "Fresh Akaroa lobster catch in green crate close-up",
+      "use": "Akaroa Day Tour · Lobster Experience"
+    },
+    {
+      "id": "13",
+      "batch": 2,
+      "folder": "Lobster-Cruise",
+      "path": "images/akaroa/Lobster-Cruise/akaroa-fishing-boat-ocean-view-01.jpg",
+      "seoName": "akaroa-fishing-boat-ocean-view-01.jpg",
+      "sourceUuid": "288171A9-71F5-46EB-A74E-C8136198EEEA_1_105_c.jpeg",
+      "alt": "Fishing rods on boat with Akaroa harbour and hills view",
+      "use": "Akaroa Day Tour · Fishing"
+    },
+    {
+      "id": "14",
+      "batch": 2,
+      "folder": "Lobster-Cruise",
+      "path": "images/akaroa/Lobster-Cruise/akaroa-fishing-experience-01.jpg",
+      "seoName": "akaroa-fishing-experience-01.jpg",
+      "sourceUuid": "A61AFA11-B52B-4090-82D2-823E795F8D24_1_105_c.jpeg",
+      "alt": "Tourist sea fishing from boat in Akaroa harbour",
+      "use": "Akaroa Day Tour · Fishing"
+    },
+    {
+      "id": "15",
+      "batch": 2,
+      "folder": "Harbour",
+      "path": "images/akaroa/Harbour/akaroa-harbour-morning-mist-01.jpg",
+      "seoName": "akaroa-harbour-morning-mist-01.jpg",
+      "sourceUuid": "A2A42AC6-1241-446C-866B-AE17948DBA9C_1_105_c.jpeg",
+      "alt": "Akaroa harbour morning mist with boats and lighthouse",
+      "use": "Akaroa Day Tour · Harbour Scenery"
+    },
+    {
+      "id": "16",
+      "batch": 2,
+      "folder": "Transport",
+      "path": "images/akaroa/Transport/mercedes-sprinter-akaroa-tour-01.jpg",
+      "seoName": "mercedes-sprinter-akaroa-tour-01.jpg",
+      "sourceUuid": "9146612D-CCB5-438B-9A36-E4E0D9B473D5_1_105_c.jpeg",
+      "alt": "Mercedes Sprinter tour van for Akaroa day tour transfers",
+      "use": "Akaroa Day Tour · Mercedes Transport"
+    },
+    {
+      "id": "17",
+      "batch": 3,
+      "folder": "Wildlife",
+      "path": "images/akaroa/Wildlife/akaroa-penguin-colony-rocks-01.jpg",
+      "seoName": "akaroa-penguin-colony-rocks-01.jpg",
+      "sourceUuid": "AD9B4C43-9F15-440E-8B36-F7D6FA5D584E_1_105_c.jpeg",
+      "sourceNote": "Seabirds (shags) on coastal rocks; filename kept per user SEO plan.",
+      "alt": "Seabird colony on coastal rocks during Akaroa wildlife cruise",
+      "use": "Akaroa Day Tour · Wildlife"
+    },
+    {
+      "id": "18",
+      "batch": 3,
+      "folder": "Cruise",
+      "path": "images/akaroa/Cruise/akaroa-harbour-cruise-boat-02.jpg",
+      "seoName": "akaroa-harbour-cruise-boat-02.jpg",
+      "sourceUuid": "B7553B9E-608F-49C7-9524-4BBA77D45F4A_1_105_c.jpeg",
+      "alt": "Coast Up Close wildlife cruise boat docked at Akaroa harbour pier",
+      "use": "Akaroa Day Tour · Harbour Cruise"
+    },
+    {
+      "id": "19",
+      "batch": 3,
+      "folder": "Cruise",
+      "path": "images/akaroa/Cruise/akaroa-cruise-cabin-view-01.jpg",
+      "seoName": "akaroa-cruise-cabin-view-01.jpg",
+      "sourceUuid": "C4C9C377-DCF4-4EFF-AAA5-B9149095CFA1_1_105_c.jpeg",
+      "alt": "Inside Akaroa harbour cruise boat cabin with passengers and coastal view",
+      "use": "Akaroa Day Tour · Harbour Cruise"
+    },
+    {
+      "id": "20",
+      "batch": 3,
+      "folder": "Seafood",
+      "path": "images/akaroa/Seafood/akaroa-paua-and-lobster-01.jpg",
+      "seoName": "akaroa-paua-and-lobster-01.jpg",
+      "sourceUuid": "C884605B-96FB-4AD1-A7EB-672F08BF9E07_1_105_c.jpeg",
+      "alt": "Fresh Akaroa paua and lobster catch displayed on boat",
+      "use": "Akaroa Day Tour · Seafood Experience"
+    },
+    {
+      "id": "21",
+      "batch": 3,
+      "folder": "Township",
+      "path": "images/akaroa/Township/akaroa-war-memorial-garden-01.jpg",
+      "seoName": "akaroa-war-memorial-garden-01.jpg",
+      "sourceUuid": "BE91285B-209A-4448-B281-749591D90F3E_1_105_c.jpeg",
+      "alt": "Akaroa war memorial garden with palm trees and hillside view",
+      "use": "Akaroa Day Tour · Township"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "description": "Sources staged into Photos/Kaikoura_MASTER/_originals (copies only, never moved)",
+  "sources": [
+    {
+      "label": "desktop-kaikoura",
+      "path": "/Users/yueshe/Desktop/NZ-Travel-photos /kaikoura ",
+      "recursive": true
+    },
+    {
+      "label": "photo-library",
+      "path": "Photo Library/Kaikoura-Day-Tour",
+      "recursive": true
+    },
+    {
+      "label": "site-kaikoura",
+      "path": "images/网页使用照片集/site",
+      "glob": "*[Kk]aik*"
+    },
+    {
+      "label": "site-routes-kaikoura",
+      "path": "images/网页使用照片集/site/routes",
+      "glob": "*kaik*"
+    },
+    {
+      "label": "site-whale",
+      "path": "images/网页使用照片集/site",
+      "files": ["kajkoura-whale-watch.jpg"]
+    }
+  ]
+}
