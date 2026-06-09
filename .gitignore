@@ -14,3 +14,7 @@ venv/
 
 # Local master archive — too large for GitHub Pages (>1 GB site limit)
 Photos/Kaikoura_MASTER/
+
+# Dev-only previews and backups — not for production site
+_previews/
+_backups/
