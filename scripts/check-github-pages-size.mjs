@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 /**
- * Fail if git-tracked files exceed GitHub Pages 1 GB site limit.
+ * Fail if git-tracked files exceed GitHub Pages 1 GB site limit,
+ * contain symlinks, or include dev-only folders that break artifact upload.
  * Run before push: node scripts/check-github-pages-size.mjs
  */
 import { execSync } from "child_process";
 import fs from "fs";
 
 const LIMIT_MB = 950;
+const FORBIDDEN_PREFIXES = ["_previews/", "_backups/", "Photos/Kaikoura_MASTER/"];
 const files = execSync("git ls-files -z", { encoding: "buffer" })
   .toString("utf8")
   .split("\0")
@@ -14,10 +16,21 @@ const files = execSync("git ls-files -z", { encoding: "buffer" })
 
 let totalKb = 0;
 const large = [];
+const symlinks = [];
+const forbidden = [];
 
 for (const file of files) {
+  if (FORBIDDEN_PREFIXES.some((prefix) => file.startsWith(prefix))) {
+    forbidden.push(file);
+  }
+
   try {
-    const kb = Math.ceil(fs.statSync(file).size / 1024);
+    const stat = fs.lstatSync(file);
+    if (stat.isSymbolicLink()) {
+      symlinks.push({ file, target: fs.readlinkSync(file) });
+      continue;
+    }
+    const kb = Math.ceil(stat.size / 1024);
     totalKb += kb;
     if (kb > 50 * 1024) large.push({ file, mb: (kb / 1024).toFixed(1) });
   } catch {
@@ -35,9 +48,31 @@ if (large.length) {
   }
 }
 
-if (totalMb > LIMIT_MB) {
-  console.error(`\nERROR: tracked files exceed ${LIMIT_MB} MB — GitHub Pages deploy will fail at "Upload artifact".`);
-  process.exit(1);
+let failed = false;
+
+if (forbidden.length) {
+  failed = true;
+  console.error("\nERROR: dev-only paths must not be tracked (breaks GitHub Pages artifact upload):");
+  for (const file of forbidden) {
+    console.error(`  ${file}`);
+  }
+  console.error("Remove with: git rm -r --cached <path>");
 }
 
-console.log("OK — within GitHub Pages limit.");
+if (symlinks.length) {
+  failed = true;
+  console.error("\nERROR: tracked symlinks break GitHub Pages (\"File removed before we read it\"):");
+  for (const { file, target } of symlinks) {
+    console.error(`  ${file} -> ${target}`);
+  }
+  console.error("Replace with real files or remove from git. Local preview: node scripts/build-akaroa-contact-sheet-preview.mjs");
+}
+
+if (totalMb > LIMIT_MB) {
+  failed = true;
+  console.error(`\nERROR: tracked files exceed ${LIMIT_MB} MB — GitHub Pages deploy will fail at "Upload artifact".`);
+}
+
+if (failed) process.exit(1);
+
+console.log("OK — within GitHub Pages limit, no symlinks or forbidden paths.");
