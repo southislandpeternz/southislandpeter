@@ -8,6 +8,15 @@ venv/
 
 # macOS
 .DS_Store
+* 2.*
+* 2.html
+* 2.js
+* 2.md
+* 2.json
+* 2.mjs
+* 2.jpg
+* 2.jpeg
+* 2.png
 
 # Photo organizer venv
 .venv-photo-organizer/
