@@ -4,6 +4,7 @@
  * Kaikoura Day Tour v1 — 6 categories, SEO titles/alt/keywords.
  *
  * Run: node scripts/build-kaikoura-day-tour-gallery.mjs
+ * Scan disk only (no MASTER re-seed): node scripts/build-kaikoura-day-tour-gallery.mjs --from-disk
  */
 import fs from "fs";
 import path from "path";
@@ -17,6 +18,7 @@ const OUT_JSON = path.join(ROOT, "gallery/kaikoura-day-tour.json");
 const IMAGE_EXT = /\.(jpe?g|png|webp|avif)$/i;
 const LIBRARY_REL = "Photo Library/Kaikoura-Day-Tour";
 const FORCE = process.argv.includes("--force");
+const FROM_DISK = process.argv.includes("--from-disk");
 
 function masterPath(...parts) {
   return path.join(MASTER_ROOT, ...parts);
@@ -263,11 +265,13 @@ const CATEGORY_FILE_ORDER = {
   ]
 };
 
-/** Homepage / banner hero picks (priority order) */
+/** Homepage / banner hero picks (priority order; missing files skipped at build) */
 const HERO_PICKS = [
   "kaikoura-coastal-seals-mountains-01.jpg",
+  "kaikoura-coastal-peninsula-landscape-01.jpg",
+  "kaikoura-coastal-scenery-coast-01.jpg",
   "whale-watching-sperm-whale-01.jpg",
-  "kaikoura-coastal-peninsula-landscape-01.jpg"
+  "whale-watching-aerial-01.jpg"
 ];
 
 const WORD_ZH = {
@@ -440,9 +444,33 @@ function findImageByFile(allImages, file) {
   return allImages.find((img) => img.file === file) || null;
 }
 
+function resolveHeroPicks(allImages) {
+  const picked = [];
+  const seen = new Set();
+  for (const file of HERO_PICKS) {
+    const img = findImageByFile(allImages, file);
+    if (img && !seen.has(file)) {
+      picked.push(img);
+      seen.add(file);
+    }
+  }
+  if (picked.length >= 3) return picked.slice(0, 3);
+  for (const img of allImages) {
+    if (seen.has(img.file)) continue;
+    picked.push(img);
+    seen.add(img.file);
+    if (picked.length >= 3) break;
+  }
+  return picked;
+}
+
 function main() {
   ensureDir(LIBRARY_ROOT);
-  seedLibrary();
+  if (!FROM_DISK) {
+    seedLibrary();
+  } else {
+    console.log("[from-disk] scanning Photo Library only — no MASTER re-seed");
+  }
 
   const categories = CATEGORIES.map((category) => {
     const images = scanCategory(category);
@@ -458,16 +486,12 @@ function main() {
     c.images.map((img) => ({ ...img, categoryId: c.id, categorySlug: c.slug }))
   );
 
-  const heroPrimary =
-    findImageByFile(allImages, HERO_PICKS[0]) ||
-    categories.find((c) => c.id === "01-Coastal-Scenery")?.primary ||
-    null;
-
-  const heroImages = HERO_PICKS.map((f) => findImageByFile(allImages, f)).filter(Boolean);
+  const heroImages = resolveHeroPicks(allImages);
+  const heroPrimary = heroImages[0] || categories.find((c) => c.id === "01-Coastal-Scenery")?.primary || null;
 
   const manifest = {
     generatedAt: new Date().toISOString(),
-    version: "v2-master",
+    version: FROM_DISK ? "v2-disk" : "v2-master",
     tour: "Kaikoura Day Tour",
     tourZh: "凯库拉一日游",
     libraryRoot: LIBRARY_REL,
