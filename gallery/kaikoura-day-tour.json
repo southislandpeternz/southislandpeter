@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-10T00:34:33.757Z",
+  "generatedAt": "2026-06-10T00:46:31.451Z",
   "version": "v2-disk",
   "tour": "Kaikoura Day Tour",
   "tourZh": "凯库拉一日游",
   "libraryRoot": "Photo Library/Kaikoura-Day-Tour",
-  "totalImages": 15,
+  "totalImages": 17,
   "heroPrimary": {
     "file": "kaikoura-coastal-peninsula-landscape-01.jpg",
     "path": "Photo Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-peninsula-landscape-01.jpg",
@@ -121,7 +121,7 @@
         "凯库拉海岸",
         "雪山海岸"
       ],
-      "imageCount": 4,
+      "imageCount": 6,
       "images": [
         {
           "file": "kaikoura-coastal-scenery-coast-01.jpg",
@@ -193,10 +193,56 @@
           ]
         },
         {
+          "file": "kaikoura-coastal-beach-walk-01.jpg",
+          "path": "Photo Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-beach-walk-01.jpg",
+          "url": "Photo%20Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-beach-walk-01.jpg",
+          "order": 4,
+          "isPrimary": false,
+          "titleZh": "凯库拉海滩漫步",
+          "titleEn": "Kaikoura Beach Walk with Dog",
+          "alt": "Kaikoura Beach Walk with Dog — Kaikoura Day Tour, Canterbury Coast, New Zealand | 凯库拉海滩漫步 · 凯库拉一日游",
+          "seoKeywords": [
+            "Kaikoura coastal scenery",
+            "seals and mountains",
+            "凯库拉海岸",
+            "雪山海岸",
+            "Kaikoura Beach Walk with Dog",
+            "凯库拉海滩漫步",
+            "Kaikoura",
+            "凯库拉",
+            "Christchurch day tour",
+            "基督城周边一日游",
+            "Peter South Island tour"
+          ]
+        },
+        {
+          "file": "kaikoura-coastal-beach-walk-02.jpg",
+          "path": "Photo Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-beach-walk-02.jpg",
+          "url": "Photo%20Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-beach-walk-02.jpg",
+          "order": 5,
+          "isPrimary": false,
+          "titleZh": "卵石海滩与客人",
+          "titleEn": "Guests on Kaikoura Pebble Beach",
+          "alt": "Guests on Kaikoura Pebble Beach — Kaikoura Day Tour, Canterbury Coast, New Zealand | 卵石海滩与客人 · 凯库拉一日游",
+          "seoKeywords": [
+            "Kaikoura coastal scenery",
+            "seals and mountains",
+            "凯库拉海岸",
+            "雪山海岸",
+            "Guests on Kaikoura Pebble Beach",
+            "卵石海滩与客人",
+            "Kaikoura",
+            "凯库拉",
+            "Christchurch day tour",
+            "基督城周边一日游",
+            "Peter South Island tour"
+          ]
+        },
+        {
           "file": "kaikoura-coastal-rod-father-bay-01.jpg",
           "path": "Photo Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-rod-father-bay-01.jpg",
           "url": "Photo%20Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-rod-father-bay-01.jpg",
-          "order": 4,
+          "order": 6,
           "isPrimary": false,
           "titleZh": "Rod Father 游艇与海湾",
           "titleEn": "Rod Father Charter in Kaikoura Bay",
@@ -771,10 +817,60 @@
       "categorySlug": "coastal-scenery"
     },
     {
+      "file": "kaikoura-coastal-beach-walk-01.jpg",
+      "path": "Photo Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-beach-walk-01.jpg",
+      "url": "Photo%20Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-beach-walk-01.jpg",
+      "order": 4,
+      "isPrimary": false,
+      "titleZh": "凯库拉海滩漫步",
+      "titleEn": "Kaikoura Beach Walk with Dog",
+      "alt": "Kaikoura Beach Walk with Dog — Kaikoura Day Tour, Canterbury Coast, New Zealand | 凯库拉海滩漫步 · 凯库拉一日游",
+      "seoKeywords": [
+        "Kaikoura coastal scenery",
+        "seals and mountains",
+        "凯库拉海岸",
+        "雪山海岸",
+        "Kaikoura Beach Walk with Dog",
+        "凯库拉海滩漫步",
+        "Kaikoura",
+        "凯库拉",
+        "Christchurch day tour",
+        "基督城周边一日游",
+        "Peter South Island tour"
+      ],
+      "categoryId": "01-Coastal-Scenery",
+      "categorySlug": "coastal-scenery"
+    },
+    {
+      "file": "kaikoura-coastal-beach-walk-02.jpg",
+      "path": "Photo Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-beach-walk-02.jpg",
+      "url": "Photo%20Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-beach-walk-02.jpg",
+      "order": 5,
+      "isPrimary": false,
+      "titleZh": "卵石海滩与客人",
+      "titleEn": "Guests on Kaikoura Pebble Beach",
+      "alt": "Guests on Kaikoura Pebble Beach — Kaikoura Day Tour, Canterbury Coast, New Zealand | 卵石海滩与客人 · 凯库拉一日游",
+      "seoKeywords": [
+        "Kaikoura coastal scenery",
+        "seals and mountains",
+        "凯库拉海岸",
+        "雪山海岸",
+        "Guests on Kaikoura Pebble Beach",
+        "卵石海滩与客人",
+        "Kaikoura",
+        "凯库拉",
+        "Christchurch day tour",
+        "基督城周边一日游",
+        "Peter South Island tour"
+      ],
+      "categoryId": "01-Coastal-Scenery",
+      "categorySlug": "coastal-scenery"
+    },
+    {
       "file": "kaikoura-coastal-rod-father-bay-01.jpg",
       "path": "Photo Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-rod-father-bay-01.jpg",
       "url": "Photo%20Library/Kaikoura-Day-Tour/01-Coastal-Scenery/kaikoura-coastal-rod-father-bay-01.jpg",
-      "order": 4,
+      "order": 6,
       "isPrimary": false,
       "titleZh": "Rod Father 游艇与海湾",
       "titleEn": "Rod Father Charter in Kaikoura Bay",

@@ -174,6 +174,14 @@ const TITLE_OVERRIDES = {
     titleZh: "蓝绿色海岸线漫步",
     titleEn: "Turquoise Coastline Rock Walk"
   },
+  "kaikoura-coastal-beach-walk-01.jpg": {
+    titleZh: "凯库拉海滩漫步",
+    titleEn: "Kaikoura Beach Walk with Dog"
+  },
+  "kaikoura-coastal-beach-walk-02.jpg": {
+    titleZh: "卵石海滩与客人",
+    titleEn: "Guests on Kaikoura Pebble Beach"
+  },
   "kaikoura-coastal-rod-father-bay-01.jpg": {
     titleZh: "Rod Father 游艇与海湾",
     titleEn: "Rod Father Charter in Kaikoura Bay"
@@ -234,10 +242,11 @@ const TITLE_OVERRIDES = {
 
 const CATEGORY_FILE_ORDER = {
   "01-Coastal-Scenery": [
-    "kaikoura-coastal-seals-mountains-01.jpg",
     "kaikoura-coastal-scenery-coast-01.jpg",
     "kaikoura-coastal-peninsula-landscape-01.jpg",
     "kaikoura-coastal-scenery-guests-01.jpg",
+    "kaikoura-coastal-beach-walk-01.jpg",
+    "kaikoura-coastal-beach-walk-02.jpg",
     "kaikoura-coastal-rod-father-bay-01.jpg"
   ],
   "02-Whale-Watching": [
