@@ -80,6 +80,17 @@
     }
   }
 
+  async function loadCuratedGallery(url) {
+    if (!url) return null;
+    try {
+      const res = await fetch(normalizePath(url), { cache: "no-store" });
+      if (!res.ok) return null;
+      return await res.json();
+    } catch {
+      return null;
+    }
+  }
+
   async function loadShowcase() {
     if (showcaseCache) return showcaseCache;
     const url = showcaseUrl();
@@ -234,6 +245,34 @@
     const grid = document.getElementById("regionGalleryMasonry");
     if (!grid) return;
     const slug = grid.dataset.galleryRegion;
+    const curatedUrl = grid.dataset.galleryJson;
+
+    if (curatedUrl) {
+      const data = await loadCuratedGallery(curatedUrl);
+      const seen = new Set();
+      const images = (data?.images || [])
+        .filter((img) => {
+          const key = img.path || img.url || img.file;
+          if (!key || seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        })
+        .map((img) => ({
+          full: img.path || img.url,
+          thumbUrl: img.thumbUrl || img.path || img.url,
+          alt: img.alt || img.titleZh || img.titleEn || ""
+        }));
+
+      if (!images.length) {
+        showEmpty(grid, `暂无 ${slug} 摄影作品。`);
+        return;
+      }
+
+      grid.classList.add("photo-masonry");
+      renderPhotoMasonry(grid, images);
+      return;
+    }
+
     const manifest = await loadManifest();
     const images = manifest?.regions?.find((r) => r.slug === slug)?.images;
     if (!images?.length) {
