@@ -7,108 +7,640 @@
     "total_reviewed": 440,
     "retained": 41,
     "hero_candidates": [
-      {"source": "2E4CF2D8-6B32-4867-B406-DA9F133274BD_1_105_c.jpeg", "dest": "queenstown-hero-remarkables-sunset-01.jpg", "reason": "Alpenglow on The Remarkables over Lake Wakatipu — primary banner"},
-      {"source": "5E25CD38-C838-4528-AF57-0143D428C97A_1_105_c.jpeg", "dest": "queenstown-hero-double-rainbow-02.jpg", "reason": "Double rainbow from Bob's Peak overlook"},
-      {"source": "1B087FC1-827F-438D-AEBB-B51F2F77CDA9_1_105_c.jpeg", "dest": "queenstown-hero-lake-panorama-03.jpg", "reason": "Wide panorama of lake, Remarkables and valley"},
-      {"source": "4DCBF7AE-4DB8-4239-9DAE-7065B7F29401_1_105_c.jpeg", "dest": "queenstown-hero-rainbow-town-04.jpg", "reason": "Full-arc rainbow over waterfront"},
-      {"source": "093C7234-6E96-498D-8B03-230CF2E03889_1_105_c.jpeg", "dest": "queenstown-hero-golden-peak-05.jpg", "reason": "Golden-hour peak over Lake Wakatipu"}
+      {
+        "source": "2E4CF2D8-6B32-4867-B406-DA9F133274BD_1_105_c.jpeg",
+        "dest": "queenstown-hero-remarkables-sunset-01.jpg",
+        "reason": "Alpenglow on The Remarkables over Lake Wakatipu — primary banner"
+      },
+      {
+        "source": "5E25CD38-C838-4528-AF57-0143D428C97A_1_105_c.jpeg",
+        "dest": "queenstown-hero-double-rainbow-02.jpg",
+        "reason": "Double rainbow from Bob's Peak overlook"
+      },
+      {
+        "source": "1B087FC1-827F-438D-AEBB-B51F2F77CDA9_1_105_c.jpeg",
+        "dest": "queenstown-hero-lake-panorama-03.jpg",
+        "reason": "Wide panorama of lake, Remarkables and valley"
+      },
+      {
+        "source": "1B78CA93-5B00-4896-91BE-BDD5A027FBBB_4_5005_c.jpeg",
+        "dest": "queenstown-hero-twilight-town-04.jpg",
+        "reason": "Twilight over Queenstown and Lake Wakatipu without rainbow duplication"
+      },
+      {
+        "source": "093C7234-6E96-498D-8B03-230CF2E03889_1_105_c.jpeg",
+        "dest": "queenstown-hero-golden-peak-05.jpg",
+        "reason": "Golden-hour peak over Lake Wakatipu"
+      }
     ],
     "assignments": [
-      {"source": "2E4CF2D8-6B32-4867-B406-DA9F133274BD_1_105_c.jpeg", "dest": "queenstown-hero-remarkables-sunset-01.jpg", "category": "01-Hero", "titleEn": "Sunset over The Remarkables and Lake Wakatipu", "titleZh": "卓越山脉与瓦卡蒂普湖日落"},
-      {"source": "5E25CD38-C838-4528-AF57-0143D428C97A_1_105_c.jpeg", "dest": "queenstown-hero-double-rainbow-02.jpg", "category": "01-Hero", "titleEn": "Double Rainbow from Bob's Peak", "titleZh": "鲍勃峰双彩虹"},
-      {"source": "1B087FC1-827F-438D-AEBB-B51F2F77CDA9_1_105_c.jpeg", "dest": "queenstown-hero-lake-panorama-03.jpg", "category": "01-Hero", "titleEn": "Panoramic View from Bob's Peak", "titleZh": "鲍勃峰全景"},
-      {"source": "4DCBF7AE-4DB8-4239-9DAE-7065B7F29401_1_105_c.jpeg", "dest": "queenstown-hero-rainbow-town-04.jpg", "category": "01-Hero", "titleEn": "Rainbow over Queenstown Bay", "titleZh": "皇后镇湾彩虹"},
-      {"source": "093C7234-6E96-498D-8B03-230CF2E03889_1_105_c.jpeg", "dest": "queenstown-hero-golden-peak-05.jpg", "category": "01-Hero", "titleEn": "Alpenglow Peak over the Lake", "titleZh": "雪山夕照"},
-      {"source": "0BF2274F-618E-4AF2-965F-744BEDFCAB49_4_5005_c.jpeg", "dest": "queenstown-lake-wakatipu-01.jpg", "category": "02-Lake-Wakatipu", "titleEn": "TSS Earnslaw on Lake Wakatipu", "titleZh": "瓦卡蒂普湖蒸汽船"},
-      {"source": "1DE02929-47E0-4D7A-BA47-5B1B8D7E960C_4_5005_c.jpeg", "dest": "queenstown-lake-wakatipu-02.jpg", "category": "02-Lake-Wakatipu", "titleEn": "Steamship Cruise on Blue Lake Waters", "titleZh": "蓝色湖面上的蒸汽船巡游"},
-      {"source": "814CE7B8-D1D2-4443-B75A-5A09B4CAFD87_4_5005_c.jpeg", "dest": "queenstown-lake-wakatipu-03.jpg", "category": "02-Lake-Wakatipu", "titleEn": "Lake Wakatipu Mountain Vista", "titleZh": "瓦卡蒂普湖雪山风光"},
-      {"source": "338B07BB-7802-4051-81B8-F23E9FFA1CBC_1_105_c.jpeg", "dest": "queenstown-lake-wakatipu-04.jpg", "category": "02-Lake-Wakatipu", "titleEn": "Rainbow over the Earnslaw", "titleZh": "蒸汽船与彩虹"},
-      {"source": "2EA3C154-EBE1-482D-A79B-0161FDC9CDF4_1_105_c.jpeg", "dest": "queenstown-lake-wakatipu-05.jpg", "category": "02-Lake-Wakatipu", "titleEn": "Snow Peaks and Turquoise Lake", "titleZh": "雪山与碧蓝湖水"},
-      {"source": "3C240083-3DD1-4B82-83CE-054E73D0E97E_1_105_c.jpeg", "dest": "queenstown-lake-wakatipu-06.jpg", "category": "02-Lake-Wakatipu", "titleEn": "Golden Hour Lake View", "titleZh": "黄金时刻湖景"},
-      {"source": "5DAECE53-448B-48F6-8AFB-648077E172CD_1_105_c.jpeg", "dest": "queenstown-lake-wakatipu-07.jpg", "category": "02-Lake-Wakatipu", "titleEn": "Evening Light on the Lake", "titleZh": "傍晚湖光"},
-      {"source": "711DA47A-5E77-41D6-8C14-CCC0732CE9C1_1_105_c.jpeg", "dest": "queenstown-lake-wakatipu-08.jpg", "category": "02-Lake-Wakatipu", "titleEn": "Earnslaw Steaming Across the Lake", "titleZh": "厄恩斯劳号航行"},
-      {"source": "0E81528A-8B86-48AF-A9E1-1A5C136AD599_1_105_c.jpeg", "dest": "queenstown-lake-wakatipu-09.jpg", "category": "02-Lake-Wakatipu", "titleEn": "Rainbow at the Lakeshore", "titleZh": "湖岸彩虹"},
-      {"source": "4B7278F5-CFAA-49CA-8853-9EB5D5D7CCFD_4_5005_c.jpeg", "dest": "queenstown-lake-wakatipu-10.jpg", "category": "02-Lake-Wakatipu", "titleEn": "Classic Earnslaw Lake Scene", "titleZh": "经典蒸汽船湖景"},
-      {"source": "1A318BED-4F11-481B-9BFE-98C1A52D85DC_1_105_c.jpeg", "dest": "queenstown-skyline-gondola-01.jpg", "category": "03-Skyline-Gondola", "titleEn": "Skyline Gondola on Bob's Peak", "titleZh": "天空缆车"},
-      {"source": "5F0749D8-97F8-45EF-A908-39C65146623B_1_105_c.jpeg", "dest": "queenstown-skyline-gondola-02.jpg", "category": "03-Skyline-Gondola", "titleEn": "Scenic Lookout over the Lake", "titleZh": "湖景观景台"},
-      {"source": "A70BD47A-F19D-4F6B-9CEB-2A256C4CA137_1_105_c.jpeg", "dest": "queenstown-skyline-gondola-03.jpg", "category": "03-Skyline-Gondola", "titleEn": "Elevated Town and Lake Vista", "titleZh": "高处俯瞰小镇与湖泊"},
-      {"source": "0D323814-2FCE-4BB3-8276-B11B48159D91_1_105_c.jpeg", "dest": "queenstown-adventure-activities-01.jpg", "category": "04-Adventure-Activities", "titleEn": "Shotover Jet on the River", "titleZh": "沙特欧弗喷射快艇"},
-      {"source": "30D4AD8C-315C-496B-A626-1F6AC814A62C_1_105_c.jpeg", "dest": "queenstown-adventure-activities-02.jpg", "category": "04-Adventure-Activities", "titleEn": "Shotover Jet Canyon Run", "titleZh": "峡谷喷射快艇"},
-      {"source": "2E2C02FC-C471-4BFD-92C1-150C2FB2945B_1_105_c.jpeg", "dest": "queenstown-adventure-activities-03.jpg", "category": "04-Adventure-Activities", "titleEn": "Jet Boat River Adventure", "titleZh": "河上喷射冒险"},
-      {"source": "662EE69F-D424-49A5-B063-EA80C27B1265_1_105_c.jpeg", "dest": "queenstown-adventure-activities-04.jpg", "category": "04-Adventure-Activities", "titleEn": "Jet Boat at the River Dock", "titleZh": "快艇码头"},
-      {"source": "3FBE9CE4-75CF-472B-9339-62999DF038DC_1_105_c.jpeg", "dest": "queenstown-adventure-activities-05.jpg", "category": "04-Adventure-Activities", "titleEn": "iFLY Indoor Skydiving Queenstown", "titleZh": "室内跳伞体验"},
-      {"source": "49D73013-7831-4325-B879-2593708A0514_1_105_c.jpeg", "dest": "queenstown-adventure-activities-06.jpg", "category": "04-Adventure-Activities", "titleEn": "Scenic Flight Aircraft", "titleZh": "观光飞行飞机"},
-      {"source": "2583A282-4FBB-4D91-AC97-57448A614900_1_105_c.jpeg", "dest": "queenstown-adventure-activities-07.jpg", "category": "04-Adventure-Activities", "titleEn": "Mountain Biking Adventure", "titleZh": "山地自行车"},
-      {"source": "215637af-6148-48bd-8aea-430a16779c15.png", "dest": "queenstown-adventure-activities-08.jpg", "category": "04-Adventure-Activities", "titleEn": "Jet Boat in the Canyon", "titleZh": "峡谷快艇穿越"},
-      {"source": "085B1866-8D5C-4C12-81C4-00B77C863CC0_1_105_c.jpeg", "dest": "queenstown-town-centre-01.jpg", "category": "05-Town-Centre", "titleEn": "Queenstown Lakefront", "titleZh": "皇后镇湖滨"},
-      {"source": "79A9C01A-2127-4FA3-9545-9902931194AF_1_105_c.jpeg", "dest": "queenstown-town-centre-02.jpg", "category": "05-Town-Centre", "titleEn": "Queenstown Town Centre Street", "titleZh": "皇后镇中心街道"},
-      {"source": "32D0BD89-0298-4E1B-839B-0C1798456922_4_5005_c.jpeg", "dest": "queenstown-town-centre-03.jpg", "category": "05-Town-Centre", "titleEn": "Waterfront Beach and Pier", "titleZh": "湖滨沙滩与码头"},
-      {"source": "112C602D-7E24-4EEB-9BE6-CAA8F324D8D6_1_105_c.jpeg", "dest": "queenstown-town-centre-04.jpg", "category": "05-Town-Centre", "titleEn": "Autumn Trees in Town", "titleZh": "小镇秋色"},
-      {"source": "044C8E30-6EC6-496E-A792-802F8C52B200_1_105_c.jpeg", "dest": "queenstown-town-centre-05.jpg", "category": "05-Town-Centre", "titleEn": "Harbour and Wharves", "titleZh": "皇后镇港口"},
-      {"source": "7CFD79AB-ABAD-4992-82FC-20B7AD766DC5_1_105_c.jpeg", "dest": "queenstown-town-centre-06.jpg", "category": "05-Town-Centre", "titleEn": "Night Lights on the Lakefront", "titleZh": "湖滨夜景"},
-      {"source": "9AA1F2F9-55A2-4606-857E-F5A4B05F5AD4_4_5005_c.jpeg", "dest": "queenstown-town-centre-07.jpg", "category": "05-Town-Centre", "titleEn": "Queenstown at Twilight", "titleZh": "皇后镇暮色"},
-      {"source": "0F9856E8-164B-4E9F-8524-D59CB85A56CA_1_105_c.jpeg", "dest": "queenstown-town-centre-08.jpg", "category": "05-Town-Centre", "titleEn": "Lakefront Buildings and Gardens", "titleZh": "湖滨建筑与花园"},
-      {"source": "17B6FEEF-6BF8-44BD-B150-D20E56045358_1_105_c.jpeg", "dest": "queenstown-town-centre-09.jpg", "category": "05-Town-Centre", "titleEn": "Town Centre Autumn Scene", "titleZh": "中心秋色"},
-      {"source": "96A5F051-E70B-4148-8AB4-F10326F20B1B_1_105_c.jpeg", "dest": "queenstown-food-experiences-01.jpg", "category": "06-Food-Experiences", "titleEn": "Fresh Bluff Oysters", "titleZh": "新鲜布拉夫生蚝"},
-      {"source": "3DA5E7D7-391F-471C-9D39-2749683A4B82_1_105_c.jpeg", "dest": "queenstown-food-experiences-02.jpg", "category": "06-Food-Experiences", "titleEn": "Oyster and Wine Toast", "titleZh": "生蚝与美酒的干杯"},
-      {"source": "43A5C788-5DA8-42F5-A20D-B507F08A0C8D_1_105_c.jpeg", "dest": "queenstown-food-experiences-03.jpg", "category": "06-Food-Experiences", "titleEn": "Premium Steak Selection", "titleZh": "精选牛排"},
-      {"source": "1CAC522F-A1CF-433D-873E-4C96A4B25879_1_105_c.jpeg", "dest": "queenstown-food-experiences-04.jpg", "category": "06-Food-Experiences", "titleEn": "Seafood Feast Celebration", "titleZh": "海鲜盛宴"},
-      {"source": "0C0DA5F8-ADE1-49B4-85AB-5F0D8AD8C59B_1_105_c.jpeg", "dest": "queenstown-food-experiences-05.jpg", "category": "06-Food-Experiences", "titleEn": "New Zealand Steak Dinner", "titleZh": "新西兰牛排晚餐"},
-      {"source": "6EBFC854-8E42-4B17-893C-724FEC30150C_1_105_c.jpeg", "dest": "queenstown-food-experiences-06.jpg", "category": "06-Food-Experiences", "titleEn": "Walter Peak Farm Experience", "titleZh": "瓦尔特峰农场体验"}
+      {
+        "source": "2E4CF2D8-6B32-4867-B406-DA9F133274BD_1_105_c.jpeg",
+        "dest": "queenstown-hero-remarkables-sunset-01.jpg",
+        "category": "01-Hero",
+        "titleEn": "Sunset over The Remarkables and Lake Wakatipu",
+        "titleZh": "卓越山脉与瓦卡蒂普湖日落"
+      },
+      {
+        "source": "5E25CD38-C838-4528-AF57-0143D428C97A_1_105_c.jpeg",
+        "dest": "queenstown-hero-double-rainbow-02.jpg",
+        "category": "01-Hero",
+        "titleEn": "Double Rainbow from Bob's Peak",
+        "titleZh": "鲍勃峰双彩虹"
+      },
+      {
+        "source": "1B087FC1-827F-438D-AEBB-B51F2F77CDA9_1_105_c.jpeg",
+        "dest": "queenstown-hero-lake-panorama-03.jpg",
+        "category": "01-Hero",
+        "titleEn": "Panoramic View from Bob's Peak",
+        "titleZh": "鲍勃峰全景"
+      },
+      {
+        "source": "1B78CA93-5B00-4896-91BE-BDD5A027FBBB_4_5005_c.jpeg",
+        "dest": "queenstown-hero-twilight-town-04.jpg",
+        "category": "01-Hero",
+        "titleEn": "Queenstown Twilight over Lake Wakatipu",
+        "titleZh": "皇后镇暮色湖景"
+      },
+      {
+        "source": "093C7234-6E96-498D-8B03-230CF2E03889_1_105_c.jpeg",
+        "dest": "queenstown-hero-golden-peak-05.jpg",
+        "category": "01-Hero",
+        "titleEn": "Alpenglow Peak over the Lake",
+        "titleZh": "雪山夕照"
+      },
+      {
+        "source": "0BF2274F-618E-4AF2-965F-744BEDFCAB49_4_5005_c.jpeg",
+        "dest": "queenstown-lake-wakatipu-01.jpg",
+        "category": "02-Lake-Wakatipu",
+        "titleEn": "TSS Earnslaw on Lake Wakatipu",
+        "titleZh": "瓦卡蒂普湖蒸汽船"
+      },
+      {
+        "source": "2AE1A2EF-B43E-40BD-8BE4-ECFCC35617D1_4_5005_c.jpeg",
+        "dest": "queenstown-lake-wakatipu-shoreline-02.jpg",
+        "category": "02-Lake-Wakatipu",
+        "titleEn": "Lake Wakatipu Shoreline and Mountain View",
+        "titleZh": "瓦卡蒂普湖岸与山景"
+      },
+      {
+        "source": "3E07C012-AC55-4AAE-8627-6501AB777180_1_105_c.jpeg",
+        "dest": "queenstown-lake-wakatipu-snow-peaks-03.jpg",
+        "category": "02-Lake-Wakatipu",
+        "titleEn": "Snowy Peaks above Lake Wakatipu",
+        "titleZh": "瓦卡蒂普湖雪峰远眺"
+      },
+      {
+        "source": "327F5B4F-45DF-46C2-8AAA-CECA999E76DD_1_105_c.jpeg",
+        "dest": "queenstown-lake-wakatipu-dramatic-sky-04.jpg",
+        "category": "02-Lake-Wakatipu",
+        "titleEn": "Dramatic Sky over Lake Wakatipu",
+        "titleZh": "瓦卡蒂普湖戏剧性天空"
+      },
+      {
+        "source": "2EA3C154-EBE1-482D-A79B-0161FDC9CDF4_1_105_c.jpeg",
+        "dest": "queenstown-lake-wakatipu-05.jpg",
+        "category": "02-Lake-Wakatipu",
+        "titleEn": "Snow Peaks and Turquoise Lake",
+        "titleZh": "雪山与碧蓝湖水"
+      },
+      {
+        "source": "3C240083-3DD1-4B82-83CE-054E73D0E97E_1_105_c.jpeg",
+        "dest": "queenstown-lake-wakatipu-06.jpg",
+        "category": "02-Lake-Wakatipu",
+        "titleEn": "Golden Hour Lake View",
+        "titleZh": "黄金时刻湖景"
+      },
+      {
+        "source": "5DAECE53-448B-48F6-8AFB-648077E172CD_1_105_c.jpeg",
+        "dest": "queenstown-lake-wakatipu-07.jpg",
+        "category": "02-Lake-Wakatipu",
+        "titleEn": "Evening Light on the Lake",
+        "titleZh": "傍晚湖光"
+      },
+      {
+        "source": "711DA47A-5E77-41D6-8C14-CCC0732CE9C1_1_105_c.jpeg",
+        "dest": "queenstown-lake-wakatipu-08.jpg",
+        "category": "02-Lake-Wakatipu",
+        "titleEn": "Earnslaw Steaming Across the Lake",
+        "titleZh": "厄恩斯劳号航行"
+      },
+      {
+        "source": "01A7E0EF-C96F-4CC4-AE2E-0E63CC4D15C5_1_105_c.jpeg",
+        "dest": "queenstown-lake-wakatipu-scenic-overlook-09.jpg",
+        "category": "02-Lake-Wakatipu",
+        "titleEn": "Lake Wakatipu Scenic Overlook",
+        "titleZh": "瓦卡蒂普湖观景远眺"
+      },
+      {
+        "source": "81D2E595-1308-4A93-AB9E-5FE296FB1FC2_1_105_c.jpeg",
+        "dest": "queenstown-lake-wakatipu-valley-view-10.jpg",
+        "category": "02-Lake-Wakatipu",
+        "titleEn": "Lake Wakatipu Valley View",
+        "titleZh": "瓦卡蒂普湖谷地风光"
+      },
+      {
+        "source": "1A318BED-4F11-481B-9BFE-98C1A52D85DC_1_105_c.jpeg",
+        "dest": "queenstown-skyline-gondola-01.jpg",
+        "category": "03-Skyline-Gondola",
+        "titleEn": "Skyline Gondola on Bob's Peak",
+        "titleZh": "天空缆车"
+      },
+      {
+        "source": "5F0749D8-97F8-45EF-A908-39C65146623B_1_105_c.jpeg",
+        "dest": "queenstown-skyline-gondola-02.jpg",
+        "category": "03-Skyline-Gondola",
+        "titleEn": "Scenic Lookout over the Lake",
+        "titleZh": "湖景观景台"
+      },
+      {
+        "source": "A70BD47A-F19D-4F6B-9CEB-2A256C4CA137_1_105_c.jpeg",
+        "dest": "queenstown-skyline-gondola-03.jpg",
+        "category": "03-Skyline-Gondola",
+        "titleEn": "Elevated Town and Lake Vista",
+        "titleZh": "高处俯瞰小镇与湖泊"
+      },
+      {
+        "source": "0D323814-2FCE-4BB3-8276-B11B48159D91_1_105_c.jpeg",
+        "dest": "queenstown-adventure-activities-01.jpg",
+        "category": "04-Adventure-Activities",
+        "titleEn": "Shotover Jet on the River",
+        "titleZh": "沙特欧弗喷射快艇"
+      },
+      {
+        "source": "30D4AD8C-315C-496B-A626-1F6AC814A62C_1_105_c.jpeg",
+        "dest": "queenstown-adventure-activities-02.jpg",
+        "category": "04-Adventure-Activities",
+        "titleEn": "Shotover Jet Canyon Run",
+        "titleZh": "峡谷喷射快艇"
+      },
+      {
+        "source": "2E2C02FC-C471-4BFD-92C1-150C2FB2945B_1_105_c.jpeg",
+        "dest": "queenstown-adventure-activities-03.jpg",
+        "category": "04-Adventure-Activities",
+        "titleEn": "Jet Boat River Adventure",
+        "titleZh": "河上喷射冒险"
+      },
+      {
+        "source": "662EE69F-D424-49A5-B063-EA80C27B1265_1_105_c.jpeg",
+        "dest": "queenstown-adventure-activities-04.jpg",
+        "category": "04-Adventure-Activities",
+        "titleEn": "Jet Boat at the River Dock",
+        "titleZh": "快艇码头"
+      },
+      {
+        "source": "6D1E28F0-F294-41B9-85B7-9B906E5B20A0_1_105_c.jpeg",
+        "dest": "queenstown-adventure-scenic-flight-05.jpg",
+        "category": "04-Adventure-Activities",
+        "titleEn": "Scenic Flight over Queenstown Basin",
+        "titleZh": "皇后镇盆地观光飞行"
+      },
+      {
+        "source": "49D73013-7831-4325-B879-2593708A0514_1_105_c.jpeg",
+        "dest": "queenstown-adventure-activities-06.jpg",
+        "category": "04-Adventure-Activities",
+        "titleEn": "Scenic Flight Aircraft",
+        "titleZh": "观光飞行飞机"
+      },
+      {
+        "source": "2583A282-4FBB-4D91-AC97-57448A614900_1_105_c.jpeg",
+        "dest": "queenstown-adventure-activities-07.jpg",
+        "category": "04-Adventure-Activities",
+        "titleEn": "Mountain Biking Adventure",
+        "titleZh": "山地自行车"
+      },
+      {
+        "source": "215637af-6148-48bd-8aea-430a16779c15.png",
+        "dest": "queenstown-adventure-activities-08.jpg",
+        "category": "04-Adventure-Activities",
+        "titleEn": "Jet Boat in the Canyon",
+        "titleZh": "峡谷快艇穿越"
+      },
+      {
+        "source": "085B1866-8D5C-4C12-81C4-00B77C863CC0_1_105_c.jpeg",
+        "dest": "queenstown-town-centre-01.jpg",
+        "category": "05-Town-Centre",
+        "titleEn": "Queenstown Lakefront",
+        "titleZh": "皇后镇湖滨"
+      },
+      {
+        "source": "79A9C01A-2127-4FA3-9545-9902931194AF_1_105_c.jpeg",
+        "dest": "queenstown-town-centre-02.jpg",
+        "category": "05-Town-Centre",
+        "titleEn": "Queenstown Town Centre Street",
+        "titleZh": "皇后镇中心街道"
+      },
+      {
+        "source": "32D0BD89-0298-4E1B-839B-0C1798456922_4_5005_c.jpeg",
+        "dest": "queenstown-town-centre-03.jpg",
+        "category": "05-Town-Centre",
+        "titleEn": "Waterfront Beach and Pier",
+        "titleZh": "湖滨沙滩与码头"
+      },
+      {
+        "source": "112C602D-7E24-4EEB-9BE6-CAA8F324D8D6_1_105_c.jpeg",
+        "dest": "queenstown-town-centre-04.jpg",
+        "category": "05-Town-Centre",
+        "titleEn": "Autumn Trees in Town",
+        "titleZh": "小镇秋色"
+      },
+      {
+        "source": "044C8E30-6EC6-496E-A792-802F8C52B200_1_105_c.jpeg",
+        "dest": "queenstown-town-centre-05.jpg",
+        "category": "05-Town-Centre",
+        "titleEn": "Harbour and Wharves",
+        "titleZh": "皇后镇港口"
+      },
+      {
+        "source": "7CFD79AB-ABAD-4992-82FC-20B7AD766DC5_1_105_c.jpeg",
+        "dest": "queenstown-town-centre-06.jpg",
+        "category": "05-Town-Centre",
+        "titleEn": "Night Lights on the Lakefront",
+        "titleZh": "湖滨夜景"
+      },
+      {
+        "source": "9AA1F2F9-55A2-4606-857E-F5A4B05F5AD4_4_5005_c.jpeg",
+        "dest": "queenstown-town-centre-07.jpg",
+        "category": "05-Town-Centre",
+        "titleEn": "Queenstown at Twilight",
+        "titleZh": "皇后镇暮色"
+      },
+      {
+        "source": "0F9856E8-164B-4E9F-8524-D59CB85A56CA_1_105_c.jpeg",
+        "dest": "queenstown-town-centre-08.jpg",
+        "category": "05-Town-Centre",
+        "titleEn": "Lakefront Buildings and Gardens",
+        "titleZh": "湖滨建筑与花园"
+      },
+      {
+        "source": "17B6FEEF-6BF8-44BD-B150-D20E56045358_1_105_c.jpeg",
+        "dest": "queenstown-town-centre-09.jpg",
+        "category": "05-Town-Centre",
+        "titleEn": "Town Centre Autumn Scene",
+        "titleZh": "中心秋色"
+      },
+      {
+        "source": "96A5F051-E70B-4148-8AB4-F10326F20B1B_1_105_c.jpeg",
+        "dest": "queenstown-food-experiences-01.jpg",
+        "category": "06-Food-Experiences",
+        "titleEn": "Fresh Bluff Oysters",
+        "titleZh": "新鲜布拉夫生蚝"
+      },
+      {
+        "source": "5D272B03-38BC-43AE-B677-20544C764D35_1_105_c.jpeg",
+        "dest": "queenstown-food-restaurant-evening-02.jpg",
+        "category": "06-Food-Experiences",
+        "titleEn": "Queenstown Restaurant Evening Ambience",
+        "titleZh": "皇后镇餐厅夜晚氛围"
+      },
+      {
+        "source": "4E22559E-BB77-490C-8322-2E2A199B5EE2_1_105_c.jpeg",
+        "dest": "queenstown-food-evening-laneway-03.jpg",
+        "category": "06-Food-Experiences",
+        "titleEn": "Evening Dining Laneway in Queenstown",
+        "titleZh": "皇后镇夜晚餐饮街景"
+      },
+      {
+        "source": "B834C7D9-A88D-4AB8-844F-955361362C79_4_5005_c.jpeg",
+        "dest": "queenstown-food-sunset-lodge-view-04.jpg",
+        "category": "06-Food-Experiences",
+        "titleEn": "Sunset Lodge Dining View",
+        "titleZh": "日落餐厅景观"
+      },
+      {
+        "source": "0C0DA5F8-ADE1-49B4-85AB-5F0D8AD8C59B_1_105_c.jpeg",
+        "dest": "queenstown-food-experiences-05.jpg",
+        "category": "06-Food-Experiences",
+        "titleEn": "New Zealand Steak Dinner",
+        "titleZh": "新西兰牛排晚餐"
+      },
+      {
+        "source": "6EBFC854-8E42-4B17-893C-724FEC30150C_1_105_c.jpeg",
+        "dest": "queenstown-food-experiences-06.jpg",
+        "category": "06-Food-Experiences",
+        "titleEn": "Walter Peak Farm Experience",
+        "titleZh": "瓦尔特峰农场体验"
+      }
     ]
   },
   "milford": {
     "total_reviewed": 227,
     "retained": 41,
     "hero_candidates": [
-      {"source": "60F5BE41-E252-4089-8F32-B1FD833B64B1_1_105_c.jpeg", "dest": "milford-sound-hero-mitre-peak-01.jpg", "reason": "Mitre Peak reflected in calm fiord — primary hero"},
-      {"source": "9B26BA6E-7BFB-4BE3-A424-768CBA30DACB_1_105_c.jpeg", "dest": "milford-sound-hero-dramatic-sky-02.jpg", "reason": "Storm clouds over Mitre Peak with cruise boat"},
-      {"source": "58FCE4B5-B4E6-4FF0-81E4-2B1B01257DFD_1_105_c.jpeg", "dest": "milford-sound-hero-misty-cliffs-03.jpg", "reason": "Misty cliffs with waterfalls"},
-      {"source": "21892822-FA29-4A8F-A2BF-D9D888D95C5F_1_105_c.jpeg", "dest": "milford-sound-hero-eglinton-valley-04.jpg", "reason": "Eglinton Valley autumn journey hero"},
-      {"source": "932890D6-A279-4B52-97CD-18EF9F4E95A9_1_105_c.jpeg", "dest": "milford-sound-hero-cruise-mitre-peak-05.jpg", "reason": "Cruise terminal with Mitre Peak"}
+      {
+        "source": "60F5BE41-E252-4089-8F32-B1FD833B64B1_1_105_c.jpeg",
+        "dest": "milford-sound-hero-mitre-peak-01.jpg",
+        "reason": "Mitre Peak reflected in calm fiord — primary hero"
+      },
+      {
+        "source": "9B26BA6E-7BFB-4BE3-A424-768CBA30DACB_1_105_c.jpeg",
+        "dest": "milford-sound-hero-dramatic-sky-02.jpg",
+        "reason": "Storm clouds over Mitre Peak with cruise boat"
+      },
+      {
+        "source": "58FCE4B5-B4E6-4FF0-81E4-2B1B01257DFD_1_105_c.jpeg",
+        "dest": "milford-sound-hero-misty-cliffs-03.jpg",
+        "reason": "Misty cliffs with waterfalls"
+      },
+      {
+        "source": "21892822-FA29-4A8F-A2BF-D9D888D95C5F_1_105_c.jpeg",
+        "dest": "milford-sound-hero-eglinton-valley-04.jpg",
+        "reason": "Eglinton Valley autumn journey hero"
+      },
+      {
+        "source": "932890D6-A279-4B52-97CD-18EF9F4E95A9_1_105_c.jpeg",
+        "dest": "milford-sound-hero-cruise-mitre-peak-05.jpg",
+        "reason": "Cruise terminal with Mitre Peak"
+      }
     ],
     "assignments": [
-      {"source": "60F5BE41-E252-4089-8F32-B1FD833B64B1_1_105_c.jpeg", "dest": "milford-sound-hero-mitre-peak-01.jpg", "category": "01-Hero", "titleEn": "Mitre Peak at Milford Sound", "titleZh": "米尔福德峡湾教冠峰"},
-      {"source": "9B26BA6E-7BFB-4BE3-A424-768CBA30DACB_1_105_c.jpeg", "dest": "milford-sound-hero-dramatic-sky-02.jpg", "category": "01-Hero", "titleEn": "Dramatic Sky over Mitre Peak", "titleZh": "教冠峰戏剧性天空"},
-      {"source": "58FCE4B5-B4E6-4FF0-81E4-2B1B01257DFD_1_105_c.jpeg", "dest": "milford-sound-hero-misty-cliffs-03.jpg", "category": "01-Hero", "titleEn": "Misty Cliffs and Cascades", "titleZh": "云雾峭壁与瀑布"},
-      {"source": "21892822-FA29-4A8F-A2BF-D9D888D95C5F_1_105_c.jpeg", "dest": "milford-sound-hero-eglinton-valley-04.jpg", "category": "01-Hero", "titleEn": "Eglinton Valley Autumn Stop", "titleZh": "埃格林顿山谷秋景"},
-      {"source": "932890D6-A279-4B52-97CD-18EF9F4E95A9_1_105_c.jpeg", "dest": "milford-sound-hero-cruise-mitre-peak-05.jpg", "category": "01-Hero", "titleEn": "Cruise Boat at Mitre Peak", "titleZh": "教冠峰下的游船"},
-      {"source": "09C69541-63AF-49F5-A52D-36F94A2C04BA_1_105_c.jpeg", "dest": "milford-sound-cruise-experience-01.jpg", "category": "02-Cruise-Experience", "titleEn": "Boarding the Milford Cruise", "titleZh": "登船开始峡湾巡游"},
-      {"source": "1F9BAEA3-F92F-4AFF-9F46-505F7C7473F4_1_105_c.jpeg", "dest": "milford-sound-cruise-experience-02.jpg", "category": "02-Cruise-Experience", "titleEn": "Cruise Departure at the Terminal", "titleZh": "码头出发"},
-      {"source": "3C328138-137F-4F04-A185-BD3C02B62704_1_105_c.jpeg", "dest": "milford-sound-cruise-experience-03.jpg", "category": "02-Cruise-Experience", "titleEn": "Scenic Cruise on the Fiord", "titleZh": "峡湾风景巡游"},
-      {"source": "48317C5F-DF19-4EE5-9CBF-D5EBB0D6B127_1_105_c.jpeg", "dest": "milford-sound-cruise-experience-04.jpg", "category": "02-Cruise-Experience", "titleEn": "Milford Haven Cruise Ship", "titleZh": "米尔福德峡湾游轮"},
-      {"source": "5DBA58F0-2FD2-4EAB-8FA2-687B244FE1AB_1_105_c.jpeg", "dest": "milford-sound-cruise-experience-05.jpg", "category": "02-Cruise-Experience", "titleEn": "Spirit of Milford on the Fiord", "titleZh": "米尔福德精神号"},
-      {"source": "69BC5E38-8A9E-45E1-AF1E-CFC0A2D8ADB8_1_105_c.jpeg", "dest": "milford-sound-cruise-experience-06.jpg", "category": "02-Cruise-Experience", "titleEn": "Cruise Along Steep Cliffs", "titleZh": "峭壁旁巡游"},
-      {"source": "6C515B55-D3C9-4447-A751-4DE7A9CA86DF_1_105_c.jpeg", "dest": "milford-sound-cruise-experience-07.jpg", "category": "02-Cruise-Experience", "titleEn": "Boat Tour beneath Mitre Peak", "titleZh": "教冠峰下的游船"},
-      {"source": "2D263CEA-B05F-463F-B8FC-E05192D3B5A6_1_105_c.jpeg", "dest": "milford-sound-cruise-experience-08.jpg", "category": "02-Cruise-Experience", "titleEn": "Cruise in Misty Fiord", "titleZh": "云雾峡湾巡游"},
-      {"source": "797C61E5-1D67-4CEE-B64C-C3DC6310BF2D_1_105_c.jpeg", "dest": "milford-sound-cruise-experience-09.jpg", "category": "02-Cruise-Experience", "titleEn": "Small Boat at the Pier", "titleZh": "码头小艇"},
-      {"source": "17FB432A-B9E0-406E-A05A-F9F04767F6DC_1_105_c.jpeg", "dest": "milford-sound-fiord-scenery-01.jpg", "category": "03-Fiord-Scenery", "titleEn": "Calm Fiord Waters and Forest Hills", "titleZh": "平静峡湾与森林山峦"},
-      {"source": "2BCB7101-2582-4626-B80B-952CDECE54C5_1_105_c.jpeg", "dest": "milford-sound-fiord-scenery-02.jpg", "category": "03-Fiord-Scenery", "titleEn": "Green Mountain Peak", "titleZh": "绿色山峰"},
-      {"source": "6F6F7099-F59B-4C09-846F-4C86EEED3A99_1_105_c.jpeg", "dest": "milford-sound-fiord-scenery-03.jpg", "category": "03-Fiord-Scenery", "titleEn": "Mitre Peak from the Shore", "titleZh": "岸观教冠峰"},
-      {"source": "88AF7464-403F-41D7-B9A0-E0F700BFCE0A_1_105_c.jpeg", "dest": "milford-sound-fiord-scenery-04.jpg", "category": "03-Fiord-Scenery", "titleEn": "Eglinton Valley Grasslands", "titleZh": "埃格林顿山谷草原"},
-      {"source": "9992DE41-6FD7-4D09-9291-35FA0D6B5B43_1_105_c.jpeg", "dest": "milford-sound-fiord-scenery-05.jpg", "category": "03-Fiord-Scenery", "titleEn": "Misty Valley Road", "titleZh": "云雾山谷公路"},
-      {"source": "8E2C506E-40DC-496E-A0DF-B1359F6C6E72_1_105_c.jpeg", "dest": "milford-sound-fiord-scenery-06.jpg", "category": "03-Fiord-Scenery", "titleEn": "Cloud-Wrapped Mountain Roadside", "titleZh": "云雾缭绕的山路"},
-      {"source": "49F749EA-941D-447D-A915-637577A48329_1_105_c.jpeg", "dest": "milford-sound-fiord-scenery-07.jpg", "category": "03-Fiord-Scenery", "titleEn": "Waterfall Mountain from the Water", "titleZh": "水上观瀑与山峰"},
-      {"source": "0D25D34B-F7C7-4946-93B9-FB4DA8BCDB65_1_105_c.jpeg", "dest": "milford-sound-fiord-scenery-08.jpg", "category": "03-Fiord-Scenery", "titleEn": "Cruise beneath Mitre Peak", "titleZh": "教冠峰下的峡湾"},
-      {"source": "5637131E-1E2E-4C34-859D-D9B27E15CC8E_1_105_c.jpeg", "dest": "milford-sound-waterfall-01.jpg", "category": "04-Waterfalls", "titleEn": "Lady Bowen Falls and Cruise Boat", "titleZh": "波文夫人瀑布与游船"},
-      {"source": "6C2E3CB6-3360-4F6C-9B70-C12C82A95054_1_105_c.jpeg", "dest": "milford-sound-waterfall-02.jpg", "category": "04-Waterfalls", "titleEn": "Towering Fiord Waterfall", "titleZh": "高耸峡湾瀑布"},
-      {"source": "085B369E-274B-4048-84FF-5FC73EFA1256_1_105_c.jpeg", "dest": "milford-sound-waterfall-04.jpg", "category": "04-Waterfalls", "titleEn": "Cliff Face Waterfalls", "titleZh": "峭壁瀑布群"},
-      {"source": "11B7E3D7-01B9-4294-AB8C-31CBBE3B63D0_1_105_c.jpeg", "dest": "milford-sound-waterfall-05.jpg", "category": "04-Waterfalls", "titleEn": "Dramatic Cliff Waterfalls", "titleZh": "壮观悬崖瀑布"},
-      {"source": "366F625F-619D-41FB-9F4D-B08E617E6A42_1_105_c.jpeg", "dest": "milford-sound-waterfall-06.jpg", "category": "04-Waterfalls", "titleEn": "Forest Waterfall Plunge", "titleZh": "森林瀑布"},
-      {"source": "0CC06F3D-26FD-4B5E-B8A1-9209384F5948_1_105_c.jpeg", "dest": "milford-sound-waterfall-07.jpg", "category": "04-Waterfalls", "titleEn": "Roadside Waterfall Viewpoint", "titleZh": "路边观瀑点"},
-      {"source": "37DF7E3E-D428-42A4-B98F-3D3C44B98D67_1_105_c.jpeg", "dest": "milford-sound-waterfall-08.jpg", "category": "04-Waterfalls", "titleEn": "Waterfall Cliff Scenic Stop", "titleZh": "瀑布峭壁观景"},
-      {"source": "653F4764-4936-4806-B5B5-B08FA54CF2A5_1_105_c.jpeg", "dest": "milford-sound-waterfall-09.jpg", "category": "04-Waterfalls", "titleEn": "Green Slope Waterfalls", "titleZh": "绿色山坡瀑布"},
-      {"source": "44F9F548-B8DF-40B6-A21E-430CBE511DFE_1_105_c.jpeg", "dest": "milford-sound-waterfall-10.jpg", "category": "04-Waterfalls", "titleEn": "Rain-Fed Mountain Cascades", "titleZh": "雨后山间瀑布"},
-      {"source": "60E68D11-D878-4B1A-8667-F06473696F72_1_105_c.jpeg", "dest": "milford-sound-scenic-viewpoint-02.jpg", "category": "05-Scenic-Viewpoints", "titleEn": "Milford Sound Piopiotahi Sign", "titleZh": "米尔福德峡湾标志"},
-      {"source": "5A7DE071-C9AC-43BC-8EFA-74974384420E_1_105_c.jpeg", "dest": "milford-sound-scenic-viewpoint-03.jpg", "category": "05-Scenic-Viewpoints", "titleEn": "Milford Road Mountain Pass", "titleZh": "米尔福德公路山口"},
-      {"source": "5931C42A-C3F1-480B-B24F-C63BAFC03191_1_105_c.jpeg", "dest": "milford-sound-scenic-viewpoint-04.jpg", "category": "05-Scenic-Viewpoints", "titleEn": "Cliff Road Waterfall Stop", "titleZh": "峭壁公路观景点"},
-      {"source": "5F021084-B809-46F3-BCDF-1078233F9D11_1_105_c.jpeg", "dest": "milford-sound-scenic-viewpoint-05.jpg", "category": "05-Scenic-Viewpoints", "titleEn": "Single-Lane Mountain Bridge", "titleZh": "单车道山区桥梁"},
-      {"source": "0BF0AD0D-D3DF-483B-9A1D-9D98DD415326_4_5005_c.jpeg", "dest": "milford-sound-scenic-viewpoint-06.jpg", "category": "05-Scenic-Viewpoints", "titleEn": "Snowy Mountain Road", "titleZh": "雪山公路"},
-      {"source": "6613197B-8CDB-44ED-8B84-DACAF2C1788E_1_105_c.jpeg", "dest": "milford-sound-scenic-viewpoint-07.jpg", "category": "05-Scenic-Viewpoints", "titleEn": "Mountain Reflection Pool", "titleZh": "山峰倒影池"},
-      {"source": "4CD58994-E0A4-4BEB-8519-E88B1993FE9F_1_105_c.jpeg", "dest": "milford-sound-scenic-viewpoint-08.jpg", "category": "05-Scenic-Viewpoints", "titleEn": "Mirror Lakes Reflection", "titleZh": "镜湖倒影"},
-      {"source": "3F754503-3EE1-4F87-B99C-D4F87BE1C89D_1_105_c.jpeg", "dest": "milford-sound-wildlife-kea-01.jpg", "category": "06-Wildlife", "titleEn": "Kea Parrot on the Alpine Road", "titleZh": "高山鹦鹉 Kea"},
-      {"source": "00C53317-195C-4933-ABC2-9A92FB3440F8_4_5005_c.jpeg", "dest": "milford-sound-wildlife-kea-02.jpg", "category": "06-Wildlife", "titleEn": "Curious Kea Close-Up", "titleZh": "好奇的 Kea 特写"},
-      {"source": "102CAD9F-573D-453B-8C64-7A528A22F8B2_1_105_c.jpeg", "dest": "milford-sound-wildlife-kea-03.jpg", "category": "06-Wildlife", "titleEn": "Kea at Roadside Sign", "titleZh": "路牌上的 Kea"}
+      {
+        "source": "60F5BE41-E252-4089-8F32-B1FD833B64B1_1_105_c.jpeg",
+        "dest": "milford-sound-hero-mitre-peak-01.jpg",
+        "category": "01-Hero",
+        "titleEn": "Mitre Peak at Milford Sound",
+        "titleZh": "米尔福德峡湾教冠峰"
+      },
+      {
+        "source": "9B26BA6E-7BFB-4BE3-A424-768CBA30DACB_1_105_c.jpeg",
+        "dest": "milford-sound-hero-dramatic-sky-02.jpg",
+        "category": "01-Hero",
+        "titleEn": "Dramatic Sky over Mitre Peak",
+        "titleZh": "教冠峰戏剧性天空"
+      },
+      {
+        "source": "58FCE4B5-B4E6-4FF0-81E4-2B1B01257DFD_1_105_c.jpeg",
+        "dest": "milford-sound-hero-misty-cliffs-03.jpg",
+        "category": "01-Hero",
+        "titleEn": "Misty Cliffs and Cascades",
+        "titleZh": "云雾峭壁与瀑布"
+      },
+      {
+        "source": "21892822-FA29-4A8F-A2BF-D9D888D95C5F_1_105_c.jpeg",
+        "dest": "milford-sound-hero-eglinton-valley-04.jpg",
+        "category": "01-Hero",
+        "titleEn": "Eglinton Valley Autumn Stop",
+        "titleZh": "埃格林顿山谷秋景"
+      },
+      {
+        "source": "932890D6-A279-4B52-97CD-18EF9F4E95A9_1_105_c.jpeg",
+        "dest": "milford-sound-hero-cruise-mitre-peak-05.jpg",
+        "category": "01-Hero",
+        "titleEn": "Cruise Boat at Mitre Peak",
+        "titleZh": "教冠峰下的游船"
+      },
+      {
+        "source": "09C69541-63AF-49F5-A52D-36F94A2C04BA_1_105_c.jpeg",
+        "dest": "milford-sound-cruise-experience-01.jpg",
+        "category": "02-Cruise-Experience",
+        "titleEn": "Boarding the Milford Cruise",
+        "titleZh": "登船开始峡湾巡游"
+      },
+      {
+        "source": "1F9BAEA3-F92F-4AFF-9F46-505F7C7473F4_1_105_c.jpeg",
+        "dest": "milford-sound-cruise-experience-02.jpg",
+        "category": "02-Cruise-Experience",
+        "titleEn": "Cruise Departure at the Terminal",
+        "titleZh": "码头出发"
+      },
+      {
+        "source": "3C328138-137F-4F04-A185-BD3C02B62704_1_105_c.jpeg",
+        "dest": "milford-sound-cruise-experience-03.jpg",
+        "category": "02-Cruise-Experience",
+        "titleEn": "Scenic Cruise on the Fiord",
+        "titleZh": "峡湾风景巡游"
+      },
+      {
+        "source": "48317C5F-DF19-4EE5-9CBF-D5EBB0D6B127_1_105_c.jpeg",
+        "dest": "milford-sound-cruise-experience-04.jpg",
+        "category": "02-Cruise-Experience",
+        "titleEn": "Milford Haven Cruise Ship",
+        "titleZh": "米尔福德峡湾游轮"
+      },
+      {
+        "source": "5DBA58F0-2FD2-4EAB-8FA2-687B244FE1AB_1_105_c.jpeg",
+        "dest": "milford-sound-cruise-experience-05.jpg",
+        "category": "02-Cruise-Experience",
+        "titleEn": "Spirit of Milford on the Fiord",
+        "titleZh": "米尔福德精神号"
+      },
+      {
+        "source": "69BC5E38-8A9E-45E1-AF1E-CFC0A2D8ADB8_1_105_c.jpeg",
+        "dest": "milford-sound-cruise-experience-06.jpg",
+        "category": "02-Cruise-Experience",
+        "titleEn": "Cruise Along Steep Cliffs",
+        "titleZh": "峭壁旁巡游"
+      },
+      {
+        "source": "6C515B55-D3C9-4447-A751-4DE7A9CA86DF_1_105_c.jpeg",
+        "dest": "milford-sound-cruise-experience-07.jpg",
+        "category": "02-Cruise-Experience",
+        "titleEn": "Boat Tour beneath Mitre Peak",
+        "titleZh": "教冠峰下的游船"
+      },
+      {
+        "source": "2D263CEA-B05F-463F-B8FC-E05192D3B5A6_1_105_c.jpeg",
+        "dest": "milford-sound-cruise-experience-08.jpg",
+        "category": "02-Cruise-Experience",
+        "titleEn": "Cruise in Misty Fiord",
+        "titleZh": "云雾峡湾巡游"
+      },
+      {
+        "source": "797C61E5-1D67-4CEE-B64C-C3DC6310BF2D_1_105_c.jpeg",
+        "dest": "milford-sound-cruise-experience-09.jpg",
+        "category": "02-Cruise-Experience",
+        "titleEn": "Small Boat at the Pier",
+        "titleZh": "码头小艇"
+      },
+      {
+        "source": "17FB432A-B9E0-406E-A05A-F9F04767F6DC_1_105_c.jpeg",
+        "dest": "milford-sound-fiord-scenery-01.jpg",
+        "category": "03-Fiord-Scenery",
+        "titleEn": "Calm Fiord Waters and Forest Hills",
+        "titleZh": "平静峡湾与森林山峦"
+      },
+      {
+        "source": "2BCB7101-2582-4626-B80B-952CDECE54C5_1_105_c.jpeg",
+        "dest": "milford-sound-fiord-scenery-02.jpg",
+        "category": "03-Fiord-Scenery",
+        "titleEn": "Green Mountain Peak",
+        "titleZh": "绿色山峰"
+      },
+      {
+        "source": "6F6F7099-F59B-4C09-846F-4C86EEED3A99_1_105_c.jpeg",
+        "dest": "milford-sound-fiord-scenery-03.jpg",
+        "category": "03-Fiord-Scenery",
+        "titleEn": "Mitre Peak from the Shore",
+        "titleZh": "岸观教冠峰"
+      },
+      {
+        "source": "88AF7464-403F-41D7-B9A0-E0F700BFCE0A_1_105_c.jpeg",
+        "dest": "milford-sound-fiord-scenery-04.jpg",
+        "category": "03-Fiord-Scenery",
+        "titleEn": "Eglinton Valley Grasslands",
+        "titleZh": "埃格林顿山谷草原"
+      },
+      {
+        "source": "9992DE41-6FD7-4D09-9291-35FA0D6B5B43_1_105_c.jpeg",
+        "dest": "milford-sound-fiord-scenery-05.jpg",
+        "category": "03-Fiord-Scenery",
+        "titleEn": "Misty Valley Road",
+        "titleZh": "云雾山谷公路"
+      },
+      {
+        "source": "8E2C506E-40DC-496E-A0DF-B1359F6C6E72_1_105_c.jpeg",
+        "dest": "milford-sound-fiord-scenery-06.jpg",
+        "category": "03-Fiord-Scenery",
+        "titleEn": "Cloud-Wrapped Mountain Roadside",
+        "titleZh": "云雾缭绕的山路"
+      },
+      {
+        "source": "49F749EA-941D-447D-A915-637577A48329_1_105_c.jpeg",
+        "dest": "milford-sound-fiord-scenery-07.jpg",
+        "category": "03-Fiord-Scenery",
+        "titleEn": "Waterfall Mountain from the Water",
+        "titleZh": "水上观瀑与山峰"
+      },
+      {
+        "source": "0D25D34B-F7C7-4946-93B9-FB4DA8BCDB65_1_105_c.jpeg",
+        "dest": "milford-sound-fiord-scenery-08.jpg",
+        "category": "03-Fiord-Scenery",
+        "titleEn": "Cruise beneath Mitre Peak",
+        "titleZh": "教冠峰下的峡湾"
+      },
+      {
+        "source": "5637131E-1E2E-4C34-859D-D9B27E15CC8E_1_105_c.jpeg",
+        "dest": "milford-sound-waterfall-01.jpg",
+        "category": "04-Waterfalls",
+        "titleEn": "Lady Bowen Falls and Cruise Boat",
+        "titleZh": "波文夫人瀑布与游船"
+      },
+      {
+        "source": "6C2E3CB6-3360-4F6C-9B70-C12C82A95054_1_105_c.jpeg",
+        "dest": "milford-sound-waterfall-02.jpg",
+        "category": "04-Waterfalls",
+        "titleEn": "Towering Fiord Waterfall",
+        "titleZh": "高耸峡湾瀑布"
+      },
+      {
+        "source": "085B369E-274B-4048-84FF-5FC73EFA1256_1_105_c.jpeg",
+        "dest": "milford-sound-waterfall-04.jpg",
+        "category": "04-Waterfalls",
+        "titleEn": "Cliff Face Waterfalls",
+        "titleZh": "峭壁瀑布群"
+      },
+      {
+        "source": "11B7E3D7-01B9-4294-AB8C-31CBBE3B63D0_1_105_c.jpeg",
+        "dest": "milford-sound-waterfall-05.jpg",
+        "category": "04-Waterfalls",
+        "titleEn": "Dramatic Cliff Waterfalls",
+        "titleZh": "壮观悬崖瀑布"
+      },
+      {
+        "source": "366F625F-619D-41FB-9F4D-B08E617E6A42_1_105_c.jpeg",
+        "dest": "milford-sound-waterfall-06.jpg",
+        "category": "04-Waterfalls",
+        "titleEn": "Forest Waterfall Plunge",
+        "titleZh": "森林瀑布"
+      },
+      {
+        "source": "0CC06F3D-26FD-4B5E-B8A1-9209384F5948_1_105_c.jpeg",
+        "dest": "milford-sound-waterfall-07.jpg",
+        "category": "04-Waterfalls",
+        "titleEn": "Roadside Waterfall Viewpoint",
+        "titleZh": "路边观瀑点"
+      },
+      {
+        "source": "37DF7E3E-D428-42A4-B98F-3D3C44B98D67_1_105_c.jpeg",
+        "dest": "milford-sound-waterfall-08.jpg",
+        "category": "04-Waterfalls",
+        "titleEn": "Waterfall Cliff Scenic Stop",
+        "titleZh": "瀑布峭壁观景"
+      },
+      {
+        "source": "653F4764-4936-4806-B5B5-B08FA54CF2A5_1_105_c.jpeg",
+        "dest": "milford-sound-waterfall-09.jpg",
+        "category": "04-Waterfalls",
+        "titleEn": "Green Slope Waterfalls",
+        "titleZh": "绿色山坡瀑布"
+      },
+      {
+        "source": "44F9F548-B8DF-40B6-A21E-430CBE511DFE_1_105_c.jpeg",
+        "dest": "milford-sound-waterfall-10.jpg",
+        "category": "04-Waterfalls",
+        "titleEn": "Rain-Fed Mountain Cascades",
+        "titleZh": "雨后山间瀑布"
+      },
+      {
+        "source": "60E68D11-D878-4B1A-8667-F06473696F72_1_105_c.jpeg",
+        "dest": "milford-sound-scenic-viewpoint-02.jpg",
+        "category": "05-Scenic-Viewpoints",
+        "titleEn": "Milford Sound Piopiotahi Sign",
+        "titleZh": "米尔福德峡湾标志"
+      },
+      {
+        "source": "5A7DE071-C9AC-43BC-8EFA-74974384420E_1_105_c.jpeg",
+        "dest": "milford-sound-scenic-viewpoint-03.jpg",
+        "category": "05-Scenic-Viewpoints",
+        "titleEn": "Milford Road Mountain Pass",
+        "titleZh": "米尔福德公路山口"
+      },
+      {
+        "source": "5931C42A-C3F1-480B-B24F-C63BAFC03191_1_105_c.jpeg",
+        "dest": "milford-sound-scenic-viewpoint-04.jpg",
+        "category": "05-Scenic-Viewpoints",
+        "titleEn": "Cliff Road Waterfall Stop",
+        "titleZh": "峭壁公路观景点"
+      },
+      {
+        "source": "5F021084-B809-46F3-BCDF-1078233F9D11_1_105_c.jpeg",
+        "dest": "milford-sound-scenic-viewpoint-05.jpg",
+        "category": "05-Scenic-Viewpoints",
+        "titleEn": "Single-Lane Mountain Bridge",
+        "titleZh": "单车道山区桥梁"
+      },
+      {
+        "source": "0BF0AD0D-D3DF-483B-9A1D-9D98DD415326_4_5005_c.jpeg",
+        "dest": "milford-sound-scenic-viewpoint-06.jpg",
+        "category": "05-Scenic-Viewpoints",
+        "titleEn": "Snowy Mountain Road",
+        "titleZh": "雪山公路"
+      },
+      {
+        "source": "6613197B-8CDB-44ED-8B84-DACAF2C1788E_1_105_c.jpeg",
+        "dest": "milford-sound-scenic-viewpoint-07.jpg",
+        "category": "05-Scenic-Viewpoints",
+        "titleEn": "Mountain Reflection Pool",
+        "titleZh": "山峰倒影池"
+      },
+      {
+        "source": "4CD58994-E0A4-4BEB-8519-E88B1993FE9F_1_105_c.jpeg",
+        "dest": "milford-sound-scenic-viewpoint-08.jpg",
+        "category": "05-Scenic-Viewpoints",
+        "titleEn": "Mirror Lakes Reflection",
+        "titleZh": "镜湖倒影"
+      },
+      {
+        "source": "3F754503-3EE1-4F87-B99C-D4F87BE1C89D_1_105_c.jpeg",
+        "dest": "milford-sound-wildlife-kea-01.jpg",
+        "category": "06-Wildlife",
+        "titleEn": "Kea Parrot on the Alpine Road",
+        "titleZh": "高山鹦鹉 Kea"
+      },
+      {
+        "source": "00C53317-195C-4933-ABC2-9A92FB3440F8_4_5005_c.jpeg",
+        "dest": "milford-sound-wildlife-kea-02.jpg",
+        "category": "06-Wildlife",
+        "titleEn": "Curious Kea Close-Up",
+        "titleZh": "好奇的 Kea 特写"
+      },
+      {
+        "source": "102CAD9F-573D-453B-8C64-7A528A22F8B2_1_105_c.jpeg",
+        "dest": "milford-sound-wildlife-kea-03.jpg",
+        "category": "06-Wildlife",
+        "titleEn": "Kea at Roadside Sign",
+        "titleZh": "路牌上的 Kea"
+      }
     ]
   }
 }
