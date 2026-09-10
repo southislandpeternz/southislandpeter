@@ -1,0 +1,30 @@
+{
+  "name": "@sp2036/api",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prebuild": "pnpm --dir ../.. --filter @sp2036/shared --filter @sp2036/types --filter @sp2036/utils build",
+    "dev": "nest start --watch",
+    "predev": "pnpm --dir ../.. --filter @sp2036/shared --filter @sp2036/types --filter @sp2036/utils build",
+    "start": "node dist/main.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/core": "^11.1.6",
+    "@nestjs/platform-express": "^11.1.6",
+    "@prisma/client": "^6.16.2",
+    "@sp2036/shared": "workspace:*",
+    "@sp2036/types": "workspace:*",
+    "@sp2036/utils": "workspace:*",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.10",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.18.1",
+    "typescript": "^5.9.2"
+  }
+}
