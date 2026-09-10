@@ -4,14 +4,20 @@ export interface AppShellProps {
   productName: string;
   title: string;
   children: ReactNode;
+  maxWidth?: number;
 }
 
-export function AppShell({ productName, title, children }: AppShellProps) {
+export function AppShell({
+  productName,
+  title,
+  children,
+  maxWidth = 720,
+}: AppShellProps) {
   return (
     <main
       style={{
         fontFamily: 'system-ui, sans-serif',
-        maxWidth: 720,
+        maxWidth,
         margin: '64px auto',
         padding: '0 24px',
         color: '#12202b',

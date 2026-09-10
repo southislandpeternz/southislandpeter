@@ -1,0 +1,101 @@
+:root {
+  --site-bg: #f4f1ea;
+  --site-text: #12202b;
+  --site-muted: #5b6b73;
+  --site-surface: #ffffff;
+  --site-border: #dce5e2;
+  --site-accent: #147f74;
+  --site-shadow: 0 10px 30px rgba(15, 42, 50, 0.08);
+  --site-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--site-bg);
+  color: var(--site-text);
+}
+
+.site-intro {
+  margin: 0 0 24px;
+  max-width: 40rem;
+  line-height: 1.55;
+  color: var(--site-muted);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 0 0 28px;
+}
+
+.site-nav a {
+  color: var(--site-accent);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  text-decoration: underline;
+}
+
+.site-service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 800px) {
+  .site-service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.site-service-card {
+  background: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius);
+  box-shadow: var(--site-shadow);
+  padding: 18px 20px;
+}
+
+.site-service-card h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.site-service-card p {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--site-muted);
+  font-size: 14px;
+}
+
+.site-service-card .site-card-link {
+  margin-top: 12px;
+}
+
+.site-card-link a {
+  color: var(--site-accent);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.site-card-link a:hover,
+.site-card-link a:focus-visible {
+  text-decoration: underline;
+}
+
+.site-note {
+  margin: 28px 0 0;
+  color: var(--site-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
