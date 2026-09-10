@@ -1,0 +1,2 @@
+# Learn about migrate at https://pris.ly/d/migrate-lock
+provider = "postgresql"

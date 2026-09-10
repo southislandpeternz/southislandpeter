@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: sp2036-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sp2036
+      POSTGRES_PASSWORD: sp2036
+      POSTGRES_DB: sp2036
+    ports:
+      - '5432:5432'
+    volumes:
+      - sp2036_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U sp2036 -d sp2036']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  sp2036_pgdata:

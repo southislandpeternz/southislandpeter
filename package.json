@@ -1,0 +1,41 @@
+{
+  "name": "sp2036",
+  "version": "0.0.1",
+  "private": true,
+  "description": "SP2036 MVP Shuttle Operation Platform — DP00 Project Foundation",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "pnpm --filter @sp2036/shared build && pnpm --filter @sp2036/types build && pnpm --filter @sp2036/utils build && pnpm --filter @sp2036/ui build && pnpm --filter @sp2036/api build && pnpm --filter @sp2036/website build && pnpm --filter @sp2036/admin build",
+    "dev": "pnpm run db:up && pnpm --parallel --filter @sp2036/api --filter @sp2036/website --filter @sp2036/admin dev",
+    "dev:api": "pnpm --filter @sp2036/api dev",
+    "dev:website": "pnpm --filter @sp2036/website dev",
+    "dev:admin": "pnpm --filter @sp2036/admin dev",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "test:health": "node --import tsx tests/api/health.test.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.16.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.1",
+    "@eslint/js": "^9.35.0",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2",
+    "prisma": "^6.16.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.43.0"
+  }
+}
