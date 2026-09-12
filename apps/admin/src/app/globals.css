@@ -141,6 +141,7 @@ select {
 }
 
 .workspace {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -157,15 +158,65 @@ select {
   padding: 0 24px;
 }
 
-.search {
+.search-wrap {
+  position: relative;
   flex: 1;
   max-width: 420px;
+}
+
+.search {
+  width: 100%;
+  max-width: none;
   height: 38px;
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0 14px;
   background: var(--surface-2);
   color: var(--text);
+}
+
+.search-results {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 44px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 6px;
+  z-index: 30;
+}
+
+.search-hit {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.search-hit:hover {
+  background: var(--surface-2);
+}
+
+.search-kind {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.search-empty {
+  padding: 10px;
+  font-size: 13px;
+  color: var(--muted);
 }
 
 .top-actions {
@@ -551,7 +602,7 @@ table.data tr.selected {
   position: absolute;
   right: 24px;
   top: 70px;
-  width: 240px;
+  width: 280px;
   background: white;
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -621,11 +672,14 @@ table.data tr.selected {
   color: var(--muted);
 }
 
-.field input {
+.field input,
+.field select {
   height: 42px;
   border-radius: 10px;
   border: 1px solid var(--border);
   padding: 0 12px;
+  background: white;
+  color: var(--text);
 }
 
 .hint {

@@ -28,10 +28,10 @@ const bookingLabels: Record<BookingStatus, string> = {
 };
 
 const departureLabels: Record<DepartureStatus, string> = {
-  PLANNED: 'Planned',
-  RESOURCE_ASSIGNED: 'Resource assigned',
-  READY: 'Ready',
-  DEPARTED: 'Departed',
+  PLANNED: 'Scheduled',
+  RESOURCE_ASSIGNED: 'Scheduled',
+  READY: 'Boarding / Ready',
+  DEPARTED: 'In progress',
   COMPLETED: 'Completed',
   CANCELLED: 'Cancelled',
 };

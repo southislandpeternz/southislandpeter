@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { DEMO_OPERATOR, isDemoSignedIn, signOutDemo } from '../lib/demo-session';
-import { operationNotifications } from '../lib/mock-data';
+import { operationNotifications, searchAdmin } from '../lib/mock-data';
 
 const NAV = [
   { href: '/dashboard', label: 'Dashboard', icon: '⌂' },
@@ -18,6 +18,12 @@ const NAV = [
   { href: '/settings', label: 'Settings', icon: '⚙' },
 ] as const;
 
+const SEARCH_KIND = {
+  booking: 'Booking',
+  customer: 'Customer',
+  departure: 'Departure',
+} as const;
+
 export function AdminShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
@@ -26,6 +32,8 @@ export function AdminShell({ children }: { children: ReactNode }) {
   const [menu, setMenu] = useState<'none' | 'quick' | 'notice' | 'user'>('none');
   const [toast, setToast] = useState<string | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [search, setSearch] = useState('');
+  const hits = useMemo(() => searchAdmin(search), [search]);
 
   useEffect(() => {
     const ok = isDemoSignedIn();
@@ -39,11 +47,18 @@ export function AdminShell({ children }: { children: ReactNode }) {
   useEffect(() => {
     setMenu('none');
     setSidebarOpen(false);
+    setSearch('');
   }, [pathname]);
 
   function demoAction(message: string): void {
     setToast(message);
     window.setTimeout(() => setToast(null), 2800);
+  }
+
+  function go(href: string): void {
+    setSearch('');
+    setMenu('none');
+    router.push(href);
   }
 
   if (!ready || !signedIn) {
@@ -71,32 +86,42 @@ export function AdminShell({ children }: { children: ReactNode }) {
             );
           })}
         </nav>
-        <div className="sidebar-foot">Admin UI V1.3 · mock data only. Authentication and APIs are not connected.</div>
+        <div className="sidebar-foot">Admin UI V1.4 · mock data only. Authentication and APIs are not connected.</div>
       </aside>
       <div className="workspace">
         <header className="topbar">
           <button className="icon-btn mobile-toggle" type="button" onClick={() => setSidebarOpen((open) => !open)}>
             Menu
           </button>
-          <input
-            className="search"
-            placeholder="Search booking, customer, departure, driver…"
-            onKeyDown={(event) => {
-              if (event.key === 'Enter') {
-                const raw = event.currentTarget.value.trim();
-                const value = raw.toUpperCase();
-                if (value.startsWith('BO')) {
-                  router.push(`/bookings?booking=${encodeURIComponent(value)}`);
-                  return;
+          <div className="search-wrap">
+            <input
+              className="search"
+              value={search}
+              placeholder="Search booking, customer, departure, route…"
+              onChange={(event) => setSearch(event.target.value)}
+              onFocus={() => setMenu('none')}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' && hits[0]) {
+                  go(hits[0].href);
                 }
-                if (value.startsWith('DEP-')) {
-                  router.push(`/departures/${raw.toLowerCase()}`);
-                  return;
-                }
-                demoAction('Demo search only. No API is connected.');
-              }
-            }}
-          />
+              }}
+            />
+            {search.trim().length > 0 ? (
+              <div className="search-results">
+                {hits.length === 0 ? (
+                  <div className="search-empty">No matching booking, customer, or departure.</div>
+                ) : (
+                  hits.map((hit) => (
+                    <button key={`${hit.kind}-${hit.href}`} type="button" className="search-hit" onClick={() => go(hit.href)}>
+                      <span className="search-kind">{SEARCH_KIND[hit.kind]}</span>
+                      <strong>{hit.title}</strong>
+                      <span className="muted">{hit.detail}</span>
+                    </button>
+                  ))
+                )}
+              </div>
+            ) : null}
+          </div>
           <div className="top-actions">
             <button className="btn" type="button" onClick={() => setMenu(menu === 'quick' ? 'none' : 'quick')}>
               + Quick action
@@ -112,14 +137,17 @@ export function AdminShell({ children }: { children: ReactNode }) {
         </header>
         {menu === 'quick' ? (
           <div className="menu">
+            <button type="button" onClick={() => go('/arrangements')}>
+              View today’s departures
+            </button>
+            <button type="button" onClick={() => go('/bookings')}>
+              View today’s bookings
+            </button>
+            <button type="button" onClick={() => go('/bookings?payment=outstanding')}>
+              View pending payments
+            </button>
             <button type="button" onClick={() => demoAction('New Booking is UI-only in Admin UI V1.')}>
               New Booking
-            </button>
-            <button type="button" onClick={() => demoAction('New Customer is UI-only in Admin UI V1.')}>
-              New Customer
-            </button>
-            <button type="button" onClick={() => demoAction('New Departure is UI-only in Admin UI V1.')}>
-              New Departure
             </button>
           </div>
         ) : null}
@@ -148,7 +176,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
           </div>
         ) : null}
         <div className="demo-banner">
-          SP2036 Admin UI V1.3 · operations board · unified mock data · not DP01
+          SP2036 Admin UI V1.4 · operations board · unified mock data · not DP01
         </div>
         <main className="content">{children}</main>
       </div>

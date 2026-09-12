@@ -816,6 +816,13 @@ export function findVehicle(id: string): MockVehicle | undefined {
   return vehicles.find((item) => item.id === id);
 }
 
+export function vehicleType(vehicle: MockVehicle): string {
+  if (vehicle.seats <= 4) {
+    return 'Airport transfer van';
+  }
+  return 'Shuttle van';
+}
+
 export function findDriver(id: string): MockDriver | undefined {
   return drivers.find((item) => item.id === id);
 }
@@ -844,8 +851,11 @@ export function findPayment(bookingNo: string): MockPayment | undefined {
 }
 
 export function activeBookingsForDeparture(departureId: string): MockBooking[] {
-  applyOverlay();
-  return bookings.filter((item) => item.departureId === departureId && item.status === 'CONFIRMED');
+  return bookingsForDeparture(departureId).filter((item) => item.status === 'CONFIRMED');
+}
+
+export function bookingsForDeparture(departureId: string): MockBooking[] {
+  return listBookings().filter((item) => item.departureId === departureId);
 }
 
 export function manifestFor(departureId: string): MockManifestRow[] {
@@ -988,10 +998,12 @@ const OPS_STORAGE_KEY = 'sp2036-admin-ui-v1-ops';
 interface MockOpsOverlay {
   departureStatus: Record<string, DepartureStatus>;
   passengerStatus: Record<string, PassengerStatus>;
+  vehicleId: Record<string, string>;
+  driverId: Record<string, string>;
 }
 
 function emptyOverlay(): MockOpsOverlay {
-  return { departureStatus: {}, passengerStatus: {} };
+  return { departureStatus: {}, passengerStatus: {}, vehicleId: {}, driverId: {} };
 }
 
 function readOverlay(): MockOpsOverlay {
@@ -1007,6 +1019,8 @@ function readOverlay(): MockOpsOverlay {
     return {
       departureStatus: parsed.departureStatus ?? {},
       passengerStatus: parsed.passengerStatus ?? {},
+      vehicleId: parsed.vehicleId ?? {},
+      driverId: parsed.driverId ?? {},
     };
   } catch {
     return emptyOverlay();
@@ -1027,6 +1041,14 @@ function applyOverlay(): void {
     if (status) {
       departure.status = status;
     }
+    const vehicleId = overlay.vehicleId[departure.id];
+    if (vehicleId) {
+      departure.vehicleId = vehicleId;
+    }
+    const driverId = overlay.driverId[departure.id];
+    if (driverId) {
+      departure.driverId = driverId;
+    }
   }
   for (const booking of bookings) {
     const status = overlay.passengerStatus[booking.bookingNo];
@@ -1046,6 +1068,48 @@ function persistPassengerStatus(bookingNo: string, status: PassengerStatus): voi
   const overlay = readOverlay();
   overlay.passengerStatus[bookingNo] = status;
   writeOverlay(overlay);
+}
+
+function persistAssignment(kind: 'vehicleId' | 'driverId', departureId: string, id: string): void {
+  const overlay = readOverlay();
+  overlay[kind][departureId] = id;
+  writeOverlay(overlay);
+}
+
+export function assignVehicle(departureId: string, vehicleId: string): MockOpResult {
+  applyOverlay();
+  const departure = findDeparture(departureId);
+  const vehicle = findVehicle(vehicleId);
+  if (!departure) {
+    return { ok: false, message: 'Departure not found.' };
+  }
+  if (!vehicle) {
+    return { ok: false, message: 'Vehicle not found.' };
+  }
+  if (departure.status === 'CANCELLED') {
+    return { ok: false, message: 'Cannot assign a vehicle to a cancelled departure.' };
+  }
+  departure.vehicleId = vehicle.id;
+  persistAssignment('vehicleId', departure.id, vehicle.id);
+  return { ok: true, message: `${vehicle.name} assigned · mock assignment only.` };
+}
+
+export function assignDriver(departureId: string, driverId: string): MockOpResult {
+  applyOverlay();
+  const departure = findDeparture(departureId);
+  const driver = findDriver(driverId);
+  if (!departure) {
+    return { ok: false, message: 'Departure not found.' };
+  }
+  if (!driver) {
+    return { ok: false, message: 'Driver not found.' };
+  }
+  if (departure.status === 'CANCELLED') {
+    return { ok: false, message: 'Cannot assign a driver to a cancelled departure.' };
+  }
+  departure.driverId = driver.id;
+  persistAssignment('driverId', departure.id, driver.id);
+  return { ok: true, message: `${driver.name} assigned · mock assignment only.` };
 }
 
 export function canStartTrip(status: DepartureStatus): boolean {
@@ -1233,4 +1297,52 @@ export function pendingPaymentBookings(): MockBooking[] {
 
 export function pendingPaymentCount(): number {
   return pendingPaymentBookings().length;
+}
+
+export interface AdminSearchHit {
+  kind: 'booking' | 'customer' | 'departure';
+  href: string;
+  title: string;
+  detail: string;
+}
+
+export function searchAdmin(query: string): AdminSearchHit[] {
+  const needle = query.trim();
+  if (needle.length === 0) {
+    return [];
+  }
+  const hits: AdminSearchHit[] = [];
+  for (const customer of customers) {
+    if (matchesSearch(needle, [customer.name, customer.email, customer.phone])) {
+      hits.push({
+        kind: 'customer',
+        href: `/customers?customer=${customer.id}`,
+        title: customer.name,
+        detail: `${customer.email} · ${customer.phone}`,
+      });
+    }
+  }
+  for (const booking of listBookings()) {
+    const customer = findCustomer(booking.customerId);
+    const departure = findDeparture(booking.departureId);
+    if (matchesSearch(needle, [booking.bookingNo, customer?.name, booking.product, departure?.name])) {
+      hits.push({
+        kind: 'booking',
+        href: `/bookings?booking=${booking.bookingNo}`,
+        title: booking.bookingNo,
+        detail: `${customer?.name ?? 'Guest'} · ${booking.product}`,
+      });
+    }
+  }
+  for (const departure of listDepartures()) {
+    if (matchesSearch(needle, [departure.id, departure.name, departure.route, departure.pickup, departure.destination])) {
+      hits.push({
+        kind: 'departure',
+        href: `/departures/${departure.id}`,
+        title: `${departure.time} · ${departure.name}`,
+        detail: `${departure.date} · ${departure.route}`,
+      });
+    }
+  }
+  return hits.slice(0, 8);
 }

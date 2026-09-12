@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { assignmentsToday, vehicles } from '../../../lib/mock-data';
+import { assignmentsToday, vehicleType, vehicles } from '../../../lib/mock-data';
 
 export default function VehiclesPage() {
   return (
@@ -17,6 +17,7 @@ export default function VehiclesPage() {
           <thead>
             <tr>
               <th>Vehicle</th>
+              <th>Type</th>
               <th>Plate</th>
               <th>Seats</th>
               <th>Today’s assignment</th>
@@ -31,6 +32,7 @@ export default function VehiclesPage() {
                   <td>
                     <strong>{item.name}</strong>
                   </td>
+                  <td>{vehicleType(item)}</td>
                   <td>{item.plate}</td>
                   <td>{item.seats}</td>
                   <td>

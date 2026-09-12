@@ -91,18 +91,18 @@ function CustomersBoard() {
             <h2>Customer detail</h2>
             <span className="muted">{selected.country}</span>
           </div>
+          <h2>Customer information</h2>
           <dl className="info-grid">
             <div>
               <dt>Name</dt>
               <dd>{selected.name}</dd>
             </div>
             <div>
-              <dt>Email</dt>
-              <dd>{selected.email}</dd>
-            </div>
-            <div>
-              <dt>Phone</dt>
-              <dd>{selected.phone}</dd>
+              <dt>Contact information</dt>
+              <dd>
+                {selected.email}
+                <div className="muted">{selected.phone}</div>
+              </dd>
             </div>
             <div>
               <dt>Country</dt>

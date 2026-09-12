@@ -6,19 +6,24 @@ import { Suspense, useMemo, useState } from 'react';
 import {
   findCustomer,
   findDeparture,
+  findDriver,
   findPayment,
+  findVehicle,
   formatNzd,
   isOutstandingPayment,
   labelDirection,
   listBookings,
   matchesSearch,
+  vehicleType,
 } from '../../../lib/mock-data';
 import {
   labelBookingStatus,
+  labelDepartureStatus,
   labelPassengerStatus,
   labelPaymentStatus,
   labelServiceType,
   toneForBooking,
+  toneForDeparture,
   toneForPassenger,
   toneForPayment,
   type BookingStatus,
@@ -106,6 +111,8 @@ function BookingsBoard() {
   const selectedCustomer = selected ? findCustomer(selected.customerId) : undefined;
   const selectedDeparture = selected ? findDeparture(selected.departureId) : undefined;
   const selectedPayment = selected ? findPayment(selected.bookingNo) : undefined;
+  const selectedVehicle = selectedDeparture ? findVehicle(selectedDeparture.vehicleId) : undefined;
+  const selectedDriver = selectedDeparture ? findDriver(selectedDeparture.driverId) : undefined;
 
   function replaceQuery(patch: Record<string, string | null>): void {
     const params = new URLSearchParams(searchParams.toString());
@@ -246,11 +253,15 @@ function BookingsBoard() {
               </dd>
             </div>
             <div>
-              <dt>Contact</dt>
+              <dt>Contact information</dt>
               <dd>
                 {selectedCustomer?.email}
                 <div className="muted">{selectedCustomer?.phone}</div>
               </dd>
+            </div>
+            <div>
+              <dt>Country</dt>
+              <dd>{selectedCustomer?.country ?? '—'}</dd>
             </div>
             <div>
               <dt>Service</dt>
@@ -260,7 +271,7 @@ function BookingsBoard() {
               </dd>
             </div>
             <div>
-              <dt>Departure</dt>
+              <dt>Related Departure</dt>
               <dd>
                 <Link href={`/departures/${selected.departureId}`}>
                   {selectedDeparture?.name} · {selectedDeparture?.date} {selectedDeparture?.time}
@@ -274,6 +285,46 @@ function BookingsBoard() {
             <div>
               <dt>Route</dt>
               <dd>{selectedDeparture?.route ?? '—'}</dd>
+            </div>
+            <div>
+              <dt>Departure status</dt>
+              <dd>
+                {selectedDeparture ? (
+                  <StatusBadge tone={toneForDeparture(selectedDeparture.status)}>
+                    {labelDepartureStatus(selectedDeparture.status)}
+                  </StatusBadge>
+                ) : (
+                  '—'
+                )}
+              </dd>
+            </div>
+            <div>
+              <dt>Vehicle</dt>
+              <dd>
+                {selectedVehicle ? (
+                  <>
+                    {selectedVehicle.name}
+                    <div className="muted">
+                      {vehicleType(selectedVehicle)} · {selectedVehicle.seats} seats
+                    </div>
+                  </>
+                ) : (
+                  '—'
+                )}
+              </dd>
+            </div>
+            <div>
+              <dt>Driver</dt>
+              <dd>
+                {selectedDriver ? (
+                  <>
+                    {selectedDriver.name}
+                    <div className="muted">{selectedDriver.phone}</div>
+                  </>
+                ) : (
+                  '—'
+                )}
+              </dd>
             </div>
             <div>
               <dt>Passenger count</dt>

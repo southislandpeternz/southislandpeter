@@ -1,32 +1,39 @@
 'use client';
 
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import {
+  assignDriver,
+  assignVehicle,
   availableSeats,
   bookedSeats,
+  bookingsForDeparture,
   canCancelPassenger,
   canCheckInPassenger,
   canMarkPassengerNoShow,
   canStartTrip,
   cancelPassenger,
   checkInPassenger,
+  drivers,
   findCustomer,
   findDeparture,
   findDriver,
   findVehicle,
   labelDirection,
-  manifestFor,
   markPassengerNoShow,
   passengerSummary,
   startTrip,
+  vehicleType,
+  vehicles,
 } from '../../../../lib/mock-data';
 import {
+  labelBookingStatus,
   labelDepartureStatus,
   labelPassengerStatus,
   labelPaymentStatus,
   labelServiceType,
+  toneForBooking,
   toneForDeparture,
   toneForPassenger,
   toneForPayment,
@@ -35,6 +42,7 @@ import { StatusBadge } from '../../../../components/status-badge';
 
 export default function DepartureDetailPage() {
   const params = useParams<{ id: string }>();
+  const router = useRouter();
   const departure = findDeparture(params.id);
   const [toast, setToast] = useState<string | null>(null);
   const [, setRevision] = useState(0);
@@ -51,15 +59,19 @@ export default function DepartureDetailPage() {
 
   const driver = findDriver(departure.driverId);
   const vehicle = findVehicle(departure.vehicleId);
-  const manifest = manifestFor(departure.id);
+  const departureBookings = bookingsForDeparture(departure.id);
   const booked = bookedSeats(departure.id);
   const available = availableSeats(departure);
+  const remainingVehicleSeats = vehicle ? Math.max(0, vehicle.seats - booked) : available;
   const summary = passengerSummary(departure.id);
-  const contactable = manifest.filter(
-    (row) => row.passengerStatus === 'CONFIRMED' || row.passengerStatus === 'CHECKED_IN',
+  const contactable = departureBookings.filter(
+    (row) =>
+      row.status === 'CONFIRMED' &&
+      (row.passengerStatus === 'CONFIRMED' || row.passengerStatus === 'CHECKED_IN'),
   );
   const contactPax = contactable.reduce((sum, row) => sum + row.pax, 0);
   const current = departure;
+  const assignmentLocked = departure.status === 'CANCELLED';
 
   function notify(message: string): void {
     setToast(message);
@@ -96,6 +108,22 @@ export default function DepartureDetailPage() {
 
   function onCancel(bookingNo: string): void {
     const result = cancelPassenger(bookingNo);
+    notify(result.message);
+    if (result.ok) {
+      refresh();
+    }
+  }
+
+  function onAssignVehicle(vehicleId: string): void {
+    const result = assignVehicle(current.id, vehicleId);
+    notify(result.message);
+    if (result.ok) {
+      refresh();
+    }
+  }
+
+  function onAssignDriver(driverId: string): void {
+    const result = assignDriver(current.id, driverId);
     notify(result.message);
     if (result.ok) {
       refresh();
@@ -197,31 +225,13 @@ export default function DepartureDetailPage() {
             <dd>{departure.destination}</dd>
           </div>
           <div>
-            <dt>Vehicle</dt>
-            <dd>
-              {vehicle?.name} · {vehicle?.plate}
-            </dd>
-          </div>
-          <div>
-            <dt>Driver</dt>
-            <dd>{driver?.name}</dd>
-          </div>
-          <div>
-            <dt>Capacity</dt>
-            <dd>{departure.capacity}</dd>
-          </div>
-          <div>
             <dt>Passenger count</dt>
             <dd>
               {booked}/{departure.capacity}
             </dd>
           </div>
           <div>
-            <dt>Booked seats</dt>
-            <dd>{booked}</dd>
-          </div>
-          <div>
-            <dt>Available seats</dt>
+            <dt>Remaining seats</dt>
             <dd>{available}</dd>
           </div>
           <div>
@@ -236,41 +246,154 @@ export default function DepartureDetailPage() {
         {departure.notes ? <p className="muted">{departure.notes}</p> : null}
       </section>
 
+      <div className="grid-2" style={{ marginTop: 0, marginBottom: 16 }}>
+        <section className="card card-pad">
+          <div className="section-title">
+            <h2>Vehicle assignment</h2>
+            <Link className="muted" href="/vehicles">
+              Vehicles
+            </Link>
+          </div>
+          <dl className="info-grid">
+            <div>
+              <dt>Vehicle</dt>
+              <dd>{vehicle?.name ?? 'Unassigned'}</dd>
+            </div>
+            <div>
+              <dt>Vehicle type</dt>
+              <dd>{vehicle ? vehicleType(vehicle) : '—'}</dd>
+            </div>
+            <div>
+              <dt>Plate</dt>
+              <dd>{vehicle?.plate ?? '—'}</dd>
+            </div>
+            <div>
+              <dt>Vehicle capacity</dt>
+              <dd>{vehicle ? `${vehicle.seats} seats` : '—'}</dd>
+            </div>
+            <div>
+              <dt>Passenger count</dt>
+              <dd>{booked}</dd>
+            </div>
+            <div>
+              <dt>Remaining seats</dt>
+              <dd>{remainingVehicleSeats}</dd>
+            </div>
+          </dl>
+          <label className="field" style={{ marginTop: 12 }}>
+            <span>Assign vehicle</span>
+            <select
+              value={departure.vehicleId}
+              disabled={assignmentLocked}
+              onChange={(event) => onAssignVehicle(event.target.value)}
+            >
+              {vehicles.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {item.name} · {vehicleType(item)} · {item.seats} seats
+                </option>
+              ))}
+            </select>
+          </label>
+          <p className="muted">Assigned to this Departure, not bound to the product. Mock assignment only.</p>
+        </section>
+
+        <section className="card card-pad">
+          <div className="section-title">
+            <h2>Driver assignment</h2>
+            <Link className="muted" href="/drivers">
+              Drivers
+            </Link>
+          </div>
+          <dl className="info-grid">
+            <div>
+              <dt>Driver</dt>
+              <dd>{driver?.name ?? 'Unassigned'}</dd>
+            </div>
+            <div>
+              <dt>Driver contact</dt>
+              <dd>{driver?.phone ?? '—'}</dd>
+            </div>
+            <div>
+              <dt>Licence</dt>
+              <dd>{driver?.licence ?? '—'}</dd>
+            </div>
+            <div>
+              <dt>Passenger count</dt>
+              <dd>
+                {booked}/{departure.capacity}
+              </dd>
+            </div>
+          </dl>
+          <label className="field" style={{ marginTop: 12 }}>
+            <span>Assign driver</span>
+            <select
+              value={departure.driverId}
+              disabled={assignmentLocked}
+              onChange={(event) => onAssignDriver(event.target.value)}
+            >
+              {drivers.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {item.name} · {item.phone}
+                </option>
+              ))}
+            </select>
+          </label>
+          <p className="muted">Contact is displayed for operations. Phone is not connected.</p>
+        </section>
+      </div>
+
       <section className="card table-wrap" style={{ marginBottom: 16 }}>
         <div className="card-pad section-title">
-          <h2>Passenger operations</h2>
+          <h2>Bookings</h2>
           <span className="muted">
-            {booked}/{departure.capacity} seats · Cancelled {summary.cancelled}
+            {departureBookings.length} booking(s) · {booked}/{departure.capacity} confirmed seats
           </span>
         </div>
-        {manifest.length === 0 ? (
-          <p className="card-pad muted">No confirmed passengers on this departure.</p>
+        {departureBookings.length === 0 ? (
+          <p className="card-pad muted">No bookings on this departure.</p>
         ) : (
           <table className="data">
             <thead>
               <tr>
-                <th>Customer</th>
                 <th>Booking number</th>
+                <th>Customer</th>
                 <th>Passengers</th>
-                <th>Pickup</th>
+                <th>Booking status</th>
                 <th>Payment status</th>
                 <th>Passenger status</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {manifest.map((row) => {
+              {departureBookings.map((row) => {
                 const customer = findCustomer(row.customerId);
+                const opsOpen = row.status === 'CONFIRMED';
                 return (
-                  <tr key={row.bookingNo}>
+                  <tr
+                    key={row.bookingNo}
+                    className="selectable"
+                    onClick={() => router.push(`/bookings?booking=${row.bookingNo}`)}
+                  >
                     <td>
-                      <Link href={`/customers?customer=${row.customerId}`}>{customer?.name}</Link>
+                      <Link
+                        href={`/bookings?booking=${row.bookingNo}`}
+                        onClick={(event) => event.stopPropagation()}
+                      >
+                        <strong>{row.bookingNo}</strong>
+                      </Link>
                     </td>
                     <td>
-                      <Link href={`/bookings?booking=${row.bookingNo}`}>{row.bookingNo}</Link>
+                      <Link
+                        href={`/customers?customer=${row.customerId}`}
+                        onClick={(event) => event.stopPropagation()}
+                      >
+                        {customer?.name}
+                      </Link>
                     </td>
                     <td>{row.pax}</td>
-                    <td>{row.pickup}</td>
+                    <td>
+                      <StatusBadge tone={toneForBooking(row.status)}>{labelBookingStatus(row.status)}</StatusBadge>
+                    </td>
                     <td>
                       <StatusBadge tone={toneForPayment(row.paymentStatus)}>
                         {labelPaymentStatus(row.paymentStatus)}
@@ -282,11 +405,11 @@ export default function DepartureDetailPage() {
                       </StatusBadge>
                     </td>
                     <td>
-                      <div className="row-actions">
+                      <div className="row-actions" onClick={(event) => event.stopPropagation()}>
                         <button
                           className="btn"
                           type="button"
-                          disabled={!canCheckInPassenger(row.passengerStatus)}
+                          disabled={!opsOpen || !canCheckInPassenger(row.passengerStatus)}
                           onClick={() => onCheckIn(row.bookingNo)}
                         >
                           Check-in
@@ -294,7 +417,7 @@ export default function DepartureDetailPage() {
                         <button
                           className="btn-ghost"
                           type="button"
-                          disabled={!canMarkPassengerNoShow(row.passengerStatus)}
+                          disabled={!opsOpen || !canMarkPassengerNoShow(row.passengerStatus)}
                           onClick={() => onNoShow(row.bookingNo)}
                         >
                           No show
@@ -302,7 +425,7 @@ export default function DepartureDetailPage() {
                         <button
                           className="btn-ghost"
                           type="button"
-                          disabled={!canCancelPassenger(row.passengerStatus)}
+                          disabled={!opsOpen || !canCancelPassenger(row.passengerStatus)}
                           onClick={() => onCancel(row.bookingNo)}
                         >
                           Cancel
@@ -319,26 +442,20 @@ export default function DepartureDetailPage() {
 
       <section className="card card-pad">
         <h2>Operations</h2>
-        <p className="muted">Vehicle and driver are assigned to this Departure, not bound to the product.</p>
+        <p className="muted">Start trip uses the same mock status rules as V1.1 / V1.2.</p>
         <dl className="info-grid">
-          <div>
-            <dt>Vehicle</dt>
-            <dd>
-              {vehicle?.name} · {vehicle?.seats} seats
-            </dd>
-          </div>
-          <div>
-            <dt>Driver</dt>
-            <dd>
-              {driver?.name} · {driver?.phone}
-            </dd>
-          </div>
           <div>
             <dt>Departure status</dt>
             <dd>
               <StatusBadge tone={toneForDeparture(departure.status)}>
                 {labelDepartureStatus(departure.status)}
               </StatusBadge>
+            </dd>
+          </div>
+          <div>
+            <dt>Capacity / remaining</dt>
+            <dd>
+              {booked}/{departure.capacity} · {available} remaining
             </dd>
           </div>
         </dl>
