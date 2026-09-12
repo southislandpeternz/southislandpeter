@@ -6,12 +6,18 @@ import { useState } from 'react';
 import {
   availableSeats,
   bookedSeats,
+  canCheckInPassenger,
+  canMarkPassengerNoShow,
+  canStartTrip,
+  checkInPassenger,
   findCustomer,
   findDeparture,
   findDriver,
   findVehicle,
   labelDirection,
   manifestFor,
+  markPassengerNoShow,
+  startTrip,
 } from '../../../../lib/mock-data';
 import {
   labelDepartureStatus,
@@ -28,6 +34,7 @@ export default function DepartureDetailPage() {
   const params = useParams<{ id: string }>();
   const departure = findDeparture(params.id);
   const [toast, setToast] = useState<string | null>(null);
+  const [, setRevision] = useState(0);
 
   if (!departure) {
     return (
@@ -45,9 +52,44 @@ export default function DepartureDetailPage() {
   const booked = bookedSeats(departure.id);
   const available = availableSeats(departure);
 
-  function demo(message: string): void {
+  function notify(message: string): void {
     setToast(message);
-    window.setTimeout(() => setToast(null), 2500);
+    window.setTimeout(() => setToast(null), 3500);
+  }
+
+  function refresh(): void {
+    setRevision((value) => value + 1);
+  }
+
+  function onStartTrip(): void {
+    if (!departure) {
+      return;
+    }
+    const result = startTrip(departure.id);
+    notify(result.message);
+    if (result.ok) {
+      refresh();
+    }
+  }
+
+  function onCheckIn(bookingNo: string): void {
+    const result = checkInPassenger(bookingNo);
+    notify(result.message);
+    if (result.ok) {
+      refresh();
+    }
+  }
+
+  function onNoShow(bookingNo: string): void {
+    const result = markPassengerNoShow(bookingNo);
+    notify(result.message);
+    if (result.ok) {
+      refresh();
+    }
+  }
+
+  function demo(message: string): void {
+    notify(message);
   }
 
   return (
@@ -153,6 +195,7 @@ export default function DepartureDetailPage() {
                 <th>Pickup</th>
                 <th>Payment status</th>
                 <th>Passenger status</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -175,6 +218,26 @@ export default function DepartureDetailPage() {
                       <StatusBadge tone={toneForPassenger(row.passengerStatus)}>
                         {labelPassengerStatus(row.passengerStatus)}
                       </StatusBadge>
+                    </td>
+                    <td>
+                      <div className="row-actions">
+                        <button
+                          className="btn"
+                          type="button"
+                          disabled={!canCheckInPassenger(row.passengerStatus)}
+                          onClick={() => onCheckIn(row.bookingNo)}
+                        >
+                          Check-in
+                        </button>
+                        <button
+                          className="btn-ghost"
+                          type="button"
+                          disabled={!canMarkPassengerNoShow(row.passengerStatus)}
+                          onClick={() => onNoShow(row.bookingNo)}
+                        >
+                          No show
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 );
@@ -210,7 +273,12 @@ export default function DepartureDetailPage() {
           </div>
         </dl>
         <div className="actions" style={{ marginTop: 16 }}>
-          <button className="btn" type="button" onClick={() => demo('Start trip is UI-only in this prototype.')}>
+          <button
+            className="btn"
+            type="button"
+            disabled={!canStartTrip(departure.status)}
+            onClick={onStartTrip}
+          >
             Start trip
           </button>
           <button className="btn-ghost" type="button" onClick={() => demo('Navigation is UI-only in this prototype.')}>

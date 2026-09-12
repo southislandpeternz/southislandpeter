@@ -1,10 +1,12 @@
-import type {
-  BookingSource,
-  BookingStatus,
-  DepartureStatus,
-  PassengerStatus,
-  PaymentStatus,
-  ServiceType,
+import {
+  labelDepartureStatus,
+  labelPassengerStatus,
+  type BookingSource,
+  type BookingStatus,
+  type DepartureStatus,
+  type PassengerStatus,
+  type PaymentStatus,
+  type ServiceType,
 } from './status';
 
 export const DEMO_TODAY = '2026-09-10';
@@ -823,10 +825,17 @@ export function findCustomer(id: string): MockCustomer | undefined {
 }
 
 export function findDeparture(id: string): MockDeparture | undefined {
+  applyOverlay();
   return departures.find((item) => item.id === id);
 }
 
+export function listDepartures(): MockDeparture[] {
+  applyOverlay();
+  return departures;
+}
+
 export function findBooking(bookingNo: string): MockBooking | undefined {
+  applyOverlay();
   return bookings.find((item) => item.bookingNo === bookingNo);
 }
 
@@ -835,6 +844,7 @@ export function findPayment(bookingNo: string): MockPayment | undefined {
 }
 
 export function activeBookingsForDeparture(departureId: string): MockBooking[] {
+  applyOverlay();
   return bookings.filter((item) => item.departureId === departureId && item.status === 'CONFIRMED');
 }
 
@@ -858,6 +868,7 @@ export function availableSeats(departure: MockDeparture): number {
 }
 
 export function todaysDepartures(): MockDeparture[] {
+  applyOverlay();
   return departures.filter((item) => item.date === DEMO_TODAY);
 }
 
@@ -966,4 +977,153 @@ export function labelDirection(direction: DepartureDirection): string {
     return 'Day return';
   }
   return 'On demand';
+}
+
+export type MockOpResult = { ok: boolean; message: string };
+
+const STARTABLE_STATUSES: DepartureStatus[] = ['PLANNED', 'RESOURCE_ASSIGNED', 'READY'];
+const OPS_STORAGE_KEY = 'sp2036-admin-ui-v1-ops';
+
+interface MockOpsOverlay {
+  departureStatus: Record<string, DepartureStatus>;
+  passengerStatus: Record<string, PassengerStatus>;
+}
+
+function emptyOverlay(): MockOpsOverlay {
+  return { departureStatus: {}, passengerStatus: {} };
+}
+
+function readOverlay(): MockOpsOverlay {
+  if (typeof window === 'undefined') {
+    return emptyOverlay();
+  }
+  try {
+    const raw = window.localStorage.getItem(OPS_STORAGE_KEY);
+    if (!raw) {
+      return emptyOverlay();
+    }
+    const parsed = JSON.parse(raw) as MockOpsOverlay;
+    return {
+      departureStatus: parsed.departureStatus ?? {},
+      passengerStatus: parsed.passengerStatus ?? {},
+    };
+  } catch {
+    return emptyOverlay();
+  }
+}
+
+function writeOverlay(overlay: MockOpsOverlay): void {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  window.localStorage.setItem(OPS_STORAGE_KEY, JSON.stringify(overlay));
+}
+
+function applyOverlay(): void {
+  const overlay = readOverlay();
+  for (const departure of departures) {
+    const status = overlay.departureStatus[departure.id];
+    if (status) {
+      departure.status = status;
+    }
+  }
+  for (const booking of bookings) {
+    const status = overlay.passengerStatus[booking.bookingNo];
+    if (status) {
+      booking.passengerStatus = status;
+    }
+  }
+}
+
+function persistDepartureStatus(id: string, status: DepartureStatus): void {
+  const overlay = readOverlay();
+  overlay.departureStatus[id] = status;
+  writeOverlay(overlay);
+}
+
+function persistPassengerStatus(bookingNo: string, status: PassengerStatus): void {
+  const overlay = readOverlay();
+  overlay.passengerStatus[bookingNo] = status;
+  writeOverlay(overlay);
+}
+
+export function canStartTrip(status: DepartureStatus): boolean {
+  return STARTABLE_STATUSES.includes(status);
+}
+
+export function canCheckInPassenger(status: PassengerStatus): boolean {
+  return status === 'CONFIRMED';
+}
+
+export function canMarkPassengerNoShow(status: PassengerStatus): boolean {
+  return status === 'CONFIRMED';
+}
+
+export function startTrip(departureId: string): MockOpResult {
+  applyOverlay();
+  const departure = findDeparture(departureId);
+  if (!departure) {
+    return { ok: false, message: 'Departure not found.' };
+  }
+  if (departure.status === 'DEPARTED') {
+    return { ok: false, message: 'Trip already started.' };
+  }
+  if (departure.status === 'COMPLETED') {
+    return { ok: false, message: 'This departure is already completed.' };
+  }
+  if (departure.status === 'CANCELLED') {
+    return { ok: false, message: 'Cannot start a cancelled departure.' };
+  }
+  if (!canStartTrip(departure.status)) {
+    return { ok: false, message: 'This departure cannot be started.' };
+  }
+  departure.status = 'DEPARTED';
+  persistDepartureStatus(departure.id, departure.status);
+  return { ok: true, message: `Trip started · status is now ${labelDepartureStatus('DEPARTED')}.` };
+}
+
+export function checkInPassenger(bookingNo: string): MockOpResult {
+  applyOverlay();
+  const booking = findBooking(bookingNo);
+  if (!booking) {
+    return { ok: false, message: 'Booking not found.' };
+  }
+  if (booking.status !== 'CONFIRMED') {
+    return { ok: false, message: `${bookingNo} is not a confirmed booking.` };
+  }
+  if (booking.passengerStatus === 'CHECKED_IN') {
+    return { ok: false, message: `${bookingNo} is already checked in.` };
+  }
+  if (booking.passengerStatus === 'NO_SHOW') {
+    return { ok: false, message: `${bookingNo} is marked no show and cannot be checked in.` };
+  }
+  if (booking.passengerStatus === 'CANCELLED') {
+    return { ok: false, message: `${bookingNo} is cancelled.` };
+  }
+  booking.passengerStatus = 'CHECKED_IN';
+  persistPassengerStatus(booking.bookingNo, booking.passengerStatus);
+  return { ok: true, message: `${bookingNo} checked in · ${labelPassengerStatus('CHECKED_IN')}.` };
+}
+
+export function markPassengerNoShow(bookingNo: string): MockOpResult {
+  applyOverlay();
+  const booking = findBooking(bookingNo);
+  if (!booking) {
+    return { ok: false, message: 'Booking not found.' };
+  }
+  if (booking.status !== 'CONFIRMED') {
+    return { ok: false, message: `${bookingNo} is not a confirmed booking.` };
+  }
+  if (booking.passengerStatus === 'NO_SHOW') {
+    return { ok: false, message: `${bookingNo} is already marked no show.` };
+  }
+  if (booking.passengerStatus === 'CHECKED_IN') {
+    return { ok: false, message: `${bookingNo} is checked in and cannot be marked no show.` };
+  }
+  if (booking.passengerStatus === 'CANCELLED') {
+    return { ok: false, message: `${bookingNo} is cancelled.` };
+  }
+  booking.passengerStatus = 'NO_SHOW';
+  persistPassengerStatus(booking.bookingNo, booking.passengerStatus);
+  return { ok: true, message: `${bookingNo} marked no show · ${labelPassengerStatus('NO_SHOW')}.` };
 }

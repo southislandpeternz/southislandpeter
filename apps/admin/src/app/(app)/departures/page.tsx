@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { bookedSeats, departures, findDriver, findVehicle, labelDirection } from '../../../lib/mock-data';
+import { bookedSeats, findDriver, findVehicle, labelDirection, listDepartures } from '../../../lib/mock-data';
 import {
   labelDepartureStatus,
   labelServiceType,
@@ -21,7 +21,7 @@ const FILTERS: Array<{ id: 'ALL' | ServiceType; label: string }> = [
 export default function DeparturesPage() {
   const [filter, setFilter] = useState<'ALL' | ServiceType>('ALL');
   const rows = useMemo(
-    () => departures.filter((item) => (filter === 'ALL' ? true : item.serviceType === filter)),
+    () => listDepartures().filter((item) => (filter === 'ALL' ? true : item.serviceType === filter)),
     [filter],
   );
 

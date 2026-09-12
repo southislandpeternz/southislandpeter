@@ -2,14 +2,15 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { DEMO_TODAY, bookedSeats, departures, formatDayLabel, weekDates } from '../../../lib/mock-data';
+import { DEMO_TODAY, bookedSeats, formatDayLabel, listDepartures, weekDates } from '../../../lib/mock-data';
 import { labelDepartureStatus, labelServiceType, type ServiceType } from '../../../lib/status';
 
 const LANES: ServiceType[] = ['SHUTTLE', 'CRUISE_DAY_TOUR', 'AIRPORT_TRANSFER'];
 
 export default function ArrangementsPage() {
   const [view, setView] = useState<'lanes' | 'week'>('lanes');
-  const today = useMemo(() => departures.filter((item) => item.date === DEMO_TODAY), []);
+  const allDepartures = listDepartures();
+  const today = useMemo(() => allDepartures.filter((item) => item.date === DEMO_TODAY), [allDepartures]);
 
   return (
     <div>
@@ -65,7 +66,7 @@ export default function ArrangementsPage() {
           {weekDates().map((date) => (
             <section key={date} className={date === DEMO_TODAY ? 'day-col today' : 'day-col'}>
               <strong>{formatDayLabel(date)}</strong>
-              {departures
+              {allDepartures
                 .filter((item) => item.date === date)
                 .map((item) => (
                   <Link key={item.id} href={`/departures/${item.id}`} className="pill">
