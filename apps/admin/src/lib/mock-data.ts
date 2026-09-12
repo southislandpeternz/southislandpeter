@@ -1127,3 +1127,97 @@ export function markPassengerNoShow(bookingNo: string): MockOpResult {
   persistPassengerStatus(booking.bookingNo, booking.passengerStatus);
   return { ok: true, message: `${bookingNo} marked no show · ${labelPassengerStatus('NO_SHOW')}.` };
 }
+
+export function canCancelPassenger(status: PassengerStatus): boolean {
+  return status === 'CONFIRMED';
+}
+
+export function cancelPassenger(bookingNo: string): MockOpResult {
+  applyOverlay();
+  const booking = findBooking(bookingNo);
+  if (!booking) {
+    return { ok: false, message: 'Booking not found.' };
+  }
+  if (booking.status !== 'CONFIRMED') {
+    return { ok: false, message: `${bookingNo} is not a confirmed booking.` };
+  }
+  if (booking.passengerStatus === 'CANCELLED') {
+    return { ok: false, message: `${bookingNo} is already cancelled.` };
+  }
+  if (booking.passengerStatus === 'CHECKED_IN') {
+    return { ok: false, message: `${bookingNo} is checked in and cannot be cancelled.` };
+  }
+  if (booking.passengerStatus === 'NO_SHOW') {
+    return { ok: false, message: `${bookingNo} is marked no show and cannot be cancelled.` };
+  }
+  booking.passengerStatus = 'CANCELLED';
+  persistPassengerStatus(booking.bookingNo, booking.passengerStatus);
+  return { ok: true, message: `${bookingNo} cancelled · ${labelPassengerStatus('CANCELLED')}.` };
+}
+
+export interface PassengerSummary {
+  total: number;
+  checkedIn: number;
+  noShow: number;
+  remaining: number;
+  cancelled: number;
+}
+
+function emptyPassengerSummary(): PassengerSummary {
+  return { total: 0, checkedIn: 0, noShow: 0, remaining: 0, cancelled: 0 };
+}
+
+function addPax(summary: PassengerSummary, status: PassengerStatus, pax: number): void {
+  summary.total += pax;
+  if (status === 'CHECKED_IN') {
+    summary.checkedIn += pax;
+    return;
+  }
+  if (status === 'NO_SHOW') {
+    summary.noShow += pax;
+    return;
+  }
+  if (status === 'CANCELLED') {
+    summary.cancelled += pax;
+    return;
+  }
+  summary.remaining += pax;
+}
+
+export function passengerSummary(departureId: string): PassengerSummary {
+  const summary = emptyPassengerSummary();
+  for (const row of manifestFor(departureId)) {
+    addPax(summary, row.passengerStatus, row.pax);
+  }
+  return summary;
+}
+
+export function todaysPassengerSummary(): PassengerSummary {
+  const summary = emptyPassengerSummary();
+  for (const departure of todaysDepartures()) {
+    const part = passengerSummary(departure.id);
+    summary.total += part.total;
+    summary.checkedIn += part.checkedIn;
+    summary.noShow += part.noShow;
+    summary.remaining += part.remaining;
+    summary.cancelled += part.cancelled;
+  }
+  return summary;
+}
+
+export function listBookings(): MockBooking[] {
+  applyOverlay();
+  return bookings;
+}
+
+export function bookingsForCustomer(customerId: string): MockBooking[] {
+  return listBookings().filter((item) => item.customerId === customerId);
+}
+
+export function matchesSearch(query: string, parts: Array<string | undefined | null>): boolean {
+  const needle = query.trim().toLowerCase();
+  if (needle.length === 0) {
+    return true;
+  }
+  return parts.some((part) => (part ?? '').toLowerCase().includes(needle));
+}

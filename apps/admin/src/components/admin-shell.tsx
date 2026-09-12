@@ -71,7 +71,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
             );
           })}
         </nav>
-        <div className="sidebar-foot">Admin UI V1.1 · mock data only. Authentication and APIs are not connected.</div>
+        <div className="sidebar-foot">Admin UI V1.2 · mock data only. Authentication and APIs are not connected.</div>
       </aside>
       <div className="workspace">
         <header className="topbar">
@@ -143,7 +143,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
           </div>
         ) : null}
         <div className="demo-banner">
-          SP2036 Admin UI V1.1 · operations board · unified mock data · not DP01
+          SP2036 Admin UI V1.2 · operations board · unified mock data · not DP01
         </div>
         <main className="content">{children}</main>
       </div>

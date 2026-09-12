@@ -281,6 +281,10 @@ select {
   gap: 16px;
 }
 
+.kpi-grid.ops {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -426,6 +430,53 @@ table.data td {
 table.data tr.clickable:hover {
   background: var(--surface-2);
   cursor: pointer;
+}
+
+table.data tr.selectable {
+  cursor: pointer;
+}
+
+table.data tr.selected {
+  background: #eef7f5;
+}
+
+.page-search {
+  height: 38px;
+  min-width: 240px;
+  max-width: 360px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0 12px;
+  background: white;
+  color: var(--text);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.summary-stat {
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.summary-stat .label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.summary-stat .value {
+  margin-top: 4px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.detail-panel {
+  margin-top: 16px;
 }
 
 .bars {
@@ -716,12 +767,14 @@ table.data tr.clickable:hover {
 
 @media (max-width: 1100px) {
   .kpi-grid,
+  .kpi-grid.ops,
   .grid-2,
   .grid-3,
   .lanes,
   .detail-grid,
   .week,
-  .info-grid {
+  .info-grid,
+  .summary-grid {
     grid-template-columns: 1fr;
   }
 }

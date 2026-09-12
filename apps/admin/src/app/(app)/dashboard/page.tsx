@@ -10,6 +10,7 @@ import {
   revenueBars,
   todaysBookings,
   todaysDepartures,
+  todaysPassengerSummary,
   todaysRevenueNzd,
 } from '../../../lib/mock-data';
 import { labelBookingStatus, labelDepartureStatus, toneForBooking, toneForDeparture } from '../../../lib/status';
@@ -24,6 +25,8 @@ export default function DashboardPage() {
   const revenue = todaysRevenueNzd();
   const bars = revenueBars();
   const tasks = operationTasks();
+  const passengerOps = todaysPassengerSummary();
+  const mtCook = findDeparture('dep-mtcook-thu-return');
 
   return (
     <div>
@@ -37,7 +40,7 @@ export default function DashboardPage() {
         </Link>
       </div>
 
-      <div className="kpi-grid">
+      <div className="kpi-grid ops">
         <Link className="card kpi clickable" href="/bookings">
           <div className="label">Today’s bookings</div>
           <div className="value">{bookingCount}</div>
@@ -47,8 +50,16 @@ export default function DashboardPage() {
           <div className="value">{departureCount}</div>
         </Link>
         <Link className="card kpi clickable" href="/departures">
-          <div className="label">Passengers today</div>
+          <div className="label">Today’s passengers</div>
           <div className="value">{passengerCount}</div>
+        </Link>
+        <Link className="card kpi clickable" href="/departures">
+          <div className="label">Checked-in passengers</div>
+          <div className="value">{passengerOps.checkedIn}</div>
+        </Link>
+        <Link className="card kpi clickable" href="/departures">
+          <div className="label">No-show passengers</div>
+          <div className="value">{passengerOps.noShow}</div>
         </Link>
         <Link className="card kpi clickable" href="/payments">
           <div className="label">Today’s received</div>
@@ -87,7 +98,7 @@ export default function DashboardPage() {
             </Link>
           </div>
           {todayBookings.map((item) => (
-            <Link key={item.id} href={`/departures/${item.departureId}`} className="row">
+            <Link key={item.id} href={`/bookings?booking=${item.bookingNo}`} className="row">
               <span className="time">{findDeparture(item.departureId)?.time}</span>
               <span>
                 <strong>{item.bookingNo}</strong>
@@ -105,12 +116,12 @@ export default function DashboardPage() {
           <h2>AI assistant</h2>
           <p>
             Morning Peter. Today’s operations board has {departureCount} departures and {passengerCount} passengers.
-            Received so far: {formatNzd(revenue)}.
+            Checked in: {passengerOps.checkedIn}. No show: {passengerOps.noShow}. Received so far: {formatNzd(revenue)}.
           </p>
           <p>
-            Mount Cook Shuttle · Return (Aoraki / Mt Cook → Christchurch) is READY with{' '}
-            {bookedSeats('dep-mtcook-thu-return')}/8 seats. Lyttelton Cruise Day Tour has{' '}
-            {bookedSeats('dep-lyttelton-cruise')} passengers assigned.
+            Mount Cook Shuttle · Return (Aoraki / Mt Cook → Christchurch) is{' '}
+            {mtCook ? labelDepartureStatus(mtCook.status) : 'unknown'} with {bookedSeats('dep-mtcook-thu-return')}/8
+            seats. Lyttelton Cruise Day Tour has {bookedSeats('dep-lyttelton-cruise')} passengers assigned.
           </p>
           <p className="muted">Placeholder copy only. AI is not connected in this UI drop.</p>
         </section>

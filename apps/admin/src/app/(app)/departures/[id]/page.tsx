@@ -6,9 +6,11 @@ import { useState } from 'react';
 import {
   availableSeats,
   bookedSeats,
+  canCancelPassenger,
   canCheckInPassenger,
   canMarkPassengerNoShow,
   canStartTrip,
+  cancelPassenger,
   checkInPassenger,
   findCustomer,
   findDeparture,
@@ -17,6 +19,7 @@ import {
   labelDirection,
   manifestFor,
   markPassengerNoShow,
+  passengerSummary,
   startTrip,
 } from '../../../../lib/mock-data';
 import {
@@ -51,6 +54,12 @@ export default function DepartureDetailPage() {
   const manifest = manifestFor(departure.id);
   const booked = bookedSeats(departure.id);
   const available = availableSeats(departure);
+  const summary = passengerSummary(departure.id);
+  const contactable = manifest.filter(
+    (row) => row.passengerStatus === 'CONFIRMED' || row.passengerStatus === 'CHECKED_IN',
+  );
+  const contactPax = contactable.reduce((sum, row) => sum + row.pax, 0);
+  const current = departure;
 
   function notify(message: string): void {
     setToast(message);
@@ -62,10 +71,7 @@ export default function DepartureDetailPage() {
   }
 
   function onStartTrip(): void {
-    if (!departure) {
-      return;
-    }
-    const result = startTrip(departure.id);
+    const result = startTrip(current.id);
     notify(result.message);
     if (result.ok) {
       refresh();
@@ -88,8 +94,28 @@ export default function DepartureDetailPage() {
     }
   }
 
-  function demo(message: string): void {
-    notify(message);
+  function onCancel(bookingNo: string): void {
+    const result = cancelPassenger(bookingNo);
+    notify(result.message);
+    if (result.ok) {
+      refresh();
+    }
+  }
+
+  function onNavigate(): void {
+    notify(
+      `Navigation opened (mock) · ${current.route} · ${current.pickup} → ${current.destination}. Maps are not connected.`,
+    );
+  }
+
+  function onContact(): void {
+    if (contactable.length === 0) {
+      notify('No passengers to contact on this departure.');
+      return;
+    }
+    notify(
+      `Contact sent (mock) to ${contactable.length} booking(s) · ${contactPax} passengers. Phone/SMS is not connected.`,
+    );
   }
 
   return (
@@ -109,6 +135,25 @@ export default function DepartureDetailPage() {
         <StatusBadge tone={toneForDeparture(departure.status)}>
           {labelDepartureStatus(departure.status)}
         </StatusBadge>
+      </div>
+
+      <div className="summary-grid">
+        <div className="summary-stat">
+          <div className="label">Total passengers</div>
+          <div className="value">{summary.total}</div>
+        </div>
+        <div className="summary-stat">
+          <div className="label">Checked in</div>
+          <div className="value">{summary.checkedIn}</div>
+        </div>
+        <div className="summary-stat">
+          <div className="label">No show</div>
+          <div className="value">{summary.noShow}</div>
+        </div>
+        <div className="summary-stat">
+          <div className="label">Remaining</div>
+          <div className="value">{summary.remaining}</div>
+        </div>
       </div>
 
       <section className="card card-pad" style={{ marginBottom: 16 }}>
@@ -165,7 +210,7 @@ export default function DepartureDetailPage() {
             <dd>{available}</dd>
           </div>
           <div>
-            <dt>Status</dt>
+            <dt>Departure status</dt>
             <dd>
               <StatusBadge tone={toneForDeparture(departure.status)}>
                 {labelDepartureStatus(departure.status)}
@@ -178,9 +223,9 @@ export default function DepartureDetailPage() {
 
       <section className="card table-wrap" style={{ marginBottom: 16 }}>
         <div className="card-pad section-title">
-          <h2>Passenger manifest</h2>
+          <h2>Passenger operations</h2>
           <span className="muted">
-            {booked}/{departure.capacity} seats
+            {booked}/{departure.capacity} seats · Cancelled {summary.cancelled}
           </span>
         </div>
         {manifest.length === 0 ? (
@@ -204,9 +249,11 @@ export default function DepartureDetailPage() {
                 return (
                   <tr key={row.bookingNo}>
                     <td>
-                      <Link href="/customers">{customer?.name}</Link>
+                      <Link href={`/customers?customer=${row.customerId}`}>{customer?.name}</Link>
                     </td>
-                    <td>{row.bookingNo}</td>
+                    <td>
+                      <Link href={`/bookings?booking=${row.bookingNo}`}>{row.bookingNo}</Link>
+                    </td>
                     <td>{row.pax}</td>
                     <td>{row.pickup}</td>
                     <td>
@@ -236,6 +283,14 @@ export default function DepartureDetailPage() {
                           onClick={() => onNoShow(row.bookingNo)}
                         >
                           No show
+                        </button>
+                        <button
+                          className="btn-ghost"
+                          type="button"
+                          disabled={!canCancelPassenger(row.passengerStatus)}
+                          onClick={() => onCancel(row.bookingNo)}
+                        >
+                          Cancel
                         </button>
                       </div>
                     </td>
@@ -281,10 +336,10 @@ export default function DepartureDetailPage() {
           >
             Start trip
           </button>
-          <button className="btn-ghost" type="button" onClick={() => demo('Navigation is UI-only in this prototype.')}>
+          <button className="btn-ghost" type="button" onClick={onNavigate}>
             Navigate
           </button>
-          <button className="btn-ghost" type="button" onClick={() => demo('Contact passengers is UI-only.')}>
+          <button className="btn-ghost" type="button" onClick={onContact}>
             Contact passengers
           </button>
           <button className="btn-ghost" type="button" onClick={() => window.print()}>
