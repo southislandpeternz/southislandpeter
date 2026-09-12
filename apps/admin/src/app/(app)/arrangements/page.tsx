@@ -6,7 +6,7 @@ import { DepartureListTable } from '../../../components/departure-table';
 import { StatusBadge } from '../../../components/status-badge';
 import {
   DEMO_TODAY,
-  bookedSeats,
+  departureLoad,
   departureRoutes,
   findDriver,
   findVehicle,
@@ -25,7 +25,7 @@ import {
   type ServiceType,
 } from '../../../lib/status';
 
-const LANES: ServiceType[] = ['SHUTTLE', 'CRUISE_DAY_TOUR', 'AIRPORT_TRANSFER'];
+const LANES: ServiceType[] = ['FIXED_SHUTTLE', 'CRUISE_DAY_TOUR', 'AIRPORT_TRANSFER'];
 
 export default function ArrangementsPage() {
   const [view, setView] = useState<'board' | 'list' | 'lanes' | 'week'>('board');
@@ -58,7 +58,7 @@ export default function ArrangementsPage() {
         <div>
           <h1>Departure board</h1>
           <p>
-            Daily operations board. Shuttle, cruise day tour, and airport transfer are scheduled here as Departure
+            Daily operations board. Fixed shuttle, cruise day tour, and airport transfer are scheduled here as Departure
             records.
           </p>
           <p className="muted">
@@ -169,11 +169,11 @@ export default function ArrangementsPage() {
                       </div>
                       <div className="muted">{item.route}</div>
                       <div className="muted" style={{ marginTop: 8 }}>
-                        {vehicle?.name ?? 'Unassigned'} · {driver?.name ?? 'Unassigned'}
+                        {vehicle?.name ?? 'Vehicle not assigned'} · {driver?.name ?? 'Driver not assigned'}
                       </div>
                       <div className="dep-card-foot">
                         <span>
-                          {bookedSeats(item.id)}/{item.capacity}
+                          {departureLoad(item).booked}/{departureLoad(item).capacity}
                         </span>
                         <StatusBadge tone={toneForDeparture(item.status)}>
                           {labelDepartureStatus(item.status)}
@@ -212,11 +212,11 @@ export default function ArrangementsPage() {
                       </div>
                       <div className="muted">{item.route}</div>
                       <div className="muted" style={{ marginTop: 8 }}>
-                        {vehicle?.name ?? 'Unassigned'} · {driver?.name ?? 'Unassigned'}
+                        {vehicle?.name ?? 'Vehicle not assigned'} · {driver?.name ?? 'Driver not assigned'}
                       </div>
                       <div className="dep-card-foot">
                         <span>
-                          {bookedSeats(item.id)}/{item.capacity} passengers
+                          {departureLoad(item).booked}/{departureLoad(item).capacity} passengers
                         </span>
                         <StatusBadge tone={toneForDeparture(item.status)}>
                           {labelDepartureStatus(item.status)}
@@ -249,10 +249,10 @@ export default function ArrangementsPage() {
                       <div>{item.name}</div>
                       <div className="muted">{item.route}</div>
                       <div className="muted">
-                        {vehicle?.name ?? 'Unassigned'} · {driver?.name ?? 'Unassigned'}
+                        {vehicle?.name ?? 'Vehicle not assigned'} · {driver?.name ?? 'Driver not assigned'}
                       </div>
                       <div>
-                        {bookedSeats(item.id)}/{item.capacity} · {labelDepartureStatus(item.status)}
+                        {departureLoad(item).booked}/{departureLoad(item).capacity} · {labelDepartureStatus(item.status)}
                       </div>
                     </Link>
                   );

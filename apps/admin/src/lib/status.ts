@@ -12,7 +12,9 @@ export type PaymentStatus = 'PENDING' | 'DEPOSIT_PAID' | 'PAID' | 'REFUNDED';
 
 export type PassengerStatus = 'CONFIRMED' | 'CHECKED_IN' | 'NO_SHOW' | 'CANCELLED';
 
-export type ServiceType = 'SHUTTLE' | 'CRUISE_DAY_TOUR' | 'AIRPORT_TRANSFER';
+export type ServiceType = 'FIXED_SHUTTLE' | 'CRUISE_DAY_TOUR' | 'AIRPORT_TRANSFER';
+
+export type InventoryStatus = 'DRAFT' | 'OPEN' | 'FULL' | 'COMPLETED' | 'CANCELLED';
 
 export type BookingSource =
   | 'WEBSITE'
@@ -51,9 +53,17 @@ const passengerLabels: Record<PassengerStatus, string> = {
 };
 
 const serviceLabels: Record<ServiceType, string> = {
-  SHUTTLE: 'Shuttle',
+  FIXED_SHUTTLE: 'Fixed shuttle',
   CRUISE_DAY_TOUR: 'Cruise day tour',
   AIRPORT_TRANSFER: 'Airport transfer',
+};
+
+const inventoryLabels: Record<InventoryStatus, string> = {
+  DRAFT: 'Draft',
+  OPEN: 'Open',
+  FULL: 'Full',
+  COMPLETED: 'Completed',
+  CANCELLED: 'Cancelled',
 };
 
 export function labelBookingStatus(status: BookingStatus): string {
@@ -74,6 +84,10 @@ export function labelPassengerStatus(status: PassengerStatus): string {
 
 export function labelServiceType(type: ServiceType): string {
   return serviceLabels[type];
+}
+
+export function labelInventoryStatus(status: InventoryStatus): string {
+  return inventoryLabels[status];
 }
 
 export function toneForDeparture(status: DepartureStatus): 'ok' | 'warn' | 'danger' | 'neutral' | 'info' {
@@ -110,6 +124,19 @@ export function toneForPayment(status: PaymentStatus): 'ok' | 'warn' | 'danger' 
     return 'warn';
   }
   return 'danger';
+}
+
+export function toneForInventory(status: InventoryStatus): 'ok' | 'warn' | 'danger' | 'neutral' | 'info' {
+  if (status === 'OPEN' || status === 'COMPLETED') {
+    return 'ok';
+  }
+  if (status === 'FULL' || status === 'DRAFT') {
+    return 'warn';
+  }
+  if (status === 'CANCELLED') {
+    return 'danger';
+  }
+  return 'neutral';
 }
 
 export function toneForPassenger(status: PassengerStatus): 'ok' | 'warn' | 'danger' | 'neutral' | 'info' {

@@ -8,7 +8,7 @@ import { type ServiceType } from '../../../lib/status';
 
 const FILTERS: Array<{ id: 'ALL' | ServiceType; label: string }> = [
   { id: 'ALL', label: 'All services' },
-  { id: 'SHUTTLE', label: 'Shuttle' },
+  { id: 'FIXED_SHUTTLE', label: 'Fixed shuttle' },
   { id: 'CRUISE_DAY_TOUR', label: 'Cruise day tour' },
   { id: 'AIRPORT_TRANSFER', label: 'Airport transfer' },
 ];
@@ -25,7 +25,10 @@ export default function DeparturesPage() {
       <div className="page-header">
         <div>
           <h1>Departures</h1>
-          <p>Every service becomes a Departure. Booking is the guest purchase record, not the operations core.</p>
+          <p>
+            Unified Departure / Service Arrangement. Fixed shuttle, cruise day tour, and airport transfer are the same
+            model.
+          </p>
         </div>
         <Link className="btn" href="/arrangements">
           Unified service arrangement

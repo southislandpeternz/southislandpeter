@@ -513,6 +513,27 @@ table.data tr.selected {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+.summary-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.summary-stat.danger {
+  background: var(--danger-bg);
+}
+
+.capacity-banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: baseline;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-size: 14px;
+}
+
 .summary-stat {
   background: var(--surface-2);
   border-radius: 10px;
@@ -904,7 +925,8 @@ table.data tr.selected {
   .week,
   .info-grid,
   .summary-grid,
-  .summary-grid.five {
+  .summary-grid.five,
+  .summary-grid.three {
     grid-template-columns: 1fr;
   }
 }

@@ -6,21 +6,22 @@ import { useState } from 'react';
 import {
   assignDriver,
   assignVehicle,
-  availableSeats,
-  bookedSeats,
   bookingsForDeparture,
   canCancelPassenger,
   canCheckInPassenger,
   canMarkPassengerNoShow,
   canStartTrip,
   cancelPassenger,
+  capacityExceededLabel,
   checkInPassenger,
+  departureLoad,
   departureOpsHints,
   drivers,
   findCustomer,
   findDeparture,
   findDriver,
   findVehicle,
+  formatReturnTime,
   labelDirection,
   markPassengerNoShow,
   passengerSummary,
@@ -31,11 +32,13 @@ import {
 import {
   labelBookingStatus,
   labelDepartureStatus,
+  labelInventoryStatus,
   labelPassengerStatus,
   labelPaymentStatus,
   labelServiceType,
   toneForBooking,
   toneForDeparture,
+  toneForInventory,
   toneForPassenger,
   toneForPayment,
 } from '../../../../lib/status';
@@ -61,9 +64,9 @@ export default function DepartureDetailPage() {
   const driver = findDriver(departure.driverId);
   const vehicle = findVehicle(departure.vehicleId);
   const departureBookings = bookingsForDeparture(departure.id);
-  const booked = bookedSeats(departure.id);
-  const available = availableSeats(departure);
-  const remainingVehicleSeats = vehicle ? Math.max(0, vehicle.seats - booked) : available;
+  const load = departureLoad(departure);
+  const booked = load.booked;
+  const remainingVehicleSeats = load.available;
   const summary = passengerSummary(departure.id);
   const hints = departureOpsHints(departure);
   const assignmentLocked = departure.status === 'CANCELLED';
@@ -164,11 +167,12 @@ export default function DepartureDetailPage() {
             {departure.date} · {labelDirection(departure.direction)} · {departure.route}
           </p>
           <p className="muted">
-            {booked}/{departure.capacity} passengers · {vehicle?.name ?? 'Unassigned'} · {driver?.name ?? 'Unassigned'}
+            {departure.id} · Capacity {load.capacity} · Booked {load.booked} · Available {load.available} ·{' '}
+            {vehicle?.name ?? 'Vehicle not assigned'} · {driver?.name ?? 'Driver not assigned'}
           </p>
         </div>
-        <StatusBadge tone={toneForDeparture(departure.status)}>
-          {labelDepartureStatus(departure.status)}
+        <StatusBadge tone={toneForInventory(load.inventoryStatus)}>
+          {labelInventoryStatus(load.inventoryStatus)}
         </StatusBadge>
       </div>
 
@@ -181,6 +185,28 @@ export default function DepartureDetailPage() {
           ))}
         </div>
       ) : null}
+
+      {load.exceeded ? (
+        <div className="capacity-banner">
+          <strong>CAPACITY EXCEEDED</strong>
+          <span>{capacityExceededLabel(load)}</span>
+        </div>
+      ) : null}
+
+      <div className="summary-grid three">
+        <div className={load.exceeded ? 'summary-stat danger' : 'summary-stat'}>
+          <div className="label">Capacity</div>
+          <div className="value">{load.capacity}</div>
+        </div>
+        <div className={load.exceeded ? 'summary-stat danger' : 'summary-stat'}>
+          <div className="label">Booked</div>
+          <div className="value">{load.booked}</div>
+        </div>
+        <div className={load.exceeded ? 'summary-stat danger' : 'summary-stat'}>
+          <div className="label">Available</div>
+          <div className="value">{load.available}</div>
+        </div>
+      </div>
 
       <div className="summary-grid five">
         <div className="summary-stat">
@@ -206,18 +232,26 @@ export default function DepartureDetailPage() {
       </div>
 
       <section className="card card-pad" style={{ marginBottom: 16 }}>
-        <h2>Departure information</h2>
+        <h2>Service information</h2>
         <dl className="info-grid">
+          <div>
+            <dt>Departure ID</dt>
+            <dd>{departure.id}</dd>
+          </div>
           <div>
             <dt>Service type</dt>
             <dd>{labelServiceType(departure.serviceType)}</dd>
           </div>
           <div>
-            <dt>Direction</dt>
-            <dd>{labelDirection(departure.direction)}</dd>
+            <dt>Product</dt>
+            <dd>{departure.product}</dd>
           </div>
           <div>
-            <dt>Departure date</dt>
+            <dt>Route</dt>
+            <dd>{departure.route}</dd>
+          </div>
+          <div>
+            <dt>Date</dt>
             <dd>{departure.date}</dd>
           </div>
           <div>
@@ -225,11 +259,15 @@ export default function DepartureDetailPage() {
             <dd>{departure.time}</dd>
           </div>
           <div>
-            <dt>Route</dt>
-            <dd>{departure.route}</dd>
+            <dt>Return time</dt>
+            <dd>{formatReturnTime(departure.returnTime)}</dd>
           </div>
           <div>
-            <dt>Pickup location</dt>
+            <dt>Direction</dt>
+            <dd>{labelDirection(departure.direction)}</dd>
+          </div>
+          <div>
+            <dt>Pickup information</dt>
             <dd>{departure.pickup}</dd>
           </div>
           <div>
@@ -237,17 +275,31 @@ export default function DepartureDetailPage() {
             <dd>{departure.destination}</dd>
           </div>
           <div>
-            <dt>Passenger count</dt>
+            <dt>Capacity</dt>
+            <dd>{load.capacity}</dd>
+          </div>
+          <div>
+            <dt>Booked</dt>
+            <dd>{load.booked}</dd>
+          </div>
+          <div>
+            <dt>Available</dt>
+            <dd>{load.available}</dd>
+          </div>
+          <div>
+            <dt>Booking count</dt>
+            <dd>{load.bookingCount}</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
             <dd>
-              {booked}/{departure.capacity}
+              <StatusBadge tone={toneForInventory(load.inventoryStatus)}>
+                {labelInventoryStatus(load.inventoryStatus)}
+              </StatusBadge>
             </dd>
           </div>
           <div>
-            <dt>Remaining seats</dt>
-            <dd>{available}</dd>
-          </div>
-          <div>
-            <dt>Departure status</dt>
+            <dt>Operations status</dt>
             <dd>
               <StatusBadge tone={toneForDeparture(departure.status)}>
                 {labelDepartureStatus(departure.status)}
@@ -255,7 +307,11 @@ export default function DepartureDetailPage() {
             </dd>
           </div>
         </dl>
-        {departure.notes ? <p className="muted">{departure.notes}</p> : null}
+        {departure.notes ? (
+          <p className="muted" style={{ marginTop: 12 }}>
+            Notes: {departure.notes}
+          </p>
+        ) : null}
       </section>
 
       <div className="grid-2" style={{ marginTop: 0, marginBottom: 16 }}>
@@ -269,7 +325,7 @@ export default function DepartureDetailPage() {
           <dl className="info-grid">
             <div>
               <dt>Vehicle</dt>
-              <dd>{vehicle?.name ?? 'Unassigned'}</dd>
+              <dd>{vehicle?.name ?? 'Vehicle not assigned'}</dd>
             </div>
             <div>
               <dt>Vehicle type</dt>
@@ -324,7 +380,7 @@ export default function DepartureDetailPage() {
           <dl className="info-grid">
             <div>
               <dt>Driver</dt>
-              <dd>{driver?.name ?? 'Unassigned'}</dd>
+              <dd>{driver?.name ?? 'Driver not assigned'}</dd>
             </div>
             <div>
               <dt>Driver contact</dt>
@@ -337,7 +393,7 @@ export default function DepartureDetailPage() {
             <div>
               <dt>Assigned passengers</dt>
               <dd>
-                {booked}/{departure.capacity}
+                {load.booked}/{load.capacity}
               </dd>
             </div>
           </dl>
@@ -364,7 +420,7 @@ export default function DepartureDetailPage() {
         <div className="card-pad section-title">
           <h2>Passenger manifest</h2>
           <span className="muted">
-            {departureBookings.length} booking(s) · {booked}/{departure.capacity} confirmed seats
+            {departureBookings.length} booking(s) · {load.booked}/{load.capacity} confirmed seats
           </span>
         </div>
         {departureBookings.length === 0 ? (
@@ -478,7 +534,7 @@ export default function DepartureDetailPage() {
           <div>
             <dt>Capacity / remaining</dt>
             <dd>
-              {booked}/{departure.capacity} · {available} remaining
+              Capacity {load.capacity} · Booked {load.booked} · Available {load.available}
             </dd>
           </div>
         </dl>

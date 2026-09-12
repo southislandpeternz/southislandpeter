@@ -5,6 +5,7 @@ import {
   type BookingSource,
   type BookingStatus,
   type DepartureStatus,
+  type InventoryStatus,
   type PassengerStatus,
   type PaymentStatus,
   type ServiceType,
@@ -46,6 +47,7 @@ export interface MockBooking {
   customerId: string;
   product: string;
   serviceType: ServiceType;
+  /** Future DB: db06_booking.departure_id — Booking belongs to one Departure. */
   departureId: string;
   pax: number;
   amountNzd: number;
@@ -66,19 +68,25 @@ export interface MockPayment {
 }
 
 export interface MockDeparture {
+  /** Future DB: db06_departure.id */
   id: string;
   time: string;
   date: string;
   name: string;
+  /** Future DB: product / service template name */
+  product: string;
   route: string;
   pickup: string;
   destination: string;
   serviceType: ServiceType;
   direction: DepartureDirection;
+  /** Operational status used by Start trip / Departure Board. */
   status: DepartureStatus;
   driverId: string;
   vehicleId: string;
   capacity: number;
+  /** Empty when the service has no same-day return. */
+  returnTime: string;
   notes: string;
 }
 
@@ -281,15 +289,17 @@ export const departures: MockDeparture[] = [
     time: '07:30',
     date: '2026-09-08',
     name: 'Mount Cook Shuttle · Outbound',
+    product: 'Mount Cook Shuttle',
     route: 'Christchurch → Aoraki / Mt Cook',
     pickup: CHC_PICKUP,
     destination: 'Aoraki / Mt Cook',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     direction: 'OUTBOUND',
     status: 'COMPLETED',
     driverId: 'drv-peter',
     vehicleId: 'veh-sprinter',
     capacity: 8,
+    returnTime: '',
     notes: 'Fixed weekly pattern: Tuesday outbound Christchurch → Mt Cook.',
   },
   {
@@ -297,15 +307,17 @@ export const departures: MockDeparture[] = [
     time: '07:30',
     date: '2026-09-09',
     name: 'Mount Cook Shuttle · Outbound',
+    product: 'Mount Cook Shuttle',
     route: 'Christchurch → Aoraki / Mt Cook',
     pickup: CHC_PICKUP,
     destination: 'Aoraki / Mt Cook',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     direction: 'OUTBOUND',
     status: 'COMPLETED',
     driverId: 'drv-peter',
     vehicleId: 'veh-sprinter',
     capacity: 8,
+    returnTime: '',
     notes: 'Fixed weekly pattern: Wednesday outbound Christchurch → Mt Cook, overnight in Lake Tekapo.',
   },
   {
@@ -313,15 +325,17 @@ export const departures: MockDeparture[] = [
     time: '09:00',
     date: DEMO_TODAY,
     name: 'Mount Cook Shuttle · Return',
+    product: 'Mount Cook Shuttle',
     route: 'Aoraki / Mt Cook → Christchurch',
     pickup: MT_COOK_PICKUP,
     destination: 'Christchurch',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     direction: 'RETURN',
     status: 'READY',
     driverId: 'drv-peter',
     vehicleId: 'veh-sprinter',
     capacity: 8,
+    returnTime: '17:30',
     notes: 'Fixed weekly pattern: Thursday return Mt Cook → Christchurch.',
   },
   {
@@ -329,6 +343,7 @@ export const departures: MockDeparture[] = [
     time: '11:30',
     date: DEMO_TODAY,
     name: 'Lyttelton Cruise Day Tour',
+    product: 'Lyttelton Cruise Day Tour',
     route: 'Lyttelton Port shore excursion',
     pickup: LYTTELTON_PICKUP,
     destination: 'Christchurch city / return to ship',
@@ -338,6 +353,7 @@ export const departures: MockDeparture[] = [
     driverId: 'drv-james',
     vehicleId: 'veh-hiace',
     capacity: 8,
+    returnTime: '16:00',
     notes: 'Ad-hoc cruise day tour. Not a fixed weekly shuttle.',
   },
   {
@@ -345,6 +361,7 @@ export const departures: MockDeparture[] = [
     time: '16:00',
     date: DEMO_TODAY,
     name: 'Airport Transfer NZ512',
+    product: 'Airport Transfer NZ512',
     route: 'Christchurch Airport → city hotels',
     pickup: AIRPORT_PICKUP,
     destination: 'Novotel Christchurch Cathedral Square',
@@ -354,6 +371,7 @@ export const departures: MockDeparture[] = [
     driverId: 'drv-mei',
     vehicleId: 'veh-airport',
     capacity: 4,
+    returnTime: '',
     notes: 'On-demand airport transfer.',
   },
   {
@@ -361,15 +379,17 @@ export const departures: MockDeparture[] = [
     time: '08:00',
     date: '2026-09-11',
     name: 'Kaikoura Shuttle',
+    product: 'Kaikoura Shuttle',
     route: 'Christchurch → Kaikoura → Christchurch',
     pickup: CHC_PICKUP,
     destination: 'Christchurch (same-day return)',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     direction: 'DAY_RETURN',
     status: 'PLANNED',
     driverId: 'drv-peter',
     vehicleId: 'veh-sprinter',
     capacity: 8,
+    returnTime: '18:00',
     notes: 'Weekly Friday day-return shuttle.',
   },
   {
@@ -377,15 +397,17 @@ export const departures: MockDeparture[] = [
     time: '08:00',
     date: '2026-09-12',
     name: 'Akaroa Shuttle',
+    product: 'Akaroa Shuttle',
     route: 'Christchurch → Akaroa → Christchurch',
     pickup: CHC_PICKUP,
     destination: 'Christchurch (same-day return)',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     direction: 'DAY_RETURN',
     status: 'PLANNED',
     driverId: 'drv-peter',
     vehicleId: 'veh-sprinter',
     capacity: 8,
+    returnTime: '18:00',
     notes: 'Weekly Saturday day-return shuttle / day tour.',
   },
   {
@@ -393,6 +415,7 @@ export const departures: MockDeparture[] = [
     time: '09:30',
     date: '2026-09-12',
     name: 'Akaroa Cruise Day Tour',
+    product: 'Akaroa Cruise Day Tour',
     route: 'Akaroa Port shore excursion',
     pickup: AKAROA_WHARF,
     destination: 'Akaroa township / return to ship',
@@ -402,6 +425,7 @@ export const departures: MockDeparture[] = [
     driverId: 'drv-james',
     vehicleId: 'veh-hiace',
     capacity: 8,
+    returnTime: '16:00',
     notes: 'Ad-hoc cruise day tour when a ship is in Akaroa.',
   },
   {
@@ -409,15 +433,17 @@ export const departures: MockDeparture[] = [
     time: '08:00',
     date: '2026-09-13',
     name: 'Kaikoura Shuttle',
+    product: 'Kaikoura Shuttle',
     route: 'Christchurch → Kaikoura → Christchurch',
     pickup: CHC_PICKUP,
     destination: 'Christchurch (same-day return)',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     direction: 'DAY_RETURN',
     status: 'PLANNED',
     driverId: 'drv-mei',
     vehicleId: 'veh-sprinter',
     capacity: 8,
+    returnTime: '18:00',
     notes: 'Weekly Sunday day-return shuttle.',
   },
 ];
@@ -429,7 +455,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-08-28',
     customerId: 'cus-li',
     product: 'Mount Cook Shuttle · Outbound',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-mtcook-tue-out',
     pax: 2,
     amountNzd: 390,
@@ -445,7 +471,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-08-30',
     customerId: 'cus-hana',
     product: 'Mount Cook Shuttle · Outbound',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-mtcook-tue-out',
     pax: 1,
     amountNzd: 195,
@@ -461,7 +487,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-01',
     customerId: 'cus-john',
     product: 'Mount Cook Shuttle · Outbound',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-mtcook-wed-out',
     pax: 2,
     amountNzd: 390,
@@ -477,7 +503,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-03',
     customerId: 'cus-emma',
     product: 'Mount Cook Shuttle · Outbound',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-mtcook-wed-out',
     pax: 1,
     amountNzd: 195,
@@ -493,7 +519,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-08-28',
     customerId: 'cus-li',
     product: 'Mount Cook Shuttle · Return',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-mtcook-thu-return',
     pax: 2,
     amountNzd: 390,
@@ -509,7 +535,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-08-30',
     customerId: 'cus-hana',
     product: 'Mount Cook Shuttle · Return',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-mtcook-thu-return',
     pax: 1,
     amountNzd: 195,
@@ -525,7 +551,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-01',
     customerId: 'cus-john',
     product: 'Mount Cook Shuttle · Return',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-mtcook-thu-return',
     pax: 2,
     amountNzd: 390,
@@ -541,7 +567,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-03',
     customerId: 'cus-emma',
     product: 'Mount Cook Shuttle · Return',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-mtcook-thu-return',
     pax: 1,
     amountNzd: 195,
@@ -605,7 +631,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-04',
     customerId: 'cus-sarah',
     product: 'Kaikoura Shuttle',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-kaikoura-fri',
     pax: 2,
     amountNzd: 330,
@@ -621,7 +647,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-05',
     customerId: 'cus-tom',
     product: 'Kaikoura Shuttle',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-kaikoura-fri',
     pax: 2,
     amountNzd: 330,
@@ -637,7 +663,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-06',
     customerId: 'cus-olivia',
     product: 'Kaikoura Shuttle',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-kaikoura-fri',
     pax: 2,
     amountNzd: 330,
@@ -653,7 +679,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-08',
     customerId: 'cus-chen',
     product: 'Kaikoura Shuttle',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-kaikoura-fri',
     pax: 2,
     amountNzd: 330,
@@ -669,7 +695,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-05',
     customerId: 'cus-grace',
     product: 'Akaroa Shuttle',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-akaroa-sat',
     pax: 3,
     amountNzd: 435,
@@ -685,7 +711,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-06',
     customerId: 'cus-wei',
     product: 'Akaroa Shuttle',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-akaroa-sat',
     pax: 2,
     amountNzd: 290,
@@ -701,7 +727,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-06',
     customerId: 'cus-wei',
     product: 'Akaroa Shuttle',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-akaroa-sat',
     pax: 2,
     amountNzd: 290,
@@ -749,7 +775,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-08',
     customerId: 'cus-noah',
     product: 'Kaikoura Shuttle',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-kaikoura-sun',
     pax: 2,
     amountNzd: 330,
@@ -765,7 +791,7 @@ export const bookings: MockBooking[] = [
     bookedOn: '2026-09-09',
     customerId: 'cus-amy',
     product: 'Kaikoura Shuttle',
-    serviceType: 'SHUTTLE',
+    serviceType: 'FIXED_SHUTTLE',
     departureId: 'dep-kaikoura-sun',
     pax: 2,
     amountNzd: 330,
@@ -874,8 +900,59 @@ export function bookedSeats(departureId: string): number {
   return manifestFor(departureId).reduce((sum, row) => sum + row.pax, 0);
 }
 
+export interface DepartureLoad {
+  booked: number;
+  bookingCount: number;
+  plannedCapacity: number;
+  vehicleSeats: number | null;
+  capacity: number;
+  available: number;
+  exceeded: boolean;
+  inventoryStatus: InventoryStatus;
+}
+
+export function departureLoad(departure: MockDeparture): DepartureLoad {
+  const vehicle = findVehicle(departure.vehicleId);
+  const booked = bookedSeats(departure.id);
+  const bookingCount = activeBookingsForDeparture(departure.id).length;
+  const plannedCapacity = departure.capacity;
+  const vehicleSeats = vehicle?.seats ?? null;
+  const capacity = vehicleSeats ?? plannedCapacity;
+  const exceeded = booked > capacity;
+  const available = Math.max(0, capacity - booked);
+  let inventoryStatus: InventoryStatus = 'OPEN';
+  if (departure.status === 'CANCELLED') {
+    inventoryStatus = 'CANCELLED';
+  } else if (departure.status === 'COMPLETED') {
+    inventoryStatus = 'COMPLETED';
+  } else if (!findDriver(departure.driverId) && !vehicle) {
+    inventoryStatus = 'DRAFT';
+  } else if (available === 0) {
+    inventoryStatus = 'FULL';
+  }
+  return {
+    booked,
+    bookingCount,
+    plannedCapacity,
+    vehicleSeats,
+    capacity,
+    available,
+    exceeded,
+    inventoryStatus,
+  };
+}
+
 export function availableSeats(departure: MockDeparture): number {
-  return departure.capacity - bookedSeats(departure.id);
+  return departureLoad(departure).available;
+}
+
+export function formatReturnTime(returnTime: string): string {
+  return returnTime.trim().length > 0 ? returnTime : '—';
+}
+
+export function capacityExceededLabel(load: DepartureLoad): string {
+  const unit = load.vehicleSeats === null ? 'departure' : 'vehicle';
+  return `${load.booked} passengers on a ${load.capacity}-seat ${unit}`;
 }
 
 export function todaysDepartures(): MockDeparture[] {
@@ -1373,9 +1450,9 @@ export function operationalAlerts(): OpsAlert[] {
   const alerts: OpsAlert[] = [];
   for (const departure of listDepartures()) {
     const active = departure.status !== 'COMPLETED' && departure.status !== 'CANCELLED';
-    const vehicle = findVehicle(departure.vehicleId);
     const driver = findDriver(departure.driverId);
-    const booked = bookedSeats(departure.id);
+    const vehicle = findVehicle(departure.vehicleId);
+    const load = departureLoad(departure);
     const summary = passengerSummary(departure.id);
     const label = `${departure.date} ${departure.time} · ${departure.name}`;
     if (active && !driver) {
@@ -1394,12 +1471,12 @@ export function operationalAlerts(): OpsAlert[] {
         related: label,
       });
     }
-    if (active && vehicle && booked > vehicle.seats) {
+    if (active && load.exceeded) {
       alerts.push({
         id: `overcap-${departure.id}`,
-        reason: `Passenger count exceeds vehicle capacity (${booked}/${vehicle.seats})`,
+        reason: 'CAPACITY EXCEEDED',
         href: `/departures/${departure.id}`,
-        related: label,
+        related: `${capacityExceededLabel(load)} · ${label}`,
       });
     }
     if (
@@ -1451,23 +1528,24 @@ export interface DepartureOpsHint {
 export function departureOpsHints(departure: MockDeparture): DepartureOpsHint[] {
   const vehicle = findVehicle(departure.vehicleId);
   const driver = findDriver(departure.driverId);
-  const booked = bookedSeats(departure.id);
+  const load = departureLoad(departure);
   const hints: DepartureOpsHint[] = [];
+  if (load.exceeded) {
+    hints.push({
+      tone: 'danger',
+      message: `CAPACITY EXCEEDED · ${capacityExceededLabel(load)}`,
+    });
+  }
   if (!vehicle) {
     hints.push({ tone: 'warn', message: 'Vehicle not assigned' });
   }
   if (!driver) {
     hints.push({ tone: 'warn', message: 'Driver not assigned' });
   }
-  if (vehicle && booked > vehicle.seats) {
-    hints.push({
-      tone: 'danger',
-      message: `Capacity exceeded · ${booked} passengers on a ${vehicle.seats}-seat vehicle`,
-    });
-  } else if (vehicle) {
+  if (!load.exceeded && vehicle) {
     hints.push({
       tone: 'info',
-      message: `Seats remaining · ${Math.max(0, vehicle.seats - booked)} of ${vehicle.seats}`,
+      message: `Seats remaining · ${load.available} of ${load.capacity}`,
     });
   }
   return hints;
