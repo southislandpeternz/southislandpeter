@@ -2,13 +2,24 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { DEMO_TODAY, bookedSeats, formatDayLabel, listDepartures, weekDates } from '../../../lib/mock-data';
-import { labelDepartureStatus, labelServiceType, type ServiceType } from '../../../lib/status';
+import { DepartureListTable } from '../../../components/departure-table';
+import { StatusBadge } from '../../../components/status-badge';
+import {
+  DEMO_TODAY,
+  bookedSeats,
+  findDriver,
+  findVehicle,
+  formatDayLabel,
+  labelDirection,
+  listDepartures,
+  weekDates,
+} from '../../../lib/mock-data';
+import { labelDepartureStatus, labelServiceType, toneForDeparture, type ServiceType } from '../../../lib/status';
 
 const LANES: ServiceType[] = ['SHUTTLE', 'CRUISE_DAY_TOUR', 'AIRPORT_TRANSFER'];
 
 export default function ArrangementsPage() {
-  const [view, setView] = useState<'lanes' | 'week'>('lanes');
+  const [view, setView] = useState<'list' | 'lanes' | 'week'>('list');
   const allDepartures = listDepartures();
   const today = useMemo(() => allDepartures.filter((item) => item.date === DEMO_TODAY), [allDepartures]);
 
@@ -27,6 +38,9 @@ export default function ArrangementsPage() {
           </p>
         </div>
         <div className="actions">
+          <button className={view === 'list' ? 'btn' : 'btn-ghost'} type="button" onClick={() => setView('list')}>
+            Departure list
+          </button>
           <button className={view === 'lanes' ? 'btn' : 'btn-ghost'} type="button" onClick={() => setView('lanes')}>
             Today by service
           </button>
@@ -36,6 +50,10 @@ export default function ArrangementsPage() {
         </div>
       </div>
 
+      {view === 'list' ? (
+        <DepartureListTable rows={allDepartures} />
+      ) : null}
+
       {view === 'lanes' ? (
         <div className="lanes">
           {LANES.map((lane) => (
@@ -44,42 +62,68 @@ export default function ArrangementsPage() {
               <p className="muted">Thursday 10 Sep 2026</p>
               {today
                 .filter((item) => item.serviceType === lane)
-                .map((item) => (
-                  <Link key={item.id} href={`/departures/${item.id}`} className="dep-card">
-                    <strong>
-                      {item.time} · {item.name}
-                    </strong>
-                    <div className="muted">{item.route}</div>
-                    <div className="muted" style={{ marginTop: 8 }}>
-                      {bookedSeats(item.id)}/{item.capacity} · {labelDepartureStatus(item.status)}
-                    </div>
-                  </Link>
-                ))}
+                .map((item) => {
+                  const driver = findDriver(item.driverId);
+                  const vehicle = findVehicle(item.vehicleId);
+                  return (
+                    <Link key={item.id} href={`/departures/${item.id}`} className="dep-card">
+                      <strong>
+                        {item.time} · {item.name}
+                      </strong>
+                      <div className="muted">
+                        {item.date} · {labelDirection(item.direction)}
+                      </div>
+                      <div className="muted">{item.route}</div>
+                      <div className="muted" style={{ marginTop: 8 }}>
+                        {vehicle?.name ?? 'Unassigned'} · {driver?.name ?? 'Unassigned'}
+                      </div>
+                      <div className="dep-card-foot">
+                        <span>
+                          {bookedSeats(item.id)}/{item.capacity} passengers
+                        </span>
+                        <StatusBadge tone={toneForDeparture(item.status)}>
+                          {labelDepartureStatus(item.status)}
+                        </StatusBadge>
+                      </div>
+                    </Link>
+                  );
+                })}
               {today.filter((item) => item.serviceType === lane).length === 0 ? (
                 <p className="muted">No departure in this lane today.</p>
               ) : null}
             </section>
           ))}
         </div>
-      ) : (
+      ) : null}
+
+      {view === 'week' ? (
         <div className="week">
           {weekDates().map((date) => (
             <section key={date} className={date === DEMO_TODAY ? 'day-col today' : 'day-col'}>
               <strong>{formatDayLabel(date)}</strong>
               {allDepartures
                 .filter((item) => item.date === date)
-                .map((item) => (
-                  <Link key={item.id} href={`/departures/${item.id}`} className="pill">
-                    {item.time} {labelServiceType(item.serviceType)}
-                    <div>
-                      {item.name} · {bookedSeats(item.id)}/{item.capacity}
-                    </div>
-                  </Link>
-                ))}
+                .map((item) => {
+                  const driver = findDriver(item.driverId);
+                  const vehicle = findVehicle(item.vehicleId);
+                  return (
+                    <Link key={item.id} href={`/departures/${item.id}`} className="pill">
+                      {item.time} · {labelDirection(item.direction)}
+                      <div>{item.name}</div>
+                      <div className="muted">{item.route}</div>
+                      <div className="muted">
+                        {vehicle?.name} · {driver?.name}
+                      </div>
+                      <div>
+                        {bookedSeats(item.id)}/{item.capacity} · {labelDepartureStatus(item.status)}
+                      </div>
+                    </Link>
+                  );
+                })}
             </section>
           ))}
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

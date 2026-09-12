@@ -458,6 +458,10 @@ table.data tr.selected {
   margin-bottom: 16px;
 }
 
+.summary-grid.five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .summary-stat {
   background: var(--surface-2);
   border-radius: 10px;
@@ -655,6 +659,15 @@ table.data tr.selected {
   border-color: var(--accent);
 }
 
+.dep-card-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
 .week {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
@@ -774,7 +787,8 @@ table.data tr.selected {
   .detail-grid,
   .week,
   .info-grid,
-  .summary-grid {
+  .summary-grid,
+  .summary-grid.five {
     grid-template-columns: 1fr;
   }
 }

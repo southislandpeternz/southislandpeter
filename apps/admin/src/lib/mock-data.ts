@@ -874,7 +874,7 @@ export function todaysDepartures(): MockDeparture[] {
 
 export function todaysBookings(): MockBooking[] {
   const ids = new Set(todaysDepartures().map((item) => item.id));
-  return bookings.filter((item) => ids.has(item.departureId));
+  return listBookings().filter((item) => ids.has(item.departureId));
 }
 
 export function passengersToday(): number {
@@ -889,7 +889,7 @@ export function todaysRevenueNzd(): number {
 }
 
 export function customerBookingCount(customerId: string): number {
-  return bookings.filter((item) => item.customerId === customerId).length;
+  return bookingsForCustomer(customerId).length;
 }
 
 export function customerSpendNzd(customerId: string): number {
@@ -941,7 +941,7 @@ export function operationTasks(): Array<{ id: string; label: string; href: strin
     {
       id: 'task-2',
       label: 'Follow up pending booking BO-KK-2404 Chen Hao · Friday Kaikoura Shuttle',
-      href: '/bookings',
+      href: '/bookings?booking=BO-KK-2404',
     },
     {
       id: 'task-3',
@@ -957,12 +957,13 @@ export function operationTasks(): Array<{ id: string; label: string; href: strin
 }
 
 export function operationNotifications(): string[] {
-  const mtCook = bookedSeats('dep-mtcook-thu-return');
+  const mtCook = findDeparture('dep-mtcook-thu-return');
+  const lyttelton = findDeparture('dep-lyttelton-cruise');
   return [
-    `Today’s Mount Cook Shuttle · Return is READY · ${mtCook}/8 passengers`,
+    `Today’s Mount Cook Shuttle · Return is ${mtCook ? labelDepartureStatus(mtCook.status) : 'unknown'} · ${bookedSeats('dep-mtcook-thu-return')}/8 passengers`,
     'Payment deposit only · BO-MC-2413 John Smith',
     'Pending booking · BO-KK-2404 Friday Kaikoura Shuttle',
-    `Lyttelton Cruise Day Tour · ${bookedSeats('dep-lyttelton-cruise')}/8 · resource assigned`,
+    `Lyttelton Cruise Day Tour · ${bookedSeats('dep-lyttelton-cruise')}/8 · ${lyttelton ? labelDepartureStatus(lyttelton.status) : 'unknown'}`,
   ];
 }
 
@@ -1220,4 +1221,16 @@ export function matchesSearch(query: string, parts: Array<string | undefined | n
     return true;
   }
   return parts.some((part) => (part ?? '').toLowerCase().includes(needle));
+}
+
+export function isOutstandingPayment(status: PaymentStatus): boolean {
+  return status === 'PENDING' || status === 'DEPOSIT_PAID';
+}
+
+export function pendingPaymentBookings(): MockBooking[] {
+  return listBookings().filter((item) => item.status !== 'CANCELLED' && isOutstandingPayment(item.paymentStatus));
+}
+
+export function pendingPaymentCount(): number {
+  return pendingPaymentBookings().length;
 }

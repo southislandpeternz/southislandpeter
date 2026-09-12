@@ -8,6 +8,7 @@ import {
   findDeparture,
   findPayment,
   formatNzd,
+  isOutstandingPayment,
   labelDirection,
   listBookings,
   matchesSearch,
@@ -20,18 +21,69 @@ import {
   toneForBooking,
   toneForPassenger,
   toneForPayment,
+  type BookingStatus,
+  type PaymentStatus,
 } from '../../../lib/status';
 import { StatusBadge } from '../../../components/status-badge';
+
+const STATUS_FILTERS: Array<{ id: 'ALL' | BookingStatus; label: string }> = [
+  { id: 'ALL', label: 'All bookings' },
+  { id: 'PENDING', label: 'Pending' },
+  { id: 'CONFIRMED', label: 'Confirmed' },
+  { id: 'CANCELLED', label: 'Cancelled' },
+];
+
+const PAYMENT_FILTERS: Array<{ id: 'ALL' | 'OUTSTANDING' | PaymentStatus; label: string }> = [
+  { id: 'ALL', label: 'All payments' },
+  { id: 'OUTSTANDING', label: 'Pending payment' },
+  { id: 'PENDING', label: 'Pending' },
+  { id: 'DEPOSIT_PAID', label: 'Deposit paid' },
+  { id: 'PAID', label: 'Paid' },
+  { id: 'REFUNDED', label: 'Refunded' },
+];
+
+type PaymentFilter = (typeof PAYMENT_FILTERS)[number]['id'];
+
+function parseStatusFilter(raw: string | null): 'ALL' | BookingStatus {
+  const value = raw?.toUpperCase();
+  if (value === 'PENDING' || value === 'CONFIRMED' || value === 'CANCELLED') {
+    return value;
+  }
+  return 'ALL';
+}
+
+function parsePaymentFilter(raw: string | null): PaymentFilter {
+  const value = raw?.toUpperCase().replace('-', '_');
+  if (value === 'OUTSTANDING' || value === 'PENDING' || value === 'DEPOSIT_PAID' || value === 'PAID' || value === 'REFUNDED') {
+    return value;
+  }
+  return 'ALL';
+}
 
 function BookingsBoard() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const selectedNo = searchParams.get('booking');
   const [query, setQuery] = useState('');
+  const statusFilter = parseStatusFilter(searchParams.get('status'));
+  const paymentFilter = parsePaymentFilter(searchParams.get('payment'));
   const rows = listBookings();
   const filtered = useMemo(
     () =>
       rows.filter((item) => {
+        if (statusFilter !== 'ALL' && item.status !== statusFilter) {
+          return false;
+        }
+        if (paymentFilter === 'OUTSTANDING' && !isOutstandingPayment(item.paymentStatus)) {
+          return false;
+        }
+        if (
+          paymentFilter !== 'ALL' &&
+          paymentFilter !== 'OUTSTANDING' &&
+          item.paymentStatus !== paymentFilter
+        ) {
+          return false;
+        }
         const customer = findCustomer(item.customerId);
         const departure = findDeparture(item.departureId);
         return matchesSearch(query, [
@@ -40,19 +92,36 @@ function BookingsBoard() {
           item.status,
           item.paymentStatus,
           customer?.name,
+          customer?.email,
           departure?.name,
+          departure?.route,
           departure?.date,
+          labelServiceType(item.serviceType),
         ]);
       }),
-    [query, rows],
+    [paymentFilter, query, rows, statusFilter],
   );
-  const selected = filtered.find((item) => item.bookingNo === selectedNo) ?? rows.find((item) => item.bookingNo === selectedNo);
+  const selected =
+    filtered.find((item) => item.bookingNo === selectedNo) ?? rows.find((item) => item.bookingNo === selectedNo);
   const selectedCustomer = selected ? findCustomer(selected.customerId) : undefined;
   const selectedDeparture = selected ? findDeparture(selected.departureId) : undefined;
   const selectedPayment = selected ? findPayment(selected.bookingNo) : undefined;
 
+  function replaceQuery(patch: Record<string, string | null>): void {
+    const params = new URLSearchParams(searchParams.toString());
+    for (const [key, value] of Object.entries(patch)) {
+      if (!value) {
+        params.delete(key);
+      } else {
+        params.set(key, value);
+      }
+    }
+    const queryString = params.toString();
+    router.replace(queryString ? `/bookings?${queryString}` : '/bookings', { scroll: false });
+  }
+
   function openBooking(bookingNo: string): void {
-    router.replace(`/bookings?booking=${encodeURIComponent(bookingNo)}`, { scroll: false });
+    replaceQuery({ booking: bookingNo });
   }
 
   return (
@@ -72,27 +141,48 @@ function BookingsBoard() {
           placeholder="Search booking, customer, departure…"
         />
       </div>
+      <div className="filters">
+        {STATUS_FILTERS.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            className={statusFilter === item.id ? 'chip active' : 'chip'}
+            onClick={() => replaceQuery({ status: item.id === 'ALL' ? null : item.id.toLowerCase() })}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+      <div className="filters">
+        {PAYMENT_FILTERS.map((item) => (
+          <button
+            key={`pay-${item.id}`}
+            type="button"
+            className={paymentFilter === item.id ? 'chip active' : 'chip'}
+            onClick={() => replaceQuery({ payment: item.id === 'ALL' ? null : item.id.toLowerCase() })}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
       <section className="card table-wrap">
         <table className="data">
           <thead>
             <tr>
               <th>Booking</th>
               <th>Customer</th>
-              <th>Product</th>
+              <th>Service / Departure</th>
               <th>Booking date</th>
-              <th>Departure date</th>
-              <th>Payment date</th>
-              <th>Pax</th>
+              <th>Passengers</th>
               <th>Amount</th>
-              <th>Payment</th>
-              <th>Status</th>
+              <th>Payment status</th>
+              <th>Booking status</th>
             </tr>
           </thead>
           <tbody>
             {filtered.map((item) => {
               const customer = findCustomer(item.customerId);
               const departure = findDeparture(item.departureId);
-              const payment = findPayment(item.bookingNo);
               return (
                 <tr
                   key={item.id}
@@ -106,18 +196,16 @@ function BookingsBoard() {
                     <Link href={`/customers?customer=${item.customerId}`} onClick={(event) => event.stopPropagation()}>
                       {customer?.name}
                     </Link>
+                    <div className="muted">{customer?.email}</div>
                   </td>
                   <td>
                     {item.product}
                     <div className="muted">{labelServiceType(item.serviceType)}</div>
-                  </td>
-                  <td>{item.bookedOn}</td>
-                  <td>
                     <Link href={`/departures/${item.departureId}`} onClick={(event) => event.stopPropagation()}>
-                      {departure?.date} {departure?.time}
+                      {departure?.name} · {departure?.date} {departure?.time}
                     </Link>
                   </td>
-                  <td>{payment?.paidOn ? payment.paidOn : '—'}</td>
+                  <td>{item.bookedOn}</td>
                   <td>{item.pax}</td>
                   <td>{formatNzd(item.amountNzd)}</td>
                   <td>
@@ -158,8 +246,18 @@ function BookingsBoard() {
               </dd>
             </div>
             <div>
-              <dt>Product</dt>
-              <dd>{selected.product}</dd>
+              <dt>Contact</dt>
+              <dd>
+                {selectedCustomer?.email}
+                <div className="muted">{selectedCustomer?.phone}</div>
+              </dd>
+            </div>
+            <div>
+              <dt>Service</dt>
+              <dd>
+                {selected.product}
+                <div className="muted">{labelServiceType(selected.serviceType)}</div>
+              </dd>
             </div>
             <div>
               <dt>Departure</dt>
@@ -172,6 +270,10 @@ function BookingsBoard() {
             <div>
               <dt>Direction</dt>
               <dd>{selectedDeparture ? labelDirection(selectedDeparture.direction) : '—'}</dd>
+            </div>
+            <div>
+              <dt>Route</dt>
+              <dd>{selectedDeparture?.route ?? '—'}</dd>
             </div>
             <div>
               <dt>Passenger count</dt>

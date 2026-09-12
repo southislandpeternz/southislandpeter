@@ -7,6 +7,7 @@ import {
   formatNzd,
   operationTasks,
   passengersToday,
+  pendingPaymentCount,
   revenueBars,
   todaysBookings,
   todaysDepartures,
@@ -26,6 +27,7 @@ export default function DashboardPage() {
   const bars = revenueBars();
   const tasks = operationTasks();
   const passengerOps = todaysPassengerSummary();
+  const pendingPayments = pendingPaymentCount();
   const mtCook = findDeparture('dep-mtcook-thu-return');
 
   return (
@@ -41,29 +43,29 @@ export default function DashboardPage() {
       </div>
 
       <div className="kpi-grid ops">
+        <Link className="card kpi clickable" href="/arrangements">
+          <div className="label">Today’s departures</div>
+          <div className="value">{departureCount}</div>
+        </Link>
+        <Link className="card kpi clickable" href="/arrangements">
+          <div className="label">Today’s passengers</div>
+          <div className="value">{passengerCount}</div>
+        </Link>
         <Link className="card kpi clickable" href="/bookings">
           <div className="label">Today’s bookings</div>
           <div className="value">{bookingCount}</div>
         </Link>
-        <Link className="card kpi clickable" href="/departures">
-          <div className="label">Today’s departures</div>
-          <div className="value">{departureCount}</div>
-        </Link>
-        <Link className="card kpi clickable" href="/departures">
-          <div className="label">Today’s passengers</div>
-          <div className="value">{passengerCount}</div>
-        </Link>
-        <Link className="card kpi clickable" href="/departures">
-          <div className="label">Checked-in passengers</div>
+        <Link className="card kpi clickable" href="/arrangements">
+          <div className="label">Checked-in</div>
           <div className="value">{passengerOps.checkedIn}</div>
         </Link>
-        <Link className="card kpi clickable" href="/departures">
-          <div className="label">No-show passengers</div>
+        <Link className="card kpi clickable" href="/arrangements">
+          <div className="label">No-show</div>
           <div className="value">{passengerOps.noShow}</div>
         </Link>
-        <Link className="card kpi clickable" href="/payments">
-          <div className="label">Today’s received</div>
-          <div className="value">{formatNzd(revenue)}</div>
+        <Link className="card kpi clickable" href="/bookings?payment=outstanding">
+          <div className="label">Pending payment</div>
+          <div className="value">{pendingPayments}</div>
         </Link>
       </div>
 
@@ -80,7 +82,9 @@ export default function DashboardPage() {
               <span className="time">{item.time}</span>
               <span>
                 <strong>{item.name}</strong>
-                <div className="muted">{item.route}</div>
+                <div className="muted">
+                  {item.route} · {item.date}
+                </div>
               </span>
               <span className="muted">
                 {bookedSeats(item.id)}/{item.capacity}
@@ -116,7 +120,8 @@ export default function DashboardPage() {
           <h2>AI assistant</h2>
           <p>
             Morning Peter. Today’s operations board has {departureCount} departures and {passengerCount} passengers.
-            Checked in: {passengerOps.checkedIn}. No show: {passengerOps.noShow}. Received so far: {formatNzd(revenue)}.
+            Checked in: {passengerOps.checkedIn}. No show: {passengerOps.noShow}. Pending payment: {pendingPayments}.
+            Received so far: {formatNzd(revenue)}.
           </p>
           <p>
             Mount Cook Shuttle · Return (Aoraki / Mt Cook → Christchurch) is{' '}
@@ -138,6 +143,7 @@ export default function DashboardPage() {
 
         <section className="card card-pad">
           <h2>Revenue</h2>
+          <p className="muted">Today’s received {formatNzd(revenue)} · demo figures only</p>
           <div className="bars">
             {bars.map((bar) => (
               <div key={bar.day} style={{ flex: 1 }}>

@@ -129,9 +129,9 @@ function CustomersBoard() {
               <thead>
                 <tr>
                   <th>Booking</th>
-                  <th>Product</th>
-                  <th>Departure</th>
-                  <th>Pax</th>
+                  <th>Service / Departure</th>
+                  <th>Passengers</th>
+                  <th>Amount</th>
                   <th>Payment</th>
                   <th>Status</th>
                 </tr>
@@ -140,17 +140,32 @@ function CustomersBoard() {
                 {related.map((item) => {
                   const departure = findDeparture(item.departureId);
                   return (
-                    <tr key={item.id}>
+                    <tr
+                      key={item.id}
+                      className="selectable"
+                      onClick={() => router.push(`/bookings?booking=${item.bookingNo}`)}
+                    >
                       <td>
-                        <Link href={`/bookings?booking=${item.bookingNo}`}>{item.bookingNo}</Link>
-                      </td>
-                      <td>{item.product}</td>
-                      <td>
-                        <Link href={`/departures/${item.departureId}`}>
-                          {departure?.date} {departure?.time}
+                        <Link
+                          href={`/bookings?booking=${item.bookingNo}`}
+                          onClick={(event) => event.stopPropagation()}
+                        >
+                          {item.bookingNo}
                         </Link>
                       </td>
+                      <td>
+                        {item.product}
+                        <div>
+                          <Link
+                            href={`/departures/${item.departureId}`}
+                            onClick={(event) => event.stopPropagation()}
+                          >
+                            {departure?.name} · {departure?.date} {departure?.time}
+                          </Link>
+                        </div>
+                      </td>
                       <td>{item.pax}</td>
+                      <td>{formatNzd(item.amountNzd)}</td>
                       <td>
                         <StatusBadge tone={toneForPayment(item.paymentStatus)}>
                           {labelPaymentStatus(item.paymentStatus)}

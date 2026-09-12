@@ -43,12 +43,18 @@ export default function PaymentsPage() {
                   <td>{item.paidOn || '—'}</td>
                   <td>
                     {booking ? (
-                      <Link href={`/departures/${booking.departureId}`}>{item.bookingNo}</Link>
+                      <Link href={`/bookings?booking=${item.bookingNo}`}>{item.bookingNo}</Link>
                     ) : (
                       item.bookingNo
                     )}
                   </td>
-                  <td>{customer?.name}</td>
+                  <td>
+                    {customer ? (
+                      <Link href={`/customers?customer=${customer.id}`}>{customer.name}</Link>
+                    ) : (
+                      '—'
+                    )}
+                  </td>
                   <td>{METHOD_LABEL[item.method]}</td>
                   <td>{formatNzd(item.amountNzd)}</td>
                   <td>

@@ -2,14 +2,9 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { bookedSeats, findDriver, findVehicle, labelDirection, listDepartures } from '../../../lib/mock-data';
-import {
-  labelDepartureStatus,
-  labelServiceType,
-  toneForDeparture,
-  type ServiceType,
-} from '../../../lib/status';
-import { StatusBadge } from '../../../components/status-badge';
+import { DepartureListTable } from '../../../components/departure-table';
+import { listDepartures } from '../../../lib/mock-data';
+import { type ServiceType } from '../../../lib/status';
 
 const FILTERS: Array<{ id: 'ALL' | ServiceType; label: string }> = [
   { id: 'ALL', label: 'All services' },
@@ -48,55 +43,7 @@ export default function DeparturesPage() {
           </button>
         ))}
       </div>
-      <section className="card table-wrap">
-        <table className="data">
-          <thead>
-            <tr>
-              <th>Time</th>
-              <th>Departure</th>
-              <th>Service</th>
-              <th>Driver / vehicle</th>
-              <th>Load</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((item) => {
-              const driver = findDriver(item.driverId);
-              const vehicle = findVehicle(item.vehicleId);
-              return (
-                <tr key={item.id}>
-                  <td>
-                    <strong>{item.time}</strong>
-                    <div className="muted">{item.date}</div>
-                  </td>
-                  <td>
-                    <Link href={`/departures/${item.id}`}>
-                      <strong>{item.name}</strong>
-                      <div className="muted">
-                        {labelDirection(item.direction)} · {item.route}
-                      </div>
-                    </Link>
-                  </td>
-                  <td>{labelServiceType(item.serviceType)}</td>
-                  <td>
-                    {driver?.name}
-                    <div className="muted">{vehicle?.name}</div>
-                  </td>
-                  <td>
-                    {bookedSeats(item.id)}/{item.capacity}
-                  </td>
-                  <td>
-                    <StatusBadge tone={toneForDeparture(item.status)}>
-                      {labelDepartureStatus(item.status)}
-                    </StatusBadge>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </section>
+      <DepartureListTable rows={rows} />
     </div>
   );
 }

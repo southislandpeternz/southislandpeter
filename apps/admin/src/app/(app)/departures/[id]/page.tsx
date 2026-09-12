@@ -44,7 +44,7 @@ export default function DepartureDetailPage() {
       <div>
         <h1>Departure not found</h1>
         <p className="muted">This demo record is not in the mock set.</p>
-        <Link href="/departures">Back to departures</Link>
+        <Link href="/arrangements">Back to operations board</Link>
       </div>
     );
   }
@@ -130,14 +130,19 @@ export default function DepartureDetailPage() {
           <h1>
             {departure.time} · {departure.name}
           </h1>
-          <p>{departure.route}</p>
+          <p>
+            {departure.date} · {labelDirection(departure.direction)} · {departure.route}
+          </p>
+          <p className="muted">
+            {booked}/{departure.capacity} passengers · {vehicle?.name ?? 'Unassigned'} · {driver?.name ?? 'Unassigned'}
+          </p>
         </div>
         <StatusBadge tone={toneForDeparture(departure.status)}>
           {labelDepartureStatus(departure.status)}
         </StatusBadge>
       </div>
 
-      <div className="summary-grid">
+      <div className="summary-grid five">
         <div className="summary-stat">
           <div className="label">Total passengers</div>
           <div className="value">{summary.total}</div>
@@ -153,6 +158,10 @@ export default function DepartureDetailPage() {
         <div className="summary-stat">
           <div className="label">Remaining</div>
           <div className="value">{summary.remaining}</div>
+        </div>
+        <div className="summary-stat">
+          <div className="label">Cancelled</div>
+          <div className="value">{summary.cancelled}</div>
         </div>
       </div>
 
@@ -200,6 +209,12 @@ export default function DepartureDetailPage() {
           <div>
             <dt>Capacity</dt>
             <dd>{departure.capacity}</dd>
+          </div>
+          <div>
+            <dt>Passenger count</dt>
+            <dd>
+              {booked}/{departure.capacity}
+            </dd>
           </div>
           <div>
             <dt>Booked seats</dt>
