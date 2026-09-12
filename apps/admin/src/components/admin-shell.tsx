@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { DEMO_OPERATOR, isDemoSignedIn, signOutDemo } from '../lib/demo-session';
-import { operationNotifications, searchAdmin } from '../lib/mock-data';
+import { operationalAlerts, searchAdmin } from '../lib/mock-data';
 
 const NAV = [
   { href: '/dashboard', label: 'Dashboard', icon: '⌂' },
   { href: '/departures', label: 'Departures', icon: '🚌' },
-  { href: '/arrangements', label: 'Service arrangement', icon: '▦' },
+  { href: '/arrangements', label: 'Departure board', icon: '▦' },
   { href: '/bookings', label: 'Bookings', icon: '▤' },
   { href: '/customers', label: 'Customers', icon: '☺' },
   { href: '/payments', label: 'Payments', icon: '$' },
@@ -86,7 +86,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
             );
           })}
         </nav>
-        <div className="sidebar-foot">Admin UI V1.4 · mock data only. Authentication and APIs are not connected.</div>
+        <div className="sidebar-foot">Admin UI V1.5 · mock data only. Authentication and APIs are not connected.</div>
       </aside>
       <div className="workspace">
         <header className="topbar">
@@ -146,18 +146,26 @@ export function AdminShell({ children }: { children: ReactNode }) {
             <button type="button" onClick={() => go('/bookings?payment=outstanding')}>
               View pending payments
             </button>
+            <button type="button" onClick={() => go('/dashboard#ops-alerts')}>
+              View operational alerts
+            </button>
             <button type="button" onClick={() => demoAction('New Booking is UI-only in Admin UI V1.')}>
               New Booking
             </button>
           </div>
         ) : null}
         {menu === 'notice' ? (
-          <div className="menu">
-            {operationNotifications().map((item) => (
-              <div key={item} style={{ padding: 10, fontSize: 13 }}>
-                {item}
-              </div>
-            ))}
+          <div className="menu menu-wide">
+            {operationalAlerts().length === 0 ? (
+              <div style={{ padding: 10, fontSize: 13 }}>All operations look good.</div>
+            ) : (
+              operationalAlerts().map((alert) => (
+                <button key={alert.id} type="button" onClick={() => go(alert.href)}>
+                  <strong>{alert.reason}</strong>
+                  <div className="muted">{alert.related}</div>
+                </button>
+              ))
+            )}
           </div>
         ) : null}
         {menu === 'user' ? (
@@ -176,7 +184,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
           </div>
         ) : null}
         <div className="demo-banner">
-          SP2036 Admin UI V1.4 · operations board · unified mock data · not DP01
+          SP2036 Admin UI V1.5 · daily operations workbench · unified mock data · not DP01
         </div>
         <main className="content">{children}</main>
       </div>

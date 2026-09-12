@@ -1,11 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import { TodayOperationsTable } from '../../../components/departure-table';
+import { StatusBadge } from '../../../components/status-badge';
 import {
   bookedSeats,
   findDeparture,
   formatNzd,
-  operationTasks,
+  operationalAlerts,
   passengersToday,
   pendingPaymentCount,
   revenueBars,
@@ -14,8 +16,7 @@ import {
   todaysPassengerSummary,
   todaysRevenueNzd,
 } from '../../../lib/mock-data';
-import { labelBookingStatus, labelDepartureStatus, toneForBooking, toneForDeparture } from '../../../lib/status';
-import { StatusBadge } from '../../../components/status-badge';
+import { labelBookingStatus, labelDepartureStatus, toneForBooking } from '../../../lib/status';
 
 export default function DashboardPage() {
   const departures = todaysDepartures();
@@ -25,20 +26,20 @@ export default function DashboardPage() {
   const bookingCount = todayBookings.length;
   const revenue = todaysRevenueNzd();
   const bars = revenueBars();
-  const tasks = operationTasks();
   const passengerOps = todaysPassengerSummary();
   const pendingPayments = pendingPaymentCount();
   const mtCook = findDeparture('dep-mtcook-thu-return');
+  const alerts = operationalAlerts();
 
   return (
     <div>
       <div className="page-header">
         <div>
           <h1>Dashboard</h1>
-          <p>Today’s operations · Thursday 10 Sep 2026 · from Unified Service Arrangement</p>
+          <p>Today’s operations · Thursday 10 Sep 2026 · daily operations workbench</p>
         </div>
         <Link className="btn" href="/arrangements">
-          Open operations board
+          Open departure board
         </Link>
       </div>
 
@@ -69,31 +70,34 @@ export default function DashboardPage() {
         </Link>
       </div>
 
-      <div className="grid-2">
-        <section className="card card-pad">
-          <div className="section-title">
-            <h2>Today’s operations</h2>
-            <Link className="muted" href="/arrangements">
-              Operations board
-            </Link>
+      <section className="card card-pad" id="ops-alerts" style={{ marginTop: 16, marginBottom: 16 }}>
+        <div className="section-title">
+          <h2>Operational alerts</h2>
+          <span className="muted">{alerts.length === 0 ? 'Clear' : `${alerts.length} item(s)`}</span>
+        </div>
+        {alerts.length === 0 ? (
+          <p className="muted">All operations look good.</p>
+        ) : (
+          <div className="alert-list">
+            {alerts.map((alert) => (
+              <Link key={alert.id} href={alert.href} className="alert-row">
+                <strong>{alert.reason}</strong>
+                <span className="muted">{alert.related}</span>
+              </Link>
+            ))}
           </div>
-          {departures.map((item) => (
-            <Link key={item.id} href={`/departures/${item.id}`} className="row">
-              <span className="time">{item.time}</span>
-              <span>
-                <strong>{item.name}</strong>
-                <div className="muted">
-                  {item.route} · {item.date}
-                </div>
-              </span>
-              <span className="muted">
-                {bookedSeats(item.id)}/{item.capacity}
-              </span>
-              <StatusBadge tone={toneForDeparture(item.status)}>{labelDepartureStatus(item.status)}</StatusBadge>
-            </Link>
-          ))}
-        </section>
+        )}
+      </section>
 
+      <div className="section-title" style={{ marginBottom: 12 }}>
+        <h2>Today’s operations</h2>
+        <Link className="muted" href="/arrangements">
+          Departure board
+        </Link>
+      </div>
+      <TodayOperationsTable rows={departures} />
+
+      <div className="grid-2">
         <section className="card card-pad">
           <div className="section-title">
             <h2>Today’s bookings</h2>
@@ -101,66 +105,40 @@ export default function DashboardPage() {
               View all
             </Link>
           </div>
-          {todayBookings.map((item) => (
-            <Link key={item.id} href={`/bookings?booking=${item.bookingNo}`} className="row">
-              <span className="time">{findDeparture(item.departureId)?.time}</span>
-              <span>
-                <strong>{item.bookingNo}</strong>
-                <div className="muted">{item.product}</div>
-              </span>
-              <span className="muted">{item.pax} pax</span>
-              <StatusBadge tone={toneForBooking(item.status)}>{labelBookingStatus(item.status)}</StatusBadge>
-            </Link>
-          ))}
+          {todayBookings.length === 0 ? (
+            <p className="muted">No bookings for today’s departures.</p>
+          ) : (
+            todayBookings.map((item) => (
+              <Link key={item.id} href={`/bookings?booking=${item.bookingNo}`} className="row">
+                <span className="time">{findDeparture(item.departureId)?.time}</span>
+                <span>
+                  <strong>{item.bookingNo}</strong>
+                  <div className="muted">{item.product}</div>
+                </span>
+                <span className="muted">{item.pax} pax</span>
+                <StatusBadge tone={toneForBooking(item.status)}>{labelBookingStatus(item.status)}</StatusBadge>
+              </Link>
+            ))
+          )}
         </section>
-      </div>
 
-      <div className="grid-3">
         <section className="card card-pad ai-card">
           <h2>AI assistant</h2>
           <p>
-            Morning Peter. Today’s operations board has {departureCount} departures and {passengerCount} passengers.
-            Checked in: {passengerOps.checkedIn}. No show: {passengerOps.noShow}. Pending payment: {pendingPayments}.
-            Received so far: {formatNzd(revenue)}.
+            Morning Peter. Today’s board has {departureCount} departures and {passengerCount} passengers. Checked in:{' '}
+            {passengerOps.checkedIn}. No show: {passengerOps.noShow}. Alerts: {alerts.length}. Received so far:{' '}
+            {formatNzd(revenue)}.
           </p>
           <p>
-            Mount Cook Shuttle · Return (Aoraki / Mt Cook → Christchurch) is{' '}
-            {mtCook ? labelDepartureStatus(mtCook.status) : 'unknown'} with {bookedSeats('dep-mtcook-thu-return')}/8
-            seats. Lyttelton Cruise Day Tour has {bookedSeats('dep-lyttelton-cruise')} passengers assigned.
+            Mount Cook Shuttle · Return is {mtCook ? labelDepartureStatus(mtCook.status) : 'unknown'} with{' '}
+            {bookedSeats('dep-mtcook-thu-return')}/8 seats.
           </p>
           <p className="muted">Placeholder copy only. AI is not connected in this UI drop.</p>
-        </section>
-
-        <section className="card card-pad">
-          <h2>Task list</h2>
-          {tasks.map((task) => (
-            <Link key={task.id} href={task.href} className="task">
-              <input type="checkbox" disabled />
-              {task.label}
-            </Link>
-          ))}
-        </section>
-
-        <section className="card card-pad">
-          <h2>Revenue</h2>
-          <p className="muted">Today’s received {formatNzd(revenue)} · demo figures only</p>
-          <div className="bars">
+          <div className="bars" style={{ marginTop: 16 }}>
             {bars.map((bar) => (
               <div key={bar.day} style={{ flex: 1 }}>
                 <div className="bar" style={{ height: `${bar.value}%` }} />
                 <div className="bar-label">{bar.day}</div>
-              </div>
-            ))}
-          </div>
-          <div className="status-list" style={{ marginTop: 18 }}>
-            <h2>System status</h2>
-            {['API', 'Database', 'AI', 'Stripe', 'Email', 'Website'].map((name) => (
-              <div key={name} className="status-item">
-                <span>
-                  <span className="dot" />
-                  {name}
-                </span>
-                <span className="muted">Demo · not connected</span>
               </div>
             ))}
           </div>

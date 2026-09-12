@@ -121,3 +121,29 @@ export function toneForPassenger(status: PassengerStatus): 'ok' | 'warn' | 'dang
   }
   return 'neutral';
 }
+
+export type BoardLane = 'SCHEDULED' | 'BOARDING' | 'IN_PROGRESS' | 'COMPLETED' | 'CANCELLED';
+
+export const BOARD_LANES: Array<{ id: BoardLane; label: string }> = [
+  { id: 'SCHEDULED', label: 'Scheduled' },
+  { id: 'BOARDING', label: 'Ready / Boarding' },
+  { id: 'IN_PROGRESS', label: 'In progress' },
+  { id: 'COMPLETED', label: 'Completed' },
+  { id: 'CANCELLED', label: 'Cancelled' },
+];
+
+export function boardLane(status: DepartureStatus): BoardLane {
+  if (status === 'READY') {
+    return 'BOARDING';
+  }
+  if (status === 'DEPARTED') {
+    return 'IN_PROGRESS';
+  }
+  if (status === 'COMPLETED') {
+    return 'COMPLETED';
+  }
+  if (status === 'CANCELLED') {
+    return 'CANCELLED';
+  }
+  return 'SCHEDULED';
+}

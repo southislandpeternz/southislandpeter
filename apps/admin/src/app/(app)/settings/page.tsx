@@ -21,7 +21,7 @@ export default function SettingsPage() {
         </section>
         <section className="card card-pad">
           <h2>This UI drop</h2>
-          <p>Admin UI V1.4 is a clickable frontend prototype with unified demo data.</p>
+          <p>Admin UI V1.5 is a clickable frontend prototype with unified demo data.</p>
           <p className="muted">Not connected to NestJS, Prisma, JWT, or Stripe.</p>
           <p className="muted">DP01 Authentication is intentionally not started.</p>
         </section>

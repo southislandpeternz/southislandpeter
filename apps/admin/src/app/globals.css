@@ -609,6 +609,12 @@ table.data tr.selected {
   box-shadow: var(--shadow);
   padding: 8px;
   z-index: 20;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+.menu-wide {
+  width: 360px;
 }
 
 .menu button,
@@ -695,6 +701,12 @@ table.data tr.selected {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
+}
+
+.board-lanes {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .lane {
@@ -828,6 +840,55 @@ table.data tr.selected {
   font-size: 12px;
 }
 
+.alert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alert-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+.alert-row:hover {
+  border-color: var(--accent);
+}
+
+.ops-hints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ops-hint {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ops-hint.warn {
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+
+.ops-hint.danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.ops-hint.info {
+  background: var(--info-bg);
+  color: var(--info);
+}
+
 .mobile-toggle {
   display: none;
 }
@@ -838,6 +899,7 @@ table.data tr.selected {
   .grid-2,
   .grid-3,
   .lanes,
+  .board-lanes,
   .detail-grid,
   .week,
   .info-grid,

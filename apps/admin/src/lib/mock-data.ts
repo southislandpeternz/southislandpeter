@@ -1,4 +1,5 @@
 import {
+  boardLane,
   labelDepartureStatus,
   labelPassengerStatus,
   type BookingSource,
@@ -1042,11 +1043,11 @@ function applyOverlay(): void {
       departure.status = status;
     }
     const vehicleId = overlay.vehicleId[departure.id];
-    if (vehicleId) {
+    if (vehicleId !== undefined) {
       departure.vehicleId = vehicleId;
     }
     const driverId = overlay.driverId[departure.id];
-    if (driverId) {
+    if (driverId !== undefined) {
       departure.driverId = driverId;
     }
   }
@@ -1079,15 +1080,20 @@ function persistAssignment(kind: 'vehicleId' | 'driverId', departureId: string, 
 export function assignVehicle(departureId: string, vehicleId: string): MockOpResult {
   applyOverlay();
   const departure = findDeparture(departureId);
-  const vehicle = findVehicle(vehicleId);
   if (!departure) {
     return { ok: false, message: 'Departure not found.' };
   }
-  if (!vehicle) {
-    return { ok: false, message: 'Vehicle not found.' };
-  }
   if (departure.status === 'CANCELLED') {
     return { ok: false, message: 'Cannot assign a vehicle to a cancelled departure.' };
+  }
+  if (vehicleId.length === 0) {
+    departure.vehicleId = '';
+    persistAssignment('vehicleId', departure.id, '');
+    return { ok: true, message: 'Vehicle unassigned · mock assignment only.' };
+  }
+  const vehicle = findVehicle(vehicleId);
+  if (!vehicle) {
+    return { ok: false, message: 'Vehicle not found.' };
   }
   departure.vehicleId = vehicle.id;
   persistAssignment('vehicleId', departure.id, vehicle.id);
@@ -1097,15 +1103,20 @@ export function assignVehicle(departureId: string, vehicleId: string): MockOpRes
 export function assignDriver(departureId: string, driverId: string): MockOpResult {
   applyOverlay();
   const departure = findDeparture(departureId);
-  const driver = findDriver(driverId);
   if (!departure) {
     return { ok: false, message: 'Departure not found.' };
   }
-  if (!driver) {
-    return { ok: false, message: 'Driver not found.' };
-  }
   if (departure.status === 'CANCELLED') {
     return { ok: false, message: 'Cannot assign a driver to a cancelled departure.' };
+  }
+  if (driverId.length === 0) {
+    departure.driverId = '';
+    persistAssignment('driverId', departure.id, '');
+    return { ok: true, message: 'Driver unassigned · mock assignment only.' };
+  }
+  const driver = findDriver(driverId);
+  if (!driver) {
+    return { ok: false, message: 'Driver not found.' };
   }
   departure.driverId = driver.id;
   persistAssignment('driverId', departure.id, driver.id);
@@ -1345,4 +1356,119 @@ export function searchAdmin(query: string): AdminSearchHit[] {
     }
   }
   return hits.slice(0, 8);
+}
+
+export function departureRoutes(): string[] {
+  return Array.from(new Set(listDepartures().map((item) => item.route)));
+}
+
+export interface OpsAlert {
+  id: string;
+  reason: string;
+  href: string;
+  related: string;
+}
+
+export function operationalAlerts(): OpsAlert[] {
+  const alerts: OpsAlert[] = [];
+  for (const departure of listDepartures()) {
+    const active = departure.status !== 'COMPLETED' && departure.status !== 'CANCELLED';
+    const vehicle = findVehicle(departure.vehicleId);
+    const driver = findDriver(departure.driverId);
+    const booked = bookedSeats(departure.id);
+    const summary = passengerSummary(departure.id);
+    const label = `${departure.date} ${departure.time} · ${departure.name}`;
+    if (active && !driver) {
+      alerts.push({
+        id: `no-driver-${departure.id}`,
+        reason: 'Driver not assigned',
+        href: `/departures/${departure.id}`,
+        related: label,
+      });
+    }
+    if (active && !vehicle) {
+      alerts.push({
+        id: `no-vehicle-${departure.id}`,
+        reason: 'Vehicle not assigned',
+        href: `/departures/${departure.id}`,
+        related: label,
+      });
+    }
+    if (active && vehicle && booked > vehicle.seats) {
+      alerts.push({
+        id: `overcap-${departure.id}`,
+        reason: `Passenger count exceeds vehicle capacity (${booked}/${vehicle.seats})`,
+        href: `/departures/${departure.id}`,
+        related: label,
+      });
+    }
+    if (
+      departure.date === DEMO_TODAY &&
+      active &&
+      summary.remaining > 0 &&
+      (boardLane(departure.status) === 'BOARDING' ||
+        boardLane(departure.status) === 'IN_PROGRESS' ||
+        boardLane(departure.status) === 'SCHEDULED')
+    ) {
+      alerts.push({
+        id: `checkin-${departure.id}`,
+        reason: `Check-in incomplete · ${summary.remaining} remaining`,
+        href: `/departures/${departure.id}`,
+        related: label,
+      });
+    }
+  }
+  for (const booking of pendingPaymentBookings()) {
+    const customer = findCustomer(booking.customerId);
+    alerts.push({
+      id: `pay-${booking.bookingNo}`,
+      reason: 'Pending payment',
+      href: `/bookings?booking=${booking.bookingNo}`,
+      related: `${booking.bookingNo} · ${customer?.name ?? 'Guest'}`,
+    });
+  }
+  for (const booking of listBookings()) {
+    if (booking.status !== 'CANCELLED' && booking.passengerStatus !== 'CANCELLED') {
+      continue;
+    }
+    const customer = findCustomer(booking.customerId);
+    const departure = findDeparture(booking.departureId);
+    alerts.push({
+      id: `cancel-${booking.bookingNo}`,
+      reason: 'Cancelled booking',
+      href: `/bookings?booking=${booking.bookingNo}`,
+      related: `${booking.bookingNo} · ${customer?.name ?? 'Guest'} · ${departure?.name ?? 'Departure'}`,
+    });
+  }
+  return alerts;
+}
+
+export interface DepartureOpsHint {
+  tone: 'warn' | 'danger' | 'info';
+  message: string;
+}
+
+export function departureOpsHints(departure: MockDeparture): DepartureOpsHint[] {
+  const vehicle = findVehicle(departure.vehicleId);
+  const driver = findDriver(departure.driverId);
+  const booked = bookedSeats(departure.id);
+  const hints: DepartureOpsHint[] = [];
+  if (!vehicle) {
+    hints.push({ tone: 'warn', message: 'Vehicle not assigned' });
+  }
+  if (!driver) {
+    hints.push({ tone: 'warn', message: 'Driver not assigned' });
+  }
+  if (vehicle && booked > vehicle.seats) {
+    hints.push({
+      tone: 'danger',
+      message: `Capacity exceeded · ${booked} passengers on a ${vehicle.seats}-seat vehicle`,
+    });
+  } else if (vehicle) {
+    hints.push({
+      tone: 'info',
+      message: `Seats remaining · ${Math.max(0, vehicle.seats - booked)} of ${vehicle.seats}`,
+    });
+  }
+  return hints;
 }

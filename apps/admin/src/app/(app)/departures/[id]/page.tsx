@@ -15,6 +15,7 @@ import {
   canStartTrip,
   cancelPassenger,
   checkInPassenger,
+  departureOpsHints,
   drivers,
   findCustomer,
   findDeparture,
@@ -64,6 +65,8 @@ export default function DepartureDetailPage() {
   const available = availableSeats(departure);
   const remainingVehicleSeats = vehicle ? Math.max(0, vehicle.seats - booked) : available;
   const summary = passengerSummary(departure.id);
+  const hints = departureOpsHints(departure);
+  const assignmentLocked = departure.status === 'CANCELLED';
   const contactable = departureBookings.filter(
     (row) =>
       row.status === 'CONFIRMED' &&
@@ -71,7 +74,6 @@ export default function DepartureDetailPage() {
   );
   const contactPax = contactable.reduce((sum, row) => sum + row.pax, 0);
   const current = departure;
-  const assignmentLocked = departure.status === 'CANCELLED';
 
   function notify(message: string): void {
     setToast(message);
@@ -169,6 +171,16 @@ export default function DepartureDetailPage() {
           {labelDepartureStatus(departure.status)}
         </StatusBadge>
       </div>
+
+      {hints.length > 0 ? (
+        <div className="ops-hints">
+          {hints.map((hint) => (
+            <div key={hint.message} className={`ops-hint ${hint.tone}`}>
+              {hint.message}
+            </div>
+          ))}
+        </div>
+      ) : null}
 
       <div className="summary-grid five">
         <div className="summary-stat">
@@ -272,7 +284,11 @@ export default function DepartureDetailPage() {
               <dd>{vehicle ? `${vehicle.seats} seats` : '—'}</dd>
             </div>
             <div>
-              <dt>Passenger count</dt>
+              <dt>Assignment status</dt>
+              <dd>{vehicle ? 'Assigned' : 'Not assigned'}</dd>
+            </div>
+            <div>
+              <dt>Assigned passengers</dt>
               <dd>{booked}</dd>
             </div>
             <div>
@@ -287,6 +303,7 @@ export default function DepartureDetailPage() {
               disabled={assignmentLocked}
               onChange={(event) => onAssignVehicle(event.target.value)}
             >
+              <option value="">Unassigned</option>
               {vehicles.map((item) => (
                 <option key={item.id} value={item.id}>
                   {item.name} · {vehicleType(item)} · {item.seats} seats
@@ -314,11 +331,11 @@ export default function DepartureDetailPage() {
               <dd>{driver?.phone ?? '—'}</dd>
             </div>
             <div>
-              <dt>Licence</dt>
-              <dd>{driver?.licence ?? '—'}</dd>
+              <dt>Assignment status</dt>
+              <dd>{driver ? 'Assigned' : 'Not assigned'}</dd>
             </div>
             <div>
-              <dt>Passenger count</dt>
+              <dt>Assigned passengers</dt>
               <dd>
                 {booked}/{departure.capacity}
               </dd>
@@ -331,6 +348,7 @@ export default function DepartureDetailPage() {
               disabled={assignmentLocked}
               onChange={(event) => onAssignDriver(event.target.value)}
             >
+              <option value="">Unassigned</option>
               {drivers.map((item) => (
                 <option key={item.id} value={item.id}>
                   {item.name} · {item.phone}
@@ -344,7 +362,7 @@ export default function DepartureDetailPage() {
 
       <section className="card table-wrap" style={{ marginBottom: 16 }}>
         <div className="card-pad section-title">
-          <h2>Bookings</h2>
+          <h2>Passenger manifest</h2>
           <span className="muted">
             {departureBookings.length} booking(s) · {booked}/{departure.capacity} confirmed seats
           </span>
@@ -355,12 +373,13 @@ export default function DepartureDetailPage() {
           <table className="data">
             <thead>
               <tr>
-                <th>Booking number</th>
+                <th>Booking No.</th>
                 <th>Customer</th>
+                <th>Contact</th>
                 <th>Passengers</th>
                 <th>Booking status</th>
                 <th>Payment status</th>
-                <th>Passenger status</th>
+                <th>Check-in status</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -389,6 +408,10 @@ export default function DepartureDetailPage() {
                       >
                         {customer?.name}
                       </Link>
+                    </td>
+                    <td>
+                      {customer?.email}
+                      <div className="muted">{customer?.phone}</div>
                     </td>
                     <td>{row.pax}</td>
                     <td>
